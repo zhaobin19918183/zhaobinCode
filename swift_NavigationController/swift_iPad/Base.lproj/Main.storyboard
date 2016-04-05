@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g7W-Hk-eec">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Split View Controller-->
+        <scene sceneID="fCT-eL-NDO">
+            <objects>
+                <splitViewController modalTransitionStyle="flipHorizontal" id="SOg-uj-cdn" customClass="SplitViewController" customModule="swift_iPad" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="dM2-O5-IoF">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="e5C-BI-jtW" kind="relationship" relationship="masterViewController" id="ry3-Hc-6It"/>
+                        <segue destination="4WP-0C-Qsm" kind="relationship" relationship="detailViewController" id="kpD-DT-blQ"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BKR-h4-yAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-756" y="835"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="geg-f7-0cd">
+            <objects>
+                <viewController storyboardIdentifier="HistoryViewController" id="aji-Pc-5Gh" customClass="HistoryViewController" customModule="swift_iPad" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iqk-hU-AX0"/>
+                        <viewControllerLayoutGuide type="bottom" id="PXk-zO-uvj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YM3-JP-qVy">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fag-Cp-igl">
+                                <rect key="frame" x="905" y="20" width="99" height="46"/>
+                                <color key="backgroundColor" red="0.2156862745" green="0.74509803919999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="bSK-aC-Sde"/>
+                                    <constraint firstAttribute="height" constant="46" id="sEE-5u-Vbn"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="0.33725490200000002" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="homebuttnAction:" destination="aji-Pc-5Gh" eventType="touchDown" id="LHq-Ss-b1G"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elH-Pf-FHo">
+                                <rect key="frame" x="156" y="227" width="353" height="86"/>
+                                <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.94117647059999998" green="0.63137254899999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fag-Cp-igl" secondAttribute="trailing" constant="20" id="WvH-V1-cXJ"/>
+                            <constraint firstItem="fag-Cp-igl" firstAttribute="top" secondItem="iqk-hU-AX0" secondAttribute="bottom" id="eCr-AE-ADg"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1024" height="768"/>
+                    <connections>
+                        <outlet property="homebutton" destination="fag-Cp-igl" id="jbc-0k-wMc"/>
+                        <outlet property="teamLabel" destination="elH-Pf-FHo" id="F8G-v2-Wl5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ew8-7f-QHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1479" y="835"/>
+        </scene>
+        <!--Master View Controller-->
+        <scene sceneID="wgF-EZ-cBh">
+            <objects>
+                <viewController storyboardIdentifier="MasterViewController" id="e5C-BI-jtW" customClass="MasterViewController" customModule="swift_iPad" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Z4-En-xyv"/>
+                        <viewControllerLayoutGuide type="bottom" id="hxh-0e-Xat"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aPx-9J-x0W">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iJq-fx-cZq">
+                                <rect key="frame" x="0.0" y="64" width="150" height="704"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="e5C-BI-jtW" id="Xqs-c0-dHq"/>
+                                    <outlet property="delegate" destination="e5C-BI-jtW" id="KkK-U6-64G"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="iJq-fx-cZq" firstAttribute="top" secondItem="3Z4-En-xyv" secondAttribute="bottom" id="1tD-ej-BAN"/>
+                            <constraint firstAttribute="trailing" secondItem="iJq-fx-cZq" secondAttribute="trailing" id="DJs-cO-YjW"/>
+                            <constraint firstItem="iJq-fx-cZq" firstAttribute="leading" secondItem="aPx-9J-x0W" secondAttribute="leading" id="GSt-Vv-AY8"/>
+                            <constraint firstItem="hxh-0e-Xat" firstAttribute="top" secondItem="iJq-fx-cZq" secondAttribute="bottom" id="SwD-OR-OYi"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="150" height="768"/>
+                    <connections>
+                        <outlet property="tableView" destination="iJq-fx-cZq" id="oUv-YK-Quz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TJP-Sl-0aG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-756" y="1741"/>
+        </scene>
+        <!--Navigation View Controller-->
+        <scene sceneID="lg2-H8-xJ2">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationViewController" id="g7W-Hk-eec" customClass="NavigationViewController" customModule="swift_iPad" customModuleProvider="target" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1024" height="768"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TpJ-dK-a0T">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.3371220815" blue="0.3803713849" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SOg-uj-cdn" kind="relationship" relationship="rootViewController" id="mX7-vA-HgJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5BD-wv-Vdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2021" y="835"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="tRO-TY-PBc">
+            <objects>
+                <viewController restorationIdentifier="HomeViewController" storyboardIdentifier="HomeViewController" id="4WP-0C-Qsm" customClass="HomeViewController" customModule="swift_iPad" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uzw-F1-dXh"/>
+                        <viewControllerLayoutGuide type="bottom" id="vgE-aC-JFV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P5e-BS-XIo">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Am3-C2-8Bv">
+                                <rect key="frame" x="320" y="248" width="384" height="271"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxv-T1-c7U">
+                                <rect key="frame" x="389" y="123" width="97" height="39"/>
+                                <color key="backgroundColor" red="0.2156862745" green="0.74509803919999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="popobuttonAction:" destination="4WP-0C-Qsm" eventType="touchDown" id="acy-Ub-Lpl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Am3-C2-8Bv" firstAttribute="leading" secondItem="P5e-BS-XIo" secondAttribute="leading" constant="320" id="7Gm-AD-a2B"/>
+                            <constraint firstItem="vgE-aC-JFV" firstAttribute="top" secondItem="Am3-C2-8Bv" secondAttribute="bottom" constant="249" id="Nrt-7d-uCi"/>
+                            <constraint firstItem="Am3-C2-8Bv" firstAttribute="top" secondItem="Uzw-F1-dXh" secondAttribute="bottom" constant="184" id="Rm8-5u-oaM"/>
+                            <constraint firstAttribute="trailing" secondItem="Am3-C2-8Bv" secondAttribute="trailing" constant="320" id="XS2-aa-bOK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bgC-vQ-IM7"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1024" height="768"/>
+                    <connections>
+                        <outlet property="popbutton" destination="Bxv-T1-c7U" id="kIg-i0-0pX"/>
+                        <outlet property="textImageVIew" destination="Am3-C2-8Bv" id="ldH-pq-L4K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tJj-1h-ES2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="835"/>
+        </scene>
+    </scenes>
+</document>
