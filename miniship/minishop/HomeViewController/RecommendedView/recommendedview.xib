@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecommendedView" customModule="minishop" customModuleProvider="target">
+            <connections>
+                <outlet property="_recommendButton1" destination="ulf-oa-q7f" id="vJZ-Sd-enB"/>
+                <outlet property="_recommendButton2" destination="xZB-kD-1aR" id="V7l-eO-Qxy"/>
+                <outlet property="_recommendButton3" destination="vi8-Iv-Mfv" id="nSP-iw-2NY"/>
+                <outlet property="myUIView" destination="iN0-l3-epB" id="7qW-Pa-UjZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulf-oa-q7f">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    <color key="backgroundColor" red="0.2156862745" green="0.74509803919999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="TPb-bQ-HEr"/>
+                    </constraints>
+                    <state key="normal" title="Button1"/>
+                    <connections>
+                        <action selector="recommendAction1:" destination="-1" eventType="touchUpInside" id="JkE-eF-eNA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vi8-Iv-Mfv">
+                    <rect key="frame" x="200" y="0.0" width="120" height="100"/>
+                    <color key="backgroundColor" red="0.94117647059999998" green="0.63137254899999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Button3"/>
+                    <connections>
+                        <action selector="recommendAction3:" destination="-1" eventType="touchUpInside" id="lEq-A7-Z4N"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZB-kD-1aR">
+                    <rect key="frame" x="100" y="0.0" width="100" height="100"/>
+                    <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Wg4-v5-jEN"/>
+                    </constraints>
+                    <state key="normal" title="Button2"/>
+                    <connections>
+                        <action selector="recommendAction2:" destination="-1" eventType="touchUpInside" id="vOt-Zu-TBT"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ulf-oa-q7f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0JN-74-Atr"/>
+                <constraint firstAttribute="bottom" secondItem="xZB-kD-1aR" secondAttribute="bottom" id="80J-VC-zzd"/>
+                <constraint firstItem="xZB-kD-1aR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="E8q-No-1MS"/>
+                <constraint firstItem="xZB-kD-1aR" firstAttribute="leading" secondItem="ulf-oa-q7f" secondAttribute="trailing" id="Hbc-br-2LN"/>
+                <constraint firstItem="ulf-oa-q7f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Q1Q-jb-rmW"/>
+                <constraint firstAttribute="bottom" secondItem="ulf-oa-q7f" secondAttribute="bottom" id="cUE-5f-OcD"/>
+                <constraint firstAttribute="trailing" secondItem="vi8-Iv-Mfv" secondAttribute="trailing" id="gcv-K7-OTc"/>
+                <constraint firstItem="vi8-Iv-Mfv" firstAttribute="leading" secondItem="xZB-kD-1aR" secondAttribute="trailing" id="hFo-6N-9GS"/>
+                <constraint firstAttribute="bottom" secondItem="vi8-Iv-Mfv" secondAttribute="bottom" id="iW4-YB-OKe"/>
+                <constraint firstItem="vi8-Iv-Mfv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wNE-9r-KMN"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="922" y="577"/>
+        </view>
+    </objects>
+</document>
