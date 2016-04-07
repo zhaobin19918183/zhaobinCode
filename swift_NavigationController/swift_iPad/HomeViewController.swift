@@ -25,9 +25,12 @@ class HomeViewController: UIViewController,UIPopoverPresentationControllerDelega
     var remainTime = 100
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        progressAction()
+        
         
     }
+    
+    
     func  progressAction()
     {
         // 初始化 progressView
@@ -46,34 +49,42 @@ class HomeViewController: UIViewController,UIPopoverPresentationControllerDelega
     func reloadData()
     {
         
-        let destination = Alamofire.Request.suggestedDownloadDestination(
-            directory: .DocumentDirectory, domain: .UserDomainMask)
+        // let destination = Alamofire.Request.suggestedDownloadDestination(
+        //      directory: .DocumentDirectory, domain: .UserDomainMask)
         
         let url = "http://img2.imgtn.bdimg.com/it/u=1457437487,655486635&fm=11&gp=0.jpg"
         
-        Alamofire.download(.GET, url, destination: destination)
-            .progress { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
-                
-                let percent = totalBytesRead*100/totalBytesExpectedToRead
-                self.remainTime   = self.remainTime - Int(percent)
-                self.progressView.setProgress(Float(self.remainTime)/100, animated:true)
-                print("已下载：\(totalBytesRead)  当前进度：\(percent)%")
-            }
-            .response { (request, response, data, error) in
-                
-                let fileManager = NSFileManager.defaultManager()
-                let directoryURL = fileManager.URLsForDirectory(.DocumentDirectory,
-                    inDomains: .UserDomainMask)[0]
-                let pathComponent = response!.suggestedFilename
-                print(directoryURL.URLByAppendingPathComponent(pathComponent!))
-                print(response)
+        AlamofireView.alamofireDelegate(url) { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
+            
+            let percent = totalBytesRead*100/totalBytesExpectedToRead
+            self.remainTime   = self.remainTime - Int(percent)
+            self.progressView.setProgress(Float(self.remainTime)/100, animated:true)
+            print("已下载：\(totalBytesRead)  当前进度：\(percent)%")
         }
+        
+        //        Alamofire.download(.GET, url, destination: destination)
+        //            .progress { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
+        //
+        //                let percent = totalBytesRead*100/totalBytesExpectedToRead
+        //                self.remainTime   = self.remainTime - Int(percent)
+        //                self.progressView.setProgress(Float(self.remainTime)/100, animated:true)
+        //                print("已下载：\(totalBytesRead)  当前进度：\(percent)%")
+        //            }
+        //            .response { (request, response, data, error) in
+        //
+        //                let fileManager = NSFileManager.defaultManager()
+        //                let directoryURL = fileManager.URLsForDirectory(.DocumentDirectory,
+        //                    inDomains: .UserDomainMask)[0]
+        //                let pathComponent = response!.suggestedFilename
+        //                print(directoryURL.URLByAppendingPathComponent(pathComponent!))
+        //                print(response)
+        //        }
         
         
         
     }
     
-
+    
     func defaultShow(){
         HUDProgtess = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         HUDProgtess.labelText = "正在同步请稍等....."
@@ -98,7 +109,7 @@ class HomeViewController: UIViewController,UIPopoverPresentationControllerDelega
         popViewController.collectionSeletctNmuber(10)
         
         let pop = popViewController()
-      
+        
         pop.delegate = self
         pop.modalPresentationStyle = .Popover
         pop.popoverPresentationController?.delegate = self
