@@ -82,7 +82,7 @@
 		BD71AA601CA9092B0097333E /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		BD71AA611CA9092B0097333E /* TeamTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamTableViewCell.xib; sourceTree = "<group>"; };
 		BDC7B7B21CB6041A004138B7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
-		BDC7B7B71CB631A2004138B7 /* AlamofireView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireView.swift; sourceTree = "<group>"; };
+		BDC7B7B71CB631A2004138B7 /* AlamofireView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireView.swift; path = ../AlamofireView.swift; sourceTree = "<group>"; };
 		BDCBAA0A1CA5305A00F87F8B /* swift_iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift_iPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCBAA0D1CA5305B00F87F8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDCBAA121CA5305B00F87F8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -129,6 +129,7 @@
 		BD070F791CAA63A200EA88D4 /* NetWorkManager */ = {
 			isa = PBXGroup;
 			children = (
+				BDC7B7B71CB631A2004138B7 /* AlamofireView.swift */,
 				BD070F7E1CAA65AE00EA88D4 /* NetWorkManager.swift */,
 			);
 			path = NetWorkManager;
@@ -172,7 +173,6 @@
 				BDCBAA3F1CA5375F00F87F8B /* NavigationViewController.swift */,
 				BD71A9741CA8BD870097333E /* SplitViewController.swift */,
 				BDCBAA3D1CA533EF00F87F8B /* HomeViewController.swift */,
-				BDC7B7B71CB631A2004138B7 /* AlamofireView.swift */,
 				BD0081E91CAE4214003C8B69 /* ProgressView.swift */,
 				BD71A9761CA8C3880097333E /* MasterViewController.swift */,
 				BD6C24601CAA13ED000B025A /* popViewController.swift */,
