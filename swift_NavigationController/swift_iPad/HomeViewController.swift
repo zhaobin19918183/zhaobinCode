@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-
+import  Result
 import Alamofire
 
 class HomeViewController: UIViewController,UIPopoverPresentationControllerDelegate,popViewControllerDelegate {
@@ -23,6 +22,7 @@ class HomeViewController: UIViewController,UIPopoverPresentationControllerDelega
     
     var progressView: UIProgressView!
     var remainTime = 100
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         progressAction()

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BD0081EA1CAE4214003C8B69 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0081E91CAE4214003C8B69 /* ProgressView.swift */; };
 		BD070F7F1CAA65AE00EA88D4 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD070F7E1CAA65AE00EA88D4 /* NetWorkManager.swift */; };
+		BD3E11511CBE0DFB00B6B2A1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3E11501CBE0DFB00B6B2A1 /* Result.framework */; };
+		BD3E11521CBE0DFB00B6B2A1 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD3E11501CBE0DFB00B6B2A1 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BD40F02B1CACFF650035D47C /* popCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40F0291CACFF650035D47C /* popCollectionViewCell.swift */; };
 		BD40F02C1CACFF650035D47C /* popCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD40F02A1CACFF650035D47C /* popCollectionViewCell.xib */; };
 		BD6C24621CAA13ED000B025A /* popViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6C24601CAA13ED000B025A /* popViewController.swift */; };
@@ -59,6 +61,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				BDC7B7B41CB6041A004138B7 /* Alamofire.framework in Embed Frameworks */,
+				BD3E11521CBE0DFB00B6B2A1 /* Result.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +71,7 @@
 /* Begin PBXFileReference section */
 		BD0081E91CAE4214003C8B69 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		BD070F7E1CAA65AE00EA88D4 /* NetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
+		BD3E11501CBE0DFB00B6B2A1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Result.framework; sourceTree = "<group>"; };
 		BD40F0291CACFF650035D47C /* popCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD40F02A1CACFF650035D47C /* popCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = popCollectionViewCell.xib; sourceTree = "<group>"; };
 		BD6C24601CAA13ED000B025A /* popViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDC7B7B31CB6041A004138B7 /* Alamofire.framework in Frameworks */,
+				BD3E11511CBE0DFB00B6B2A1 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +153,7 @@
 		BDCBAA011CA5305A00F87F8B = {
 			isa = PBXGroup;
 			children = (
+				BD3E11501CBE0DFB00B6B2A1 /* Result.framework */,
 				BDC7B7B21CB6041A004138B7 /* Alamofire.framework */,
 				BDCBAA0C1CA5305B00F87F8B /* swift_iPad */,
 				BDCBAA211CA5305B00F87F8B /* swift_iPadTests */,
