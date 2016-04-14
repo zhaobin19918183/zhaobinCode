@@ -17,7 +17,7 @@ class imageViewController: UIViewController {
     {
         super.viewDidLoad()
         self.tabBarController?.tabBar.hidden = true
-        let nextItem=UIBarButtonItem(title:"Home",style:.Plain,target:self,action:#selector(imageViewController.backHomeView))
+        let nextItem=UIBarButtonItem(title:"Home",style:.Plain,target:self,action:#selector(backHomeView))
         self.navigationItem.leftBarButtonItem = nextItem
         
     }

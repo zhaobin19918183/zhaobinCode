@@ -26,11 +26,11 @@
             </objects>
             <point key="canvasLocation" x="-350" y="2034"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--222222-->
         <scene sceneID="yxh-j4-xav">
             <objects>
                 <navigationController id="4Ru-GO-jPq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="DcY-XG-D2o"/>
+                    <tabBarItem key="tabBarItem" title="222222" image="channel_compact_placeholder_inactive.png" id="DcY-XG-D2o"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rci-JW-IeX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -121,10 +121,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYz-1s-rpv" customClass="goodsView" customModule="minishop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="350" width="320" height="500"/>
+                                        <rect key="frame" x="0.0" y="350" width="320" height="169"/>
                                         <color key="backgroundColor" red="0.91764705879999997" green="0.30588235289999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="500" id="JeZ-Kc-CQC"/>
+                                            <constraint firstAttribute="height" constant="169" id="JeZ-Kc-CQC"/>
                                         </constraints>
                                     </view>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ydc-WB-6Bf">
@@ -144,7 +144,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="fYz-1s-rpv" secondAttribute="bottom" constant="-108" id="1Jy-r7-a73"/>
+                                    <constraint firstAttribute="bottom" secondItem="fYz-1s-rpv" secondAttribute="bottom" id="1Jy-r7-a73"/>
                                     <constraint firstItem="DIa-MV-f4f" firstAttribute="top" secondItem="Ydc-WB-6Bf" secondAttribute="bottom" id="552-39-YTs"/>
                                     <constraint firstItem="v9O-D3-OVd" firstAttribute="top" secondItem="DIa-MV-f4f" secondAttribute="bottom" id="EHl-RK-QHh"/>
                                     <constraint firstItem="YJz-tz-wgz" firstAttribute="leading" secondItem="I4k-oW-Obm" secondAttribute="leading" constant="10" id="KrJ-Z5-DjV"/>
@@ -174,7 +174,7 @@
                             <constraint firstAttribute="trailing" secondItem="I4k-oW-Obm" secondAttribute="trailing" id="jyI-5Z-L8W"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="neL-nn-CIE"/>
+                    <tabBarItem key="tabBarItem" id="neL-nn-CIE"/>
                     <navigationItem key="navigationItem" title="Home" id="dcT-U3-63q"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -372,4 +372,7 @@
             <point key="canvasLocation" x="-1689" y="1611"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="channel_compact_placeholder_inactive.png" width="70" height="30"/>
+    </resources>
 </document>
