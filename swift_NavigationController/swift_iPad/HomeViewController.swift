@@ -26,7 +26,7 @@ class HomeViewController: UIViewController,UIPopoverPresentationControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         progressAction()
-        
+    
         
     }
     
