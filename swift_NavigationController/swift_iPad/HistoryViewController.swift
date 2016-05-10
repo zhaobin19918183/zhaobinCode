@@ -48,7 +48,7 @@ class HistoryViewController: UIViewController {
                 let string = data.dataUsingEncoding(NSUTF8StringEncoding)
                 let jsonDic = try! NSJSONSerialization.JSONObjectWithData(string!,
                                                                           options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
-                print(jsonDic?.valueForKey("reason"))
+                print(jsonDic?.valueForKey("result"))
                 return
             }
         }

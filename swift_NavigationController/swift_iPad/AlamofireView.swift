@@ -25,10 +25,7 @@ class AlamofireView: NSObject
 
     class func alamofiredown()
     {
-        //    Alamofire.download(.GET, url, parameters: [String : AnyObject]?, encoding: ParameterEncoding.JSON, headers: [String : String]?) { (NSURL, NSHTTPURLResponse) -> NSURL in
-        //
-        //    }
-        let imageURL:NSURL = NSURL(string: "http://www.szplanner.com/images/inside/product_thumb.jpg")!
+       let imageURL:NSURL = NSURL(string: "http://www.szplanner.com/images/inside/product_thumb.jpg")!
         
         SDWebImageManager.sharedManager().downloadImageWithURL(imageURL, options: SDWebImageOptions(), progress: { (min:Int, max:Int) -> Void in
             
