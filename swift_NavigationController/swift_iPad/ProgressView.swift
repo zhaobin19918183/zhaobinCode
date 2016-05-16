@@ -36,7 +36,6 @@ class ProgressView: UIView {
             directory: .DocumentDirectory, domain: .UserDomainMask)
         
         let url = "http://img2.imgtn.bdimg.com/it/u=1457437487,655486635&fm=11&gp=0.jpg"
-        
         Alamofire.download(.GET, url, destination: destination)
             .progress { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
                 
