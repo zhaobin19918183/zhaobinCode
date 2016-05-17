@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A11C02981CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A11C02951CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m */; };
+		A11C02991CEB4EF600797AC9 /* WeatherEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A11C02971CEB4EF600797AC9 /* WeatherEntity.m */; };
 		A13ABAC51CE9F79000F8D01B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13ABAC41CE9F79000F8D01B /* AppDelegate.swift */; };
 		A13ABACA1CE9F79000F8D01B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13ABAC81CE9F79000F8D01B /* Main.storyboard */; };
 		A13ABACC1CE9F79000F8D01B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13ABACB1CE9F79000F8D01B /* Assets.xcassets */; };
@@ -77,6 +79,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A11C02941CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeatherEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A11C02951CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WeatherEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A11C02961CEB4EF600797AC9 /* WeatherEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherEntity.h; sourceTree = "<group>"; };
+		A11C02971CEB4EF600797AC9 /* WeatherEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherEntity.m; sourceTree = "<group>"; };
 		A13ABAC11CE9F79000F8D01B /* HTK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13ABAC41CE9F79000F8D01B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A13ABAC91CE9F79000F8D01B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -247,6 +253,10 @@
 			children = (
 				A13ABB011CE9F9C400F8D01B /* BaseDAO.swift */,
 				A13ABAFE1CE9F98400F8D01B /* HTKModel.xcdatamodeld */,
+				A11C02941CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.h */,
+				A11C02951CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m */,
+				A11C02961CEB4EF600797AC9 /* WeatherEntity.h */,
+				A11C02971CEB4EF600797AC9 /* WeatherEntity.m */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -500,6 +510,7 @@
 				A13ABB3D1CE9FDC200F8D01B /* SDWebImagePrefetcher.m in Sources */,
 				A13ABB3B1CE9FDC200F8D01B /* SDWebImageDownloaderOperation.m in Sources */,
 				A13ABB001CE9F98400F8D01B /* HTKModel.xcdatamodeld in Sources */,
+				A11C02991CEB4EF600797AC9 /* WeatherEntity.m in Sources */,
 				A13ABAFB1CE9F7B300F8D01B /* HomeViewController.swift in Sources */,
 				A13ABB401CE9FDC200F8D01B /* UIImage+MultiFormat.m in Sources */,
 				A13ABB0E1CE9FAD600F8D01B /* FolderManager.swift in Sources */,
@@ -510,6 +521,7 @@
 				BD489FDE1CEAAC1F0010806B /* TrafficView.swift in Sources */,
 				A13ABB3F1CE9FDC200F8D01B /* UIImage+GIF.m in Sources */,
 				A13ABB3A1CE9FDC200F8D01B /* SDWebImageDownloader.m in Sources */,
+				A11C02981CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m in Sources */,
 				A13ABB431CE9FDC200F8D01B /* UIImageView+WebCache.m in Sources */,
 				A13ABB351CE9FDC200F8D01B /* MKAnnotationView+WebCache.m in Sources */,
 			);
