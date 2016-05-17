@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" red="0.0" green="0.98823529409999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="535.5" y="436"/>
+            <point key="canvasLocation" x="457.5" y="298"/>
         </view>
     </objects>
 </document>
