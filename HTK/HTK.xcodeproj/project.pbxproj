@@ -39,6 +39,10 @@
 		A13ABB431CE9FDC200F8D01B /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB321CE9FDC200F8D01B /* UIImageView+WebCache.m */; };
 		A13ABB441CE9FDC200F8D01B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB341CE9FDC200F8D01B /* UIView+WebCacheOperation.m */; };
 		A13ABB471CE9FE0500F8D01B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */; };
+		BD489FD71CEAA9340010806B /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD489FD61CEAA9340010806B /* WeatherView.swift */; };
+		BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FD81CEAA9500010806B /* WeatherView.xib */; };
+		BD489FDC1CEAAC110010806B /* TrafficView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FDB1CEAAC110010806B /* TrafficView.xib */; };
+		BD489FDE1CEAAC1F0010806B /* TrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD489FDD1CEAAC1F0010806B /* TrafficView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +133,10 @@
 		A13ABB451CE9FE0500F8D01B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "HTK/ Resources/MBProgressHUD.h"; sourceTree = SOURCE_ROOT; };
 		A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "HTK/ Resources/MBProgressHUD.m"; sourceTree = SOURCE_ROOT; };
 		A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		BD489FD61CEAA9340010806B /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		BD489FD81CEAA9500010806B /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
+		BD489FDB1CEAAC110010806B /* TrafficView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrafficView.xib; sourceTree = "<group>"; };
+		BD489FDD1CEAAC1F0010806B /* TrafficView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrafficView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				A13ABAF61CE9F7B300F8D01B /* HomeViewController.swift */,
+				BD489FDA1CEAAC060010806B /* TrafficView */,
+				BD489FD51CEAA9180010806B /* WeatherView */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -321,6 +331,24 @@
 				A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		BD489FD51CEAA9180010806B /* WeatherView */ = {
+			isa = PBXGroup;
+			children = (
+				BD489FD61CEAA9340010806B /* WeatherView.swift */,
+				BD489FD81CEAA9500010806B /* WeatherView.xib */,
+			);
+			path = WeatherView;
+			sourceTree = "<group>";
+		};
+		BD489FDA1CEAAC060010806B /* TrafficView */ = {
+			isa = PBXGroup;
+			children = (
+				BD489FDB1CEAAC110010806B /* TrafficView.xib */,
+				BD489FDD1CEAAC1F0010806B /* TrafficView.swift */,
+			);
+			path = TrafficView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +459,8 @@
 				A13ABACF1CE9F79000F8D01B /* LaunchScreen.storyboard in Resources */,
 				A13ABACC1CE9F79000F8D01B /* Assets.xcassets in Resources */,
 				A13ABACA1CE9F79000F8D01B /* Main.storyboard in Resources */,
+				BD489FDC1CEAAC110010806B /* TrafficView.xib in Resources */,
+				BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +490,7 @@
 				A13ABB361CE9FDC200F8D01B /* NSData+ImageContentType.m in Sources */,
 				A13ABB381CE9FDC200F8D01B /* SDWebImageCompat.m in Sources */,
 				A13ABB441CE9FDC200F8D01B /* UIView+WebCacheOperation.m in Sources */,
+				BD489FD71CEAA9340010806B /* WeatherView.swift in Sources */,
 				A13ABB411CE9FDC200F8D01B /* UIImage+WebP.m in Sources */,
 				A13ABAC51CE9F79000F8D01B /* AppDelegate.swift in Sources */,
 				A13ABB421CE9FDC200F8D01B /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -476,6 +507,7 @@
 				A13ABB371CE9FDC200F8D01B /* SDImageCache.m in Sources */,
 				A13ABB021CE9F9C400F8D01B /* BaseDAO.swift in Sources */,
 				A13ABB041CE9FA2600F8D01B /* Common.swift in Sources */,
+				BD489FDE1CEAAC1F0010806B /* TrafficView.swift in Sources */,
 				A13ABB3F1CE9FDC200F8D01B /* UIImage+GIF.m in Sources */,
 				A13ABB3A1CE9FDC200F8D01B /* SDWebImageDownloader.m in Sources */,
 				A13ABB431CE9FDC200F8D01B /* UIImageView+WebCache.m in Sources */,
@@ -631,7 +663,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
 			};
 			name = Debug;
@@ -648,7 +680,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 			};
 			name = Release;
 		};
