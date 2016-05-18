@@ -49,6 +49,9 @@
 		BD8682121CEC3B2C004AC3E4 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */; };
 		BD86821A1CEC4587004AC3E4 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8682191CEC4587004AC3E4 /* MAMapKit.framework */; };
 		BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */; };
+		BD8682211CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = BD86821E1CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m */; };
+		BD8682221CEC52D3004AC3E4 /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8682201CEC52D3004AC3E4 /* CityEntity.m */; };
+		BD8682241CEC5C2F004AC3E4 /* WeatherDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */; };
 		BDE6AE341CEC0277007A315E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE331CEC0277007A315E /* MapKit.framework */; };
 		BDE6AE561CEC37CE007A315E /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */; };
 		BDE6AE581CEC37D6007A315E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE571CEC37D6007A315E /* libz.tbd */; };
@@ -160,6 +163,11 @@
 		BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
 		BD8682191CEC4587004AC3E4 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		BD86821D1CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CityEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		BD86821E1CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CityEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		BD86821F1CEC52D3004AC3E4 /* CityEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityEntity.h; sourceTree = "<group>"; };
+		BD8682201CEC52D3004AC3E4 /* CityEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityEntity.m; sourceTree = "<group>"; };
+		BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDAO.swift; sourceTree = "<group>"; };
 		BDE6AE331CEC0277007A315E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		BDE6AE571CEC37D6007A315E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -304,7 +312,12 @@
 			isa = PBXGroup;
 			children = (
 				A13ABB011CE9F9C400F8D01B /* BaseDAO.swift */,
+				BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */,
 				A13ABAFE1CE9F98400F8D01B /* HTKModel.xcdatamodeld */,
+				BD86821D1CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.h */,
+				BD86821E1CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m */,
+				BD86821F1CEC52D3004AC3E4 /* CityEntity.h */,
+				BD8682201CEC52D3004AC3E4 /* CityEntity.m */,
 				A11C02941CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.h */,
 				A11C02951CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m */,
 				A11C02961CEB4EF600797AC9 /* WeatherEntity.h */,
@@ -563,6 +576,7 @@
 				A13ABB3D1CE9FDC200F8D01B /* SDWebImagePrefetcher.m in Sources */,
 				A13ABB3B1CE9FDC200F8D01B /* SDWebImageDownloaderOperation.m in Sources */,
 				A13ABB001CE9F98400F8D01B /* HTKModel.xcdatamodeld in Sources */,
+				BD8682241CEC5C2F004AC3E4 /* WeatherDAO.swift in Sources */,
 				A11C02991CEB4EF600797AC9 /* WeatherEntity.m in Sources */,
 				A13ABAFB1CE9F7B300F8D01B /* HomeViewController.swift in Sources */,
 				A13ABB401CE9FDC200F8D01B /* UIImage+MultiFormat.m in Sources */,
@@ -570,9 +584,11 @@
 				A13ABB471CE9FE0500F8D01B /* MBProgressHUD.m in Sources */,
 				A13ABB371CE9FDC200F8D01B /* SDImageCache.m in Sources */,
 				A13ABB021CE9F9C400F8D01B /* BaseDAO.swift in Sources */,
+				BD8682221CEC52D3004AC3E4 /* CityEntity.m in Sources */,
 				A13ABB041CE9FA2600F8D01B /* Common.swift in Sources */,
 				BD489FDE1CEAAC1F0010806B /* TrafficView.swift in Sources */,
 				A13ABB3F1CE9FDC200F8D01B /* UIImage+GIF.m in Sources */,
+				BD8682211CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m in Sources */,
 				A13ABB3A1CE9FDC200F8D01B /* SDWebImageDownloader.m in Sources */,
 				A11C02981CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m in Sources */,
 				A13ABB431CE9FDC200F8D01B /* UIImageView+WebCache.m in Sources */,
@@ -741,6 +757,7 @@
 					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
@@ -772,6 +789,7 @@
 					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;

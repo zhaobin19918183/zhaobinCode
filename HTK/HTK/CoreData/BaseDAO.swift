@@ -13,7 +13,7 @@ class BaseDAO: NSObject
 {
     static let managedObjectModel : NSManagedObjectModel =
     {
-        let modelURL = NSBundle.mainBundle().URLForResource("Model", withExtension: "momd")
+        let modelURL = NSBundle.mainBundle().URLForResource("HTKModel", withExtension: "momd")
     
         return NSManagedObjectModel(contentsOfURL: modelURL!)!
     }()

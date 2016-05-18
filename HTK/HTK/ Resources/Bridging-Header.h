@@ -4,5 +4,7 @@
 
 #import "MBProgressHUD.h"
 #import "UIImageView+WebCache.h"
+#import "WeatherEntity.h"
+
 #import <MAMapKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchAPI.h>
