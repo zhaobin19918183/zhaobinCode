@@ -4,3 +4,5 @@
 
 #import "MBProgressHUD.h"
 #import "UIImageView+WebCache.h"
+#import <MAMapKit/MAMapKit.h>
+#import <AMapSearchKit/AMapSearchAPI.h>

@@ -45,6 +45,19 @@
 		BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FD81CEAA9500010806B /* WeatherView.xib */; };
 		BD489FDC1CEAAC110010806B /* TrafficView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FDB1CEAAC110010806B /* TrafficView.xib */; };
 		BD489FDE1CEAAC1F0010806B /* TrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD489FDD1CEAAC1F0010806B /* TrafficView.swift */; };
+		BD86820C1CEC3949004AC3E4 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD86820B1CEC3949004AC3E4 /* AMapLocationKit.framework */; };
+		BD8682121CEC3B2C004AC3E4 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */; };
+		BD86821A1CEC4587004AC3E4 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8682191CEC4587004AC3E4 /* MAMapKit.framework */; };
+		BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */; };
+		BDE6AE341CEC0277007A315E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE331CEC0277007A315E /* MapKit.framework */; };
+		BDE6AE561CEC37CE007A315E /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */; };
+		BDE6AE581CEC37D6007A315E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE571CEC37D6007A315E /* libz.tbd */; };
+		BDE6AE5A1CEC37E1007A315E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE591CEC37E1007A315E /* QuartzCore.framework */; };
+		BDE6AE5C1CEC37EA007A315E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE5B1CEC37EA007A315E /* OpenGLES.framework */; };
+		BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE5D1CEC37F4007A315E /* CoreLocation.framework */; };
+		BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE5F1CEC37FD007A315E /* CoreTelephony.framework */; };
+		BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE611CEC3805007A315E /* Security.framework */; };
+		BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,11 +151,24 @@
 		A13ABB341CE9FDC200F8D01B /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		A13ABB451CE9FE0500F8D01B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "HTK/ Resources/MBProgressHUD.h"; sourceTree = SOURCE_ROOT; };
 		A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "HTK/ Resources/MBProgressHUD.m"; sourceTree = SOURCE_ROOT; };
-		A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = " Resources/Bridging-Header.h"; sourceTree = "<group>"; };
 		BD489FD61CEAA9340010806B /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		BD489FD81CEAA9500010806B /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		BD489FDB1CEAAC110010806B /* TrafficView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrafficView.xib; sourceTree = "<group>"; };
 		BD489FDD1CEAAC1F0010806B /* TrafficView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrafficView.swift; sourceTree = "<group>"; };
+		BD86820B1CEC3949004AC3E4 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
+		BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
+		BD8682191CEC4587004AC3E4 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		BDE6AE331CEC0277007A315E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		BDE6AE571CEC37D6007A315E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		BDE6AE591CEC37E1007A315E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BDE6AE5B1CEC37EA007A315E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		BDE6AE5D1CEC37F4007A315E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BDE6AE5F1CEC37FD007A315E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		BDE6AE611CEC3805007A315E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +176,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
+				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
+				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
+				BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */,
+				BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */,
+				BDE6AE5C1CEC37EA007A315E /* OpenGLES.framework in Frameworks */,
+				BDE6AE5A1CEC37E1007A315E /* QuartzCore.framework in Frameworks */,
+				BDE6AE581CEC37D6007A315E /* libz.tbd in Frameworks */,
+				BD8682121CEC3B2C004AC3E4 /* AMapSearchKit.framework in Frameworks */,
+				BDE6AE561CEC37CE007A315E /* libstdc++.6.0.9.tbd in Frameworks */,
+				BD86820C1CEC3949004AC3E4 /* AMapLocationKit.framework in Frameworks */,
+				BDE6AE341CEC0277007A315E /* MapKit.framework in Frameworks */,
+				BD86821A1CEC4587004AC3E4 /* MAMapKit.framework in Frameworks */,
 				A13ABB061CE9FA6500F8D01B /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				A13ABAC41CE9F79000F8D01B /* AppDelegate.swift */,
+				A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */,
 				A13ABAF21CE9F7B300F8D01B /*  Resources */,
 				A13ABAF31CE9F7B300F8D01B /* Common */,
 				A13ABAF41CE9F7B300F8D01B /* CoreData */,
@@ -231,10 +271,22 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */,
+				BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */,
+				BD8682191CEC4587004AC3E4 /* MAMapKit.framework */,
+				BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */,
+				BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */,
+				BDE6AE611CEC3805007A315E /* Security.framework */,
+				BDE6AE5F1CEC37FD007A315E /* CoreTelephony.framework */,
+				BDE6AE5D1CEC37F4007A315E /* CoreLocation.framework */,
+				BDE6AE5B1CEC37EA007A315E /* OpenGLES.framework */,
+				BDE6AE591CEC37E1007A315E /* QuartzCore.framework */,
+				BDE6AE571CEC37D6007A315E /* libz.tbd */,
+				BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */,
+				BD86820B1CEC3949004AC3E4 /* AMapLocationKit.framework */,
 				A13ABB4A1CE9FEFA00F8D01B /* MBProgressHUD */,
 				A13ABB131CE9FDC200F8D01B /* SDWebImage */,
 				A13ABB051CE9FA6500F8D01B /* Alamofire.framework */,
+				BDE6AE331CEC0277007A315E /* MapKit.framework */,
 			);
 			path = " Resources";
 			sourceTree = "<group>";
@@ -430,6 +482,7 @@
 				TargetAttributes = {
 					A13ABAC01CE9F79000F8D01B = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = W4WR9Z32J8;
 					};
 					A13ABAD41CE9F79100F8D01B = {
 						CreatedOnToolsVersion = 7.3;
@@ -618,6 +671,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LIBTOOLFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -657,6 +712,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LIBTOOLFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -667,15 +724,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HTK/Common",
+					"$(PROJECT_DIR)/HTK/",
+					Resources/BaiduMapAPI,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
 			};
 			name = Debug;
@@ -684,15 +755,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HTK/Common",
+					"$(PROJECT_DIR)/HTK/",
+					Resources/BaiduMapAPI,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 			};
 			name = Release;
 		};
