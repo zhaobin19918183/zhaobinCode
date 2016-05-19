@@ -13,6 +13,15 @@ class WeatherView: UIView
 
     @IBOutlet var _weatherVIew: UIView!
     
+    @IBOutlet weak var cityLabel: UILabel!
+    
+    @IBOutlet weak var tempratureLabel: UILabel!
+    @IBOutlet weak var weatherImageView: UIImageView!
+    
+    @IBOutlet weak var powerLabel: UILabel!
+    @IBOutlet weak var directLabel: UILabel!
+    
+    @IBOutlet weak var dateLabel: UILabel!
     override func drawRect(rect: CGRect) {
         // Drawing code
     }
@@ -28,6 +37,7 @@ class WeatherView: UIView
     {
         
         NSBundle.mainBundle().loadNibNamed("WeatherView", owner:self,options:nil)
+        _weatherVIew.backgroundColor = UIColor(patternImage: UIImage(named:"weatherImage.png")!)
         self.addSubview(_weatherVIew)
         
     }

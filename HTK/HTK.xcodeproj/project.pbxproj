@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1129BA21CEDD56400285AE5 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1129BA11CEDD56400285AE5 /* MAMapKit.framework */; };
+		A1129BA51CEDE1EF00285AE5 /* weatherImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A1129BA41CEDE1EF00285AE5 /* weatherImage.png */; };
 		A11C02981CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A11C02951CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m */; };
 		A11C02991CEB4EF600797AC9 /* WeatherEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A11C02971CEB4EF600797AC9 /* WeatherEntity.m */; };
 		A13ABAC51CE9F79000F8D01B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13ABAC41CE9F79000F8D01B /* AppDelegate.swift */; };
@@ -41,7 +43,6 @@
 		A13ABB431CE9FDC200F8D01B /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB321CE9FDC200F8D01B /* UIImageView+WebCache.m */; };
 		A13ABB441CE9FDC200F8D01B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB341CE9FDC200F8D01B /* UIView+WebCacheOperation.m */; };
 		A13ABB471CE9FE0500F8D01B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */; };
-		BD07B3581CED6CD400F06EAF /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD07B3571CED6CD400F06EAF /* MAMapKit.framework */; };
 		BD489FD71CEAA9340010806B /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD489FD61CEAA9340010806B /* WeatherView.swift */; };
 		BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FD81CEAA9500010806B /* WeatherView.xib */; };
 		BD489FDC1CEAAC110010806B /* TrafficView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FDB1CEAAC110010806B /* TrafficView.xib */; };
@@ -95,6 +96,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A1129BA11CEDD56400285AE5 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		A1129BA41CEDE1EF00285AE5 /* weatherImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weatherImage.png; sourceTree = "<group>"; };
 		A11C02941CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeatherEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A11C02951CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WeatherEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A11C02961CEB4EF600797AC9 /* WeatherEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherEntity.h; sourceTree = "<group>"; };
@@ -155,7 +158,6 @@
 		A13ABB451CE9FE0500F8D01B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "HTK/ Resources/MBProgressHUD.h"; sourceTree = SOURCE_ROOT; };
 		A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "HTK/ Resources/MBProgressHUD.m"; sourceTree = SOURCE_ROOT; };
 		A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = " Resources/Bridging-Header.h"; sourceTree = "<group>"; };
-		BD07B3571CED6CD400F06EAF /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BD489FD61CEAA9340010806B /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		BD489FD81CEAA9500010806B /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		BD489FDB1CEAAC110010806B /* TrafficView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrafficView.xib; sourceTree = "<group>"; };
@@ -186,7 +188,7 @@
 			files = (
 				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
-				BD07B3581CED6CD400F06EAF /* MAMapKit.framework in Frameworks */,
+				A1129BA21CEDD56400285AE5 /* MAMapKit.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
 				BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */,
 				BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */,
@@ -218,10 +220,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1129BA31CEDE1CD00285AE5 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				A1129BA41CEDE1EF00285AE5 /* weatherImage.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		A13ABAB81CE9F79000F8D01B = {
 			isa = PBXGroup;
 			children = (
 				A13ABAC31CE9F79000F8D01B /* HTK */,
+				A1129BA31CEDE1CD00285AE5 /* image */,
 				A13ABAD81CE9F79100F8D01B /* HTKTests */,
 				A13ABAE31CE9F79100F8D01B /* HTKUITests */,
 				A13ABAC21CE9F79000F8D01B /* Products */,
@@ -279,7 +290,7 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BD07B3571CED6CD400F06EAF /* MAMapKit.framework */,
+				A1129BA11CEDD56400285AE5 /* MAMapKit.framework */,
 				BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */,
 				BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */,
 				BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */,
@@ -495,7 +506,6 @@
 				TargetAttributes = {
 					A13ABAC01CE9F79000F8D01B = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = W4WR9Z32J8;
 					};
 					A13ABAD41CE9F79100F8D01B = {
 						CreatedOnToolsVersion = 7.3;
@@ -536,6 +546,7 @@
 				A13ABACC1CE9F79000F8D01B /* Assets.xcassets in Resources */,
 				A13ABACA1CE9F79000F8D01B /* Main.storyboard in Resources */,
 				BD489FDC1CEAAC110010806B /* TrafficView.xib in Resources */,
+				A1129BA51CEDE1EF00285AE5 /* weatherImage.png in Resources */,
 				BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,6 +768,8 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -765,7 +778,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
 			};
 			name = Debug;
@@ -791,6 +804,8 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -799,7 +814,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 			};
 			name = Release;
 		};
