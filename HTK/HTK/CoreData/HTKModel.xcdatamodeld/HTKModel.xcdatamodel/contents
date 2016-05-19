@@ -7,14 +7,14 @@
         <attribute name="newsResult" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <entity name="WeatherEntity" representedClassName="WeatherEntity" syncable="YES">
-        <attribute name="life" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="pm25" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="realtime" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="weather" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="life" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="pm25" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="realtime" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="weather" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
     <elements>
+        <element name="CityEntity" positionX="-54" positionY="9" width="128" height="60"/>
         <element name="NewaEntity" positionX="-54" positionY="18" width="128" height="60"/>
         <element name="WeatherEntity" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="CityEntity" positionX="-54" positionY="9" width="128" height="60"/>
     </elements>
 </model>

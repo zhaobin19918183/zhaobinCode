@@ -41,13 +41,13 @@
 		A13ABB431CE9FDC200F8D01B /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB321CE9FDC200F8D01B /* UIImageView+WebCache.m */; };
 		A13ABB441CE9FDC200F8D01B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB341CE9FDC200F8D01B /* UIView+WebCacheOperation.m */; };
 		A13ABB471CE9FE0500F8D01B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */; };
+		BD07B3581CED6CD400F06EAF /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD07B3571CED6CD400F06EAF /* MAMapKit.framework */; };
 		BD489FD71CEAA9340010806B /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD489FD61CEAA9340010806B /* WeatherView.swift */; };
 		BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FD81CEAA9500010806B /* WeatherView.xib */; };
 		BD489FDC1CEAAC110010806B /* TrafficView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FDB1CEAAC110010806B /* TrafficView.xib */; };
 		BD489FDE1CEAAC1F0010806B /* TrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD489FDD1CEAAC1F0010806B /* TrafficView.swift */; };
 		BD86820C1CEC3949004AC3E4 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD86820B1CEC3949004AC3E4 /* AMapLocationKit.framework */; };
 		BD8682121CEC3B2C004AC3E4 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */; };
-		BD86821A1CEC4587004AC3E4 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8682191CEC4587004AC3E4 /* MAMapKit.framework */; };
 		BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */; };
 		BD8682211CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = BD86821E1CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m */; };
 		BD8682221CEC52D3004AC3E4 /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8682201CEC52D3004AC3E4 /* CityEntity.m */; };
@@ -155,13 +155,13 @@
 		A13ABB451CE9FE0500F8D01B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "HTK/ Resources/MBProgressHUD.h"; sourceTree = SOURCE_ROOT; };
 		A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "HTK/ Resources/MBProgressHUD.m"; sourceTree = SOURCE_ROOT; };
 		A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = " Resources/Bridging-Header.h"; sourceTree = "<group>"; };
+		BD07B3571CED6CD400F06EAF /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BD489FD61CEAA9340010806B /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		BD489FD81CEAA9500010806B /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		BD489FDB1CEAAC110010806B /* TrafficView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrafficView.xib; sourceTree = "<group>"; };
 		BD489FDD1CEAAC1F0010806B /* TrafficView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrafficView.swift; sourceTree = "<group>"; };
 		BD86820B1CEC3949004AC3E4 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
 		BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
-		BD8682191CEC4587004AC3E4 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		BD86821D1CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CityEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
 		BD86821E1CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CityEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -186,6 +186,7 @@
 			files = (
 				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
+				BD07B3581CED6CD400F06EAF /* MAMapKit.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
 				BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */,
 				BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */,
@@ -196,7 +197,6 @@
 				BDE6AE561CEC37CE007A315E /* libstdc++.6.0.9.tbd in Frameworks */,
 				BD86820C1CEC3949004AC3E4 /* AMapLocationKit.framework in Frameworks */,
 				BDE6AE341CEC0277007A315E /* MapKit.framework in Frameworks */,
-				BD86821A1CEC4587004AC3E4 /* MAMapKit.framework in Frameworks */,
 				A13ABB061CE9FA6500F8D01B /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,8 +279,8 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BD07B3571CED6CD400F06EAF /* MAMapKit.framework */,
 				BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */,
-				BD8682191CEC4587004AC3E4 /* MAMapKit.framework */,
 				BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */,
 				BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */,
 				BDE6AE611CEC3805007A315E /* Security.framework */,
@@ -755,6 +755,8 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -779,6 +781,8 @@
 					"$(PROJECT_DIR)/HTK/Common",
 					"$(PROJECT_DIR)/HTK/",
 					Resources/BaiduMapAPI,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
 					"$(PROJECT_DIR)/HTK/",

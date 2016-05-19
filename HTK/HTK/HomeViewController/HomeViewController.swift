@@ -22,12 +22,12 @@ class HomeViewController: UIViewController,CLLocationManagerDelegate {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        weather()
-//        print(WeatherDAO.SearchCoreDataEntity().objectAtIndex(0))
-//        self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0) as? WeatherEntity
-//        
-//        print(self.weatherEntity?.realtime)
-       
+     //   weather()
+//        print(WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0))
+        self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
+        let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("realtime"))! as! NSData)! as! NSDictionary
+         print(dictionary.allKeys)
+      
         
     }
     
@@ -43,11 +43,10 @@ class HomeViewController: UIViewController,CLLocationManagerDelegate {
             
             let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
                 options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
-            print(jsonArr?.valueForKey("result")?.valueForKey("data")?.allKeys)
-            if(jsonArr != nil)
-            {
-             WeatherDAO.createNewPassWordData(jsonArr!)
-            }
+            let dataDic = jsonArr?.valueForKey("result")?.valueForKey("data") as!NSMutableDictionary
+    
+            WeatherDAO.createNewPassWordData(dataDic)
+        
             
         }
         

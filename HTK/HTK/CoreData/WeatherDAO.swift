@@ -56,11 +56,16 @@ class WeatherDAO: BaseDAO {
     {
 
         let success = WeatherDAO.createEntityWith { (newEntity:WeatherEntity) -> () in
-             
-            newEntity.realtime = dicData.valueForKey("result")?.valueForKey("data")?.valueForKey("realtime") as? NSDate
-            newEntity.life = dicData.valueForKey("result")?.valueForKey("data")?.valueForKey("life") as? NSDate
-            newEntity.weather = dicData.valueForKey("result")?.valueForKey("data")?.valueForKey("weather") as? NSDate
-            newEntity.pm25 = dicData.valueForKey("result")?.valueForKey("data")?.valueForKey("pm25") as? NSDate
+            
+            let realtimedata : NSData = NSKeyedArchiver.archivedDataWithRootObject(dicData.valueForKey("realtime")!)
+            let lifedata : NSData = NSKeyedArchiver.archivedDataWithRootObject(dicData.valueForKey("life")!)
+            let weatherdata : NSData = NSKeyedArchiver.archivedDataWithRootObject(dicData.valueForKey("weather")!)
+            let pmdata : NSData = NSKeyedArchiver.archivedDataWithRootObject(dicData.valueForKey("pm25")!) 
+            
+            newEntity.realtime = realtimedata 
+            newEntity.life = lifedata
+            newEntity.weather = weatherdata
+            newEntity.pm25 = pmdata
             
         }
         if success == true
