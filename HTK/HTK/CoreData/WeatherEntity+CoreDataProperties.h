@@ -2,7 +2,7 @@
 //  WeatherEntity+CoreDataProperties.h
 //  HTK
 //
-//  Created by 赵斌 on 16/5/17.
+//  Created by Zhao.bin on 16/5/19.
 //  Copyright © 2016年 赵斌. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WeatherEntity (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSDate *realtime;
-@property (nullable, nonatomic, retain) NSDate *life;
-@property (nullable, nonatomic, retain) NSDate *weather;
-@property (nullable, nonatomic, retain) NSDate *pm25;
+@property (nullable, nonatomic, retain) NSData *life;
+@property (nullable, nonatomic, retain) NSData *pm25;
+@property (nullable, nonatomic, retain) NSData *realtime;
+@property (nullable, nonatomic, retain) NSData *weather;
 
 @end
 

@@ -2,7 +2,7 @@
 //  WeatherEntity+CoreDataProperties.m
 //  HTK
 //
-//  Created by 赵斌 on 16/5/17.
+//  Created by Zhao.bin on 16/5/19.
 //  Copyright © 2016年 赵斌. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,9 +13,9 @@
 
 @implementation WeatherEntity (CoreDataProperties)
 
-@dynamic realtime;
 @dynamic life;
-@dynamic weather;
 @dynamic pm25;
+@dynamic realtime;
+@dynamic weather;
 
 @end
