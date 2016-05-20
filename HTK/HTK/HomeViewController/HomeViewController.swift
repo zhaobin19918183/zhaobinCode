@@ -16,8 +16,11 @@ class HomeViewController: UIViewController{
 
     weak var weatherEntity : WeatherEntity?
     @IBOutlet weak var _weather: WeatherView!
-    
     @IBOutlet weak var _newsVIew: TrafficView!
+    
+    @IBOutlet weak var trainButton: UIButton!
+    @IBOutlet weak var carButton: UIButton!
+    //var _weatherView
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -27,13 +30,16 @@ class HomeViewController: UIViewController{
     {
         if(WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).count == 0)
         {
-          weatherAlamofire()
+         // weatherAlamofire()
         }
         else
         {
             self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
             let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("realtime"))! as! NSData)! as! NSDictionary
-            print(dictionary.allKeys)
+            let windDic = dictionary.valueForKey("wind")
+            
+            print(windDic!.valueForKey("power"))
+            print(windDic!.valueForKey("direct"))
         }
     }
     
@@ -58,6 +64,18 @@ class HomeViewController: UIViewController{
         
     }
     
+    @IBAction func trainAction(sender: UIButton)
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let target = storyboard.instantiateViewControllerWithIdentifier("trainViewController")
+        self.navigationController?.pushViewController(target, animated:true)
+    }
+    @IBAction func carAction(sender: UIButton)
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let target = storyboard.instantiateViewControllerWithIdentifier("carViewController")
+        self.navigationController?.pushViewController(target, animated:true)
+    }
 
     
 }

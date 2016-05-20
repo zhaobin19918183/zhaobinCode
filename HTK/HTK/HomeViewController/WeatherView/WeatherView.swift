@@ -22,6 +22,8 @@ class WeatherView: UIView
     @IBOutlet weak var directLabel: UILabel!
     
     @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var moreButton: UIButton!
     override func drawRect(rect: CGRect) {
         // Drawing code
     }
@@ -33,6 +35,10 @@ class WeatherView: UIView
         
     }
     
+    @IBAction func moreWeatherAction(sender: UIButton)
+    {
+        
+    }
     func  resetUILayout()
     {
         
