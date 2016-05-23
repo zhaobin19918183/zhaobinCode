@@ -13,8 +13,19 @@ class CarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "汽车"
+        self.tabBarController?.tabBar.hidden = true
+        let nextItem=UIBarButtonItem(title:"Home",style:.Plain,target:self,action:#selector(backHomeView))
+        self.navigationItem.leftBarButtonItem = nextItem
         // Do any additional setup after loading the view.
     }
+    func backHomeView()
+    {
+        
+        self.navigationController!.popViewControllerAnimated(true)
+        self.tabBarController?.tabBar.hidden = false
+        
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

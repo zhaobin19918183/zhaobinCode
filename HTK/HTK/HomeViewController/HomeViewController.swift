@@ -13,7 +13,7 @@ import Alamofire
 
 class HomeViewController: UIViewController{
     
-
+    
     weak var weatherEntity : WeatherEntity?
     @IBOutlet weak var _weather: WeatherView!
     @IBOutlet weak var _newsVIew: TrafficView!
@@ -25,38 +25,61 @@ class HomeViewController: UIViewController{
     {
         super.viewDidLoad()
         weatherCoredata()
+        
+        
     }
+    
     func weatherCoredata()
     {
-        /*"weather":{
-         "humidity":"74",
-         "img":"3",
-         "info":"阵雨",
-         "temperature":"18"*/
         if(WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).count == 0)
         {
-             weatherAlamofire()
+            if (!(NSUserDefaults.standardUserDefaults().boolForKey("everLaunched"))) {
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey:"everLaunched")
+                let status = Reach().connectionStatus()
+                switch status {
+                case .Unknown, .Offline:
+                    netWorkAlert()
+                case .Online(.WWAN):
+                    weatherAlamofire()
+                case .Online(.WiFi):
+                    weatherAlamofire()
+                    
+                }
+                
+            }
+  
         }
+            
         else
         {
-            self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
-            let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("realtime"))! as! NSData)! as! NSDictionary
-            let windDic = dictionary.valueForKey("wind")
-            let  weatherDic = dictionary.valueForKey("weather")
-            let temp = "°"
-            _weather.tempratureLabel.text =  (weatherDic?.valueForKey("temperature") as? String)!+temp
-            let pow = "风力:"
-            _weather.powerLabel.text = pow+((windDic?.valueForKey("power"))! as! String)
-            let dire = "风向:"
-            _weather.directLabel.text = dire+((windDic?.valueForKey("direct"))! as! String)
-            let img = UIImage(named:(weatherDic?.valueForKey("img"))! as! String)
-            _weather.weatherImageView.image = img
+            let status = Reach().connectionStatus()
+            switch status {
+            case .Unknown, .Offline:
+                dataFunc()
+            case .Online(.WWAN):
+                dataFunc()
+            case .Online(.WiFi):
+                weatherAlamofire()
+            }
+            
         }
+    }
+    func netWorkAlert()
+    {
+        let alert  = UIAlertController(title:"提示", message:"无网络连接", preferredStyle:UIAlertControllerStyle.Alert)
+        
+        let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default) {
+            (action: UIAlertAction!) -> Void in
+            exit(0)
+            
+        }
+        alert.addAction(okAction)
+        self.presentViewController(alert, animated:true, completion:nil)
     }
     
     func weatherAlamofire()
     {
-    
+        
         let string1 = "http://op.juhe.cn/onebox/weather/query?cityname="
         let string2 = "&dtype=&key=e527188bbf687ccccac5350acf9a151f"
         let string = "大连"
@@ -67,11 +90,34 @@ class HomeViewController: UIViewController{
             let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
                 options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
             let dataDic = jsonArr?.valueForKey("result")?.valueForKey("data") as!NSMutableDictionary
-    
             WeatherDAO.createNewPassWordData(dataDic)
-        
-            
+            self.dataFunc()
         }
+        
+        
+        
+    }
+    
+    func  dataFunc()
+    {
+        
+        
+        
+        self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
+        let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("realtime"))! as! NSData)! as! NSDictionary
+        let windDic = dictionary.valueForKey("wind")
+        let  weatherDic = dictionary.valueForKey("weather")
+        let  info = weatherDic!.valueForKey("info") as! String
+        let temp = "°"
+        _weather.tempratureLabel.text = (weatherDic?.valueForKey("temperature") as? String)!+temp
+        let pow = "风力:"
+        _weather.powerLabel.text = pow+((windDic?.valueForKey("power"))! as! String)
+        let dire = "风向:"
+        _weather.directLabel.text = dire+((windDic?.valueForKey("direct"))! as! String)
+        let img = UIImage(named:(weatherDic?.valueForKey("img"))! as! String)
+        _weather.weatherImageView.image = img
+        let moon = " 农历 : "
+        _weather.dateLabel.text = (dictionary.valueForKey("date") as? String)!+moon+(dictionary.valueForKey("moon") as? String)! + info
         
     }
     
@@ -87,7 +133,7 @@ class HomeViewController: UIViewController{
         let target = storyboard.instantiateViewControllerWithIdentifier("carViewController")
         self.navigationController?.pushViewController(target, animated:true)
     }
-
+    
     
 }
 

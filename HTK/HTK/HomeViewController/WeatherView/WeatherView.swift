@@ -46,7 +46,10 @@ class WeatherView: UIView
         _weatherVIew.backgroundColor = UIColor(patternImage: UIImage(named:"weatherImage.png")!)
         self.addSubview(_weatherVIew)
         
+  
+        
     }
+
 
     
     
