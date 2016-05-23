@@ -28,18 +28,29 @@ class HomeViewController: UIViewController{
     }
     func weatherCoredata()
     {
+        /*"weather":{
+         "humidity":"74",
+         "img":"3",
+         "info":"阵雨",
+         "temperature":"18"*/
         if(WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).count == 0)
         {
-         // weatherAlamofire()
+             weatherAlamofire()
         }
         else
         {
             self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
             let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("realtime"))! as! NSData)! as! NSDictionary
             let windDic = dictionary.valueForKey("wind")
-            
-            print(windDic!.valueForKey("power"))
-            print(windDic!.valueForKey("direct"))
+            let  weatherDic = dictionary.valueForKey("weather")
+            let temp = "°"
+            _weather.tempratureLabel.text =  (weatherDic?.valueForKey("temperature") as? String)!+temp
+            let pow = "风力:"
+            _weather.powerLabel.text = pow+((windDic?.valueForKey("power"))! as! String)
+            let dire = "风向:"
+            _weather.directLabel.text = dire+((windDic?.valueForKey("direct"))! as! String)
+            let img = UIImage(named:(weatherDic?.valueForKey("img"))! as! String)
+            _weather.weatherImageView.image = img
         }
     }
     

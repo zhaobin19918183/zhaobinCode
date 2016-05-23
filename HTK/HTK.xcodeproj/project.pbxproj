@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1129BA21CEDD56400285AE5 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1129BA11CEDD56400285AE5 /* MAMapKit.framework */; };
 		A1129BA51CEDE1EF00285AE5 /* weatherImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A1129BA41CEDE1EF00285AE5 /* weatherImage.png */; };
 		A11C02981CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A11C02951CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m */; };
 		A11C02991CEB4EF600797AC9 /* WeatherEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A11C02971CEB4EF600797AC9 /* WeatherEntity.m */; };
@@ -47,12 +46,16 @@
 		BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FD81CEAA9500010806B /* WeatherView.xib */; };
 		BD489FDC1CEAAC110010806B /* TrafficView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FDB1CEAAC110010806B /* TrafficView.xib */; };
 		BD489FDE1CEAAC1F0010806B /* TrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD489FDD1CEAAC1F0010806B /* TrafficView.swift */; };
+		BD6DCA0B1CEEBCB400B1AC3A /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6DCA091CEEBCB400B1AC3A /* CarViewController.swift */; };
+		BD6DCA111CEED63600B1AC3A /* TrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6DCA101CEED63600B1AC3A /* TrainViewController.swift */; };
 		BD86820C1CEC3949004AC3E4 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD86820B1CEC3949004AC3E4 /* AMapLocationKit.framework */; };
 		BD8682121CEC3B2C004AC3E4 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */; };
 		BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */; };
 		BD8682211CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = BD86821E1CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m */; };
 		BD8682221CEC52D3004AC3E4 /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8682201CEC52D3004AC3E4 /* CityEntity.m */; };
 		BD8682241CEC5C2F004AC3E4 /* WeatherDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */; };
+		BDE4E4AF1CF2AD9F0025004B /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE4E4AE1CF2AD9F0025004B /* MAMapKit.framework */; };
+		BDE4E4B41CF2D23F0025004B /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE4E4B31CF2D23F0025004B /* 3.png */; };
 		BDE6AE341CEC0277007A315E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE331CEC0277007A315E /* MapKit.framework */; };
 		BDE6AE561CEC37CE007A315E /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */; };
 		BDE6AE581CEC37D6007A315E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE571CEC37D6007A315E /* libz.tbd */; };
@@ -96,7 +99,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A1129BA11CEDD56400285AE5 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		A1129BA41CEDE1EF00285AE5 /* weatherImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weatherImage.png; sourceTree = "<group>"; };
 		A11C02941CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeatherEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A11C02951CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WeatherEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -114,7 +116,7 @@
 		A13ABAE01CE9F79100F8D01B /* HTKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13ABAE41CE9F79100F8D01B /* HTKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTKUITests.swift; sourceTree = "<group>"; };
 		A13ABAE61CE9F79100F8D01B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A13ABAF61CE9F7B300F8D01B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A13ABAF61CE9F7B300F8D01B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 		A13ABAF81CE9F7B300F8D01B /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		A13ABAFA1CE9F7B300F8D01B /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		A13ABAFF1CE9F98400F8D01B /* HTKModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HTKModel.xcdatamodel; sourceTree = "<group>"; };
@@ -162,6 +164,8 @@
 		BD489FD81CEAA9500010806B /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		BD489FDB1CEAAC110010806B /* TrafficView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrafficView.xib; sourceTree = "<group>"; };
 		BD489FDD1CEAAC1F0010806B /* TrafficView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrafficView.swift; sourceTree = "<group>"; };
+		BD6DCA091CEEBCB400B1AC3A /* CarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
+		BD6DCA101CEED63600B1AC3A /* TrainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainViewController.swift; sourceTree = "<group>"; };
 		BD86820B1CEC3949004AC3E4 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
 		BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
 		BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -170,6 +174,8 @@
 		BD86821F1CEC52D3004AC3E4 /* CityEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityEntity.h; sourceTree = "<group>"; };
 		BD8682201CEC52D3004AC3E4 /* CityEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityEntity.m; sourceTree = "<group>"; };
 		BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDAO.swift; sourceTree = "<group>"; };
+		BDE4E4AE1CF2AD9F0025004B /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		BDE4E4B31CF2D23F0025004B /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		BDE6AE331CEC0277007A315E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		BDE6AE571CEC37D6007A315E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -188,7 +194,7 @@
 			files = (
 				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
-				A1129BA21CEDD56400285AE5 /* MAMapKit.framework in Frameworks */,
+				BDE4E4AF1CF2AD9F0025004B /* MAMapKit.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
 				BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */,
 				BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */,
@@ -224,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				A1129BA41CEDE1EF00285AE5 /* weatherImage.png */,
+				BDE4E4B31CF2D23F0025004B /* 3.png */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -257,7 +264,7 @@
 				A13ABAF21CE9F7B300F8D01B /*  Resources */,
 				A13ABAF31CE9F7B300F8D01B /* Common */,
 				A13ABAF41CE9F7B300F8D01B /* CoreData */,
-				A13ABAF51CE9F7B300F8D01B /* HomeViewController */,
+				A13ABAF51CE9F7B300F8D01B /* ViewController */,
 				A13ABAF71CE9F7B300F8D01B /* MYViewController */,
 				A13ABAF91CE9F7B300F8D01B /* NoteViewController */,
 				A13ABB0A1CE9FA9400F8D01B /* NetWorkManager */,
@@ -290,7 +297,7 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A1129BA11CEDD56400285AE5 /* MAMapKit.framework */,
+				BDE4E4AE1CF2AD9F0025004B /* MAMapKit.framework */,
 				BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */,
 				BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */,
 				BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */,
@@ -337,13 +344,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		A13ABAF51CE9F7B300F8D01B /* HomeViewController */ = {
+		A13ABAF51CE9F7B300F8D01B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A13ABAF61CE9F7B300F8D01B /* HomeViewController.swift */,
-				BD489FDA1CEAAC060010806B /* TrafficView */,
-				BD489FD51CEAA9180010806B /* WeatherView */,
+				BDE4E4B01CF2CDE60025004B /* HomeVIewController */,
+				BD6DCA0F1CEED62D00B1AC3A /* TrainVIewController */,
+				BD6DCA081CEEBCA100B1AC3A /* CarVIewController */,
 			);
+			name = ViewController;
 			path = HomeViewController;
 			sourceTree = "<group>";
 		};
@@ -425,7 +433,8 @@
 				BD489FD61CEAA9340010806B /* WeatherView.swift */,
 				BD489FD81CEAA9500010806B /* WeatherView.xib */,
 			);
-			path = WeatherView;
+			name = WeatherView;
+			path = ../WeatherView;
 			sourceTree = "<group>";
 		};
 		BD489FDA1CEAAC060010806B /* TrafficView */ = {
@@ -434,7 +443,34 @@
 				BD489FDB1CEAAC110010806B /* TrafficView.xib */,
 				BD489FDD1CEAAC1F0010806B /* TrafficView.swift */,
 			);
-			path = TrafficView;
+			name = TrafficView;
+			path = ../TrafficView;
+			sourceTree = "<group>";
+		};
+		BD6DCA081CEEBCA100B1AC3A /* CarVIewController */ = {
+			isa = PBXGroup;
+			children = (
+				BD6DCA091CEEBCB400B1AC3A /* CarViewController.swift */,
+			);
+			path = CarVIewController;
+			sourceTree = "<group>";
+		};
+		BD6DCA0F1CEED62D00B1AC3A /* TrainVIewController */ = {
+			isa = PBXGroup;
+			children = (
+				BD6DCA101CEED63600B1AC3A /* TrainViewController.swift */,
+			);
+			path = TrainVIewController;
+			sourceTree = "<group>";
+		};
+		BDE4E4B01CF2CDE60025004B /* HomeVIewController */ = {
+			isa = PBXGroup;
+			children = (
+				A13ABAF61CE9F7B300F8D01B /* HomeViewController.swift */,
+				BD489FDA1CEAAC060010806B /* TrafficView */,
+				BD489FD51CEAA9180010806B /* WeatherView */,
+			);
+			path = HomeVIewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,6 +583,7 @@
 				A13ABACA1CE9F79000F8D01B /* Main.storyboard in Resources */,
 				BD489FDC1CEAAC110010806B /* TrafficView.xib in Resources */,
 				A1129BA51CEDE1EF00285AE5 /* weatherImage.png in Resources */,
+				BDE4E4B41CF2D23F0025004B /* 3.png in Resources */,
 				BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,6 +613,7 @@
 				A13ABB3C1CE9FDC200F8D01B /* SDWebImageManager.m in Sources */,
 				A13ABB361CE9FDC200F8D01B /* NSData+ImageContentType.m in Sources */,
 				A13ABB381CE9FDC200F8D01B /* SDWebImageCompat.m in Sources */,
+				BD6DCA0B1CEEBCB400B1AC3A /* CarViewController.swift in Sources */,
 				A13ABB441CE9FDC200F8D01B /* UIView+WebCacheOperation.m in Sources */,
 				BD489FD71CEAA9340010806B /* WeatherView.swift in Sources */,
 				A13ABB411CE9FDC200F8D01B /* UIImage+WebP.m in Sources */,
@@ -602,6 +640,7 @@
 				BD8682211CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m in Sources */,
 				A13ABB3A1CE9FDC200F8D01B /* SDWebImageDownloader.m in Sources */,
 				A11C02981CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m in Sources */,
+				BD6DCA111CEED63600B1AC3A /* TrainViewController.swift in Sources */,
 				A13ABB431CE9FDC200F8D01B /* UIImageView+WebCache.m in Sources */,
 				A13ABB351CE9FDC200F8D01B /* MKAnnotationView+WebCache.m in Sources */,
 			);
@@ -770,6 +809,14 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -778,7 +825,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
 			};
 			name = Debug;
@@ -806,6 +853,14 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -814,7 +869,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 			};
 			name = Release;
 		};
