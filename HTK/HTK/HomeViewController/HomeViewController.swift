@@ -101,7 +101,7 @@ class HomeViewController: UIViewController{
             let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
                 options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
             let dataDic = jsonArr?.valueForKey("result")?.valueForKey("data") as!NSMutableDictionary
-            
+            WeatherDAO.createNewPassWordData(dataDic)
             self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
             let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("realtime"))! as! NSData)! as! NSDictionary
             let dateString = dictionary.valueForKey("date") as? String
@@ -137,8 +137,9 @@ class HomeViewController: UIViewController{
         _weather.directLabel.text = dire+((windDic?.valueForKey("direct"))! as! String)
         let img = UIImage(named:(weatherDic?.valueForKey("img"))! as! String)
         _weather.weatherImageView.image = img
-        let moon = " 农历 : "
-        _weather.dateLabel.text = (dictionary.valueForKey("date") as? String)!+moon+(dictionary.valueForKey("moon") as? String)! + info
+        let moon = " 农历 :  "
+        _weather.dateLabel.text = (dictionary.valueForKey("date") as? String)!+moon+(dictionary.valueForKey("moon") as? String)!
+        _weather.weatherLabel.text = info
         
     }
     

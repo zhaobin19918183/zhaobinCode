@@ -18,6 +18,7 @@ class WeatherView: UIView
     @IBOutlet weak var tempratureLabel: UILabel!
     @IBOutlet weak var weatherImageView: UIImageView!
     
+    @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var powerLabel: UILabel!
     @IBOutlet weak var directLabel: UILabel!
     

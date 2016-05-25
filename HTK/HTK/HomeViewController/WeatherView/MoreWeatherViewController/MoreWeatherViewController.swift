@@ -8,17 +8,72 @@
 
 import UIKit
 
-class MoreWeatherViewController: UIViewController {
+class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     weak var weatherEntity : WeatherEntity?
-    
-    @IBOutlet weak var sctollView: UIScrollView!
+    let titleArray = ["当日推荐","未来天气"]
+    var weatherArr  = NSMutableArray()
+    @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tabBarControllerData()
         weatherDeatilData()
         
         
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let initIdentifier : String = "WaatherTableViewCell"
+        var cell : WaatherTableViewCell? = tableView.dequeueReusableCellWithIdentifier(initIdentifier) as? WaatherTableViewCell
+        if cell == nil
+        {
+            let nibArray = NSBundle.mainBundle().loadNibNamed("WaatherTableViewCell", owner: self, options: nil)
+            cell = nibArray.first as? WaatherTableViewCell
+            
+        }
+        cell!.selectionStyle = UITableViewCellSelectionStyle.None
+        return cell!
+    
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            80
+        }
+        else
+        {
+        
+        return 160
+        
+        }
+      return  80
+    }
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
+      
+        return self.titleArray[section]
+    }
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        if section == 0 {
+            return weatherArr.count
+        }
+        else{
+          return 1
+        }
+        
+      
+    }
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+        return 20
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+       
+        return 2
     }
     func tabBarControllerData()
     {
@@ -36,7 +91,7 @@ class MoreWeatherViewController: UIViewController {
         let lifeDictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("life"))! as! NSData)! as! NSDictionary
         print(lifeDictionary.valueForKey("info")?.allKeys)
         
-        let weatherArr:NSMutableArray = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("weather"))! as! NSData)! as! NSMutableArray
+        self.weatherArr = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("weather"))! as! NSData)! as! NSMutableArray
         print(weatherArr.count)
         
     }
