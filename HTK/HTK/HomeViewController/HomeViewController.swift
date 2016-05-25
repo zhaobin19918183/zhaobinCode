@@ -25,8 +25,19 @@ class HomeViewController: UIViewController{
     {
         super.viewDidLoad()
         weatherCoredata()
+        weatherMoreButtonAction()
         
         
+    }
+    func weatherMoreButtonAction()
+    {
+        _weather.moreButton.addTarget(self, action:#selector(HomeViewController.moreWeather), forControlEvents: UIControlEvents.TouchDown)
+    }
+    func moreWeather()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let target = storyboard.instantiateViewControllerWithIdentifier("moreWeatherViewController")
+        self.navigationController?.pushViewController(target, animated:true)
     }
     
     func weatherCoredata()
@@ -82,7 +93,7 @@ class HomeViewController: UIViewController{
         
         let string1 = "http://op.juhe.cn/onebox/weather/query?cityname="
         let string2 = "&dtype=&key=e527188bbf687ccccac5350acf9a151f"
-        let string = "大连"
+        let string  = "大连"
         let urlString = string.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
         let string3 = string1+urlString!+string2
         Alamofire.request(.GET, string3).response{(request, response, data, error) in
@@ -90,19 +101,29 @@ class HomeViewController: UIViewController{
             let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
                 options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
             let dataDic = jsonArr?.valueForKey("result")?.valueForKey("data") as!NSMutableDictionary
-            WeatherDAO.createNewPassWordData(dataDic)
-            self.dataFunc()
+            
+            self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
+            let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("realtime"))! as! NSData)! as! NSDictionary
+            let dateString = dictionary.valueForKey("date") as? String
+            let dateDicString = dataDic.valueForKey("realtime")?.valueForKey("date") as? String
+            if(dateString == dateDicString)
+            {
+                  self.dataFunc()
+            }
+            else
+            {
+               WeatherDAO.deleteEntityWith(Entity: self.weatherEntity!)
+               WeatherDAO.createNewPassWordData(dataDic)
+               self.dataFunc()
+            }
+  
         }
-        
-        
-        
+
     }
     
     func  dataFunc()
     {
-        
-        
-        
+
         self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
         let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("realtime"))! as! NSData)! as! NSDictionary
         let windDic = dictionary.valueForKey("wind")

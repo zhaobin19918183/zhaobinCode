@@ -35,10 +35,6 @@ class WeatherView: UIView
         
     }
     
-    @IBAction func moreWeatherAction(sender: UIButton)
-    {
-        
-    }
     func  resetUILayout()
     {
         

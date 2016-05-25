@@ -131,6 +131,25 @@
             </objects>
             <point key="canvasLocation" x="306.5" y="173.5"/>
         </scene>
+        <!--More Weather View Controller-->
+        <scene sceneID="wGx-F8-dRq">
+            <objects>
+                <viewController restorationIdentifier="moreWeatherViewController" storyboardIdentifier="moreWeatherViewController" id="Dea-hw-0eF" customClass="MoreWeatherViewController" customModule="HTK" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jcf-TH-GlJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="k4I-FZ-6Lq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Me-fl-wSz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EB2-0Z-00Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1619" y="173"/>
+        </scene>
         <!--Train View Controller-->
         <scene sceneID="SvF-lz-0hv">
             <objects>
