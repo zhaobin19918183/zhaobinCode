@@ -12,6 +12,7 @@ class MoreWeatherViewController: UIViewController {
 
     weak var weatherEntity : WeatherEntity?
     
+    @IBOutlet weak var sctollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarControllerData()
@@ -31,6 +32,7 @@ class MoreWeatherViewController: UIViewController {
     func  weatherDeatilData()
     {
         self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
+        
         let lifeDictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("life"))! as! NSData)! as! NSDictionary
         print(lifeDictionary.valueForKey("info")?.allKeys)
         
