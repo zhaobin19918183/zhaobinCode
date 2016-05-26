@@ -15,6 +15,8 @@ class HomeViewController: UIViewController{
     
     
     weak var weatherEntity : WeatherEntity?
+    
+    weak var dataDic  = NSMutableDictionary()
     @IBOutlet weak var _weather: WeatherView!
     @IBOutlet weak var _newsVIew: TrafficView!
     
@@ -24,7 +26,9 @@ class HomeViewController: UIViewController{
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         weatherCoredata()
+        weatherAlamofire()
         weatherMoreButtonAction()
         
         
@@ -40,41 +44,7 @@ class HomeViewController: UIViewController{
         self.navigationController?.pushViewController(target, animated:true)
     }
     
-    func weatherCoredata()
-    {
-        if(WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).count == 0)
-        {
-            if (!(NSUserDefaults.standardUserDefaults().boolForKey("everLaunched"))) {
-                NSUserDefaults.standardUserDefaults().setBool(true, forKey:"everLaunched")
-                let status = Reach().connectionStatus()
-                switch status {
-                case .Unknown, .Offline:
-                    netWorkAlert()
-                case .Online(.WWAN):
-                    weatherAlamofire()
-                case .Online(.WiFi):
-                    weatherAlamofire()
-                    
-                }
-                
-            }
-  
-        }
-            
-        else
-        {
-            let status = Reach().connectionStatus()
-            switch status {
-            case .Unknown, .Offline:
-                dataFunc()
-            case .Online(.WWAN):
-                dataFunc()
-            case .Online(.WiFi):
-                weatherAlamofire()
-            }
-            
-        }
-    }
+    
     func netWorkAlert()
     {
         let alert  = UIAlertController(title:"提示", message:"无网络连接", preferredStyle:UIAlertControllerStyle.Alert)
@@ -100,32 +70,51 @@ class HomeViewController: UIViewController{
             
             let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
                 options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
-            let dataDic = jsonArr?.valueForKey("result")?.valueForKey("data") as!NSMutableDictionary
-            WeatherDAO.createNewPassWordData(dataDic)
+            self.dataDic = jsonArr?.valueForKey("result")?.valueForKey("data") as?NSMutableDictionary
+            WeatherDAO.createNewPassWordData(self.dataDic!)
             self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
-            let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("realtime"))! as! NSData)! as! NSDictionary
-            let dateString = dictionary.valueForKey("date") as? String
-            let dateDicString = dataDic.valueForKey("realtime")?.valueForKey("date") as? String
-            if(dateString == dateDicString)
-            {
-                  self.dataFunc()
-            }
-            else
-            {
-               WeatherDAO.deleteEntityWith(Entity: self.weatherEntity!)
-               WeatherDAO.createNewPassWordData(dataDic)
-               self.dataFunc()
-            }
-  
+            self.dataFunc()
+            
         }
-
+        
     }
+    func weatherCoredata()
+    {
+        let status = Reach().connectionStatus()
+        if (!(NSUserDefaults.standardUserDefaults().boolForKey("everLaunched"))) {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey:"everLaunched")
+            
+            switch status {
+            case .Unknown, .Offline:
+                netWorkAlert()
+            case .Online(.WWAN):
+                weatherAlamofire()
+            case .Online(.WiFi):
+                weatherAlamofire()
+            }
+            
+        }
+        else
+        {
+            switch status {
+            case .Unknown, .Offline:
+                dataFunc()
+            case .Online(.WWAN):
+                dataFunc()
+            case .Online(.WiFi):
+                weatherAlamofire()
+            }
+        }
+        
+    }
+    
     
     func  dataFunc()
     {
-
+        
         self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
         let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("realtime"))! as! NSData)! as! NSDictionary
+
         let windDic = dictionary.valueForKey("wind")
         let  weatherDic = dictionary.valueForKey("weather")
         let  info = weatherDic!.valueForKey("info") as! String
@@ -140,6 +129,8 @@ class HomeViewController: UIViewController{
         let moon = " 农历 :  "
         _weather.dateLabel.text = (dictionary.valueForKey("date") as? String)!+moon+(dictionary.valueForKey("moon") as? String)!
         _weather.weatherLabel.text = info
+        
+        WeatherDAO.deleteEntityWith(Entity: self.weatherEntity!)
         
     }
     
