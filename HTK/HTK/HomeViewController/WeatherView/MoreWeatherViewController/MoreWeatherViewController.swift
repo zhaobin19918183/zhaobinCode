@@ -22,17 +22,42 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         
         
     }
+    func  weatherDeatilData()
+    {
+        self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
+        
+        let lifeDictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("life"))! as! NSData)! as! NSDictionary
+        print(lifeDictionary.valueForKey("info")?.allKeys)
+        
+        self.weatherArr = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("weather"))! as! NSData)! as! NSMutableArray
+        print(weatherArr.count)
+        
+    }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let initIdentifier : String = "WaatherTableViewCell"
-        var cell : WaatherTableViewCell? = tableView.dequeueReusableCellWithIdentifier(initIdentifier) as? WaatherTableViewCell
+     
+        if(indexPath.section==0)
+        {
+            let initIdentifier : String = "WaatherTableViewCell"
+            var cell : WaatherTableViewCell? = tableView.dequeueReusableCellWithIdentifier(initIdentifier) as? WaatherTableViewCell
+            if cell == nil
+            {
+                let nibArray = NSBundle.mainBundle().loadNibNamed("WaatherTableViewCell", owner: self, options: nil)
+                cell = nibArray.first as? WaatherTableViewCell
+            }
+            cell!.selectionStyle = UITableViewCellSelectionStyle.None
+            return cell!
+        }
+        let initIdentifier : String = "MoreTableViewCell"
+        var cell : MoreTableViewCell? = tableView.dequeueReusableCellWithIdentifier(initIdentifier) as? MoreTableViewCell
         if cell == nil
         {
-            let nibArray = NSBundle.mainBundle().loadNibNamed("WaatherTableViewCell", owner: self, options: nil)
-            cell = nibArray.first as? WaatherTableViewCell
-            
+            let nibArray = NSBundle.mainBundle().loadNibNamed("MoreTableViewCell", owner: self, options: nil)
+            cell = nibArray.first as? MoreTableViewCell
         }
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
         return cell!
+       
+       
     
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -84,17 +109,7 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
 
     }
     
-    func  weatherDeatilData()
-    {
-        self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
-        
-        let lifeDictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("life"))! as! NSData)! as! NSDictionary
-        print(lifeDictionary.valueForKey("info")?.allKeys)
-        
-        self.weatherArr = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("weather"))! as! NSData)! as! NSMutableArray
-        print(weatherArr.count)
-        
-    }
+  
     
     func backHomeView()
     {
