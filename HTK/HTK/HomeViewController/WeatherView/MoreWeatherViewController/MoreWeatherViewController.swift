@@ -11,12 +11,15 @@ import UIKit
 class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     weak var weatherEntity : WeatherEntity?
-    let titleArray = ["当日推荐","未来天气"]
+    let headerArray = ["当日推荐","未来天气"]
+    let titleArray = ["感冒 : ","空调 : ","穿衣 : ","运动 : ","紫外线 : ","污染 : ","洗车 : "]
     var weatherArr  = NSMutableArray()
+    var messageArr0  = NSMutableArray()
+    var messageArr1  = NSMutableArray()
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableview.separatorStyle = UITableViewCellSeparatorStyle.None
         tabBarControllerData()
         weatherDeatilData()
         
@@ -30,6 +33,15 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         print(lifeDictionary.valueForKey("info")?.allKeys)
         
         self.weatherArr = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("weather"))! as! NSData)! as! NSMutableArray
+        let ganmao = lifeDictionary.valueForKey("info")?.valueForKey("ganmao") as! NSArray
+        let kongtiao = lifeDictionary.valueForKey("info")?.valueForKey("kongtiao") as! NSArray
+        let chuanyi = lifeDictionary.valueForKey("info")?.valueForKey("chuanyi") as! NSArray
+        let yundong = lifeDictionary.valueForKey("info")?.valueForKey("yundong") as! NSArray
+        let ziwaixian = lifeDictionary.valueForKey("info")?.valueForKey("ziwaixian") as! NSArray
+        let wuran = lifeDictionary.valueForKey("info")?.valueForKey("wuran") as! NSArray
+        let xiche = lifeDictionary.valueForKey("info")?.valueForKey("xiche") as! NSArray
+        self.messageArr1 = [ganmao.objectAtIndex(1),kongtiao.objectAtIndex(1),chuanyi.objectAtIndex(1),yundong.objectAtIndex(1),ziwaixian.objectAtIndex(1),wuran.objectAtIndex(1),xiche.objectAtIndex(1)]
+        self.messageArr0 = [ganmao.objectAtIndex(0),kongtiao.objectAtIndex(0),chuanyi.objectAtIndex(0),yundong.objectAtIndex(0),ziwaixian.objectAtIndex(0),wuran.objectAtIndex(0),xiche.objectAtIndex(0)]
         print(weatherArr.count)
         
     }
@@ -45,6 +57,8 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
                 cell = nibArray.first as? WaatherTableViewCell
             }
             cell!.selectionStyle = UITableViewCellSelectionStyle.None
+            cell?.infotitle.text = self.titleArray[indexPath.row] + (self.messageArr0[indexPath.row] as! String)
+            cell?.messageLabel.text = self.messageArr1[indexPath.row] as? String
             return cell!
         }
         let initIdentifier : String = "MoreTableViewCell"
@@ -56,13 +70,11 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         }
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
         return cell!
-       
-       
-    
+
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            80
+            120
         }
         else
         {
@@ -70,12 +82,12 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         return 160
         
         }
-      return  80
+      return  120
     }
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
       
-        return self.titleArray[section]
+        return self.headerArray[section]
     }
     
     

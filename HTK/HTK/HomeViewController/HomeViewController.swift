@@ -28,7 +28,6 @@ class HomeViewController: UIViewController{
         super.viewDidLoad()
         
         weatherCoredata()
-        weatherAlamofire()
         weatherMoreButtonAction()
         
         
@@ -71,8 +70,21 @@ class HomeViewController: UIViewController{
             let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
                 options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
             self.dataDic = jsonArr?.valueForKey("result")?.valueForKey("data") as?NSMutableDictionary
-            WeatherDAO.createNewPassWordData(self.dataDic!)
-            self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
+            if(NSUserDefaults.standardUserDefaults().valueForKey("first") != nil)
+            {
+                self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
+                WeatherDAO.deleteEntityWith(Entity: self.weatherEntity!)
+                WeatherDAO.createNewPassWordData(self.dataDic!)
+  
+            }
+            else
+            {
+           
+              WeatherDAO.createNewPassWordData(self.dataDic!)
+              NSUserDefaults.standardUserDefaults().setObject("first", forKey: "first")
+
+            }
+           
             self.dataFunc()
             
         }
@@ -83,7 +95,7 @@ class HomeViewController: UIViewController{
         let status = Reach().connectionStatus()
         if (!(NSUserDefaults.standardUserDefaults().boolForKey("everLaunched"))) {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey:"everLaunched")
-            
+           
             switch status {
             case .Unknown, .Offline:
                 netWorkAlert()
@@ -130,7 +142,7 @@ class HomeViewController: UIViewController{
         _weather.dateLabel.text = (dictionary.valueForKey("date") as? String)!+moon+(dictionary.valueForKey("moon") as? String)!
         _weather.weatherLabel.text = info
         
-        WeatherDAO.deleteEntityWith(Entity: self.weatherEntity!)
+       
         
     }
     

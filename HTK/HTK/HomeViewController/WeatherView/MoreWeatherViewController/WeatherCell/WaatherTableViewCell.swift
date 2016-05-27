@@ -10,18 +10,23 @@ import UIKit
 
 class WaatherTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var weatherBackgroundView: UIView!
     @IBOutlet weak var infotitle: UILabel!
-    
     @IBOutlet weak var messageLabel: UILabel!
-    override func awakeFromNib() {
+    
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
-        // Initialization code
+        weatherBackgroundView.layer.cornerRadius = 10;//设置那个圆角的有多圆
+        
+       
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(selected: Bool, animated: Bool)
+    {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+       
     }
     
 }
