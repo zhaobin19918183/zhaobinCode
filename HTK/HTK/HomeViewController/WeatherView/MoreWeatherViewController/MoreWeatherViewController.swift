@@ -32,7 +32,7 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         let lifeDictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("life"))! as! NSData)! as! NSDictionary
         print(lifeDictionary.valueForKey("info")?.allKeys)
         
-        self.weatherArr = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("weather"))! as! NSData)! as! NSMutableArray
+        
         let ganmao = lifeDictionary.valueForKey("info")?.valueForKey("ganmao") as! NSArray
         let kongtiao = lifeDictionary.valueForKey("info")?.valueForKey("kongtiao") as! NSArray
         let chuanyi = lifeDictionary.valueForKey("info")?.valueForKey("chuanyi") as! NSArray
@@ -42,7 +42,7 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         let xiche = lifeDictionary.valueForKey("info")?.valueForKey("xiche") as! NSArray
         self.messageArr1 = [ganmao.objectAtIndex(1),kongtiao.objectAtIndex(1),chuanyi.objectAtIndex(1),yundong.objectAtIndex(1),ziwaixian.objectAtIndex(1),wuran.objectAtIndex(1),xiche.objectAtIndex(1)]
         self.messageArr0 = [ganmao.objectAtIndex(0),kongtiao.objectAtIndex(0),chuanyi.objectAtIndex(0),yundong.objectAtIndex(0),ziwaixian.objectAtIndex(0),wuran.objectAtIndex(0),xiche.objectAtIndex(0)]
-        print(weatherArr.count)
+        
         
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -68,6 +68,8 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
             let nibArray = NSBundle.mainBundle().loadNibNamed("MoreTableViewCell", owner: self, options: nil)
             cell = nibArray.first as? MoreTableViewCell
         }
+        self.weatherArr = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("weather"))! as! NSData)! as! NSMutableArray
+        cell?.weatherDataArray(self.weatherArr, index: indexPath)
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
         return cell!
 
