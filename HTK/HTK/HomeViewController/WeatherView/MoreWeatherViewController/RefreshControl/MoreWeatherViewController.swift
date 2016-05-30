@@ -26,11 +26,10 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         tabBarControllerData()
         weatherDeatilData()
         tableview.addSubview(refreshControl)
-      
+
       
     }
-    
-    //TODO:赋值
+        
     func  weatherDeatilData()
     {
         self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
@@ -51,7 +50,6 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         self.weatherArr = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("weather"))! as! NSData)! as! NSMutableArray
         
     }
-    //TODO:tableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
      
         if(indexPath.section==0)
@@ -129,8 +127,9 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         self.navigationItem.leftBarButtonItem = nextItem
 
     }
-    //TODO: backHomeView
-
+    
+  
+    
     func backHomeView()
     {
         
@@ -138,20 +137,21 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         self.tabBarController?.tabBar.hidden = false
         
     }
-    //TODO:滚动视图开始拖动
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        if !refreshControl.refreshing {
-          print("开始刷新")
-        }
-      
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    //TODO:视图拖动
-    func scrollViewDidScroll(scrollView: UIScrollView)
-    {
-        
-       
-      
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-    
+    */
+
 }
