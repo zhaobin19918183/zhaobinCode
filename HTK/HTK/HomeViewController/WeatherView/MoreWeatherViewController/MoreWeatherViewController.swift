@@ -25,7 +25,7 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         tableview.separatorStyle = UITableViewCellSeparatorStyle.None
         tabBarControllerData()
         weatherDeatilData()
-        tableview.addSubview(refreshControl)
+      //  tableview.addSubview(refreshControl)
       
       
     }
@@ -36,9 +36,7 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
         
         let lifeDictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("life"))! as! NSData)! as! NSDictionary
-        print(lifeDictionary.valueForKey("info")?.allKeys)
-        
-        
+
         let ganmao = lifeDictionary.valueForKey("info")?.valueForKey("ganmao") as! NSArray
         let kongtiao = lifeDictionary.valueForKey("info")?.valueForKey("kongtiao") as! NSArray
         let chuanyi = lifeDictionary.valueForKey("info")?.valueForKey("chuanyi") as! NSArray
@@ -88,7 +86,7 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         else
         {
         
-        return 160
+        return 240
         
         }
       return  120
@@ -138,20 +136,16 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         self.tabBarController?.tabBar.hidden = false
         
     }
-    //TODO:滚动视图开始拖动
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        if !refreshControl.refreshing {
-          print("开始刷新")
-        }
-      
-    }
-    
-    //TODO:视图拖动
-    func scrollViewDidScroll(scrollView: UIScrollView)
+
+    //TODO:数据刷新
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView)
     {
+        tableview.reloadData()
+        print("刷新结束")
+    }
         
        
       
-    }
+    
     
 }

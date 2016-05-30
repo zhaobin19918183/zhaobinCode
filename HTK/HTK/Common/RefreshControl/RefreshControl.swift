@@ -21,7 +21,8 @@ class RefreshControl: UIRefreshControl {
     
     var timer: NSTimer!
  
-    required override init(){
+    required override init()
+    {
         
         super.init()
         resetUILayout()

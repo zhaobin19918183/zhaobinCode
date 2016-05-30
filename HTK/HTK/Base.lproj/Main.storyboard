@@ -38,17 +38,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPJ-8a-mwn" customClass="TrafficView" customModule="HTK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="224" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="244" width="320" height="60"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="qch-dJ-QKC"/>
+                                    <constraint firstAttribute="height" constant="60" id="qch-dJ-QKC"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sX-UK-th5" customClass="WeatherView" customModule="HTK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="320" height="160"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="180"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.65490196079999996" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="iBK-52-JjE"/>
+                                    <constraint firstAttribute="height" constant="180" id="iBK-52-JjE"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Yfb-FY-b9c">
