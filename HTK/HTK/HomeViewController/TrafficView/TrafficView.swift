@@ -12,6 +12,11 @@ class TrafficView: UIView {
 
     @IBOutlet var trafficView: UIView!
   
+    @IBOutlet weak var typeLabel: UIButton!
+    @IBOutlet weak var gongjiaoLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    
+    @IBOutlet weak var lineTextField: UITextField!
     override func drawRect(rect: CGRect) {
         // Drawing code
     }

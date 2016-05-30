@@ -148,15 +148,15 @@ class HomeViewController: UIViewController{
     
     @IBAction func trainAction(sender: UIButton)
     {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let target = storyboard.instantiateViewControllerWithIdentifier("trainViewController")
-        self.navigationController?.pushViewController(target, animated:true)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let target = storyboard.instantiateViewControllerWithIdentifier("trainViewController")
+//        self.navigationController?.pushViewController(target, animated:true)
     }
     @IBAction func carAction(sender: UIButton)
     {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let target = storyboard.instantiateViewControllerWithIdentifier("carViewController")
-        self.navigationController?.pushViewController(target, animated:true)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let target = storyboard.instantiateViewControllerWithIdentifier("carViewController")
+//        self.navigationController?.pushViewController(target, animated:true)
     }
     
     

@@ -11,7 +11,7 @@ import UIKit
 class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     weak var weatherEntity : WeatherEntity?
-    let headerArray = ["当日推荐","未来天气"]
+    let headerArray = ["当日推荐","天气走势"]
     let titleArray = ["感冒 : ","空调 : ","穿衣 : ","运动 : ","紫外线 : ","污染 : ","洗车 : "]
     var weatherArr  = NSMutableArray()
     var messageArr0  = NSMutableArray()

@@ -80,7 +80,7 @@ class PDLineChart: PDChart {
         chartLayer.lineJoin = kCALineJoinRound
         chartLayer.fillColor = UIColor.whiteColor().CGColor
         chartLayer.strokeColor = self.dataItem.chartLayerColor.CGColor
-        chartLayer.lineWidth = 2.0
+        chartLayer.lineWidth = 1.0
         chartLayer.strokeStart = 0.0
         chartLayer.strokeEnd = 1.0
         self.layer.addSublayer(chartLayer)
@@ -95,7 +95,7 @@ class PDLineChart: PDChart {
         let yAxesHeight: CGFloat = axesComponent.getYAxesHeight()
         for i in 0 ..< self.dataItem.pointArray!.count {
             let point: CGPoint = self.dataItem.pointArray![i]
-            let pixelPoint: CGPoint = CGPoint(x: basePoint.x + point.x / self.dataItem.xMax * xAxesWidth, y: basePoint.y - point.y / self.dataItem.yMax * yAxesHeight)//转换为可以绘制的，屏幕中的像素点
+            let pixelPoint: CGPoint = CGPoint(x: basePoint.x + point.x / self.dataItem.xMax * xAxesWidth, y: basePoint.y - point.y / self.dataItem.yMax * yAxesHeight*2)//转换为可以绘制的，屏幕中的像素点
             
             if i == 0 {
                 progressLine.moveToPoint(pixelPoint)

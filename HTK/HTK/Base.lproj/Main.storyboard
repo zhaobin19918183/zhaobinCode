@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dlk-we-A8P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dlk-we-A8P">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -38,10 +38,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPJ-8a-mwn" customClass="TrafficView" customModule="HTK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="244" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="244" width="320" height="70"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="qch-dJ-QKC"/>
+                                    <constraint firstAttribute="height" constant="70" id="qch-dJ-QKC"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sX-UK-th5" customClass="WeatherView" customModule="HTK" customModuleProvider="target">
@@ -52,13 +52,13 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Yfb-FY-b9c">
-                                <rect key="frame" x="0.0" y="304" width="320" height="215"/>
+                                <rect key="frame" x="0.0" y="314" width="320" height="205"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DkM-L6-mb8">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="102.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wof-2n-JGo">
-                                                <rect key="frame" x="0.0" y="0.0" width="107" height="108"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="106.5" height="102.5"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="汽车" image="car.png"/>
                                                 <connections>
@@ -66,35 +66,35 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xk5-Ng-wWg">
-                                                <rect key="frame" x="107" y="0.0" width="106" height="108"/>
+                                                <rect key="frame" x="106.5" y="0.0" width="107" height="102.5"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="火车"/>
+                                                <state key="normal" title="火车" backgroundImage="huoche.png"/>
                                                 <connections>
                                                     <action selector="trainAction:" destination="gFw-Kd-exn" eventType="touchDown" id="L3K-CC-vNE"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pg3-fE-vYL">
-                                                <rect key="frame" x="213" y="0.0" width="107" height="108"/>
+                                                <rect key="frame" x="213.5" y="0.0" width="106.5" height="102.5"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="公交" image="gongjiao.png"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FqN-BC-rgK">
-                                        <rect key="frame" x="0.0" y="108" width="320" height="107"/>
+                                        <rect key="frame" x="0.0" y="102.5" width="320" height="102.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCv-J5-opW">
-                                                <rect key="frame" x="0.0" y="0.0" width="107" height="107"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="106.5" height="102.5"/>
                                                 <color key="backgroundColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dg-x3-OSq">
-                                                <rect key="frame" x="107" y="0.0" width="106" height="107"/>
+                                                <rect key="frame" x="106.5" y="0.0" width="107" height="102.5"/>
                                                 <color key="backgroundColor" red="0.12549019610000001" green="0.56470588239999997" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6f-l2-z5L">
-                                                <rect key="frame" x="213" y="0.0" width="107" height="107"/>
+                                                <rect key="frame" x="213.5" y="0.0" width="106.5" height="102.5"/>
                                                 <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
@@ -172,6 +172,7 @@
         <!--Train View Controller-->
         <scene sceneID="SvF-lz-0hv">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHc-Cw-czx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController restorationIdentifier="trainViewController" storyboardIdentifier="trainViewController" id="q5l-v5-brQ" customClass="TrainViewController" customModule="HTK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ODc-FC-2kT"/>
@@ -184,13 +185,13 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fHc-Cw-czx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1200" y="173"/>
         </scene>
         <!--Car View Controller-->
         <scene sceneID="kxa-ED-udq">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RTu-3c-496" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController restorationIdentifier="carViewController" storyboardIdentifier="carViewController" id="eOT-9x-xkR" customClass="CarViewController" customModule="HTK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tui-ym-uol"/>
@@ -203,7 +204,6 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RTu-3c-496" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="771" y="173"/>
         </scene>
@@ -317,7 +317,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="car.png" width="500" height="500"/>
+        <image name="car.png" width="300" height="300"/>
         <image name="gongjiao.png" width="219" height="219"/>
+        <image name="huoche.png" width="400" height="400"/>
     </resources>
 </document>

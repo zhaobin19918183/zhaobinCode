@@ -41,6 +41,8 @@
 		A13ABB431CE9FDC200F8D01B /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB321CE9FDC200F8D01B /* UIImageView+WebCache.m */; };
 		A13ABB441CE9FDC200F8D01B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB341CE9FDC200F8D01B /* UIView+WebCacheOperation.m */; };
 		A13ABB471CE9FE0500F8D01B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */; };
+		A173A6741CFC5560006AF7EE /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A173A6731CFC5560006AF7EE /* MAMapKit.framework */; };
+		A173A6781CFC6889006AF7EE /* huoche.png in Resources */ = {isa = PBXBuildFile; fileRef = A173A6771CFC6889006AF7EE /* huoche.png */; };
 		A1CDFF591CF5C44700F50491 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1CDFF581CF5C44700F50491 /* 1.png */; };
 		A1CDFF5B1CF5CA0100F50491 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = A1CDFF5A1CF5CA0100F50491 /* car.png */; };
 		A1CDFF5D1CF5D1F800F50491 /* gongjiao.png in Resources */ = {isa = PBXBuildFile; fileRef = A1CDFF5C1CF5D1F800F50491 /* gongjiao.png */; };
@@ -62,7 +64,6 @@
 		BD6D3B171CFC1D3E0000ED34 /* PDChartAxesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6D3B101CFC1D3E0000ED34 /* PDChartAxesComponent.swift */; };
 		BD6D3B181CFC1D3E0000ED34 /* PDLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6D3B121CFC1D3E0000ED34 /* PDLineChart.swift */; };
 		BD6D3B191CFC1D3E0000ED34 /* PDPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6D3B141CFC1D3E0000ED34 /* PDPieChart.swift */; };
-		BD6D3B1B1CFC342F0000ED34 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D3B1A1CFC342F0000ED34 /* MAMapKit.framework */; };
 		BD6DCA0B1CEEBCB400B1AC3A /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6DCA091CEEBCB400B1AC3A /* CarViewController.swift */; };
 		BD6DCA111CEED63600B1AC3A /* TrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6DCA101CEED63600B1AC3A /* TrainViewController.swift */; };
 		BD72C21B1CF696D80031F0FA /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = BD72C21A1CF696D80031F0FA /* 0.png */; };
@@ -177,6 +178,8 @@
 		A13ABB451CE9FE0500F8D01B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "HTK/ Resources/MBProgressHUD.h"; sourceTree = SOURCE_ROOT; };
 		A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "HTK/ Resources/MBProgressHUD.m"; sourceTree = SOURCE_ROOT; };
 		A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = " Resources/Bridging-Header.h"; sourceTree = "<group>"; };
+		A173A6731CFC5560006AF7EE /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		A173A6771CFC6889006AF7EE /* huoche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huoche.png; sourceTree = "<group>"; };
 		A1CDFF581CF5C44700F50491 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		A1CDFF5A1CF5CA0100F50491 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
 		A1CDFF5C1CF5D1F800F50491 /* gongjiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gongjiao.png; sourceTree = "<group>"; };
@@ -198,7 +201,6 @@
 		BD6D3B101CFC1D3E0000ED34 /* PDChartAxesComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDChartAxesComponent.swift; sourceTree = "<group>"; };
 		BD6D3B121CFC1D3E0000ED34 /* PDLineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDLineChart.swift; sourceTree = "<group>"; };
 		BD6D3B141CFC1D3E0000ED34 /* PDPieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDPieChart.swift; sourceTree = "<group>"; };
-		BD6D3B1A1CFC342F0000ED34 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BD6DCA091CEEBCB400B1AC3A /* CarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		BD6DCA101CEED63600B1AC3A /* TrainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainViewController.swift; sourceTree = "<group>"; };
 		BD72C21A1CF696D80031F0FA /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
@@ -230,7 +232,7 @@
 			files = (
 				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
-				BD6D3B1B1CFC342F0000ED34 /* MAMapKit.framework in Frameworks */,
+				A173A6741CFC5560006AF7EE /* MAMapKit.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
 				BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */,
 				BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */,
@@ -267,6 +269,7 @@
 			children = (
 				A1CDFF5A1CF5CA0100F50491 /* car.png */,
 				A1D9B3B41CF3242B00B78808 /* 7.png */,
+				A173A6771CFC6889006AF7EE /* huoche.png */,
 				A1CDFF5C1CF5D1F800F50491 /* gongjiao.png */,
 				A1CDFF581CF5C44700F50491 /* 1.png */,
 				BD6D3B071CFC143A0000ED34 /* 33.png */,
@@ -338,7 +341,7 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BD6D3B1A1CFC342F0000ED34 /* MAMapKit.framework */,
+				A173A6731CFC5560006AF7EE /* MAMapKit.framework */,
 				BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */,
 				BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */,
 				BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */,
@@ -513,8 +516,8 @@
 		BD6D3B0B1CFC1D3E0000ED34 /* PDChart */ = {
 			isa = PBXGroup;
 			children = (
-				BD6D3B0C1CFC1D3E0000ED34 /* PDBarChart */,
 				BD6D3B0E1CFC1D3E0000ED34 /* PDChart.swift */,
+				BD6D3B0C1CFC1D3E0000ED34 /* PDBarChart */,
 				BD6D3B0F1CFC1D3E0000ED34 /* PDChartComponent */,
 				BD6D3B111CFC1D3E0000ED34 /* PDLineChart */,
 				BD6D3B131CFC1D3E0000ED34 /* PDPieChart */,
@@ -695,6 +698,7 @@
 				A13ABACA1CE9F79000F8D01B /* Main.storyboard in Resources */,
 				A1CDFF5D1CF5D1F800F50491 /* gongjiao.png in Resources */,
 				BD97F3631CF6A269005FF681 /* MoreTableViewCell.xib in Resources */,
+				A173A6781CFC6889006AF7EE /* huoche.png in Resources */,
 				A1D9B3B51CF3242B00B78808 /* 7.png in Resources */,
 				BD6D3B081CFC143A0000ED34 /* 33.png in Resources */,
 				BD489FDC1CEAAC110010806B /* TrafficView.xib in Resources */,
@@ -961,6 +965,8 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -969,7 +975,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
 			};
 			name = Debug;
@@ -1023,6 +1029,8 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1031,7 +1039,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 			};
 			name = Release;
 		};
