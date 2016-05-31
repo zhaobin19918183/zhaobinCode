@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         initialDirectories()
+        window?.backgroundColor = UIColor.whiteColor()
         //location()
         
         // Override point for customization after application launch.

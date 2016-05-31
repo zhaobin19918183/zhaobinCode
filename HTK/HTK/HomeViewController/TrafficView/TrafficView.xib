@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -10,8 +10,10 @@
                 <outlet property="cityLabel" destination="yhz-9x-9vB" id="A2t-EI-b8x"/>
                 <outlet property="gongjiaoLabel" destination="4Cu-RV-qt5" id="0mP-av-Xxy"/>
                 <outlet property="lineTextField" destination="6HW-fd-wne" id="xIq-C1-icj"/>
+                <outlet property="projectButton" destination="BDJ-Ug-chG" id="Ttc-yy-1th"/>
+                <outlet property="searchButton" destination="33e-Sy-teT" id="2Ga-54-WNn"/>
                 <outlet property="trafficView" destination="iN0-l3-epB" id="e4Q-nX-VUO"/>
-                <outlet property="typeLabel" destination="Bhr-TQ-j4f" id="DGe-2t-pq9"/>
+                <outlet property="typeButton" destination="Bhr-TQ-j4f" id="qxb-5n-sxj"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -32,7 +34,7 @@
                                         <constraint firstAttribute="width" constant="60" id="K8g-Fp-heF"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="城市" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhz-9x-9vB">
@@ -42,12 +44,15 @@
                                         <constraint firstAttribute="width" constant="40" id="wty-j1-F2T"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhr-TQ-j4f">
                                     <rect key="frame" x="100" y="0.0" width="220" height="35"/>
                                     <state key="normal" title="查询方式查询方式查询"/>
+                                    <connections>
+                                        <action selector="typeButtonAction:" destination="-1" eventType="touchUpInside" id="MW2-x0-oey"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,18 +72,21 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6NU-ml-fB5">
                             <rect key="frame" x="0.0" y="35" width="320" height="35"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="线路" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6HW-fd-wne">
-                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="35"/>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="线路" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6HW-fd-wne">
+                                    <rect key="frame" x="0.0" y="0.0" width="107" height="35"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDJ-Ug-chG">
-                                    <rect key="frame" x="106" y="0.0" width="107" height="35"/>
+                                    <rect key="frame" x="107" y="0.0" width="106" height="35"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" title="换乘方案"/>
+                                    <connections>
+                                        <action selector="projectButtonAction:" destination="-1" eventType="touchUpInside" id="MCc-7N-6th"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33e-Sy-teT">
-                                    <rect key="frame" x="213" y="0.0" width="106.5" height="35"/>
+                                    <rect key="frame" x="213" y="0.0" width="107" height="35"/>
                                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="搜索"/>
                                 </button>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dlk-we-A8P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dlk-we-A8P">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -55,10 +55,10 @@
                                 <rect key="frame" x="0.0" y="314" width="320" height="205"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DkM-L6-mb8">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="102.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wof-2n-JGo">
-                                                <rect key="frame" x="0.0" y="0.0" width="106.5" height="102.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="107" height="103"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="汽车" image="car.png"/>
                                                 <connections>
@@ -66,7 +66,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xk5-Ng-wWg">
-                                                <rect key="frame" x="106.5" y="0.0" width="107" height="102.5"/>
+                                                <rect key="frame" x="107" y="0.0" width="106" height="103"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="火车" backgroundImage="huoche.png"/>
                                                 <connections>
@@ -74,27 +74,27 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pg3-fE-vYL">
-                                                <rect key="frame" x="213.5" y="0.0" width="106.5" height="102.5"/>
+                                                <rect key="frame" x="213" y="0.0" width="107" height="103"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="公交" image="gongjiao.png"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FqN-BC-rgK">
-                                        <rect key="frame" x="0.0" y="102.5" width="320" height="102.5"/>
+                                        <rect key="frame" x="0.0" y="103" width="320" height="102"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCv-J5-opW">
-                                                <rect key="frame" x="0.0" y="0.0" width="106.5" height="102.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="107" height="102"/>
                                                 <color key="backgroundColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dg-x3-OSq">
-                                                <rect key="frame" x="106.5" y="0.0" width="107" height="102.5"/>
+                                                <rect key="frame" x="107" y="0.0" width="106" height="102"/>
                                                 <color key="backgroundColor" red="0.12549019610000001" green="0.56470588239999997" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6f-l2-z5L">
-                                                <rect key="frame" x="213.5" y="0.0" width="106.5" height="102.5"/>
+                                                <rect key="frame" x="213" y="0.0" width="107" height="102"/>
                                                 <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
@@ -103,7 +103,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xPJ-8a-mwn" firstAttribute="leading" secondItem="bMr-tU-5s5" secondAttribute="leading" id="DaH-nf-NDY"/>
                             <constraint firstItem="Yfb-FY-b9c" firstAttribute="leading" secondItem="bMr-tU-5s5" secondAttribute="leading" id="Ftl-IW-OzL"/>
@@ -121,7 +121,7 @@
                     <navigationItem key="navigationItem" title="掌上工具" id="ivs-48-Hfw"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="_newsVIew" destination="xPJ-8a-mwn" id="6Zq-Ya-0IH"/>
+                        <outlet property="_traffic" destination="xPJ-8a-mwn" id="5hr-Wl-mDg"/>
                         <outlet property="_weather" destination="2sX-UK-th5" id="IR9-DQ-Mcy"/>
                         <outlet property="carButton" destination="wof-2n-JGo" id="10Z-mT-FSJ"/>
                         <outlet property="trainButton" destination="xk5-Ng-wWg" id="FXS-UA-ho3"/>
@@ -169,10 +169,28 @@
             </objects>
             <point key="canvasLocation" x="1634" y="173"/>
         </scene>
+        <!--Picker View Controller-->
+        <scene sceneID="J71-wv-9ku">
+            <objects>
+                <viewController restorationIdentifier="pickerViewController" storyboardIdentifier="pickerViewController" id="bOX-XE-kiB" customClass="pickerViewController" customModule="HTK" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KaM-jM-h6V"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZZa-ZI-V6b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2aD-OX-Dsq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yhk-r4-1HH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2107" y="173"/>
+        </scene>
         <!--Train View Controller-->
         <scene sceneID="SvF-lz-0hv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fHc-Cw-czx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController restorationIdentifier="trainViewController" storyboardIdentifier="trainViewController" id="q5l-v5-brQ" customClass="TrainViewController" customModule="HTK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ODc-FC-2kT"/>
@@ -185,13 +203,13 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHc-Cw-czx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1200" y="173"/>
         </scene>
         <!--Car View Controller-->
         <scene sceneID="kxa-ED-udq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RTu-3c-496" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController restorationIdentifier="carViewController" storyboardIdentifier="carViewController" id="eOT-9x-xkR" customClass="CarViewController" customModule="HTK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tui-ym-uol"/>
@@ -204,6 +222,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RTu-3c-496" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="771" y="173"/>
         </scene>

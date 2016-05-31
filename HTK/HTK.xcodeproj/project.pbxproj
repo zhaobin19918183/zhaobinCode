@@ -41,7 +41,6 @@
 		A13ABB431CE9FDC200F8D01B /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB321CE9FDC200F8D01B /* UIImageView+WebCache.m */; };
 		A13ABB441CE9FDC200F8D01B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB341CE9FDC200F8D01B /* UIView+WebCacheOperation.m */; };
 		A13ABB471CE9FE0500F8D01B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */; };
-		A173A6741CFC5560006AF7EE /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A173A6731CFC5560006AF7EE /* MAMapKit.framework */; };
 		A173A6781CFC6889006AF7EE /* huoche.png in Resources */ = {isa = PBXBuildFile; fileRef = A173A6771CFC6889006AF7EE /* huoche.png */; };
 		A1CDFF591CF5C44700F50491 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1CDFF581CF5C44700F50491 /* 1.png */; };
 		A1CDFF5B1CF5CA0100F50491 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = A1CDFF5A1CF5CA0100F50491 /* car.png */; };
@@ -84,6 +83,9 @@
 		BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE5F1CEC37FD007A315E /* CoreTelephony.framework */; };
 		BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE611CEC3805007A315E /* Security.framework */; };
 		BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */; };
+		BDE7DEBE1CFD2AEB0006560E /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE7DEBD1CFD2AEB0006560E /* MAMapKit.framework */; };
+		BDE7DEC51CFD30210006560E /* pickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7DEC31CFD30210006560E /* pickerViewController.swift */; };
+		BDE7DEC61CFD30210006560E /* pickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE7DEC41CFD30210006560E /* pickerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,7 +180,6 @@
 		A13ABB451CE9FE0500F8D01B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "HTK/ Resources/MBProgressHUD.h"; sourceTree = SOURCE_ROOT; };
 		A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "HTK/ Resources/MBProgressHUD.m"; sourceTree = SOURCE_ROOT; };
 		A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = " Resources/Bridging-Header.h"; sourceTree = "<group>"; };
-		A173A6731CFC5560006AF7EE /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		A173A6771CFC6889006AF7EE /* huoche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huoche.png; sourceTree = "<group>"; };
 		A1CDFF581CF5C44700F50491 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		A1CDFF5A1CF5CA0100F50491 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
@@ -223,6 +224,9 @@
 		BDE6AE5F1CEC37FD007A315E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		BDE6AE611CEC3805007A315E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BDE7DEBD1CFD2AEB0006560E /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		BDE7DEC31CFD30210006560E /* pickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pickerViewController.swift; sourceTree = "<group>"; };
+		BDE7DEC41CFD30210006560E /* pickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = pickerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,7 +236,7 @@
 			files = (
 				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
-				A173A6741CFC5560006AF7EE /* MAMapKit.framework in Frameworks */,
+				BDE7DEBE1CFD2AEB0006560E /* MAMapKit.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
 				BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */,
 				BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */,
@@ -341,7 +345,7 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A173A6731CFC5560006AF7EE /* MAMapKit.framework */,
+				BDE7DEBD1CFD2AEB0006560E /* MAMapKit.framework */,
 				BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */,
 				BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */,
 				BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */,
@@ -364,6 +368,7 @@
 		A13ABAF31CE9F7B300F8D01B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BDE7DEB61CFD20930006560E /* pickerView */,
 				BD6D3B0B1CFC1D3E0000ED34 /* PDChart */,
 				BD6D3AFE1CFC04CC0000ED34 /* RefreshControl */,
 				A1D9B3B61CF33FD800B78808 /* Reach.swift */,
@@ -584,6 +589,15 @@
 			path = MoreWeatherViewController;
 			sourceTree = "<group>";
 		};
+		BDE7DEB61CFD20930006560E /* pickerView */ = {
+			isa = PBXGroup;
+			children = (
+				BDE7DEC31CFD30210006560E /* pickerViewController.swift */,
+				BDE7DEC41CFD30210006560E /* pickerViewController.xib */,
+			);
+			path = pickerView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -705,6 +719,7 @@
 				A1CDFF621CF5DE3A00F50491 /* WaatherTableViewCell.xib in Resources */,
 				A1129BA51CEDE1EF00285AE5 /* weatherImage.png in Resources */,
 				BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */,
+				BDE7DEC61CFD30210006560E /* pickerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,6 +785,7 @@
 				A1CDFF611CF5DE3A00F50491 /* WaatherTableViewCell.swift in Sources */,
 				A11C02981CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m in Sources */,
 				BD6DCA111CEED63600B1AC3A /* TrainViewController.swift in Sources */,
+				BDE7DEC51CFD30210006560E /* pickerViewController.swift in Sources */,
 				A1D9B3B71CF33FD800B78808 /* Reach.swift in Sources */,
 				A13ABB431CE9FDC200F8D01B /* UIImageView+WebCache.m in Sources */,
 				A13ABB351CE9FDC200F8D01B /* MKAnnotationView+WebCache.m in Sources */,
@@ -967,6 +983,10 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -975,7 +995,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
 			};
 			name = Debug;
@@ -1031,6 +1051,10 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1039,7 +1063,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 			};
 			name = Release;
 		};

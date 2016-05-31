@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="pickerViewController" customModule="HTK" customModuleProvider="target">
+            <connections>
+                <outlet property="pickerView" destination="Wu3-X5-cyB" id="RVE-W7-CKw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUh-ig-hcD">
+                    <rect key="frame" x="0.0" y="368" width="320" height="200"/>
+                    <subviews>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wu3-X5-cyB">
+                            <rect key="frame" x="0.0" y="35" width="320" height="165"/>
+                            <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="YBo-cf-5xb"/>
+                                <outlet property="delegate" destination="-1" id="RLp-tj-xra"/>
+                            </connections>
+                        </pickerView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94117647059999998" green="0.63137254899999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Wu3-X5-cyB" firstAttribute="top" secondItem="dUh-ig-hcD" secondAttribute="top" constant="35" id="BL7-YA-PZ1"/>
+                        <constraint firstAttribute="height" constant="200" id="Z1B-gj-7ME"/>
+                        <constraint firstItem="Wu3-X5-cyB" firstAttribute="leading" secondItem="dUh-ig-hcD" secondAttribute="leading" id="cFm-Ri-d3G"/>
+                        <constraint firstAttribute="trailing" secondItem="Wu3-X5-cyB" secondAttribute="trailing" id="ryH-Nx-Hzn"/>
+                        <constraint firstAttribute="bottom" secondItem="Wu3-X5-cyB" secondAttribute="bottom" id="t4c-A4-tXQ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dUh-ig-hcD" secondAttribute="trailing" id="AsU-Dw-a9v"/>
+                <constraint firstAttribute="bottom" secondItem="dUh-ig-hcD" secondAttribute="bottom" id="ZHv-Em-3IO"/>
+                <constraint firstItem="dUh-ig-hcD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rqS-Rf-PR2"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

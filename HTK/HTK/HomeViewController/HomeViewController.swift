@@ -15,10 +15,10 @@ class HomeViewController: UIViewController{
     
     
     weak var weatherEntity : WeatherEntity?
-    
     weak var dataDic  = NSMutableDictionary()
     @IBOutlet weak var _weather: WeatherView!
-    @IBOutlet weak var _newsVIew: TrafficView!
+   
+    @IBOutlet weak var _traffic: TrafficView!
     
     @IBOutlet weak var trainButton: UIButton!
     @IBOutlet weak var carButton: UIButton!
@@ -26,16 +26,19 @@ class HomeViewController: UIViewController{
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+      
         weatherCoredata()
         weatherMoreButtonAction()
-        
+        _traffic.pickerView = self.parentViewController!
+       
         
     }
+
     func weatherMoreButtonAction()
     {
         _weather.moreButton.addTarget(self, action:#selector(HomeViewController.moreWeather), forControlEvents: UIControlEvents.TouchDown)
     }
+
     func moreWeather()
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
