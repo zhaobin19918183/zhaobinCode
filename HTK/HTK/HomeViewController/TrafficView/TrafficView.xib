@@ -89,6 +89,9 @@
                                     <rect key="frame" x="213" y="0.0" width="107" height="35"/>
                                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="搜索"/>
+                                    <connections>
+                                        <action selector="seatchAction:" destination="-1" eventType="touchDown" id="qpg-l1-xfL"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

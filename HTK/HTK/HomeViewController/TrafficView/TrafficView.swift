@@ -9,7 +9,7 @@
 import UIKit
 
 class TrafficView:UIView,trafficViewPickerDelegate {
-
+    
     @IBOutlet var trafficView: UIView!
     var pickerView = UIViewController()
     
@@ -64,38 +64,46 @@ class TrafficView:UIView,trafficViewPickerDelegate {
         loginView.tag = String(sender.tag)
         loginView.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha:0.5)
         pickerView.presentViewController(loginView, animated: true, completion: nil)
- 
+        
+    }
+    
+    @IBAction func seatchAction(sender: UIButton)
+    {
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let target = storyboard.instantiateViewControllerWithIdentifier("carViewController")
+        pickerView.navigationController?.pushViewController(target, animated:true)
     }
     func trafficViewprojectPickerViewString(project: String)
     {
-     
-         print("project====\(project)")
+        
+        print("查询方式====\(project)")
         if project == "0" {
             projectButton.hidden = true
             lineTextField.hidden = false
             lineTextField.placeholder = "线路"
         }
         else
-        if project == "1"
-        {
-            projectButton.hidden = true
-            lineTextField.hidden = false
-            lineTextField.placeholder = "站台"
-            
-        }
-        else
-        {
-            projectButton.hidden = false
-            lineTextField.hidden = true
+            if project == "1"
+            {
+                projectButton.hidden = true
+                lineTextField.hidden = false
+                lineTextField.placeholder = "站台"
+                
+            }
+            else
+            {
+                projectButton.hidden = false
+                lineTextField.hidden = true
         }
         
         
     }
     func trafficViewtypePickerViewString(type: String)
     {
-         print("type====\(type)")
+        print("换乘方案====\(type)")
         
         
     }
-   
+    
 }

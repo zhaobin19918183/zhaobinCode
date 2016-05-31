@@ -20,9 +20,15 @@ class HomeViewController: UIViewController{
    
     @IBOutlet weak var _traffic: TrafficView!
     
-    @IBOutlet weak var trainButton: UIButton!
-    @IBOutlet weak var carButton: UIButton!
-    //var _weatherView
+    @IBOutlet weak var footballButton: UIButton!
+
+    @IBOutlet weak var basketballButton: UIButton!
+    
+    @IBOutlet weak var newsButton: UIButton!
+    
+    @IBOutlet weak var jiazhaoButton: UIButton!
+    @IBOutlet weak var wifiButton: UIButton!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -149,18 +155,33 @@ class HomeViewController: UIViewController{
         
     }
     
+    @IBAction func footballAction(sender: UIButton)
+    {
+    }
+    
+    @IBAction func basketballAction(sender: UIButton)
+    {
+    }
+    
+    @IBAction func newsAction(sender: UIButton)
+    {
+    }
+    
+    @IBAction func jiazhaoAction(sender: UIButton)
+    
+    {
+    }
+    
+    @IBAction func wifiAction(sender: UIButton)
+    {
+    }
     @IBAction func trainAction(sender: UIButton)
     {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let target = storyboard.instantiateViewControllerWithIdentifier("trainViewController")
 //        self.navigationController?.pushViewController(target, animated:true)
     }
-    @IBAction func carAction(sender: UIButton)
-    {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let target = storyboard.instantiateViewControllerWithIdentifier("carViewController")
-//        self.navigationController?.pushViewController(target, animated:true)
-    }
+
     
     
 }
