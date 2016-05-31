@@ -29,8 +29,9 @@ class MoreTableViewCell: UITableViewCell {
 
         for index in 0...6
         {
-          let night = (weather[index].valueForKey("info")?.valueForKey("night")![2])!
-          nightArray.addObject(night)
+
+           let night = weather[index].valueForKey("info")?.valueForKey("night")?.objectAtIndex(2)
+           nightArray.addObject(night!)
  
         }
         print(nightArray[0].integerValue)

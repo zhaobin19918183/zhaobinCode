@@ -50,6 +50,7 @@
 		A1D9B3AF1CF31E4900B78808 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D9B3AE1CF31E4900B78808 /* HomeViewController.swift */; };
 		A1D9B3B51CF3242B00B78808 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = A1D9B3B41CF3242B00B78808 /* 7.png */; };
 		A1D9B3B71CF33FD800B78808 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D9B3B61CF33FD800B78808 /* Reach.swift */; };
+		A1DDB8A91CFDAD180048F123 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DDB8A81CFDAD180048F123 /* MAMapKit.framework */; };
 		BD489FD71CEAA9340010806B /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD489FD61CEAA9340010806B /* WeatherView.swift */; };
 		BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FD81CEAA9500010806B /* WeatherView.xib */; };
 		BD489FDC1CEAAC110010806B /* TrafficView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FDB1CEAAC110010806B /* TrafficView.xib */; };
@@ -82,7 +83,6 @@
 		BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE5F1CEC37FD007A315E /* CoreTelephony.framework */; };
 		BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE611CEC3805007A315E /* Security.framework */; };
 		BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */; };
-		BDE7DEBE1CFD2AEB0006560E /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE7DEBD1CFD2AEB0006560E /* MAMapKit.framework */; };
 		BDE7DEC51CFD30210006560E /* pickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7DEC31CFD30210006560E /* pickerViewController.swift */; };
 		BDE7DEC61CFD30210006560E /* pickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE7DEC41CFD30210006560E /* pickerViewController.xib */; };
 		BDE7DEC91CFD7ADB0006560E /* basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE7DEC71CFD7ADB0006560E /* basketball.png */; };
@@ -195,6 +195,7 @@
 		A1D9B3AE1CF31E4900B78808 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A1D9B3B41CF3242B00B78808 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		A1D9B3B61CF33FD800B78808 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
+		A1DDB8A81CFDAD180048F123 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BD489FD61CEAA9340010806B /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherView.swift; path = ../WeatherView.swift; sourceTree = "<group>"; };
 		BD489FD81CEAA9500010806B /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherView.xib; path = ../WeatherView.xib; sourceTree = "<group>"; };
 		BD489FDB1CEAAC110010806B /* TrafficView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrafficView.xib; sourceTree = "<group>"; };
@@ -229,7 +230,6 @@
 		BDE6AE5F1CEC37FD007A315E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		BDE6AE611CEC3805007A315E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		BDE7DEBD1CFD2AEB0006560E /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BDE7DEC31CFD30210006560E /* pickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pickerViewController.swift; sourceTree = "<group>"; };
 		BDE7DEC41CFD30210006560E /* pickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = pickerViewController.xib; sourceTree = "<group>"; };
 		BDE7DEC71CFD7ADB0006560E /* basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basketball.png; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 			files = (
 				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
-				BDE7DEBE1CFD2AEB0006560E /* MAMapKit.framework in Frameworks */,
+				A1DDB8A91CFDAD180048F123 /* MAMapKit.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
 				BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */,
 				BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */,
@@ -362,7 +362,7 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BDE7DEBD1CFD2AEB0006560E /* MAMapKit.framework */,
+				A1DDB8A81CFDAD180048F123 /* MAMapKit.framework */,
 				BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */,
 				BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */,
 				BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */,
@@ -685,6 +685,7 @@
 				TargetAttributes = {
 					A13ABAC01CE9F79000F8D01B = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 7N9H446X4W;
 					};
 					A13ABAD41CE9F79100F8D01B = {
 						CreatedOnToolsVersion = 7.3;
@@ -885,6 +886,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -933,6 +935,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1011,6 +1014,8 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1019,7 +1024,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
 			};
 			name = Debug;
@@ -1079,6 +1084,8 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1087,7 +1094,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 			};
 			name = Release;
 		};

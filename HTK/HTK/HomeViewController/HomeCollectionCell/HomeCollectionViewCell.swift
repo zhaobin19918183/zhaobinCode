@@ -10,6 +10,7 @@ import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var backgroundimagView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
