@@ -51,80 +51,43 @@
                                     <constraint firstAttribute="height" constant="180" id="iBK-52-JjE"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Yfb-FY-b9c">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3zP-wP-zgC">
                                 <rect key="frame" x="0.0" y="314" width="320" height="205"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DkM-L6-mb8">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wof-2n-JGo">
-                                                <rect key="frame" x="0.0" y="0.0" width="107" height="103"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="汽车" image="football.png"/>
-                                                <connections>
-                                                    <action selector="footballAction:" destination="gFw-Kd-exn" eventType="touchDown" id="Obj-H6-RV2"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xk5-Ng-wWg">
-                                                <rect key="frame" x="107" y="0.0" width="106" height="103"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="火车" image="basketball.png" backgroundImage="huoche.png"/>
-                                                <connections>
-                                                    <action selector="basketballAction:" destination="gFw-Kd-exn" eventType="touchDown" id="HS6-iv-WSs"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pg3-fE-vYL">
-                                                <rect key="frame" x="213" y="0.0" width="107" height="103"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="公交" image="news.png"/>
-                                                <connections>
-                                                    <action selector="newsAction:" destination="gFw-Kd-exn" eventType="touchDown" id="mSm-90-lLT"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FqN-BC-rgK">
-                                        <rect key="frame" x="0.0" y="103" width="320" height="102"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCv-J5-opW">
-                                                <rect key="frame" x="0.0" y="0.0" width="107" height="102"/>
-                                                <color key="backgroundColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Button" image="jiazhao.jpg"/>
-                                                <connections>
-                                                    <action selector="jiazhaoAction:" destination="gFw-Kd-exn" eventType="touchDown" id="PcP-jl-3ba"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dg-x3-OSq">
-                                                <rect key="frame" x="107" y="0.0" width="106" height="102"/>
-                                                <color key="backgroundColor" red="0.12549019610000001" green="0.56470588239999997" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Button" image="wifi.jpg"/>
-                                                <connections>
-                                                    <action selector="wifiAction:" destination="gFw-Kd-exn" eventType="touchDown" id="sRO-iz-4yP"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6f-l2-z5L">
-                                                <rect key="frame" x="213" y="0.0" width="107" height="102"/>
-                                                <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="敬请期待...">
-                                                    <color key="titleColor" red="0.94117647059999998" green="0.63137254899999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="uz4-oA-16c">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="40" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCellID" id="UbC-If-wnT">
+                                        <rect key="frame" x="20" y="40" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="gFw-Kd-exn" id="lCh-Ox-3LF"/>
+                                    <outlet property="delegate" destination="gFw-Kd-exn" id="T6h-ZD-wdj"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3zP-wP-zgC" firstAttribute="leading" secondItem="bMr-tU-5s5" secondAttribute="leading" id="64Z-X2-QeR"/>
                             <constraint firstItem="xPJ-8a-mwn" firstAttribute="leading" secondItem="bMr-tU-5s5" secondAttribute="leading" id="DaH-nf-NDY"/>
-                            <constraint firstItem="Yfb-FY-b9c" firstAttribute="leading" secondItem="bMr-tU-5s5" secondAttribute="leading" id="Ftl-IW-OzL"/>
-                            <constraint firstItem="oPf-nn-xsm" firstAttribute="top" secondItem="Yfb-FY-b9c" secondAttribute="bottom" id="IIp-xf-n8x"/>
-                            <constraint firstAttribute="trailing" secondItem="Yfb-FY-b9c" secondAttribute="trailing" id="T28-1l-mx3"/>
                             <constraint firstItem="2sX-UK-th5" firstAttribute="top" secondItem="Scb-X4-XdS" secondAttribute="bottom" id="UQ0-Ae-fMI"/>
                             <constraint firstItem="xPJ-8a-mwn" firstAttribute="top" secondItem="2sX-UK-th5" secondAttribute="bottom" id="V2T-Pt-qF8"/>
+                            <constraint firstAttribute="trailing" secondItem="3zP-wP-zgC" secondAttribute="trailing" id="eYj-Z7-Vj2"/>
                             <constraint firstAttribute="trailing" secondItem="xPJ-8a-mwn" secondAttribute="trailing" id="g4R-76-ysc"/>
+                            <constraint firstItem="3zP-wP-zgC" firstAttribute="top" secondItem="xPJ-8a-mwn" secondAttribute="bottom" id="i5b-kp-jwE"/>
+                            <constraint firstItem="oPf-nn-xsm" firstAttribute="top" secondItem="3zP-wP-zgC" secondAttribute="bottom" id="jDb-gO-gJ7"/>
                             <constraint firstItem="2sX-UK-th5" firstAttribute="leading" secondItem="bMr-tU-5s5" secondAttribute="leading" id="pTc-eK-mav"/>
-                            <constraint firstItem="Yfb-FY-b9c" firstAttribute="top" secondItem="xPJ-8a-mwn" secondAttribute="bottom" id="pde-Xg-DMO"/>
                             <constraint firstAttribute="trailing" secondItem="2sX-UK-th5" secondAttribute="trailing" id="uf3-96-iQO"/>
                         </constraints>
                     </view>
@@ -134,11 +97,7 @@
                     <connections>
                         <outlet property="_traffic" destination="xPJ-8a-mwn" id="5hr-Wl-mDg"/>
                         <outlet property="_weather" destination="2sX-UK-th5" id="IR9-DQ-Mcy"/>
-                        <outlet property="basketballButton" destination="xk5-Ng-wWg" id="gZa-56-47n"/>
-                        <outlet property="footballButton" destination="wof-2n-JGo" id="gzV-o5-unM"/>
-                        <outlet property="jiazhaoButton" destination="RCv-J5-opW" id="Qaj-xZ-LNF"/>
-                        <outlet property="newsButton" destination="pg3-fE-vYL" id="gbB-w1-nml"/>
-                        <outlet property="wifiButton" destination="3Dg-x3-OSq" id="Ue3-49-wiT"/>
+                        <outlet property="collectionView" destination="3zP-wP-zgC" id="ERA-cZ-EXz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kO1-jz-KOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -330,12 +289,4 @@
             <point key="canvasLocation" x="-1209.5" y="1994.5"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="basketball.png" width="215" height="215"/>
-        <image name="football.png" width="208" height="208"/>
-        <image name="huoche.png" width="400" height="400"/>
-        <image name="jiazhao.jpg" width="200" height="189"/>
-        <image name="news.png" width="300" height="291"/>
-        <image name="wifi.jpg" width="200" height="200"/>
-    </resources>
 </document>

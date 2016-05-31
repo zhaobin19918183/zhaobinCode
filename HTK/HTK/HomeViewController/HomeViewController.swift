@@ -11,23 +11,15 @@ import MapKit
 import CoreLocation
 import Alamofire
 
-class HomeViewController: UIViewController{
+class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
     
     
     weak var weatherEntity : WeatherEntity?
     weak var dataDic  = NSMutableDictionary()
     @IBOutlet weak var _weather: WeatherView!
-   
     @IBOutlet weak var _traffic: TrafficView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var footballButton: UIButton!
-
-    @IBOutlet weak var basketballButton: UIButton!
-    
-    @IBOutlet weak var newsButton: UIButton!
-    
-    @IBOutlet weak var jiazhaoButton: UIButton!
-    @IBOutlet weak var wifiButton: UIButton!
     
     override func viewDidLoad()
     {
@@ -36,9 +28,33 @@ class HomeViewController: UIViewController{
         weatherCoredata()
         weatherMoreButtonAction()
         _traffic.pickerView = self.parentViewController!
+        collectionView.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellID")
+        
        
         
     }
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return 5
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
+    {
+        return 1;
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    {
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCellID", forIndexPath: indexPath) as? HomeCollectionViewCell
+        if cell == nil
+        {
+            let nibArray : NSArray = NSBundle.mainBundle().loadNibNamed("HomeCollectionViewCell", owner:self, options:nil)
+            cell = nibArray.firstObject as? HomeCollectionViewCell
+        }
+            return cell!
+        
+    }
+
 
     func weatherMoreButtonAction()
     {
@@ -154,27 +170,7 @@ class HomeViewController: UIViewController{
        
         
     }
-    
-    @IBAction func footballAction(sender: UIButton)
-    {
-    }
-    
-    @IBAction func basketballAction(sender: UIButton)
-    {
-    }
-    
-    @IBAction func newsAction(sender: UIButton)
-    {
-    }
-    
-    @IBAction func jiazhaoAction(sender: UIButton)
-    
-    {
-    }
-    
-    @IBAction func wifiAction(sender: UIButton)
-    {
-    }
+ 
     @IBAction func trainAction(sender: UIButton)
     {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
