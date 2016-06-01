@@ -9,10 +9,25 @@
 import UIKit
 
 class HeaderTableViewCell: UITableViewCell {
-
+ 
+    
+    @IBOutlet weak var busNameLabel: UILabel!
+    
+    @IBOutlet weak var firstStationLabel: UILabel!
+    @IBOutlet weak var fitstStationNameLabel: UILabel!
+    @IBOutlet weak var endStationLabel: UILabel!
+    
+    @IBOutlet weak var endStationNameLabel: UILabel!
+    
+    @IBOutlet weak var firstBusLabel: UILabel!
+    @IBOutlet weak var firstBusTimeLabel: UILabel!
+    
+    @IBOutlet weak var endBusLabel: UILabel!
+    @IBOutlet weak var endBusTImeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+      
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

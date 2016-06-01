@@ -78,9 +78,17 @@ class CarViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
         return (detailDic.valueForKey("result")?.objectAtIndex(section).valueForKey("stationdes")?.count)!
         
     }
+    //MARK:HeaderTitle
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let  headerCell = tableView.dequeueReusableCellWithIdentifier("HeaderTableViewCell") as! HeaderTableViewCell
-       // headerCell.backgroundColor = UIColor.whiteColor()
+        headerCell.busNameLabel.text = detailDic.valueForKey("result")?.objectAtIndex(section).valueForKey("key_name") as? String
+        headerCell.fitstStationNameLabel.text = detailDic.valueForKey("result")?.objectAtIndex(section).valueForKey("terminal_name") as? String
+        headerCell.endStationNameLabel.text =  detailDic.valueForKey("result")?.objectAtIndex(section).valueForKey("front_name") as? String
+         headerCell.firstBusTimeLabel.text =  detailDic.valueForKey("result")?.objectAtIndex(section).valueForKey("start_time") as? String
+        
+         headerCell.endBusTImeLabel.text =  detailDic.valueForKey("result")?.objectAtIndex(section).valueForKey("end_time") as? String
+        
+        
         return headerCell
     }
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
