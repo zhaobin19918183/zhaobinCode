@@ -19,6 +19,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     @IBOutlet weak var _weather: WeatherView!
     @IBOutlet weak var _traffic: TrafficView!
     @IBOutlet weak var collectionView: UICollectionView!
+   
+    var progressHUD : MBProgressHUD!
     var imageArray = ["basketball","football","news","wifi.jpg","jiazhao.jpg"]
     
     override func viewDidLoad()
@@ -70,31 +72,85 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         _traffic.searchButton.addTarget(self, action:#selector(HomeViewController.searchTraffic), forControlEvents: UIControlEvents.TouchDown)
         
     }
-    //MARK:
+    //MARK:searchTraffic
     func searchTraffic()
     {
         
-        let string1 = "http://op.juhe.cn/189/bus/busline"
+        self.prpgressHud()
+//        DataLogicJudgment()
+        alamofireRequestData()
         
-        Alamofire.request(.GET, string1, parameters: ["dtype":"","city":"大连","bus":"3","key":"f572b98772d02d5b4ec1164e8b6fb0f0"]).response { (request, response, data, error) in
+     
+    }
+    //MARK: 数据逻辑判断 回家在做 啦啦啦啦
+    func  DataLogicJudgment()
+    {
+    //1.查询方式选择
+    //2.线路添加,换乘方案,站台.
+       //|| _traffic.lineTextField.text == nil
+        if _traffic.project == nil
+        {
+         self.progressHUD.hide(true, afterDelay:0)
+          //数据添加错误
+        }
+        else
             
-            let jsonDic = try! NSJSONSerialization.JSONObjectWithData(data!,
-                options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
-            print(jsonDic?.allKeys)
-            if jsonDic?.valueForKey("result") == nil
+        {
+            print("判断 ===== \(_traffic.project)")
+            if _traffic.project == "1"
             {
+             //线路
+                
+            }
+            if _traffic.project == "2"
+            {
+              //车辆
+            }
+            if _traffic.project == "3"
+            {
+               //换乘
+            }
+        
+        }
+        
+    
+    }
+    //MARK:申请数据
+    func  alamofireRequestData()
+    {
+    
+        let string1 = "http://op.juhe.cn/189/bus/busline"
+        Alamofire.request(.GET, string1, parameters: ["dtype":"","city":"大连","bus":"3","key":"f572b98772d02d5b4ec1164e8b6fb0f0"]).response { (request, response, data, error) in
+            let jsonDic = try! NSJSONSerialization.JSONObjectWithData(data!,
+                options: NSJSONReadingOptions.MutableContainers) as! NSMutableDictionary
             
+            self.progressHUD.hide(true, afterDelay:0.25)
+            if jsonDic.valueForKey("result") == nil
+            {
+                
             }else
             {
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let target = storyboard.instantiateViewControllerWithIdentifier("carViewController")
-//                self.navigationController?.pushViewController(target, animated:true)
- 
-            }
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let target = storyboard.instantiateViewControllerWithIdentifier("carViewController")
+                as! CarViewController
+                target.detailDic = jsonDic
+                self.navigationController?.pushViewController(target, animated:true)
                 
+            }
+            
         }
     }
+
+    //MARK:MBProgressHUD
+    func prpgressHud()
+    {
+        progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        progressHUD.labelText = "正在申请数据......"
+        //背景渐变效果
+        progressHUD.dimBackground = true
     
+
+    }
     func moreWeather()
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

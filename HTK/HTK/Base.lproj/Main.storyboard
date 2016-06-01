@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dlk-we-A8P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dlk-we-A8P">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -172,9 +172,28 @@
                     <view key="view" contentMode="scaleToFill" id="zME-06-cwN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6UG-n0-aUz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="eOT-9x-xkR" id="KQo-lQ-60w"/>
+                                    <outlet property="delegate" destination="eOT-9x-xkR" id="90t-8U-pT7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6UG-n0-aUz" secondAttribute="trailing" id="ELr-qk-Xvw"/>
+                            <constraint firstItem="6UG-n0-aUz" firstAttribute="leading" secondItem="zME-06-cwN" secondAttribute="leading" id="F2v-1z-UA6"/>
+                            <constraint firstItem="6UG-n0-aUz" firstAttribute="top" secondItem="zME-06-cwN" secondAttribute="top" id="YJJ-mh-185"/>
+                            <constraint firstItem="Tfz-ry-M60" firstAttribute="top" secondItem="6UG-n0-aUz" secondAttribute="bottom" id="d0y-8t-w8y"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="bustableview" destination="6UG-n0-aUz" id="QFG-Wo-Ydf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTu-3c-496" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

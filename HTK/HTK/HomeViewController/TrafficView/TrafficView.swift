@@ -20,6 +20,7 @@ class TrafficView:UIView,trafficViewPickerDelegate,UITextFieldDelegate {
     @IBOutlet weak var lineTextField: UITextField!
     
     @IBOutlet weak var searchButton: UIButton!
+    var project:String!
     
     
     
@@ -86,7 +87,7 @@ class TrafficView:UIView,trafficViewPickerDelegate,UITextFieldDelegate {
  
     func trafficViewprojectPickerViewString(project: String)
     {
-        
+        self.project = project
         print("查询方式====\(project)")
         if project == "0" {
             projectButton.hidden = true
@@ -104,7 +105,8 @@ class TrafficView:UIView,trafficViewPickerDelegate,UITextFieldDelegate {
             else
             {
                 projectButton.hidden = false
-                lineTextField.hidden = true
+                lineTextField.placeholder = "目标站点"
+               
         }
         
         

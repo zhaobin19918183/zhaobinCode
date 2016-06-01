@@ -8,16 +8,29 @@
 
 import UIKit
 
-class CarViewController: UIViewController {
-
+class CarViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    
+    @IBOutlet weak var bustableview: UITableView!
+    var  navigationItemtitle = String()
+    var  detailDic = NSMutableDictionary()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "汽车"
+        self.navigationItem.title = "公交"
         self.tabBarController?.tabBar.hidden = true
-        let nextItem=UIBarButtonItem(title:"Home",style:.Plain,target:self,action:#selector(backHomeView))
+        let nextItem=UIBarButtonItem(title:" < 返回 ",style:.Plain,target:self,action:#selector(backHomeView))
         self.navigationItem.leftBarButtonItem = nextItem
-        // Do any additional setup after loading the view.
+        busCarPresentationData()
     }
+    
+    
+    
+    func busCarPresentationData()
+    {
+        print(detailDic.valueForKey("result")![0].allKeys)
+        
+        
+    }
+    
     func backHomeView()
     {
         
@@ -25,22 +38,58 @@ class CarViewController: UIViewController {
         self.tabBarController?.tabBar.hidden = false
         
     }
-
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        
+        let initIdentifier : String = "BusCarTableViewCell"
+        var cell : BusCarTableViewCell? = tableView.dequeueReusableCellWithIdentifier(initIdentifier) as? BusCarTableViewCell
+        if cell == nil
+        {
+            let nibArray = NSBundle.mainBundle().loadNibNamed("BusCarTableViewCell", owner: self, options: nil)
+            cell = nibArray.first as? BusCarTableViewCell
+        }
+        cell?.busCarStationdesList(detailDic.valueForKey("result")?.objectAtIndex(indexPath.section).valueForKey("stationdes") as! NSMutableArray, index: indexPath)
+        cell!.selectionStyle = UITableViewCellSelectionStyle.None
+        return cell!
+        
     }
-    */
-
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return  60
+    }
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
+        
+        return "\(detailDic.valueForKey("result")!.objectAtIndex(section).valueForKey("key_name") as! String )     首班车:\(detailDic.valueForKey("result")!.objectAtIndex(section).valueForKey("start_time") as! String )     末班车:\(detailDic.valueForKey("result")!.objectAtIndex(section).valueForKey("end_time") as! String)  "
+            
+    
+    }
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return (detailDic.valueForKey("result")?.objectAtIndex(section).valueForKey("stationdes")?.count)!
+        
+    }
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+        return 20
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        
+        return (detailDic.valueForKey("result")?.count)!
+    }
+    
+    
+    
+    
 }
