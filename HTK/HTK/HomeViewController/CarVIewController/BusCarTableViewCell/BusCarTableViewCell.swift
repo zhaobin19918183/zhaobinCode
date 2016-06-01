@@ -25,9 +25,7 @@ class BusCarTableViewCell: UITableViewCell {
     {
 
         numberDetailLabel.text = array.objectAtIndex(index.row).valueForKey("stationNum") as? String
-         nameDetailLabel.text = array.objectAtIndex(index.row).valueForKey("name") as? String
-        
-        
+        nameDetailLabel.text = array.objectAtIndex(index.row).valueForKey("name") as? String
         
     }
     override func setSelected(selected: Bool, animated: Bool) {

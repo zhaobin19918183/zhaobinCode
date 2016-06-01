@@ -53,6 +53,8 @@
 		BD23099A1CFE68AB0034B8AE /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2309991CFE68AB0034B8AE /* MAMapKit.framework */; };
 		BD23099E1CFEAF1D0034B8AE /* BusCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */; };
 		BD23099F1CFEAF1D0034B8AE /* BusCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */; };
+		BD2309A21CFEDACE0034B8AE /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */; };
+		BD2309A31CFEDACE0034B8AE /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD2309A11CFEDACE0034B8AE /* HeaderTableViewCell.xib */; };
 		BD489FD71CEAA9340010806B /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD489FD61CEAA9340010806B /* WeatherView.swift */; };
 		BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FD81CEAA9500010806B /* WeatherView.xib */; };
 		BD489FDC1CEAAC110010806B /* TrafficView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FDB1CEAAC110010806B /* TrafficView.xib */; };
@@ -200,6 +202,8 @@
 		BD2309991CFE68AB0034B8AE /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusCarTableViewCell.swift; sourceTree = "<group>"; };
 		BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusCarTableViewCell.xib; sourceTree = "<group>"; };
+		BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		BD2309A11CFEDACE0034B8AE /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		BD489FD61CEAA9340010806B /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherView.swift; path = ../WeatherView.swift; sourceTree = "<group>"; };
 		BD489FD81CEAA9500010806B /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherView.xib; path = ../WeatherView.xib; sourceTree = "<group>"; };
 		BD489FDB1CEAAC110010806B /* TrafficView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrafficView.xib; sourceTree = "<group>"; };
@@ -518,6 +522,8 @@
 			children = (
 				BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */,
 				BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */,
+				BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */,
+				BD2309A11CFEDACE0034B8AE /* HeaderTableViewCell.xib */,
 			);
 			path = BusCarTableViewCell;
 			sourceTree = "<group>";
@@ -754,6 +760,7 @@
 				BD6D3B081CFC143A0000ED34 /* 33.png in Resources */,
 				BD489FDC1CEAAC110010806B /* TrafficView.xib in Resources */,
 				A1CDFF621CF5DE3A00F50491 /* WaatherTableViewCell.xib in Resources */,
+				BD2309A31CFEDACE0034B8AE /* HeaderTableViewCell.xib in Resources */,
 				BDE7DECA1CFD7ADB0006560E /* football.png in Resources */,
 				BD23099F1CFEAF1D0034B8AE /* BusCarTableViewCell.xib in Resources */,
 				BDE7DECC1CFD7B700006560E /* news.png in Resources */,
@@ -801,6 +808,7 @@
 				BD6D3B181CFC1D3E0000ED34 /* PDLineChart.swift in Sources */,
 				BD6D3B171CFC1D3E0000ED34 /* PDChartAxesComponent.swift in Sources */,
 				BD6D3B191CFC1D3E0000ED34 /* PDPieChart.swift in Sources */,
+				BD2309A21CFEDACE0034B8AE /* HeaderTableViewCell.swift in Sources */,
 				A13ABB3E1CE9FDC200F8D01B /* UIButton+WebCache.m in Sources */,
 				A13ABB3D1CE9FDC200F8D01B /* SDWebImagePrefetcher.m in Sources */,
 				A13ABB3B1CE9FDC200F8D01B /* SDWebImageDownloaderOperation.m in Sources */,

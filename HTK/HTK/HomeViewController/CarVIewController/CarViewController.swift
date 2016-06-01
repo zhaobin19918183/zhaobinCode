@@ -78,9 +78,14 @@ class CarViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
         return (detailDic.valueForKey("result")?.objectAtIndex(section).valueForKey("stationdes")?.count)!
         
     }
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let  headerCell = tableView.dequeueReusableCellWithIdentifier("HeaderTableViewCell") as! HeaderTableViewCell
+       // headerCell.backgroundColor = UIColor.whiteColor()
+        return headerCell
+    }
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
-        return 20
+        return 40
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
