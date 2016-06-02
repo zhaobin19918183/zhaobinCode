@@ -9,10 +9,13 @@
 import UIKit
 
 class QuoteCell: UITableViewCell {
-    @IBOutlet var actAndSceneLabel: UILabel!
-    @IBOutlet var characterLabel: UILabel!
+    
     @IBOutlet var quotationTextView: UITextView!
     
+    @IBOutlet weak var stationsNameDetail: UILabel!
+    @IBOutlet weak var stationsNumberDetail: UILabel!
+    @IBOutlet weak var stationsName: UILabel!
+    @IBOutlet weak var stationsNumber: UILabel!
     var quotation: Quotation!
     
     var longPressRecognizer: UILongPressGestureRecognizer?
@@ -21,10 +24,10 @@ class QuoteCell: UITableViewCell {
     func setTheQuotation(newQuotation: Quotation) {
         
         quotation = newQuotation
+        stationsNumberDetail.text = quotation.stationNum
+        stationsNameDetail.text = quotation.name
             
-        self.characterLabel.text = quotation.character
-        self.actAndSceneLabel.text = "Act \(quotation.act), Scene \(quotation.scene)"
-        self.quotationTextView.text = quotation.quotation
+      
     }
     
     // 长按手势判定

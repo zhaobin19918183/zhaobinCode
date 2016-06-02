@@ -10,6 +10,11 @@ import Foundation
 
 // 引言类，定义了单元格的数据结构
 class Quotation: NSObject {
+    var code :String = ""
+    var xy :String = ""
+    var stationNum: String = ""
+    var name: String = ""
+    
     var character: String = ""
     var act: Int = 0
     var scene: Int = 0

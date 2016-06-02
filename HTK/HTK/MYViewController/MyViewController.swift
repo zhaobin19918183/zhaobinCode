@@ -63,7 +63,7 @@ class MyViewController: UITableViewController,SectionHeaderViewDelegate{
         // 为表视图添加缩放手势识别
         let pinchRecognizer = UIPinchGestureRecognizer(target: self, action:#selector(MyViewController.handlePinch(_:)))
         self.tableView.addGestureRecognizer(pinchRecognizer)
-        
+         self.tableView.separatorStyle  = UITableViewCellSeparatorStyle.None
         // 设置Header的高度
         self.tableView.sectionHeaderHeight = CGFloat(HeaderHeight)
         
@@ -121,7 +121,7 @@ class MyViewController: UITableViewController,SectionHeaderViewDelegate{
     // MARK: 单元格数量
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 这个方法返回对应的section有多少个元素，也就是多少行
-        let sectionInfo: SectionInfo = self.playe![section] as! SectionInfo
+        let sectionInfo: SectionInfo = self.sectionInfoArray[section] as! SectionInfo
         let numStoriesInSection = sectionInfo.play.quotations.count
         let sectionOpen = sectionInfo.open!
         
@@ -139,7 +139,7 @@ class MyViewController: UITableViewController,SectionHeaderViewDelegate{
             cell.longPressRecognizer = longPressRecognizer
         }
         
-        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         let play:Play = (self.sectionInfoArray[indexPath.section] as! SectionInfo).play
         cell.quotation = play.quotations[indexPath.row] as! Quotation
         
@@ -357,12 +357,31 @@ class MyViewController: UITableViewController,SectionHeaderViewDelegate{
     func played() -> NSArray {
         
         if playe == nil {
+
+            let playDict = NSArray(contentsOfFile: NSHomeDirectory() + "/Documents/busCar.plist")
             
-           // let url = NSBundle.mainBundle().URLForResource("PlaysAndQuotations", withExtension: "plist")
-            let playDictionariesArray = NSArray(contentsOfFile: NSHomeDirectory() + "/Documents/busCar.plist")
-  
-            playe = playDictionariesArray?.objectAtIndex(0) as? NSMutableArray
-      
+            let playName = playDict?.objectAtIndex(0) as! NSMutableArray
+             playe = NSMutableArray(capacity: playName.count)
+            
+            for playDictionary in playName {
+                let play: Play! = Play()
+                play.name = playDictionary.valueForKey("name") as! String
+                
+                let quotationDictionaries:NSArray = playDictionary["stationdes"] as! NSArray
+                
+                let quotations = NSMutableArray(capacity: quotationDictionaries.count)
+                
+                for quotationDictionary in quotationDictionaries {
+                    
+                    let quotationDic:NSDictionary = quotationDictionary as! NSDictionary
+                    let quotation: Quotation = Quotation()
+                    
+                    quotation.setValuesForKeysWithDictionary(quotationDic as! [String : AnyObject])
+                    quotations.addObject(quotation)
+                }
+                play.quotations = quotations
+                playe!.addObject(play)
+            }
         }
         
         return playe!
