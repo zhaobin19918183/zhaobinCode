@@ -50,7 +50,6 @@
 		A1D9B3AF1CF31E4900B78808 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D9B3AE1CF31E4900B78808 /* HomeViewController.swift */; };
 		A1D9B3B51CF3242B00B78808 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = A1D9B3B41CF3242B00B78808 /* 7.png */; };
 		A1D9B3B71CF33FD800B78808 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D9B3B61CF33FD800B78808 /* Reach.swift */; };
-		A1FAB5061CFF05CE00A28A64 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1FAB5051CFF05CE00A28A64 /* MAMapKit.framework */; };
 		BD23099E1CFEAF1D0034B8AE /* BusCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */; };
 		BD23099F1CFEAF1D0034B8AE /* BusCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */; };
 		BD2309A21CFEDACE0034B8AE /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */; };
@@ -77,6 +76,15 @@
 		BD8682241CEC5C2F004AC3E4 /* WeatherDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */; };
 		BD97F3621CF6A269005FF681 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD97F3601CF6A269005FF681 /* MoreTableViewCell.swift */; };
 		BD97F3631CF6A269005FF681 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD97F3611CF6A269005FF681 /* MoreTableViewCell.xib */; };
+		BD99C6F61D0000E200636939 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD99C6F51D0000E200636939 /* MAMapKit.framework */; };
+		BD99C6FD1D00011000636939 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99C6F71D00011000636939 /* Play.swift */; };
+		BD99C6FE1D00011000636939 /* Quotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99C6F81D00011000636939 /* Quotation.swift */; };
+		BD99C6FF1D00011000636939 /* HighlightingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99C6F91D00011000636939 /* HighlightingTextView.swift */; };
+		BD99C7001D00011000636939 /* QuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99C6FA1D00011000636939 /* QuoteCell.swift */; };
+		BD99C7011D00011000636939 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99C6FB1D00011000636939 /* SectionHeaderView.swift */; };
+		BD99C7021D00011000636939 /* SectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99C6FC1D00011000636939 /* SectionInfo.swift */; };
+		BD99C7041D00024500636939 /* PlaysAndQuotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD99C7031D00024500636939 /* PlaysAndQuotations.plist */; };
+		BD99C7061D00029100636939 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD99C7051D00029100636939 /* SectionHeaderView.xib */; };
 		BDE6AE341CEC0277007A315E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE331CEC0277007A315E /* MapKit.framework */; };
 		BDE6AE561CEC37CE007A315E /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */; };
 		BDE6AE581CEC37D6007A315E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE571CEC37D6007A315E /* libz.tbd */; };
@@ -198,7 +206,6 @@
 		A1D9B3AE1CF31E4900B78808 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A1D9B3B41CF3242B00B78808 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		A1D9B3B61CF33FD800B78808 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
-		A1FAB5051CFF05CE00A28A64 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusCarTableViewCell.swift; sourceTree = "<group>"; };
 		BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusCarTableViewCell.xib; sourceTree = "<group>"; };
 		BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -227,6 +234,15 @@
 		BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDAO.swift; sourceTree = "<group>"; };
 		BD97F3601CF6A269005FF681 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		BD97F3611CF6A269005FF681 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreTableViewCell.xib; sourceTree = "<group>"; };
+		BD99C6F51D0000E200636939 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		BD99C6F71D00011000636939 /* Play.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Play.swift; sourceTree = "<group>"; };
+		BD99C6F81D00011000636939 /* Quotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quotation.swift; sourceTree = "<group>"; };
+		BD99C6F91D00011000636939 /* HighlightingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightingTextView.swift; sourceTree = "<group>"; };
+		BD99C6FA1D00011000636939 /* QuoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteCell.swift; sourceTree = "<group>"; };
+		BD99C6FB1D00011000636939 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		BD99C6FC1D00011000636939 /* SectionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionInfo.swift; sourceTree = "<group>"; };
+		BD99C7031D00024500636939 /* PlaysAndQuotations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaysAndQuotations.plist; sourceTree = "<group>"; };
+		BD99C7051D00029100636939 /* SectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
 		BDE6AE331CEC0277007A315E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		BDE6AE571CEC37D6007A315E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -254,7 +270,7 @@
 			files = (
 				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
-				A1FAB5061CFF05CE00A28A64 /* MAMapKit.framework in Frameworks */,
+				BD99C6F61D0000E200636939 /* MAMapKit.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
 				BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */,
 				BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */,
@@ -368,7 +384,7 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A1FAB5051CFF05CE00A28A64 /* MAMapKit.framework */,
+				BD99C6F51D0000E200636939 /* MAMapKit.framework */,
 				BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */,
 				BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */,
 				BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */,
@@ -435,7 +451,15 @@
 		A13ABAF71CE9F7B300F8D01B /* MYViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BD99C7031D00024500636939 /* PlaysAndQuotations.plist */,
 				A13ABAF81CE9F7B300F8D01B /* MyViewController.swift */,
+				BD99C6F71D00011000636939 /* Play.swift */,
+				BD99C6F81D00011000636939 /* Quotation.swift */,
+				BD99C6F91D00011000636939 /* HighlightingTextView.swift */,
+				BD99C6FA1D00011000636939 /* QuoteCell.swift */,
+				BD99C6FB1D00011000636939 /* SectionHeaderView.swift */,
+				BD99C6FC1D00011000636939 /* SectionInfo.swift */,
+				BD99C7051D00029100636939 /* SectionHeaderView.xib */,
 			);
 			path = MYViewController;
 			sourceTree = "<group>";
@@ -744,7 +768,9 @@
 				BDE7DECE1CFD7BDE0006560E /* jiazhao.jpg in Resources */,
 				A1CDFF591CF5C44700F50491 /* 1.png in Resources */,
 				A13ABACF1CE9F79000F8D01B /* LaunchScreen.storyboard in Resources */,
+				BD99C7041D00024500636939 /* PlaysAndQuotations.plist in Resources */,
 				A13ABACC1CE9F79000F8D01B /* Assets.xcassets in Resources */,
+				BD99C7061D00029100636939 /* SectionHeaderView.xib in Resources */,
 				A1CDFF5B1CF5CA0100F50491 /* car.png in Resources */,
 				A13ABACA1CE9F79000F8D01B /* Main.storyboard in Resources */,
 				BDE7DED01CFD7C1A0006560E /* wifi.jpg in Resources */,
@@ -798,9 +824,11 @@
 				BD489FD71CEAA9340010806B /* WeatherView.swift in Sources */,
 				A13ABB411CE9FDC200F8D01B /* UIImage+WebP.m in Sources */,
 				A13ABAC51CE9F79000F8D01B /* AppDelegate.swift in Sources */,
+				BD99C6FD1D00011000636939 /* Play.swift in Sources */,
 				A13ABB421CE9FDC200F8D01B /* UIImageView+HighlightedWebCache.m in Sources */,
 				A13ABAFC1CE9F7B300F8D01B /* MyViewController.swift in Sources */,
 				A13ABAFD1CE9F7B300F8D01B /* NoteViewController.swift in Sources */,
+				BD99C7011D00011000636939 /* SectionHeaderView.swift in Sources */,
 				BD6D3B181CFC1D3E0000ED34 /* PDLineChart.swift in Sources */,
 				BD6D3B171CFC1D3E0000ED34 /* PDChartAxesComponent.swift in Sources */,
 				BD6D3B191CFC1D3E0000ED34 /* PDPieChart.swift in Sources */,
@@ -813,10 +841,13 @@
 				BD6D3B061CFC054B0000ED34 /* RefreshControl.swift in Sources */,
 				A11C02991CEB4EF600797AC9 /* WeatherEntity.m in Sources */,
 				A13ABB401CE9FDC200F8D01B /* UIImage+MultiFormat.m in Sources */,
+				BD99C6FF1D00011000636939 /* HighlightingTextView.swift in Sources */,
 				A13ABB0E1CE9FAD600F8D01B /* FolderManager.swift in Sources */,
+				BD99C6FE1D00011000636939 /* Quotation.swift in Sources */,
 				BD6D3B151CFC1D3E0000ED34 /* PDBarChart.swift in Sources */,
 				A13ABB471CE9FE0500F8D01B /* MBProgressHUD.m in Sources */,
 				A13ABB371CE9FDC200F8D01B /* SDImageCache.m in Sources */,
+				BD99C7021D00011000636939 /* SectionInfo.swift in Sources */,
 				A13ABB021CE9F9C400F8D01B /* BaseDAO.swift in Sources */,
 				BD97F3621CF6A269005FF681 /* MoreTableViewCell.swift in Sources */,
 				BD8682221CEC52D3004AC3E4 /* CityEntity.m in Sources */,
@@ -829,6 +860,7 @@
 				A13ABB3A1CE9FDC200F8D01B /* SDWebImageDownloader.m in Sources */,
 				A1CDFF611CF5DE3A00F50491 /* WaatherTableViewCell.swift in Sources */,
 				A11C02981CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m in Sources */,
+				BD99C7001D00011000636939 /* QuoteCell.swift in Sources */,
 				BDE7DEC51CFD30210006560E /* pickerViewController.swift in Sources */,
 				A1D9B3B71CF33FD800B78808 /* Reach.swift in Sources */,
 				BD23099E1CFEAF1D0034B8AE /* BusCarTableViewCell.swift in Sources */,
@@ -1040,6 +1072,10 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1048,7 +1084,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
 			};
 			name = Debug;
@@ -1114,6 +1150,10 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1122,7 +1162,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -33,7 +33,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         _traffic.pickerView = self.parentViewController!
         collectionView.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellID")
         
-        
+        alamofireRequestData()
         
     }
     //TODO:CollectionView
@@ -78,7 +78,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         
         self.prpgressHud()
 //        DataLogicJudgment()
-        alamofireRequestData()
+//        alamofireRequestData()
         
      
     }
@@ -124,19 +124,25 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             let jsonDic = try! NSJSONSerialization.JSONObjectWithData(data!,
                 options: NSJSONReadingOptions.MutableContainers) as! NSMutableDictionary
             
-            self.progressHUD.hide(true, afterDelay:0.25)
-            if jsonDic.valueForKey("result") == nil
-            {
-                
-            }else
-            {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let target = storyboard.instantiateViewControllerWithIdentifier("carViewController")
-                as! CarViewController
-                target.detailDic = jsonDic
-                self.navigationController?.pushViewController(target, animated:true)
-                
-            }
+            //self.progressHUD.hide(true, afterDelay:0.25)
+
+            let array = NSArray(objects:jsonDic.valueForKey("result")!)
+            let filePath:String = NSHomeDirectory() + "/Documents/busCar.plist"
+            array.writeToFile(filePath, atomically: true)
+            
+//            
+//            if jsonDic.valueForKey("result") == nil
+//            {
+//                
+//            }else
+//            {
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let target = storyboard.instantiateViewControllerWithIdentifier("carViewController")
+//                as! CarViewController
+//                target.detailDic = jsonDic
+//                self.navigationController?.pushViewController(target, animated:true)
+//                
+//            }
             
         }
     }
