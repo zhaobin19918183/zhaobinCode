@@ -85,6 +85,7 @@
 		BDD1F03B1D010D3200816B95 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1F0341D010D3200816B95 /* SectionHeaderView.swift */; };
 		BDD1F03C1D010D3200816B95 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD1F0351D010D3200816B95 /* SectionHeaderView.xib */; };
 		BDD1F03D1D010D3200816B95 /* SectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1F0361D010D3200816B95 /* SectionInfo.swift */; };
+		BDD1F0411D0148AE00816B95 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1F0401D0148AE00816B95 /* NetWorkManager.swift */; };
 		BDE6AE341CEC0277007A315E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE331CEC0277007A315E /* MapKit.framework */; };
 		BDE6AE561CEC37CE007A315E /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */; };
 		BDE6AE581CEC37D6007A315E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE571CEC37D6007A315E /* libz.tbd */; };
@@ -243,6 +244,7 @@
 		BDD1F0341D010D3200816B95 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		BDD1F0351D010D3200816B95 /* SectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
 		BDD1F0361D010D3200816B95 /* SectionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionInfo.swift; sourceTree = "<group>"; };
+		BDD1F0401D0148AE00816B95 /* NetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
 		BDE6AE331CEC0277007A315E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		BDE6AE571CEC37D6007A315E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -439,6 +441,8 @@
 			isa = PBXGroup;
 			children = (
 				A1D9B3AE1CF31E4900B78808 /* HomeViewController.swift */,
+				BDD1F0401D0148AE00816B95 /* NetWorkManager.swift */,
+				BDD1F03F1D01219E00816B95 /* basketballViewController */,
 				BDE7DED11CFD8C3A0006560E /* HomeCollectionCell */,
 				BD489FDA1CEAAC060010806B /* TrafficView */,
 				BD489FD51CEAA9180010806B /* WeatherView */,
@@ -655,6 +659,13 @@
 			path = busCarTableVIewCell;
 			sourceTree = "<group>";
 		};
+		BDD1F03F1D01219E00816B95 /* basketballViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = basketballViewController;
+			sourceTree = "<group>";
+		};
 		BDE7DEB61CFD20930006560E /* pickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,7 +753,7 @@
 				TargetAttributes = {
 					A13ABAC01CE9F79000F8D01B = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 7N9H446X4W;
+						DevelopmentTeam = W4WR9Z32J8;
 					};
 					A13ABAD41CE9F79100F8D01B = {
 						CreatedOnToolsVersion = 7.3;
@@ -843,6 +854,7 @@
 				A13ABB421CE9FDC200F8D01B /* UIImageView+HighlightedWebCache.m in Sources */,
 				A13ABAFD1CE9F7B300F8D01B /* NoteViewController.swift in Sources */,
 				BD6D3B181CFC1D3E0000ED34 /* PDLineChart.swift in Sources */,
+				BDD1F0411D0148AE00816B95 /* NetWorkManager.swift in Sources */,
 				BDD1F03D1D010D3200816B95 /* SectionInfo.swift in Sources */,
 				BD6D3B171CFC1D3E0000ED34 /* PDChartAxesComponent.swift in Sources */,
 				BDD1F03A1D010D3200816B95 /* QuoteCell.swift in Sources */,
@@ -954,8 +966,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lilly Enterprise (97JAFF8YXJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lilly Enterprise (97JAFF8YXJ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -979,6 +991,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_LIBTOOLFLAGS = "";
+				PROVISIONING_PROFILE = "1d4b016a-d2b5-450a-982c-2eaed96b31a0";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1003,8 +1016,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lilly Enterprise (97JAFF8YXJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lilly Enterprise (97JAFF8YXJ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1021,6 +1034,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_LIBTOOLFLAGS = "";
+				PROVISIONING_PROFILE = "1d4b016a-d2b5-450a-982c-2eaed96b31a0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1103,7 +1117,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-Objc";
-				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lilly.innocellence.eadverse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
@@ -1187,7 +1201,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-Objc";
-				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lilly.innocellence.eadverse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";

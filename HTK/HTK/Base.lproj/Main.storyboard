@@ -142,25 +142,6 @@
             </objects>
             <point key="canvasLocation" x="1634" y="173"/>
         </scene>
-        <!--Picker View Controller-->
-        <scene sceneID="J71-wv-9ku">
-            <objects>
-                <viewController restorationIdentifier="pickerViewController" storyboardIdentifier="pickerViewController" id="bOX-XE-kiB" customClass="pickerViewController" customModule="HTK" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KaM-jM-h6V"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZZa-ZI-V6b"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2aD-OX-Dsq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yhk-r4-1HH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2107" y="173"/>
-        </scene>
         <!--Car View Controller-->
         <scene sceneID="kxa-ED-udq">
             <objects>

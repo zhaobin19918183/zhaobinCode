@@ -19,7 +19,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     @IBOutlet weak var _weather: WeatherView!
     @IBOutlet weak var _traffic: TrafficView!
     @IBOutlet weak var collectionView: UICollectionView!
-   
+    
     var progressHUD : MBProgressHUD!
     var imageArray = ["basketball","football","news","wifi.jpg","jiazhao.jpg"]
     
@@ -27,16 +27,21 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     {
         super.viewDidLoad()
         
+    
         weatherCoredata()
         weatherMoreButtonAction()
         trafficViewSearchButtonAction()
         _traffic.pickerView = self.parentViewController!
         collectionView.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellID")
+//        NetWorkManager.alamofireRequestData("大连", bus: "10", url: "http://op.juhe.cn/189/bus/busline") { (response) in
+//            print(1111111)
+//        }
         
-      
+        
+        
         
     }
-    //TODO:CollectionView
+    //MARK:CollectionView
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return 5
@@ -60,6 +65,12 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    {
+        print(indexPath.row)
+    }
+    
+    
     //MARK:weatherMoreButtonAction
     func weatherMoreButtonAction()
     {
@@ -77,21 +88,21 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     {
         
         self.prpgressHud()
-//        DataLogicJudgment()
+        //        DataLogicJudgment()
         alamofireRequestData()
         
-     
+        
     }
     //MARK: 数据逻辑判断 回家在做 啦啦啦啦
     func  DataLogicJudgment()
     {
-    //1.查询方式选择
-    //2.线路添加,换乘方案,站台.
-       //|| _traffic.lineTextField.text == nil
+        //1.查询方式选择
+        //2.线路添加,换乘方案,站台.
+        //|| _traffic.lineTextField.text == nil
         if _traffic.project == nil
         {
-         self.progressHUD.hide(true, afterDelay:0)
-          //数据添加错误
+            self.progressHUD.hide(true, afterDelay:0)
+            //数据添加错误
         }
         else
             
@@ -99,53 +110,64 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             print("判断 ===== \(_traffic.project)")
             if _traffic.project == "1"
             {
-             //线路
+                //线路
                 
             }
             if _traffic.project == "2"
             {
-              //车辆
+                //车辆
             }
             if _traffic.project == "3"
             {
-               //换乘
+                //换乘
             }
-        
+            
         }
         
-    
+        
     }
-    //MARK:申请数据
+    //MARK:bus申请数据
     func  alamofireRequestData()
     {
-    
-        let string1 = "http://op.juhe.cn/189/bus/busline"
-        Alamofire.request(.GET, string1, parameters: ["dtype":"","city":"大连","bus":"3","key":"f572b98772d02d5b4ec1164e8b6fb0f0"]).response { (request, response, data, error) in
-            let jsonDic = try! NSJSONSerialization.JSONObjectWithData(data!,
-                options: NSJSONReadingOptions.MutableContainers) as! NSMutableDictionary
-            
-            self.progressHUD.hide(true, afterDelay:0.25)
+        
+        NetWorkManager.alamofireRequestData("大连", bus: "10", url: "http://op.juhe.cn/189/bus/busline")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.successAction), name: "alamofireSuccess", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.errorAction), name: "alamofireError", object: nil)
 
-            let array = NSArray(objects:jsonDic.valueForKey("result")!)
-            let filePath:String = NSHomeDirectory() + "/Documents/busCar.plist"
-            array.writeToFile(filePath, atomically: true)
-            
-            
-            if jsonDic.valueForKey("result") == nil
-            {
-                
-            }else
-            {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let target = storyboard.instantiateViewControllerWithIdentifier("busTableViewViewController")
-                as! BusTableViewController
-                self.navigationController?.pushViewController(target, animated:true)
-                
-            }
-            
-        }
     }
-
+    
+    //MARK:error
+    func errorAction()
+    {
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "alamofireError", object: nil)
+        let okAction:UIAlertAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default) {
+            (action: UIAlertAction!) -> Void in
+        }
+        AlertControllerAction("警告", message: "公交线路输入错误", firstAction:okAction, seccondAction: nil)
+     
+    }
+    //MARK:AlertControllerAction
+    func AlertControllerAction(title:String , message:String ,firstAction:UIAlertAction,seccondAction:UIAlertAction?)
+    {
+        
+        let alert  = UIAlertController(title:title, message:message, preferredStyle:UIAlertControllerStyle.Alert)
+        alert.addAction(firstAction)
+        alert.addAction(seccondAction!)
+        self.presentViewController(alert, animated:true, completion:nil)
+    }
+    //MARK:successAction
+    func successAction()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let target = storyboard.instantiateViewControllerWithIdentifier("busTableViewViewController")
+            as! BusTableViewController
+        self.progressHUD.hide(true, afterDelay:0.25)
+        self.navigationController?.pushViewController(target, animated:true)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "alamofireSuccess", object: nil)
+       
+    }
+    
     //MARK:MBProgressHUD
     func prpgressHud()
     {
@@ -153,16 +175,17 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         progressHUD.labelText = "正在申请数据......"
         //背景渐变效果
         progressHUD.dimBackground = true
-    
-
+        
+        
     }
+    //MARK:moreWeather
     func moreWeather()
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let target = storyboard.instantiateViewControllerWithIdentifier("moreWeatherViewController")
         self.navigationController?.pushViewController(target, animated:true)
     }
-    
+    //MARK:netWorkAlert
     
     func netWorkAlert()
     {
@@ -216,26 +239,26 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         if (!(NSUserDefaults.standardUserDefaults().boolForKey("everLaunched"))) {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey:"everLaunched")
             
-            switch status {
-            case .Unknown, .Offline:
+            if  status.description == "Offline"{
                 netWorkAlert()
-            case .Online(.WWAN):
-                weatherAlamofire()
-            case .Online(.WiFi):
+            }
+            else
+            {
                 weatherAlamofire()
             }
+            
             
         }
         else
         {
-            switch status {
-            case .Unknown, .Offline:
+            if  status.description == "Offline"{
                 dataFunc()
-            case .Online(.WWAN):
-                dataFunc()
-            case .Online(.WiFi):
+            }
+            else
+            {
                 weatherAlamofire()
             }
+            
         }
         
     }
@@ -266,14 +289,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         
     }
     
-    @IBAction func trainAction(sender: UIButton)
-    {
-        //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //        let target = storyboard.instantiateViewControllerWithIdentifier("trainViewController")
-        //        self.navigationController?.pushViewController(target, animated:true)
-    }
-    
-    
+
     
 }
 

@@ -18,6 +18,7 @@ class AlamofireView: NSObject
     {
        
         let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory, domain: .UserDomainMask)
+        
          Alamofire.download(.GET, url, destination: destination).progress(complete)
         
     }
