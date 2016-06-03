@@ -120,7 +120,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     {
     
         let string1 = "http://op.juhe.cn/189/bus/busline"
-        Alamofire.request(.GET, string1, parameters: ["dtype":"","city":"大连","bus":"406","key":"f572b98772d02d5b4ec1164e8b6fb0f0"]).response { (request, response, data, error) in
+        Alamofire.request(.GET, string1, parameters: ["dtype":"","city":"大连","bus":"3","key":"f572b98772d02d5b4ec1164e8b6fb0f0"]).response { (request, response, data, error) in
             let jsonDic = try! NSJSONSerialization.JSONObjectWithData(data!,
                 options: NSJSONReadingOptions.MutableContainers) as! NSMutableDictionary
             
@@ -137,9 +137,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             }else
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let target = storyboard.instantiateViewControllerWithIdentifier("carViewController")
-                as! CarViewController
-                target.detailDic = jsonDic
+                let target = storyboard.instantiateViewControllerWithIdentifier("busTableViewViewController")
+                as! BusTableViewController
                 self.navigationController?.pushViewController(target, animated:true)
                 
             }

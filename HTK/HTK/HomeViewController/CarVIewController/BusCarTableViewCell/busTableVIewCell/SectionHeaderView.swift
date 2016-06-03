@@ -47,13 +47,13 @@ class SectionHeaderView: UITableViewHeaderFooterView {
         // 如果确信是用户进行的操作，将给委托传递相应的消息
         if userAction {
             if self.disclosureButton.selected {
-                if self.delegate.respondsToSelector(#selector(MyViewController.sectionHeaderView(_:sectionClosed:))) {
+                if self.delegate.respondsToSelector(#selector(BusTableViewController.sectionHeaderView(_:sectionClosed:))) {
                    
                     self.delegate.sectionHeaderView(self, sectionOpened: self.section)
                 }
             }
             else {
-                if self.delegate.respondsToSelector(#selector(MyViewController.sectionHeaderView(_:sectionClosed:))) {
+                if self.delegate.respondsToSelector(#selector(BusTableViewController.sectionHeaderView(_:sectionClosed:))) {
                     
                     self.delegate.sectionHeaderView(self, sectionClosed: self.section)
                 }
