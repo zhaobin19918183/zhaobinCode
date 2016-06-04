@@ -15,9 +15,9 @@ import Alamofire
 class NetWorkManager: NSObject
 {
     var progressHUD : MBProgressHUD!
-    
+   
 
-    //NSURLRequest?, NSHTTPURLResponse?, NSData?, NSError?
+    //MARK:alamofireRequestData
     static func  alamofireRequestData(city:String ,bus:String,url:String)
     {
         let parameters = [
@@ -56,4 +56,44 @@ class NetWorkManager: NSObject
 
         }
     }
+    //MARK:alamofireWeatherRequestData
+    static func  alamofireWeatherRequestData(city:String ,url:String,key:String,dtype:String)
+    {
+        let parameters = [
+            "dtype":dtype,
+            "cityname":city,
+            "key": key,
+            ]
+        weak var weatherEntity : WeatherEntity?
+        weak var dataDic  = NSMutableDictionary()
+          
+        Alamofire.request(.GET, url,parameters: parameters).response{(request, response, data, error) in
+            
+            let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
+                options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
+            dataDic = jsonArr?.valueForKey("result")?.valueForKey("data") as?NSMutableDictionary
+            if(NSUserDefaults.standardUserDefaults().valueForKey("first") != nil)
+            {
+                weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
+                WeatherDAO.deleteEntityWith(Entity: weatherEntity!)
+                WeatherDAO.createNewPassWordData(dataDic!)
+                
+            }
+            else
+            {
+                
+                WeatherDAO.createNewPassWordData(dataDic!)
+                NSUserDefaults.standardUserDefaults().setObject("first", forKey: "first")
+                
+            }
+            NSNotificationCenter.defaultCenter().postNotificationName("WeatherData", object: nil)
+            //self.dataFunc()
+            
+        }
+        
+    }
+
 }
+
+
+

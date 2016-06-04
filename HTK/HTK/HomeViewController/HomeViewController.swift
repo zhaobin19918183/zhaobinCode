@@ -141,8 +141,9 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     {
         
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "alamofireError", object: nil)
-        let okAction:UIAlertAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default) {
+        let okAction:UIAlertAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default) {
             (action: UIAlertAction!) -> Void in
+             self.progressHUD.hide(true, afterDelay:0.25)
         }
         AlertControllerAction("警告", message: "公交线路输入错误", firstAction:okAction, seccondAction: nil)
      
@@ -153,7 +154,11 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         
         let alert  = UIAlertController(title:title, message:message, preferredStyle:UIAlertControllerStyle.Alert)
         alert.addAction(firstAction)
-        alert.addAction(seccondAction!)
+        if seccondAction != nil
+        {
+          alert.addAction(seccondAction!)
+        }
+   
         self.presentViewController(alert, animated:true, completion:nil)
     }
     //MARK:successAction
@@ -199,40 +204,20 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         alert.addAction(okAction)
         self.presentViewController(alert, animated:true, completion:nil)
     }
-    //MARK:Alamofire
+    //MARK:weatherAlamofire
     func weatherAlamofire()
     {
-        
-        let string1 = "http://op.juhe.cn/onebox/weather/query?cityname="
-        let string2 = "&dtype=&key=e527188bbf687ccccac5350acf9a151f"
-        let string  = "大连"
-        let urlString = string.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-        let string3 = string1+urlString!+string2
-        Alamofire.request(.GET, string3).response{(request, response, data, error) in
-            
-            let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
-                options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
-            self.dataDic = jsonArr?.valueForKey("result")?.valueForKey("data") as?NSMutableDictionary
-            if(NSUserDefaults.standardUserDefaults().valueForKey("first") != nil)
-            {
-                self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
-                WeatherDAO.deleteEntityWith(Entity: self.weatherEntity!)
-                WeatherDAO.createNewPassWordData(self.dataDic!)
-                
-            }
-            else
-            {
-                
-                WeatherDAO.createNewPassWordData(self.dataDic!)
-                NSUserDefaults.standardUserDefaults().setObject("first", forKey: "first")
-                
-            }
-            
-            self.dataFunc()
-            
-        }
+         NetWorkManager.alamofireWeatherRequestData("大连", url: "http://op.juhe.cn/onebox/weather/query", key: "e527188bbf687ccccac5350acf9a151f", dtype: "json")
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.weatherData), name: "WeatherData", object: nil)
         
     }
+    func weatherData()
+    {
+    
+       self.dataFunc()
+       NSNotificationCenter.defaultCenter().removeObserver(self, name: "WeatherData", object: nil)
+    }
+    
     func weatherCoredata()
     {
         let status = Reach().connectionStatus()
