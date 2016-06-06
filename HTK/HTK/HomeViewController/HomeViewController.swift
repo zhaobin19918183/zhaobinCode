@@ -129,8 +129,27 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     //MARK:bus申请数据
     func  alamofireRequestData()
     {
+        let username = _traffic.lineTextField.rx_text
+        username.subscribeNext {
+            if $0 == ""
+            {
+                let okAction:UIAlertAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default) {
+                    (action: UIAlertAction!) -> Void in
+                    self.progressHUD.hide(true, afterDelay:0.25)
+                }
+                self.AlertControllerAction("警告", message: "公交线路输入为空", firstAction:okAction, seccondAction: nil)
+                self.progressHUD.hide(true, afterDelay:0)
+               
+            }
+            else
+            {
+               NetWorkManager.alamofireRequestData("大连", bus:$0, url: "http://op.juhe.cn/189/bus/busline")
+            }
+         
+            
+        }
         
-        NetWorkManager.alamofireRequestData("大连", bus: "10", url: "http://op.juhe.cn/189/bus/busline")
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.successAction), name: "alamofireSuccess", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.errorAction), name: "alamofireError", object: nil)
 

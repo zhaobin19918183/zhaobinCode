@@ -8,6 +8,10 @@
 
 import UIKit
 
+import RxSwift
+
+import RxCocoa
+
 class TrafficView:UIView,trafficViewPickerDelegate,UITextFieldDelegate {
     
     @IBOutlet var trafficView: UIView!
@@ -44,6 +48,7 @@ class TrafficView:UIView,trafficViewPickerDelegate,UITextFieldDelegate {
         typeButton.tag = 2
         projectButton.tag = 1
         lineTextField.delegate = self
+
         self.addSubview(trafficView)
         
         cityLabel.text = "大连"

@@ -345,12 +345,12 @@ class BusTableViewController: UITableViewController,SectionHeaderViewDelegate{
         
         if playe == nil {
             
-            let filePath = NSBundle.mainBundle().pathForResource("dataList.plist", ofType:nil )
-            let listData = NSArray(contentsOfFile: filePath!)!
+//            let filePath = NSBundle.mainBundle().pathForResource("dataList.plist", ofType:nil )
+//            let listData = NSArray(contentsOfFile: filePath!)!
             
-           // let playDict = NSArray(contentsOfFile: NSHomeDirectory() + "/Documents/dataList.plist")
+            let playDict = NSArray(contentsOfFile: NSHomeDirectory() + "/Documents/busCar.plist")
             
-            let playName = listData.objectAtIndex(0) as! NSMutableArray
+            let playName = playDict!.objectAtIndex(0) as! NSMutableArray
             
             playe = NSMutableArray(capacity: playName.count)
             
