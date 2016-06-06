@@ -41,15 +41,15 @@ class NetWorkManager: NSObject
                     options: NSJSONReadingOptions.MutableContainers) as! NSMutableDictionary
                 
               
-                if jsonDic.valueForKey("result") == nil
+                if (jsonDic.valueForKey("reason") as! String) == "city or bus may not matching"
                 {
                    NSNotificationCenter.defaultCenter().postNotificationName("alamofireError", object: nil)
                 }
                 else
                 {   NSNotificationCenter.defaultCenter().postNotificationName("alamofireSuccess", object: nil)
                     let array = NSArray(objects:jsonDic.valueForKey("result")!)
-                    let filePath:String = NSHomeDirectory() + "/Documents/busCar.plist"
-                     array.writeToFile(filePath, atomically: true)
+                    let filePath = NSBundle.mainBundle().pathForResource("dataList.plist", ofType:nil )
+                     array.writeToFile(filePath!, atomically: true)
                 }
 
               }

@@ -48,7 +48,13 @@ class TrafficView:UIView,trafficViewPickerDelegate,UITextFieldDelegate {
         typeButton.tag = 2
         projectButton.tag = 1
         lineTextField.delegate = self
-
+//        let username = lineTextField.rx_text
+//        username.subscribeNext {
+//            //print($0)
+//            let text  = $0
+//            print(text)
+//        }
+        
         self.addSubview(trafficView)
         
         cityLabel.text = "大连"

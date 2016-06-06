@@ -22,6 +22,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     var progressHUD : MBProgressHUD!
     var imageArray = ["basketball","football","news","wifi.jpg","jiazhao.jpg"]
+    var lineString:String!
     
     override func viewDidLoad()
     {
@@ -33,14 +34,30 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         trafficViewSearchButtonAction()
         _traffic.pickerView = self.parentViewController!
         collectionView.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellID")
-//        NetWorkManager.alamofireRequestData("大连", bus: "10", url: "http://op.juhe.cn/189/bus/busline") { (response) in
-//            print(1111111)
-//        }
-        
-        
-        
+        rxTextFieldCocoa()
         
     }
+    //MARK:lineTextField 实时监控
+    func rxTextFieldCocoa()
+    {
+        let username = _traffic.lineTextField.rx_text
+    
+        username.subscribeNext {
+         
+            let text = $0
+            print(text)
+     
+            if $0 == ""
+            {
+                self.lineString = nil
+            }
+            else
+            {
+                self.lineString  = $0
+            }
+        }
+    }
+   
     //MARK:CollectionView
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
@@ -121,34 +138,23 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             {
                 //换乘
             }
-            
         }
-        
-        
     }
     //MARK:bus申请数据
     func  alamofireRequestData()
     {
-        let username = _traffic.lineTextField.rx_text
-        username.subscribeNext {
-            if $0 == ""
-            {
-                let okAction:UIAlertAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default) {
-                    (action: UIAlertAction!) -> Void in
-                    self.progressHUD.hide(true, afterDelay:0.25)
-                }
-                self.AlertControllerAction("警告", message: "公交线路输入为空", firstAction:okAction, seccondAction: nil)
-                self.progressHUD.hide(true, afterDelay:0)
-               
+        if self.lineString == nil {
+            let okAction:UIAlertAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default) {
+                (action: UIAlertAction!) -> Void in
+                self.progressHUD.hide(true, afterDelay:0.25)
             }
-            else
-            {
-               NetWorkManager.alamofireRequestData("大连", bus:$0, url: "http://op.juhe.cn/189/bus/busline")
-            }
-         
-            
+            AlertControllerAction("警告", message: "公交线路输入为空", firstAction:okAction, seccondAction: nil)
+            self.progressHUD.hide(true, afterDelay:0)
         }
-        
+        else
+        {
+          NetWorkManager.alamofireRequestData("大连", bus:self.lineString, url: "http://op.juhe.cn/189/bus/busline")
+        }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.successAction), name: "alamofireSuccess", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.errorAction), name: "alamofireError", object: nil)
@@ -162,7 +168,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "alamofireError", object: nil)
         let okAction:UIAlertAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default) {
             (action: UIAlertAction!) -> Void in
-             self.progressHUD.hide(true, afterDelay:0.25)
+             self.progressHUD.hide(true, afterDelay:0)
         }
         AlertControllerAction("警告", message: "公交线路输入错误", firstAction:okAction, seccondAction: nil)
      
@@ -191,7 +197,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "alamofireSuccess", object: nil)
        
     }
-    
     //MARK:MBProgressHUD
     func prpgressHud()
     {
@@ -199,8 +204,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         progressHUD.labelText = "正在申请数据......"
         //背景渐变效果
         progressHUD.dimBackground = true
-        
-        
     }
     //MARK:moreWeather
     func moreWeather()
@@ -250,8 +253,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             {
                 weatherAlamofire()
             }
-            
-            
         }
         else
         {
@@ -262,11 +263,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             {
                 weatherAlamofire()
             }
-            
         }
-        
     }
-    
     
     func  dataFunc()
     {
@@ -288,16 +286,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         let moon = " 农历 :  "
         _weather.dateLabel.text = (dictionary.valueForKey("date") as? String)!+moon+(dictionary.valueForKey("moon") as? String)!
         _weather.weatherLabel.text = info
-        
-        
-        
+    
     }
     
-
-    
 }
-
-
-
-
-

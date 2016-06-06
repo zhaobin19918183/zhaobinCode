@@ -75,7 +75,6 @@
 		BD8682241CEC5C2F004AC3E4 /* WeatherDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */; };
 		BD97F3621CF6A269005FF681 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD97F3601CF6A269005FF681 /* MoreTableViewCell.swift */; };
 		BD97F3631CF6A269005FF681 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD97F3611CF6A269005FF681 /* MoreTableViewCell.xib */; };
-		BDD1F0281D01092800816B95 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD1F0271D01092800816B95 /* MAMapKit.framework */; };
 		BDD1F02A1D010AE900816B95 /* BusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1F0291D010AE900816B95 /* BusTableViewController.swift */; };
 		BDD1F02C1D010BFD00816B95 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1F02B1D010BFD00816B95 /* MyViewController.swift */; };
 		BDD1F0371D010D3200816B95 /* HighlightingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1F0301D010D3200816B95 /* HighlightingTextView.swift */; };
@@ -104,6 +103,12 @@
 		BDE7DED01CFD7C1A0006560E /* wifi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BDE7DECF1CFD7C1A0006560E /* wifi.jpg */; };
 		BDE7DED41CFD8C4C0006560E /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7DED21CFD8C4C0006560E /* HomeCollectionViewCell.swift */; };
 		BDE7DED51CFD8C4C0006560E /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE7DED31CFD8C4C0006560E /* HomeCollectionViewCell.xib */; };
+		BDECC3F11D05527D0077D8CA /* dataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDECC3F01D05527D0077D8CA /* dataList.plist */; };
+		BDECC3F31D0552870077D8CA /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDECC3F21D0552870077D8CA /* MAMapKit.framework */; };
+		BDECC3F61D05533A0077D8CA /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDECC3F41D05533A0077D8CA /* RxCocoa.framework */; };
+		BDECC3F71D05533A0077D8CA /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDECC3F41D05533A0077D8CA /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BDECC3F81D05533A0077D8CA /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDECC3F51D05533A0077D8CA /* RxSwift.framework */; };
+		BDECC3F91D05533A0077D8CA /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDECC3F51D05533A0077D8CA /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,7 +135,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BDECC3F71D05533A0077D8CA /* RxCocoa.framework in Embed Frameworks */,
 				A13ABB081CE9FA6D00F8D01B /* Alamofire.framework in Embed Frameworks */,
+				BDECC3F91D05533A0077D8CA /* RxSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,7 +241,6 @@
 		BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDAO.swift; sourceTree = "<group>"; };
 		BD97F3601CF6A269005FF681 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		BD97F3611CF6A269005FF681 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreTableViewCell.xib; sourceTree = "<group>"; };
-		BDD1F0271D01092800816B95 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BDD1F0291D010AE900816B95 /* BusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusTableViewController.swift; path = ../BusTableViewController.swift; sourceTree = "<group>"; };
 		BDD1F02B1D010BFD00816B95 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BDD1F0301D010D3200816B95 /* HighlightingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightingTextView.swift; sourceTree = "<group>"; };
@@ -263,6 +269,10 @@
 		BDE7DECF1CFD7C1A0006560E /* wifi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wifi.jpg; sourceTree = "<group>"; };
 		BDE7DED21CFD8C4C0006560E /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDE7DED31CFD8C4C0006560E /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		BDECC3F01D05527D0077D8CA /* dataList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dataList.plist; sourceTree = "<group>"; };
+		BDECC3F21D0552870077D8CA /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		BDECC3F41D05533A0077D8CA /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = "<group>"; };
+		BDECC3F51D05533A0077D8CA /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,7 +282,9 @@
 			files = (
 				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
-				BDD1F0281D01092800816B95 /* MAMapKit.framework in Frameworks */,
+				BDECC3F31D0552870077D8CA /* MAMapKit.framework in Frameworks */,
+				BDECC3F61D05533A0077D8CA /* RxCocoa.framework in Frameworks */,
+				BDECC3F81D05533A0077D8CA /* RxSwift.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
 				BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */,
 				BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */,
@@ -327,6 +339,9 @@
 		A13ABAB81CE9F79000F8D01B = {
 			isa = PBXGroup;
 			children = (
+				BDECC3F41D05533A0077D8CA /* RxCocoa.framework */,
+				BDECC3F51D05533A0077D8CA /* RxSwift.framework */,
+				BDECC3F01D05527D0077D8CA /* dataList.plist */,
 				A13ABAC31CE9F79000F8D01B /* HTK */,
 				A1129BA31CEDE1CD00285AE5 /* image */,
 				A13ABAD81CE9F79100F8D01B /* HTKTests */,
@@ -386,7 +401,7 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BDD1F0271D01092800816B95 /* MAMapKit.framework */,
+				BDECC3F21D0552870077D8CA /* MAMapKit.framework */,
 				BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */,
 				BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */,
 				BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */,
@@ -796,6 +811,7 @@
 				A1CDFF591CF5C44700F50491 /* 1.png in Resources */,
 				A13ABACF1CE9F79000F8D01B /* LaunchScreen.storyboard in Resources */,
 				A13ABACC1CE9F79000F8D01B /* Assets.xcassets in Resources */,
+				BDECC3F11D05527D0077D8CA /* dataList.plist in Resources */,
 				A1CDFF5B1CF5CA0100F50491 /* car.png in Resources */,
 				A13ABACA1CE9F79000F8D01B /* Main.storyboard in Resources */,
 				BDE7DED01CFD7C1A0006560E /* wifi.jpg in Resources */,
@@ -1112,6 +1128,11 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1196,6 +1217,11 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
