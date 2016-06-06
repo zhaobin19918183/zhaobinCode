@@ -48,8 +48,22 @@ class NetWorkManager: NSObject
                 else
                 {   NSNotificationCenter.defaultCenter().postNotificationName("alamofireSuccess", object: nil)
                     let array = NSArray(objects:jsonDic.valueForKey("result")!)
-                    let filePath = NSBundle.mainBundle().pathForResource("dataList.plist", ofType:nil )
-                     array.writeToFile(filePath!, atomically: true)
+                    
+//                    let filePath = NSBundle.mainBundle().pathForResource("dataList.plist", ofType:nil )
+//                    array.writeToFile(filePath!, atomically: true)
+                    
+                   let documentPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+                    let documentPath = documentPaths[0]
+
+                    print(documentPath)
+                    
+                    let filePath1:String = documentPath + "/dataList.plist"
+                    array.writeToFile(filePath1, atomically: true)
+                    
+                    
+                   let succ = array.writeToFile(filePath1, atomically:true)
+                    print(succ)
+                    
                 }
 
               }

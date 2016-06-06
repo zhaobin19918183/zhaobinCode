@@ -41,6 +41,8 @@
 		A13ABB441CE9FDC200F8D01B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB341CE9FDC200F8D01B /* UIView+WebCacheOperation.m */; };
 		A13ABB471CE9FE0500F8D01B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */; };
 		A173A6781CFC6889006AF7EE /* huoche.png in Resources */ = {isa = PBXBuildFile; fileRef = A173A6771CFC6889006AF7EE /* huoche.png */; };
+		A1B5C3261D0590D000F03139 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B5C3251D0590D000F03139 /* MAMapKit.framework */; };
+		A1B5C3281D05944400F03139 /* dataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1B5C3271D05944400F03139 /* dataList.plist */; };
 		A1CDFF591CF5C44700F50491 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1CDFF581CF5C44700F50491 /* 1.png */; };
 		A1CDFF5B1CF5CA0100F50491 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = A1CDFF5A1CF5CA0100F50491 /* car.png */; };
 		A1CDFF5D1CF5D1F800F50491 /* gongjiao.png in Resources */ = {isa = PBXBuildFile; fileRef = A1CDFF5C1CF5D1F800F50491 /* gongjiao.png */; };
@@ -103,8 +105,6 @@
 		BDE7DED01CFD7C1A0006560E /* wifi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BDE7DECF1CFD7C1A0006560E /* wifi.jpg */; };
 		BDE7DED41CFD8C4C0006560E /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7DED21CFD8C4C0006560E /* HomeCollectionViewCell.swift */; };
 		BDE7DED51CFD8C4C0006560E /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE7DED31CFD8C4C0006560E /* HomeCollectionViewCell.xib */; };
-		BDECC3F11D05527D0077D8CA /* dataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDECC3F01D05527D0077D8CA /* dataList.plist */; };
-		BDECC3F31D0552870077D8CA /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDECC3F21D0552870077D8CA /* MAMapKit.framework */; };
 		BDECC3F61D05533A0077D8CA /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDECC3F41D05533A0077D8CA /* RxCocoa.framework */; };
 		BDECC3F71D05533A0077D8CA /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDECC3F41D05533A0077D8CA /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDECC3F81D05533A0077D8CA /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDECC3F51D05533A0077D8CA /* RxSwift.framework */; };
@@ -205,6 +205,8 @@
 		A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "HTK/ Resources/MBProgressHUD.m"; sourceTree = SOURCE_ROOT; };
 		A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = " Resources/Bridging-Header.h"; sourceTree = "<group>"; };
 		A173A6771CFC6889006AF7EE /* huoche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huoche.png; sourceTree = "<group>"; };
+		A1B5C3251D0590D000F03139 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		A1B5C3271D05944400F03139 /* dataList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dataList.plist; sourceTree = "<group>"; };
 		A1CDFF581CF5C44700F50491 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		A1CDFF5A1CF5CA0100F50491 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
 		A1CDFF5C1CF5D1F800F50491 /* gongjiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gongjiao.png; sourceTree = "<group>"; };
@@ -213,9 +215,9 @@
 		A1D9B3AE1CF31E4900B78808 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A1D9B3B41CF3242B00B78808 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		A1D9B3B61CF33FD800B78808 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
-		BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusCarTableViewCell.swift; path = ../BusCarTableViewCell.swift; sourceTree = "<group>"; };
-		BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BusCarTableViewCell.xib; path = ../BusCarTableViewCell.xib; sourceTree = "<group>"; };
-		BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderTableViewCell.swift; path = ../HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusCarTableViewCell.swift; sourceTree = "<group>"; };
+		BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusCarTableViewCell.xib; sourceTree = "<group>"; };
+		BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		BD489FD61CEAA9340010806B /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherView.swift; path = ../WeatherView.swift; sourceTree = "<group>"; };
 		BD489FD81CEAA9500010806B /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherView.xib; path = ../WeatherView.xib; sourceTree = "<group>"; };
 		BD489FDB1CEAAC110010806B /* TrafficView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrafficView.xib; sourceTree = "<group>"; };
@@ -229,7 +231,7 @@
 		BD6D3B101CFC1D3E0000ED34 /* PDChartAxesComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDChartAxesComponent.swift; sourceTree = "<group>"; };
 		BD6D3B121CFC1D3E0000ED34 /* PDLineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDLineChart.swift; sourceTree = "<group>"; };
 		BD6D3B141CFC1D3E0000ED34 /* PDPieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDPieChart.swift; sourceTree = "<group>"; };
-		BD6DCA091CEEBCB400B1AC3A /* CarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarViewController.swift; path = ../CarViewController.swift; sourceTree = "<group>"; };
+		BD6DCA091CEEBCB400B1AC3A /* CarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		BD72C21A1CF696D80031F0FA /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		BD86820B1CEC3949004AC3E4 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
 		BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
@@ -269,10 +271,8 @@
 		BDE7DECF1CFD7C1A0006560E /* wifi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wifi.jpg; sourceTree = "<group>"; };
 		BDE7DED21CFD8C4C0006560E /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDE7DED31CFD8C4C0006560E /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
-		BDECC3F01D05527D0077D8CA /* dataList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dataList.plist; sourceTree = "<group>"; };
-		BDECC3F21D0552870077D8CA /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
-		BDECC3F41D05533A0077D8CA /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = "<group>"; };
-		BDECC3F51D05533A0077D8CA /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwift.framework; sourceTree = "<group>"; };
+		BDECC3F41D05533A0077D8CA /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../../RxCocoa.framework; sourceTree = "<group>"; };
+		BDECC3F51D05533A0077D8CA /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../../RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,7 +282,7 @@
 			files = (
 				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
-				BDECC3F31D0552870077D8CA /* MAMapKit.framework in Frameworks */,
+				A1B5C3261D0590D000F03139 /* MAMapKit.framework in Frameworks */,
 				BDECC3F61D05533A0077D8CA /* RxCocoa.framework in Frameworks */,
 				BDECC3F81D05533A0077D8CA /* RxSwift.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
@@ -339,9 +339,7 @@
 		A13ABAB81CE9F79000F8D01B = {
 			isa = PBXGroup;
 			children = (
-				BDECC3F41D05533A0077D8CA /* RxCocoa.framework */,
-				BDECC3F51D05533A0077D8CA /* RxSwift.framework */,
-				BDECC3F01D05527D0077D8CA /* dataList.plist */,
+				A1B5C3271D05944400F03139 /* dataList.plist */,
 				A13ABAC31CE9F79000F8D01B /* HTK */,
 				A1129BA31CEDE1CD00285AE5 /* image */,
 				A13ABAD81CE9F79100F8D01B /* HTKTests */,
@@ -401,7 +399,9 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BDECC3F21D0552870077D8CA /* MAMapKit.framework */,
+				A1B5C3251D0590D000F03139 /* MAMapKit.framework */,
+				BDECC3F41D05533A0077D8CA /* RxCocoa.framework */,
+				BDECC3F51D05533A0077D8CA /* RxSwift.framework */,
 				BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */,
 				BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */,
 				BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */,
@@ -553,9 +553,10 @@
 		BD23099B1CFEAF070034B8AE /* BusCarTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				BD6DCA091CEEBCB400B1AC3A /* CarViewController.swift */,
 				BDD1F0291D010AE900816B95 /* BusTableViewController.swift */,
-				BDD1F03E1D010FA900816B95 /* busCarTableVIewCell */,
+				BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */,
+				BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */,
+				BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */,
 				BDD1F02F1D010C7C00816B95 /* busTableVIewCell */,
 			);
 			path = BusCarTableViewCell;
@@ -634,6 +635,7 @@
 		BD6DCA081CEEBCA100B1AC3A /* CarVIewController */ = {
 			isa = PBXGroup;
 			children = (
+				BD6DCA091CEEBCB400B1AC3A /* CarViewController.swift */,
 				BD23099B1CFEAF070034B8AE /* BusCarTableViewCell */,
 			);
 			path = CarVIewController;
@@ -662,16 +664,6 @@
 				BDD1F0361D010D3200816B95 /* SectionInfo.swift */,
 			);
 			path = busTableVIewCell;
-			sourceTree = "<group>";
-		};
-		BDD1F03E1D010FA900816B95 /* busCarTableVIewCell */ = {
-			isa = PBXGroup;
-			children = (
-				BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */,
-				BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */,
-				BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */,
-			);
-			path = busCarTableVIewCell;
 			sourceTree = "<group>";
 		};
 		BDD1F03F1D01219E00816B95 /* basketballViewController */ = {
@@ -768,7 +760,6 @@
 				TargetAttributes = {
 					A13ABAC01CE9F79000F8D01B = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = W4WR9Z32J8;
 					};
 					A13ABAD41CE9F79100F8D01B = {
 						CreatedOnToolsVersion = 7.3;
@@ -811,7 +802,7 @@
 				A1CDFF591CF5C44700F50491 /* 1.png in Resources */,
 				A13ABACF1CE9F79000F8D01B /* LaunchScreen.storyboard in Resources */,
 				A13ABACC1CE9F79000F8D01B /* Assets.xcassets in Resources */,
-				BDECC3F11D05527D0077D8CA /* dataList.plist in Resources */,
+				A1B5C3281D05944400F03139 /* dataList.plist in Resources */,
 				A1CDFF5B1CF5CA0100F50491 /* car.png in Resources */,
 				A13ABACA1CE9F79000F8D01B /* Main.storyboard in Resources */,
 				BDE7DED01CFD7C1A0006560E /* wifi.jpg in Resources */,
@@ -1133,6 +1124,8 @@
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1141,7 +1134,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lilly.innocellence.eadverse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
 			};
 			name = Debug;
@@ -1222,6 +1215,8 @@
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1230,7 +1225,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lilly.innocellence.eadverse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 			};
 			name = Release;
 		};
