@@ -84,6 +84,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
+       
         print(indexPath.row)
     }
     
@@ -275,8 +276,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         let windDic = dictionary.valueForKey("wind")
         let  weatherDic = dictionary.valueForKey("weather")
         let  info = weatherDic!.valueForKey("info") as! String
-        let temp = "°"
-        _weather.tempratureLabel.text = (weatherDic?.valueForKey("temperature") as? String)!+temp
+        
+        _weather.tempratureLabel.text = String(format: "温度 : %@ °",(weatherDic?.valueForKey("temperature") as? String)!)
         let pow = "风力:"
         _weather.powerLabel.text = pow+((windDic?.valueForKey("power"))! as! String)
         let dire = "风向:"

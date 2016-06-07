@@ -12,8 +12,9 @@ class MyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //请确认您要打开的应用已经下载 (要打开的应用连接为(%@))
+        let url =   String(format:"123 ==  \("eee+++")%@ ==== ","123")
+        print(url)
     }
 
     override func didReceiveMemoryWarning() {
