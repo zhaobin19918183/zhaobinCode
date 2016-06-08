@@ -80,19 +80,19 @@ class MasterViewController: UIViewController {
     
     func reloadData(){
         
-        let BaiduURL = "http://op.juhe.cn/onebox/news/words?dtype=&key=c3184060738e9895f1f66bd9af7e1d87"
-        Alamofire.request(.GET, BaiduURL).response{(request, response, data, error) in
-            let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
-                options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
-            //print(jsonArr?.valueForKey("result")?.valueForKey("title"))
-            self.basketballTeamName = jsonArr?.valueForKey("result") as! NSMutableArray
-            if (self.basketballTeamName.count != 0) {
-                
-                self.tableView.reloadData()
-                
-            }
-
-        }
+//        let BaiduURL = "http://op.juhe.cn/onebox/news/words?dtype=&key=c3184060738e9895f1f66bd9af7e1d87"
+//        Alamofire.request(.GET, BaiduURL).response{(request, response, data, error) in
+//            let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
+//                options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
+//            //print(jsonArr?.valueForKey("result")?.valueForKey("title"))
+//            self.basketballTeamName = jsonArr?.valueForKey("result") as! NSMutableArray
+//            if (self.basketballTeamName.count != 0) {
+//                
+//                self.tableView.reloadData()
+//                
+//            }
+//
+//        }
         
     }
     

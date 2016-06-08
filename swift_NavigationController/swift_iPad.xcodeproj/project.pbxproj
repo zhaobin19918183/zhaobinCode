@@ -29,6 +29,7 @@
 		BD3E11521CBE0DFB00B6B2A1 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD3E11501CBE0DFB00B6B2A1 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BD40F02B1CACFF650035D47C /* popCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40F0291CACFF650035D47C /* popCollectionViewCell.swift */; };
 		BD40F02C1CACFF650035D47C /* popCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD40F02A1CACFF650035D47C /* popCollectionViewCell.xib */; };
+		BD5653001D07FDF000EC1B17 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5652FF1D07FDF000EC1B17 /* CustomLayout.swift */; };
 		BD6C24621CAA13ED000B025A /* popViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6C24601CAA13ED000B025A /* popViewController.swift */; };
 		BD6C24631CAA13ED000B025A /* popViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD6C24611CAA13ED000B025A /* popViewController.xib */; };
 		BD71A9751CA8BD870097333E /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71A9741CA8BD870097333E /* SplitViewController.swift */; };
@@ -123,6 +124,7 @@
 		BD3E11501CBE0DFB00B6B2A1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Result.framework; sourceTree = "<group>"; };
 		BD40F0291CACFF650035D47C /* popCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD40F02A1CACFF650035D47C /* popCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = popCollectionViewCell.xib; sourceTree = "<group>"; };
+		BD5652FF1D07FDF000EC1B17 /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		BD6C24601CAA13ED000B025A /* popViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popViewController.swift; sourceTree = "<group>"; };
 		BD6C24611CAA13ED000B025A /* popViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = popViewController.xib; sourceTree = "<group>"; };
 		BD71A9741CA8BD870097333E /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				BD0081E91CAE4214003C8B69 /* ProgressView.swift */,
 				BD71A9761CA8C3880097333E /* MasterViewController.swift */,
 				BD6C24601CAA13ED000B025A /* popViewController.swift */,
+				BD5652FF1D07FDF000EC1B17 /* CustomLayout.swift */,
 				BD6C24611CAA13ED000B025A /* popViewController.xib */,
 				BD40F0291CACFF650035D47C /* popCollectionViewCell.swift */,
 				BD40F02A1CACFF650035D47C /* popCollectionViewCell.xib */,
@@ -451,6 +454,7 @@
 				BDCBAA0E1CA5305B00F87F8B /* AppDelegate.swift in Sources */,
 				BD71A9771CA8C3880097333E /* MasterViewController.swift in Sources */,
 				BDCBAA401CA5375F00F87F8B /* NavigationViewController.swift in Sources */,
+				BD5653001D07FDF000EC1B17 /* CustomLayout.swift in Sources */,
 				BD0081EA1CAE4214003C8B69 /* ProgressView.swift in Sources */,
 				BD0CAB101CBF4205007D8DD5 /* SDWebImageDownloaderOperation.m in Sources */,
 				BD40F02B1CACFF650035D47C /* popCollectionViewCell.swift in Sources */,

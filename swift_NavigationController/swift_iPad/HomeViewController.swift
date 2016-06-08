@@ -25,7 +25,7 @@ class HomeViewController: UIViewController,UIPopoverPresentationControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        progressAction()
+       
     
         
     }
@@ -116,7 +116,8 @@ class HomeViewController: UIViewController,UIPopoverPresentationControllerDelega
     
     func popViewControllerPhotosArray(photosImage: UIImage) {
         self.textImageVIew.image = photosImage
-        print(photosImage)
+        
+        print(photosImage.size.width)
     }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {

@@ -10,12 +10,29 @@ import UIKit
 
 import Alamofire
 
-
+typealias completionWithResponse     = (request : NSURLRequest? , response : NSHTTPURLResponse? , data : NSData? , error : NSError?) -> Void
 
 class NetWorkManager: NSObject
 {
     var progressHUD : MBProgressHUD!
+    //MARK:测试
+    static func  callbackData(city:String ,bus:String,url:String,complete:completionWithResponse)
+    {
+        let parameters = [
+            "dtype":"json",
+            "city":city,
+            "bus": bus,
+            "key": "f572b98772d02d5b4ec1164e8b6fb0f0",
+            ]
 
+        let string1 = url
+
+        Alamofire.request(.GET, string1, parameters: parameters ).response { (request:NSURLRequest?, response:NSHTTPURLResponse?, data:NSData?, error:NSError?)->Void in complete(request: request , response: response , data: data , error: error)
+            
+        }
+
+        
+    }
     //MARK:alamofireRequestData
     static func  alamofireRequestData(city:String ,bus:String,url:String)
     {

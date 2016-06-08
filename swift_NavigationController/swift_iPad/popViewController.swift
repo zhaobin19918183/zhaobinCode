@@ -37,7 +37,9 @@ class popViewController: UIViewController,UICollectionViewDelegate,UICollectionV
     override func viewDidLoad()
     {
         photosCollectionView.registerNib(UINib(nibName: "popCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellID")
-        //多选属性
+       // let layout = CustomLayout()
+         //self.photosCollectionView.collectionViewLayout = layout
+        
          photosCollectionView.allowsMultipleSelection = true
         
         assetsFetchResults = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: nil)
@@ -53,6 +55,8 @@ class popViewController: UIViewController,UICollectionViewDelegate,UICollectionV
     {
         return assetsFetchResults.count
     }
+    
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCellID", forIndexPath: indexPath) as? popCollectionViewCell

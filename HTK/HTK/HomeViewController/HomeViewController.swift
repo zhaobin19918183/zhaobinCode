@@ -155,6 +155,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         else
         {
           NetWorkManager.alamofireRequestData("大连", bus:self.lineString, url: "http://op.juhe.cn/189/bus/busline")
+      
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.successAction), name: "alamofireSuccess", object: nil)

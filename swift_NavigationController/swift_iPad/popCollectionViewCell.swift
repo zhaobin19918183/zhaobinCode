@@ -18,5 +18,6 @@ class popCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 5
         // Initialization code
     }
+    
   
 }
