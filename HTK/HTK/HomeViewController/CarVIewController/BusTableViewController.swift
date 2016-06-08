@@ -82,7 +82,7 @@ class BusTableViewController: UITableViewController,SectionHeaderViewDelegate{
             let infoArray = NSMutableArray()
             
             for play in self.plays {
-                _ = (play as! Play).quotations
+                
                 let sectionInfo = SectionInfo()
                 sectionInfo.play = play as! Play
                 sectionInfo.open = false

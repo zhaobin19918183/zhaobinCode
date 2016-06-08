@@ -15,7 +15,6 @@ import Alamofire
 class NetWorkManager: NSObject
 {
     var progressHUD : MBProgressHUD!
-   
 
     //MARK:alamofireRequestData
     static func  alamofireRequestData(city:String ,bus:String,url:String)
@@ -46,7 +45,8 @@ class NetWorkManager: NSObject
                    NSNotificationCenter.defaultCenter().postNotificationName("alamofireError", object: nil)
                 }
                 else
-                {   NSNotificationCenter.defaultCenter().postNotificationName("alamofireSuccess", object: nil)
+                {
+                    NSNotificationCenter.defaultCenter().postNotificationName("alamofireSuccess", object: nil)
                     let array = NSArray(objects:jsonDic.valueForKey("result")!)
                     
 //                    let filePath = NSBundle.mainBundle().pathForResource("dataList.plist", ofType:nil )

@@ -41,7 +41,6 @@
 		A13ABB441CE9FDC200F8D01B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB341CE9FDC200F8D01B /* UIView+WebCacheOperation.m */; };
 		A13ABB471CE9FE0500F8D01B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */; };
 		A173A6781CFC6889006AF7EE /* huoche.png in Resources */ = {isa = PBXBuildFile; fileRef = A173A6771CFC6889006AF7EE /* huoche.png */; };
-		A1B5C3261D0590D000F03139 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B5C3251D0590D000F03139 /* MAMapKit.framework */; };
 		A1B5C3281D05944400F03139 /* dataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1B5C3271D05944400F03139 /* dataList.plist */; };
 		A1CDFF591CF5C44700F50491 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1CDFF581CF5C44700F50491 /* 1.png */; };
 		A1CDFF5B1CF5CA0100F50491 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = A1CDFF5A1CF5CA0100F50491 /* car.png */; };
@@ -58,6 +57,7 @@
 		BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FD81CEAA9500010806B /* WeatherView.xib */; };
 		BD489FDC1CEAAC110010806B /* TrafficView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FDB1CEAAC110010806B /* TrafficView.xib */; };
 		BD489FDE1CEAAC1F0010806B /* TrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD489FDD1CEAAC1F0010806B /* TrafficView.swift */; };
+		BD5652861D07A57A00EC1B17 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5652851D07A57A00EC1B17 /* MAMapKit.framework */; };
 		BD6D3B021CFC04CC0000ED34 /* Refresh.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD6D3B001CFC04CC0000ED34 /* Refresh.xib */; };
 		BD6D3B041CFC05370000ED34 /* MoreWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6D3B031CFC05370000ED34 /* MoreWeatherViewController.swift */; };
 		BD6D3B061CFC054B0000ED34 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6D3B051CFC054B0000ED34 /* RefreshControl.swift */; };
@@ -203,9 +203,8 @@
 		A13ABB341CE9FDC200F8D01B /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		A13ABB451CE9FE0500F8D01B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "HTK/ Resources/MBProgressHUD.h"; sourceTree = SOURCE_ROOT; };
 		A13ABB461CE9FE0500F8D01B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "HTK/ Resources/MBProgressHUD.m"; sourceTree = SOURCE_ROOT; };
-		A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = " Resources/Bridging-Header.h"; sourceTree = "<group>"; };
+		A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A173A6771CFC6889006AF7EE /* huoche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huoche.png; sourceTree = "<group>"; };
-		A1B5C3251D0590D000F03139 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		A1B5C3271D05944400F03139 /* dataList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dataList.plist; sourceTree = "<group>"; };
 		A1CDFF581CF5C44700F50491 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		A1CDFF5A1CF5CA0100F50491 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
@@ -222,6 +221,7 @@
 		BD489FD81CEAA9500010806B /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherView.xib; path = ../WeatherView.xib; sourceTree = "<group>"; };
 		BD489FDB1CEAAC110010806B /* TrafficView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrafficView.xib; sourceTree = "<group>"; };
 		BD489FDD1CEAAC1F0010806B /* TrafficView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrafficView.swift; sourceTree = "<group>"; };
+		BD5652851D07A57A00EC1B17 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BD6D3B001CFC04CC0000ED34 /* Refresh.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Refresh.xib; sourceTree = "<group>"; };
 		BD6D3B031CFC05370000ED34 /* MoreWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreWeatherViewController.swift; sourceTree = "<group>"; };
 		BD6D3B051CFC054B0000ED34 /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
@@ -282,7 +282,7 @@
 			files = (
 				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
-				A1B5C3261D0590D000F03139 /* MAMapKit.framework in Frameworks */,
+				BD5652861D07A57A00EC1B17 /* MAMapKit.framework in Frameworks */,
 				BDECC3F61D05533A0077D8CA /* RxCocoa.framework in Frameworks */,
 				BDECC3F81D05533A0077D8CA /* RxSwift.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
@@ -362,7 +362,6 @@
 			isa = PBXGroup;
 			children = (
 				A13ABAC41CE9F79000F8D01B /* AppDelegate.swift */,
-				A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */,
 				A13ABAF21CE9F7B300F8D01B /*  Resources */,
 				A13ABAF31CE9F7B300F8D01B /* Common */,
 				A13ABAF41CE9F7B300F8D01B /* CoreData */,
@@ -399,7 +398,8 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A1B5C3251D0590D000F03139 /* MAMapKit.framework */,
+				A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */,
+				BD5652851D07A57A00EC1B17 /* MAMapKit.framework */,
 				BDECC3F41D05533A0077D8CA /* RxCocoa.framework */,
 				BDECC3F51D05533A0077D8CA /* RxSwift.framework */,
 				BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */,
@@ -1126,6 +1126,18 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1134,7 +1146,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lilly.innocellence.eadverse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
 			};
 			name = Debug;
@@ -1217,6 +1230,18 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1225,7 +1250,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lilly.innocellence.eadverse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhixiang/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 			};
 			name = Release;
 		};
