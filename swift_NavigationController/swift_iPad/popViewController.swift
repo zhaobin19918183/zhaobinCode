@@ -31,24 +31,26 @@ class popViewController: UIViewController,UICollectionViewDelegate,UICollectionV
     var options = PHFetchOptions()
     var imageManager  = PHImageManager()
     var imageArray:NSMutableArray?
- 
+    var layout = UICollectionViewFlowLayout()
+    
     var isSelect = false
     
     override func viewDidLoad()
     {
         photosCollectionView.registerNib(UINib(nibName: "popCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellID")
-       // let layout = CustomLayout()
-         //self.photosCollectionView.collectionViewLayout = layout
+
+        layout.itemSize = CGSizeMake(80, 80)
+        self.photosCollectionView.collectionViewLayout = layout
         
-         photosCollectionView.allowsMultipleSelection = true
+        photosCollectionView.allowsMultipleSelection = true
         
         assetsFetchResults = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: nil)
         
     }
     static func collectionSeletctNmuber(number:NSInteger)
     {
-      print(number)
-    
+        print(number)
+        
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
@@ -60,33 +62,36 @@ class popViewController: UIViewController,UICollectionViewDelegate,UICollectionV
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCellID", forIndexPath: indexPath) as? popCollectionViewCell
-       
+        
         if cell == nil
         {
             let nibArray : NSArray = NSBundle.mainBundle().loadNibNamed("popCollectionViewCell", owner:self, options:nil)
             cell = nibArray.firstObject as? popCollectionViewCell
             
         }
-      
+        
         asset = assetsFetchResults[indexPath.row] as! PHAsset
-       
+        
         imageManager.requestImageForAsset(asset, targetSize: CGSize.init(width:60, height:40), contentMode: PHImageContentMode.AspectFill, options: nil) { (resultimage,  info) in
-           
+            
             cell?.backgroundImagview.image = resultimage
         }
-       
+        
         
         return cell!
         
     }
-    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets{
+        
+        return UIEdgeInsetsMake(0, 0,0, 0)
+    }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
-
-         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! popCollectionViewCell
         
-          cell.backgroundColor = UIColor.greenColor()
-      
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! popCollectionViewCell
+        
+        cell.backgroundColor = UIColor.greenColor()
+        
         print("didSelect====\(indexPath.row)")
         
         asset = assetsFetchResults[indexPath.row] as! PHAsset
@@ -94,10 +99,10 @@ class popViewController: UIViewController,UICollectionViewDelegate,UICollectionV
         imageManager.requestImageForAsset(asset, targetSize:PHImageManagerMaximumSize, contentMode: PHImageContentMode.Default, options: nil) { (resultimage,  info) in
             self.delegate.popViewControllerPhotosArray(resultimage!)
         }
-//        self.dismissViewControllerAnimated(true, completion: nil)
-      
+        //        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
-
+    
     func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool
     {
         
@@ -110,13 +115,13 @@ class popViewController: UIViewController,UICollectionViewDelegate,UICollectionV
         cell.backgroundColor = UIColor.whiteColor()
         print("didDeselec====\(indexPath.row)")
     }
-//
+    //
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
-
+    
     
 }

@@ -43,7 +43,7 @@ class CustomLayout: UICollectionViewLayout
             let lineSpacing = 5
             
             //单元格边长
-            let largeCellSide:CGFloat = 50
+            let largeCellSide:CGFloat = 200
             let smallCellSide:CGFloat = 100
             
             //内部间隙，左右5
