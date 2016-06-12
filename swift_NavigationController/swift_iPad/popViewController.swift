@@ -39,7 +39,6 @@ class popViewController: UIViewController,UICollectionViewDelegate,UICollectionV
     {
         photosCollectionView.registerNib(UINib(nibName: "popCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellID")
 
-        layout.itemSize = CGSizeMake(80, 80)
         self.photosCollectionView.collectionViewLayout = layout
         
         photosCollectionView.allowsMultipleSelection = true
@@ -75,15 +74,18 @@ class popViewController: UIViewController,UICollectionViewDelegate,UICollectionV
         imageManager.requestImageForAsset(asset, targetSize: CGSize.init(width:60, height:40), contentMode: PHImageContentMode.AspectFill, options: nil) { (resultimage,  info) in
             
             cell?.backgroundImagview.image = resultimage
+            print(cell?.backgroundImagview.image?.size)
+            
         }
-        
+       // print(cell?.backgroundImagview.image?.size)
+        layout.itemSize = CGSizeMake(90, 65)
         
         return cell!
         
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets{
         
-        return UIEdgeInsetsMake(0, 0,0, 0)
+        return UIEdgeInsetsMake(5, 5,0, 5)
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {

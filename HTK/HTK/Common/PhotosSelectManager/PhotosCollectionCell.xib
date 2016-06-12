@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PhotosCollectionCell" customModule="HTK" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFV-ge-nnC">
+                        <rect key="frame" x="2" y="2" width="81" height="81"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="tFV-ge-nnC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="Dwa-IN-T7g"/>
+                <constraint firstItem="tFV-ge-nnC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="coC-eT-ENE"/>
+                <constraint firstAttribute="trailing" secondItem="tFV-ge-nnC" secondAttribute="trailing" constant="2" id="eda-PP-lWJ"/>
+                <constraint firstAttribute="bottom" secondItem="tFV-ge-nnC" secondAttribute="bottom" constant="2" id="ltJ-tG-nhe"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundImageVIew" destination="tFV-ge-nnC" id="put-ao-y8Z"/>
+            </connections>
+            <point key="canvasLocation" x="487.5" y="333.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

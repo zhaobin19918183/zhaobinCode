@@ -8,23 +8,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="popCollectionViewCell" customModule="swift_iPad" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EkQ-j5-dsM">
-                        <rect key="frame" x="3" y="2" width="55" height="55"/>
+                        <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                         <color key="backgroundColor" red="1" green="0.3371220815" blue="0.3803713849" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="EkQ-j5-dsM" secondAttribute="trailing" constant="2" id="D4Q-8s-M42"/>
-                <constraint firstAttribute="bottom" secondItem="EkQ-j5-dsM" secondAttribute="bottom" constant="3" id="Hxy-bP-v08"/>
-                <constraint firstItem="EkQ-j5-dsM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="SyH-qp-rCe"/>
-                <constraint firstItem="EkQ-j5-dsM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="fzh-bD-EOi"/>
+                <constraint firstAttribute="bottom" secondItem="EkQ-j5-dsM" secondAttribute="bottom" id="QDn-Cl-vAV"/>
+                <constraint firstItem="EkQ-j5-dsM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Uvw-5d-oPQ"/>
+                <constraint firstAttribute="trailing" secondItem="EkQ-j5-dsM" secondAttribute="trailing" id="oa0-cf-nDT"/>
+                <constraint firstItem="EkQ-j5-dsM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zEo-BY-UrV"/>
             </constraints>
             <connections>
                 <outlet property="backgroundImagview" destination="EkQ-j5-dsM" id="cpu-4h-GJR"/>

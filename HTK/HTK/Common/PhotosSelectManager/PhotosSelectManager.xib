@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotosSelectManager" customModule="HTK" customModuleProvider="target">
+            <connections>
+                <outlet property="cancleButton" destination="pfg-lM-JlJ" id="qGJ-vn-L9f"/>
+                <outlet property="collectionView" destination="hP1-ir-4n9" id="3Li-oT-mPo"/>
+                <outlet property="numberPhotos" destination="Zsm-po-Ddj" id="jqP-X1-zyj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0j-oi-MXO">
+                    <rect key="frame" x="0.0" y="368" width="320" height="200"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfg-lM-JlJ">
+                            <rect key="frame" x="0.0" y="155" width="320" height="45"/>
+                            <color key="backgroundColor" red="0.94117647059999998" green="0.63137254899999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="6VN-8A-LyW"/>
+                            </constraints>
+                            <state key="normal" title="取消"/>
+                            <connections>
+                                <action selector="cancleButtonAction:" destination="-1" eventType="touchDown" id="YkG-lY-Rd6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsm-po-Ddj">
+                            <rect key="frame" x="0.0" y="110" width="320" height="45"/>
+                            <color key="backgroundColor" red="0.33725490200000002" green="0.63529411759999999" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="THF-xI-SDi"/>
+                            </constraints>
+                            <state key="normal" title="相册"/>
+                            <connections>
+                                <action selector="numberPhotosAction:" destination="-1" eventType="touchDown" id="tYX-AT-MIM"/>
+                            </connections>
+                        </button>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hP1-ir-4n9">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ijV-8v-83p">
+                                <size key="itemSize" width="95" height="100"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="qaq-5Y-lU8"/>
+                                <outlet property="delegate" destination="-1" id="9ts-qk-Ns8"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="pfg-lM-JlJ" firstAttribute="top" secondItem="Zsm-po-Ddj" secondAttribute="bottom" id="Bts-h1-SDf"/>
+                        <constraint firstAttribute="trailing" secondItem="pfg-lM-JlJ" secondAttribute="trailing" id="JOG-xK-M7z"/>
+                        <constraint firstItem="Zsm-po-Ddj" firstAttribute="top" secondItem="hP1-ir-4n9" secondAttribute="bottom" id="LlN-lu-7hm"/>
+                        <constraint firstItem="Zsm-po-Ddj" firstAttribute="leading" secondItem="O0j-oi-MXO" secondAttribute="leading" id="Ny0-tw-HH4"/>
+                        <constraint firstAttribute="bottom" secondItem="pfg-lM-JlJ" secondAttribute="bottom" id="OpX-VA-9Do"/>
+                        <constraint firstItem="hP1-ir-4n9" firstAttribute="top" secondItem="O0j-oi-MXO" secondAttribute="top" id="Scl-iT-RCq"/>
+                        <constraint firstAttribute="trailing" secondItem="Zsm-po-Ddj" secondAttribute="trailing" id="ZT9-aO-bUQ"/>
+                        <constraint firstAttribute="trailing" secondItem="hP1-ir-4n9" secondAttribute="trailing" id="hDB-EO-Bou"/>
+                        <constraint firstAttribute="height" constant="200" id="jzB-iA-XSO"/>
+                        <constraint firstItem="hP1-ir-4n9" firstAttribute="leading" secondItem="O0j-oi-MXO" secondAttribute="leading" id="mwW-9p-N7f"/>
+                        <constraint firstItem="pfg-lM-JlJ" firstAttribute="leading" secondItem="O0j-oi-MXO" secondAttribute="leading" id="zmL-nC-8C8"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="O0j-oi-MXO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NG5-cY-LX8"/>
+                <constraint firstAttribute="trailing" secondItem="O0j-oi-MXO" secondAttribute="trailing" id="OBI-9U-5RY"/>
+                <constraint firstAttribute="bottom" secondItem="O0j-oi-MXO" secondAttribute="bottom" id="ohI-WL-esp"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="149" y="337"/>
+        </view>
+    </objects>
+</document>

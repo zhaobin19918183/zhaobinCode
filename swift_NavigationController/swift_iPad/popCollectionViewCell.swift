@@ -15,7 +15,7 @@ class popCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib()
     {
         super.awakeFromNib()
-        self.layer.cornerRadius = 5
+        //self.layer.cornerRadius = 5
         // Initialization code
     }
     

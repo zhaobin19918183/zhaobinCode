@@ -149,7 +149,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                 (action: UIAlertAction!) -> Void in
                 self.progressHUD.hide(true, afterDelay:0.25)
             }
-            AlertControllerAction("警告", message: "公交线路输入为空", firstAction:okAction, seccondAction: nil)
+            AlertControllerAction("警告", message: "公交线路输入为空", firstAction:okAction, seccondAction: nil,thirdAction:nil)
             self.progressHUD.hide(true, afterDelay:0)
         }
         else
@@ -168,15 +168,15 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     {
         
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "alamofireError", object: nil)
-        let okAction:UIAlertAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default) {
+        let errorAction:UIAlertAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default) {
             (action: UIAlertAction!) -> Void in
              self.progressHUD.hide(true, afterDelay:0)
         }
-        AlertControllerAction("警告", message: "公交线路输入错误", firstAction:okAction, seccondAction: nil)
+        AlertControllerAction("警告", message: "公交线路输入错误", firstAction:errorAction, seccondAction: nil,thirdAction:nil)
      
     }
     //MARK:AlertControllerAction
-    func AlertControllerAction(title:String , message:String ,firstAction:UIAlertAction,seccondAction:UIAlertAction?)
+    func AlertControllerAction(title:String , message:String ,firstAction:UIAlertAction,seccondAction:UIAlertAction?,thirdAction:UIAlertAction?)
     {
         
         let alert  = UIAlertController(title:title, message:message, preferredStyle:UIAlertControllerStyle.Alert)
@@ -185,7 +185,11 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         {
           alert.addAction(seccondAction!)
         }
-   
+        if thirdAction != nil
+        {
+            alert.addAction(thirdAction!)
+        }
+     
         self.presentViewController(alert, animated:true, completion:nil)
     }
     //MARK:successAction
