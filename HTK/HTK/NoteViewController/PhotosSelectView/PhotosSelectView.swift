@@ -14,6 +14,7 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     @IBOutlet weak var photosCollection: UICollectionView!
     @IBOutlet var _photosSelectView: PhotosSelectView!
     var photosSelectView = UIViewController()
+    var photosImageArray = NSMutableArray()
     
     required init(coder aDecoder: NSCoder){
         
@@ -36,11 +37,18 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     func popViewControllerPhotosArray(photosImageArray : NSMutableArray)
     {
           print(photosImageArray)
+       
+        self.photosImageArray = photosImageArray
+         self.photosCollection.reloadData()
     }
     //MARK:CollectionView
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 3
+        if self.photosImageArray.count == 0 {
+            return 1
+        }
+        
+        return  self.photosImageArray.count + 1
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
@@ -63,11 +71,17 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
-        let loginView = PhotosSelectManager()
-        loginView.delegate = self
-        loginView.view.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha:0)
+        if indexPath.row == self.photosImageArray.count
+        {
+            
+            let loginView = PhotosSelectManager()
+            loginView.delegate = self
+            loginView.view.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha:0)
+            
+            photosSelectView.presentViewController(loginView, animated: true, completion: nil)
+        }
+    
         
-        photosSelectView.presentViewController(loginView, animated: true, completion: nil)
         
     }
     

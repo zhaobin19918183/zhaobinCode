@@ -76,7 +76,6 @@
 		BD8682241CEC5C2F004AC3E4 /* WeatherDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */; };
 		BD97F3621CF6A269005FF681 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD97F3601CF6A269005FF681 /* MoreTableViewCell.swift */; };
 		BD97F3631CF6A269005FF681 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD97F3611CF6A269005FF681 /* MoreTableViewCell.xib */; };
-		BDBB649D1D0CE514000B0028 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBB649C1D0CE514000B0028 /* MAMapKit.framework */; };
 		BDBB64DC1D0D2732000B0028 /* PhotosSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBB64DB1D0D2732000B0028 /* PhotosSelectView.swift */; };
 		BDBB64DE1D0D2742000B0028 /* PhotosSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBB64DD1D0D2742000B0028 /* PhotosSelectView.xib */; };
 		BDBB64E21D0D2C25000B0028 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBB64E01D0D2C25000B0028 /* PhotosCollectionViewCell.swift */; };
@@ -85,6 +84,7 @@
 		BDBB64EA1D0D2F70000B0028 /* PhotosSelectManager.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBB64E81D0D2F70000B0028 /* PhotosSelectManager.xib */; };
 		BDBB64ED1D0D3959000B0028 /* PhotosCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBB64EB1D0D3959000B0028 /* PhotosCollectionCell.swift */; };
 		BDBB64EE1D0D3959000B0028 /* PhotosCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBB64EC1D0D3959000B0028 /* PhotosCollectionCell.xib */; };
+		BDBDDD691D0D530D00087298 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBDDD681D0D530D00087298 /* MAMapKit.framework */; };
 		BDD1F02A1D010AE900816B95 /* BusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1F0291D010AE900816B95 /* BusTableViewController.swift */; };
 		BDD1F02C1D010BFD00816B95 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1F02B1D010BFD00816B95 /* MyViewController.swift */; };
 		BDD1F0371D010D3200816B95 /* HighlightingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1F0301D010D3200816B95 /* HighlightingTextView.swift */; };
@@ -250,7 +250,6 @@
 		BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDAO.swift; sourceTree = "<group>"; };
 		BD97F3601CF6A269005FF681 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		BD97F3611CF6A269005FF681 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreTableViewCell.xib; sourceTree = "<group>"; };
-		BDBB649C1D0CE514000B0028 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BDBB64DB1D0D2732000B0028 /* PhotosSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosSelectView.swift; sourceTree = "<group>"; };
 		BDBB64DD1D0D2742000B0028 /* PhotosSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotosSelectView.xib; sourceTree = "<group>"; };
 		BDBB64E01D0D2C25000B0028 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -259,6 +258,7 @@
 		BDBB64E81D0D2F70000B0028 /* PhotosSelectManager.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotosSelectManager.xib; sourceTree = "<group>"; };
 		BDBB64EB1D0D3959000B0028 /* PhotosCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionCell.swift; sourceTree = "<group>"; };
 		BDBB64EC1D0D3959000B0028 /* PhotosCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotosCollectionCell.xib; sourceTree = "<group>"; };
+		BDBDDD681D0D530D00087298 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BDD1F0291D010AE900816B95 /* BusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusTableViewController.swift; path = ../BusTableViewController.swift; sourceTree = "<group>"; };
 		BDD1F02B1D010BFD00816B95 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BDD1F0301D010D3200816B95 /* HighlightingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightingTextView.swift; sourceTree = "<group>"; };
@@ -298,7 +298,7 @@
 			files = (
 				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
-				BDBB649D1D0CE514000B0028 /* MAMapKit.framework in Frameworks */,
+				BDBDDD691D0D530D00087298 /* MAMapKit.framework in Frameworks */,
 				BDECC3F61D05533A0077D8CA /* RxCocoa.framework in Frameworks */,
 				BDECC3F81D05533A0077D8CA /* RxSwift.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
@@ -414,7 +414,7 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BDBB649C1D0CE514000B0028 /* MAMapKit.framework */,
+				BDBDDD681D0D530D00087298 /* MAMapKit.framework */,
 				A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */,
 				BDECC3F41D05533A0077D8CA /* RxCocoa.framework */,
 				BDECC3F51D05533A0077D8CA /* RxSwift.framework */,
@@ -1212,6 +1212,8 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1302,6 +1304,8 @@
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
 					"$(PROJECT_DIR)/HTK/",

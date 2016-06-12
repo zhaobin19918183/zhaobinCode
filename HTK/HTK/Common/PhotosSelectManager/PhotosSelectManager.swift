@@ -63,7 +63,7 @@ class PhotosSelectManager: UIViewController,UICollectionViewDelegate,UICollectio
         }
         asset = assetsFetchResults[indexPath.row] as! PHAsset
         
-        imageManager.requestImageForAsset(asset, targetSize: CGSize.init(width:60, height:40), contentMode: PHImageContentMode.AspectFit, options: nil) { (resultimage,  info) in
+        imageManager.requestImageForAsset(asset, targetSize:PHImageManagerMaximumSize, contentMode: PHImageContentMode.AspectFit, options: nil) { (resultimage,  info) in
             
             cell?.backgroundImageVIew.image = resultimage
    
@@ -77,37 +77,17 @@ class PhotosSelectManager: UIViewController,UICollectionViewDelegate,UICollectio
     {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! PhotosCollectionCell
         cell.backgroundColor = UIColor.greenColor()
-        
-//        print("didSelect====\(indexPath.row)")
-        
-        asset = assetsFetchResults[indexPath.row] as! PHAsset
-        
-        imageManager.requestImageForAsset(asset, targetSize:PHImageManagerMaximumSize, contentMode: PHImageContentMode.AspectFill, options: nil) { (resultimage,  info) in
-            self.imageArray.addObject(resultimage!)
-           
-           
-           // self.numberPhotos.titleLabel?.text = String(format: "%d",self.imageArray.count)
-        }
-       
-         print(self.imageArray.count+1)
+        self.imageArray.addObject(cell.backgroundImageVIew.image!)
+         print(" did  ===== \(self.imageArray)")
+
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! PhotosCollectionCell
         cell.backgroundColor = UIColor.grayColor()
-        asset = assetsFetchResults[indexPath.row] as! PHAsset
-        
-        imageManager.requestImageForAsset(asset, targetSize:PHImageManagerMaximumSize, contentMode: PHImageContentMode.AspectFill, options: nil) { (resultimage,  info) in
-            print(resultimage)
-            let index = self.imageArray.indexOfObject((resultimage?.images!)!)
-            print(index)
-            //self.imageArray.removeObject(self.imageArray.objectAtIndex(index))
-            
-            // self.numberPhotos.titleLabel?.text = String(format: "%d",self.imageArray.count)
-        }
+        self.imageArray.removeObject(cell.backgroundImageVIew.image!)
+         print(" dis  ===== \(self.imageArray)")
 
-//        print(self.imageArray)
-//        print("didDeselec====\(indexPath.row)")
         
     }
     @IBAction func numberPhotosAction(sender: UIButton)
