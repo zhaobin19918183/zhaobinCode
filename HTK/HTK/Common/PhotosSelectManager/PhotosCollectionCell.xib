@@ -7,29 +7,42 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PhotosCollectionCell" customModule="HTK" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCellId" id="gTV-IL-0wX" customClass="PhotosCollectionCell" customModule="HTK" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFV-ge-nnC">
-                        <rect key="frame" x="2" y="2" width="81" height="81"/>
+                        <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2X-on-aG2">
+                        <rect key="frame" x="65" y="0.0" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="Ath-eK-bCk"/>
+                            <constraint firstAttribute="height" constant="20" id="LxQ-vZ-2Bu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="tFV-ge-nnC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="Dwa-IN-T7g"/>
-                <constraint firstItem="tFV-ge-nnC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="coC-eT-ENE"/>
-                <constraint firstAttribute="trailing" secondItem="tFV-ge-nnC" secondAttribute="trailing" constant="2" id="eda-PP-lWJ"/>
-                <constraint firstAttribute="bottom" secondItem="tFV-ge-nnC" secondAttribute="bottom" constant="2" id="ltJ-tG-nhe"/>
+                <constraint firstAttribute="bottom" secondItem="tFV-ge-nnC" secondAttribute="bottom" id="4j5-0e-HEu"/>
+                <constraint firstAttribute="trailing" secondItem="tFV-ge-nnC" secondAttribute="trailing" id="IQ4-pc-XgW"/>
+                <constraint firstItem="tFV-ge-nnC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="N5y-zg-gST"/>
+                <constraint firstAttribute="trailing" secondItem="X2X-on-aG2" secondAttribute="trailing" id="Rd3-9c-sFL"/>
+                <constraint firstItem="X2X-on-aG2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="aO7-rU-qMy"/>
+                <constraint firstItem="tFV-ge-nnC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nMl-xB-dbl"/>
             </constraints>
             <connections>
                 <outlet property="backgroundImageVIew" destination="tFV-ge-nnC" id="put-ao-y8Z"/>
+                <outlet property="imageLable" destination="X2X-on-aG2" id="WHT-9x-QOY"/>
             </connections>
-            <point key="canvasLocation" x="487.5" y="333.5"/>
+            <point key="canvasLocation" x="863.5" y="540.5"/>
         </collectionViewCell>
     </objects>
 </document>

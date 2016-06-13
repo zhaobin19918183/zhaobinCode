@@ -10,9 +10,13 @@ import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var delectButton: UIButton!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        delectButton.layer.cornerRadius = 8
     }
 
+   
 }

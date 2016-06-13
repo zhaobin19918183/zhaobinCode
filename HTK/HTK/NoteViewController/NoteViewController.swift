@@ -10,12 +10,14 @@ import UIKit
 
 class NoteViewController: UIViewController {
 
+  
     @IBOutlet weak var _photosSelectView: PhotosSelectView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-      _photosSelectView.photosSelectView = self.parentViewController!
+         _photosSelectView.photosSelectView = self.parentViewController!
+       
       
     }
 

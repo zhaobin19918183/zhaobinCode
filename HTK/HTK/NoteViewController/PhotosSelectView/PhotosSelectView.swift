@@ -30,16 +30,16 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
         NSBundle.mainBundle().loadNibNamed("PhotosSelectView", owner:self,options:nil)
          photosCollection.registerNib(UINib(nibName: "PhotosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellID")
         self.addSubview(_photosSelectView)
-        
-        
-        
+
     }
+  
+    
     func popViewControllerPhotosArray(photosImageArray : NSMutableArray)
     {
-          print(photosImageArray)
-       
+ 
         self.photosImageArray = photosImageArray
-         self.photosCollection.reloadData()
+        self.photosCollection.reloadData()
+        
     }
     //MARK:CollectionView
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
@@ -64,11 +64,31 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
             let nibArray : NSArray = NSBundle.mainBundle().loadNibNamed("PhotosCollectionViewCell", owner:self, options:nil)
             cell = nibArray.firstObject as? PhotosCollectionViewCell
         }
-       
+        if self.photosImageArray.count != 0 && indexPath.row < self.photosImageArray.count{
+            
+           cell?.backgroundImageView.image = self.photosImageArray.objectAtIndex(indexPath.row ) as? UIImage
+           // print(indexPath.row)
+            cell?.delectButton.hidden = false
+            cell?.delectButton.tag = indexPath.row
+            cell?.delectButton.addTarget(self, action: #selector(PhotosSelectView.deleteImage(_:)), forControlEvents: UIControlEvents.TouchDown)
+        }
+        else
+        {
+            
+         cell?.backgroundImageView.image = UIImage(named:"jiahao")
+         cell?.delectButton.hidden = true
+        
+        }
         return cell!
         
     }
-    
+    func deleteImage(button:UIButton)
+    {
+        print(button.tag)
+        self.photosImageArray.removeObject(self.photosImageArray[button.tag])
+        self.photosCollection.reloadData()
+        
+    }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
         if indexPath.row == self.photosImageArray.count
@@ -77,11 +97,9 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
             let loginView = PhotosSelectManager()
             loginView.delegate = self
             loginView.view.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha:0)
-            
+            loginView.imageArray = self.photosImageArray
             photosSelectView.presentViewController(loginView, animated: true, completion: nil)
         }
-    
-        
         
     }
     
