@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFV-ge-nnC">
-                        <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                        <rect key="frame" x="2" y="0.0" width="81" height="85"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2X-on-aG2">
@@ -24,7 +24,7 @@
                             <constraint firstAttribute="height" constant="20" id="LxQ-vZ-2Bu"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="textColor" red="1" green="0.039807787329999997" blue="0.078941213309999994" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -32,11 +32,11 @@
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="tFV-ge-nnC" secondAttribute="bottom" id="4j5-0e-HEu"/>
-                <constraint firstAttribute="trailing" secondItem="tFV-ge-nnC" secondAttribute="trailing" id="IQ4-pc-XgW"/>
+                <constraint firstAttribute="trailing" secondItem="tFV-ge-nnC" secondAttribute="trailing" constant="2" id="IQ4-pc-XgW"/>
                 <constraint firstItem="tFV-ge-nnC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="N5y-zg-gST"/>
                 <constraint firstAttribute="trailing" secondItem="X2X-on-aG2" secondAttribute="trailing" id="Rd3-9c-sFL"/>
                 <constraint firstItem="X2X-on-aG2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="aO7-rU-qMy"/>
-                <constraint firstItem="tFV-ge-nnC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nMl-xB-dbl"/>
+                <constraint firstItem="tFV-ge-nnC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="nMl-xB-dbl"/>
             </constraints>
             <connections>
                 <outlet property="backgroundImageVIew" destination="tFV-ge-nnC" id="put-ao-y8Z"/>

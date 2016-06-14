@@ -15,8 +15,8 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        delectButton.layer.cornerRadius = 8
+        delectButton.layer.cornerRadius = 10
     }
 
-   
+    
 }

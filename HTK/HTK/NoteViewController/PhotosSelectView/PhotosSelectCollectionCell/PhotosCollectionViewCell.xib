@@ -23,7 +23,7 @@
                             <constraint firstAttribute="height" constant="20" id="4hf-15-27n"/>
                             <constraint firstAttribute="width" constant="20" id="mmB-fX-AXR"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                         <state key="normal" title="×">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>

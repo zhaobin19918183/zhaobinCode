@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Photos
+
 class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,popViewControllerDelegate
 {
     
@@ -15,6 +17,16 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     @IBOutlet var _photosSelectView: PhotosSelectView!
     var photosSelectView = UIViewController()
     var photosImageArray = NSMutableArray()
+    
+    //资源库管理类
+    var assetsFetchResults =  PHFetchResult()
+    //保存照片集合
+    var PHIassets = PHImageManager()
+    var asset = PHAsset()
+    var options = PHFetchOptions()
+    var imageManager  = PHImageManager()
+    var imageArray = NSMutableArray()
+    var selectedArray = NSMutableArray()
     
     required init(coder aDecoder: NSCoder){
         
@@ -26,10 +38,34 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     func  resetUILayout()
     {
         
+     
         
         NSBundle.mainBundle().loadNibNamed("PhotosSelectView", owner:self,options:nil)
          photosCollection.registerNib(UINib(nibName: "PhotosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellID")
         self.addSubview(_photosSelectView)
+        assetsFetchResults = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: nil)
+        for index in 1...assetsFetchResults.count
+        {
+            
+            asset = assetsFetchResults[index - 1] as! PHAsset
+           
+            imageManager.requestImageForAsset(asset, targetSize:PHImageManagerMaximumSize, contentMode: PHImageContentMode.AspectFit, options: nil) { (resultimage,  info) in
+              
+                let imageData = UIImagePNGRepresentation(resultimage!)
+                let base64String = imageData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue:0))
+      
+                
+                self.selectedArray.addObject(base64String)
+                let data : NSData! = try? NSJSONSerialization.dataWithJSONObject(self.selectedArray, options: [])
+                //NSData转换成NSString打印输出
+                let str = NSString(data:data, encoding: NSUTF8StringEncoding)
+               
+                NSUserDefaults.standardUserDefaults().setObject(str, forKey: "photos")
+               
+                
+            }
+            
+        }
 
     }
   
@@ -96,9 +132,12 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
             
             let loginView = PhotosSelectManager()
             loginView.delegate = self
+       
             loginView.view.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha:0)
             loginView.imageArray = self.photosImageArray
             photosSelectView.presentViewController(loginView, animated: true, completion: nil)
+         
+
         }
         
     }
