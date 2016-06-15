@@ -38,37 +38,37 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     func  resetUILayout()
     {
         
-     
-        
         NSBundle.mainBundle().loadNibNamed("PhotosSelectView", owner:self,options:nil)
          photosCollection.registerNib(UINib(nibName: "PhotosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellID")
         self.addSubview(_photosSelectView)
+        photosUserDefaults()
+
+    }
+  //MARK: 照片缓存
+    func photosUserDefaults()
+    {
         assetsFetchResults = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: nil)
         for index in 1...assetsFetchResults.count
         {
-            
             asset = assetsFetchResults[index - 1] as! PHAsset
-           
+            
             imageManager.requestImageForAsset(asset, targetSize:PHImageManagerMaximumSize, contentMode: PHImageContentMode.AspectFit, options: nil) { (resultimage,  info) in
-              
+                
                 let imageData = UIImagePNGRepresentation(resultimage!)
                 let base64String = imageData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue:0))
-      
                 
                 self.selectedArray.addObject(base64String)
                 let data : NSData! = try? NSJSONSerialization.dataWithJSONObject(self.selectedArray, options: [])
                 //NSData转换成NSString打印输出
                 let str = NSString(data:data, encoding: NSUTF8StringEncoding)
-               
-                NSUserDefaults.standardUserDefaults().setObject(str, forKey: "photos")
-               
                 
+                NSUserDefaults.standardUserDefaults().setObject(str, forKey: "photos")
             }
             
         }
-
+    
+    
     }
-  
     
     func popViewControllerPhotosArray(photosImageArray : NSMutableArray)
     {

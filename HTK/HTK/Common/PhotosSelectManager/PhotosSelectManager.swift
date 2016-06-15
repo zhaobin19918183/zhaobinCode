@@ -15,10 +15,13 @@ protocol popViewControllerDelegate
 }
 class PhotosSelectManager: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
+  
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var numberPhotos: UIButton!
     var delegate : popViewControllerDelegate!
-    @IBOutlet weak var cancleButton: UIButton!
+  
+    @IBOutlet weak var photosButton: UIButton!
     
     //资源库管理类
     var assetsFetchResults =  PHFetchResult()
@@ -102,26 +105,33 @@ class PhotosSelectManager: UIViewController,UICollectionViewDelegate,UICollectio
         
         
     }
+    //MARK:取出图片按照图片大小确定cell 的大小
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 
         let  string =  NSUserDefaults.standardUserDefaults().valueForKey("photos") as! String
         let array = HelperManager.convertStringToAnyObject(string) as! NSMutableArray
+
         let decodedData = NSData(base64EncodedString:array.objectAtIndex(indexPath.row) as! String, options:NSDataBase64DecodingOptions())
         let decodedimage = UIImage(data: decodedData!)! as UIImage
-        return CGSize(width: decodedimage.size.width/2, height:100)   
+        print(decodedimage.size.width)
+        return CGSize(width: decodedimage.size.width/2, height:120)
     }
     @IBAction func numberPhotosAction(sender: UIButton)
     {
         self.delegate.popViewControllerPhotosArray(self.imageArray)
-       //  NSUserDefaults.standardUserDefaults().removeObjectForKey("photos")
         dismiss()
     }
     
-    @IBAction func cancleButtonAction(sender: UIButton)
+    @IBAction func photosButtonAction(sender: UIButton)
     {
         
-        
     }
+
+    @IBAction func backButtonAction(sender: UIButton)
+    {
+        dismiss()
+    }
+    
     func dismiss()
     {
        

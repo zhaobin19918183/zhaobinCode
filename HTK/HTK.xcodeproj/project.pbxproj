@@ -53,7 +53,6 @@
 		BD23099E1CFEAF1D0034B8AE /* BusCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */; };
 		BD23099F1CFEAF1D0034B8AE /* BusCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */; };
 		BD2309A21CFEDACE0034B8AE /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */; };
-		BD4550D01D0F89460077D396 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4550CF1D0F89460077D396 /* MAMapKit.framework */; };
 		BD4550D21D0FE7C40077D396 /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4550D11D0FE7C40077D396 /* HelperManager.swift */; };
 		BD489FD71CEAA9340010806B /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD489FD61CEAA9340010806B /* WeatherView.swift */; };
 		BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FD81CEAA9500010806B /* WeatherView.xib */; };
@@ -70,6 +69,7 @@
 		BD6D3B191CFC1D3E0000ED34 /* PDPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6D3B141CFC1D3E0000ED34 /* PDPieChart.swift */; };
 		BD6DCA0B1CEEBCB400B1AC3A /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6DCA091CEEBCB400B1AC3A /* CarViewController.swift */; };
 		BD72C21B1CF696D80031F0FA /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = BD72C21A1CF696D80031F0FA /* 0.png */; };
+		BD753A441D10E5780096854A /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = BD753A431D10E5780096854A /* 3.png */; };
 		BD800DD21D0E486500E2DDEE /* jiahao.png in Resources */ = {isa = PBXBuildFile; fileRef = BD800DD11D0E486500E2DDEE /* jiahao.png */; };
 		BD800DD61D0E50E500E2DDEE /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD800DD51D0E50E500E2DDEE /* iconfont.ttf */; };
 		BD86820C1CEC3949004AC3E4 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD86820B1CEC3949004AC3E4 /* AMapLocationKit.framework */; };
@@ -80,6 +80,11 @@
 		BD8682241CEC5C2F004AC3E4 /* WeatherDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */; };
 		BD97F3621CF6A269005FF681 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD97F3601CF6A269005FF681 /* MoreTableViewCell.swift */; };
 		BD97F3631CF6A269005FF681 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD97F3611CF6A269005FF681 /* MoreTableViewCell.xib */; };
+		BDA1C9201D10F3F1000122BD /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDA1C91F1D10F3F1000122BD /* MAMapKit.framework */; };
+		BDA1C9221D10F430000122BD /* NoteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA1C9211D10F430000122BD /* NoteTextView.swift */; };
+		BDA1C9261D10F456000122BD /* NoteTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDA1C9251D10F456000122BD /* NoteTextView.xib */; };
+		BDA1C9281D10F67E000122BD /* typeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA1C9271D10F67E000122BD /* typeView.swift */; };
+		BDA1C92A1D10F68D000122BD /* typeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDA1C9291D10F68D000122BD /* typeView.xib */; };
 		BDBB64DC1D0D2732000B0028 /* PhotosSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBB64DB1D0D2732000B0028 /* PhotosSelectView.swift */; };
 		BDBB64DE1D0D2742000B0028 /* PhotosSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBB64DD1D0D2742000B0028 /* PhotosSelectView.xib */; };
 		BDBB64E21D0D2C25000B0028 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBB64E01D0D2C25000B0028 /* PhotosCollectionViewCell.swift */; };
@@ -228,7 +233,6 @@
 		BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusCarTableViewCell.swift; sourceTree = "<group>"; };
 		BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusCarTableViewCell.xib; sourceTree = "<group>"; };
 		BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
-		BD4550CF1D0F89460077D396 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BD4550D11D0FE7C40077D396 /* HelperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperManager.swift; sourceTree = "<group>"; };
 		BD489FD61CEAA9340010806B /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherView.swift; path = ../WeatherView.swift; sourceTree = "<group>"; };
 		BD489FD81CEAA9500010806B /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherView.xib; path = ../WeatherView.xib; sourceTree = "<group>"; };
@@ -245,6 +249,7 @@
 		BD6D3B141CFC1D3E0000ED34 /* PDPieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDPieChart.swift; sourceTree = "<group>"; };
 		BD6DCA091CEEBCB400B1AC3A /* CarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		BD72C21A1CF696D80031F0FA /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		BD753A431D10E5780096854A /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		BD800DD11D0E486500E2DDEE /* jiahao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiahao.png; sourceTree = "<group>"; };
 		BD800DD51D0E50E500E2DDEE /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = iconfont.ttf; path = ../iconfont.ttf; sourceTree = "<group>"; };
 		BD86820B1CEC3949004AC3E4 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
@@ -257,6 +262,11 @@
 		BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDAO.swift; sourceTree = "<group>"; };
 		BD97F3601CF6A269005FF681 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		BD97F3611CF6A269005FF681 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreTableViewCell.xib; sourceTree = "<group>"; };
+		BDA1C91F1D10F3F1000122BD /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		BDA1C9211D10F430000122BD /* NoteTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTextView.swift; sourceTree = "<group>"; };
+		BDA1C9251D10F456000122BD /* NoteTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteTextView.xib; sourceTree = "<group>"; };
+		BDA1C9271D10F67E000122BD /* typeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = typeView.swift; sourceTree = "<group>"; };
+		BDA1C9291D10F68D000122BD /* typeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = typeView.xib; sourceTree = "<group>"; };
 		BDBB64DB1D0D2732000B0028 /* PhotosSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosSelectView.swift; sourceTree = "<group>"; };
 		BDBB64DD1D0D2742000B0028 /* PhotosSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotosSelectView.xib; sourceTree = "<group>"; };
 		BDBB64E01D0D2C25000B0028 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -304,7 +314,7 @@
 			files = (
 				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
-				BD4550D01D0F89460077D396 /* MAMapKit.framework in Frameworks */,
+				BDA1C9201D10F3F1000122BD /* MAMapKit.framework in Frameworks */,
 				BDECC3F61D05533A0077D8CA /* RxCocoa.framework in Frameworks */,
 				BDECC3F81D05533A0077D8CA /* RxSwift.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
@@ -341,6 +351,7 @@
 		A1129BA31CEDE1CD00285AE5 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				BD753A431D10E5780096854A /* 3.png */,
 				BD800DD11D0E486500E2DDEE /* jiahao.png */,
 				BDE7DECF1CFD7C1A0006560E /* wifi.jpg */,
 				BDE7DECD1CFD7BDE0006560E /* jiazhao.jpg */,
@@ -422,7 +433,7 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BD4550CF1D0F89460077D396 /* MAMapKit.framework */,
+				BDA1C91F1D10F3F1000122BD /* MAMapKit.framework */,
 				A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */,
 				BDECC3F41D05533A0077D8CA /* RxCocoa.framework */,
 				BDECC3F51D05533A0077D8CA /* RxSwift.framework */,
@@ -505,9 +516,9 @@
 			isa = PBXGroup;
 			children = (
 				A13ABAFA1CE9F7B300F8D01B /* NoteViewController.swift */,
-				BDBB64DA1D0D2709000B0028 /* PhotosSelectView */,
-				BDBB64D91D0D26F8000B0028 /* TypeView */,
 				BDBB64D81D0D26D4000B0028 /* NoteTextFieldView */,
+				BDBB64D91D0D26F8000B0028 /* TypeView */,
+				BDBB64DA1D0D2709000B0028 /* PhotosSelectView */,
 			);
 			path = NoteViewController;
 			sourceTree = "<group>";
@@ -684,6 +695,8 @@
 		BDBB64D81D0D26D4000B0028 /* NoteTextFieldView */ = {
 			isa = PBXGroup;
 			children = (
+				BDA1C9211D10F430000122BD /* NoteTextView.swift */,
+				BDA1C9251D10F456000122BD /* NoteTextView.xib */,
 			);
 			path = NoteTextFieldView;
 			sourceTree = "<group>";
@@ -691,6 +704,8 @@
 		BDBB64D91D0D26F8000B0028 /* TypeView */ = {
 			isa = PBXGroup;
 			children = (
+				BDA1C9271D10F67E000122BD /* typeView.swift */,
+				BDA1C9291D10F68D000122BD /* typeView.xib */,
 			);
 			path = TypeView;
 			sourceTree = "<group>";
@@ -869,6 +884,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD753A441D10E5780096854A /* 3.png in Resources */,
 				BD800DD61D0E50E500E2DDEE /* iconfont.ttf in Resources */,
 				BD72C21B1CF696D80031F0FA /* 0.png in Resources */,
 				BD6D3B021CFC04CC0000ED34 /* Refresh.xib in Resources */,
@@ -880,7 +896,9 @@
 				A13ABACC1CE9F79000F8D01B /* Assets.xcassets in Resources */,
 				A1B5C3281D05944400F03139 /* dataList.plist in Resources */,
 				A1CDFF5B1CF5CA0100F50491 /* car.png in Resources */,
+				BDA1C92A1D10F68D000122BD /* typeView.xib in Resources */,
 				A13ABACA1CE9F79000F8D01B /* Main.storyboard in Resources */,
+				BDA1C9261D10F456000122BD /* NoteTextView.xib in Resources */,
 				BDE7DED01CFD7C1A0006560E /* wifi.jpg in Resources */,
 				A1CDFF5D1CF5D1F800F50491 /* gongjiao.png in Resources */,
 				BD97F3631CF6A269005FF681 /* MoreTableViewCell.xib in Resources */,
@@ -939,6 +957,7 @@
 				BDD1F0381D010D3200816B95 /* Play.swift in Sources */,
 				A13ABB411CE9FDC200F8D01B /* UIImage+WebP.m in Sources */,
 				A13ABAC51CE9F79000F8D01B /* AppDelegate.swift in Sources */,
+				BDA1C9221D10F430000122BD /* NoteTextView.swift in Sources */,
 				A13ABB421CE9FDC200F8D01B /* UIImageView+HighlightedWebCache.m in Sources */,
 				A13ABAFD1CE9F7B300F8D01B /* NoteViewController.swift in Sources */,
 				BD6D3B181CFC1D3E0000ED34 /* PDLineChart.swift in Sources */,
@@ -978,6 +997,7 @@
 				BD6D3B161CFC1D3E0000ED34 /* PDChart.swift in Sources */,
 				A13ABB3A1CE9FDC200F8D01B /* SDWebImageDownloader.m in Sources */,
 				A1CDFF611CF5DE3A00F50491 /* WaatherTableViewCell.swift in Sources */,
+				BDA1C9281D10F67E000122BD /* typeView.swift in Sources */,
 				BDD1F03B1D010D3200816B95 /* SectionHeaderView.swift in Sources */,
 				A11C02981CEB4EF600797AC9 /* WeatherEntity+CoreDataProperties.m in Sources */,
 				BDE7DEC51CFD30210006560E /* pickerViewController.swift in Sources */,
@@ -1232,6 +1252,14 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1322,6 +1350,14 @@
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
 					"$(PROJECT_DIR)/HTK/",

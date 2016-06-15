@@ -334,14 +334,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tp1-EM-cXf">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tp1-EM-cXf" customClass="NoteTextView" customModule="HTK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="200"/>
                                 <color key="backgroundColor" red="0.33725490200000002" green="0.63529411759999999" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="B8C-71-RZN"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJ4-eH-3yU">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJ4-eH-3yU" customClass="typeView" customModule="HTK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="264" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.63137254899999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -372,7 +372,9 @@
                     <tabBarItem key="tabBarItem" title="Item 1" id="J87-Cp-EHz"/>
                     <navigationItem key="navigationItem" title="笔记" id="4rJ-X3-LYB"/>
                     <connections>
+                        <outlet property="_noteTextView" destination="tp1-EM-cXf" id="3Q7-Dl-I3n"/>
                         <outlet property="_photosSelectView" destination="JWH-YV-K62" id="6YP-0O-A1J"/>
+                        <outlet property="_typeView" destination="HJ4-eH-3yU" id="BdE-nj-E5P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5D-yn-03u" userLabel="First Responder" sceneMemberID="firstResponder"/>
