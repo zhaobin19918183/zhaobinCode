@@ -11,8 +11,9 @@ import MapKit
 import CoreLocation
 import Alamofire
 
-class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
-    
+class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,CLLocationManagerDelegate{
+    let locationManager:CLLocationManager = CLLocationManager()
+    var currLocation:CLLocation = CLLocation()
     
     weak var weatherEntity : WeatherEntity?
     weak var dataDic  = NSMutableDictionary()
@@ -28,7 +29,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     {
         super.viewDidLoad()
         
-    
+        location()
         weatherCoredata()
         weatherMoreButtonAction()
         trafficViewSearchButtonAction()
@@ -37,16 +38,17 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         rxTextFieldCocoa()
         
     }
+    
     //MARK:lineTextField 实时监控
     func rxTextFieldCocoa()
     {
         let username = _traffic.lineTextField.rx_text
-    
+        
         username.subscribeNext {
-         
+            
             let text = $0
             print(text)
-     
+            
             if $0 == ""
             {
                 self.lineString = nil
@@ -57,7 +59,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             }
         }
     }
-   
+    
     //MARK:CollectionView
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
@@ -84,7 +86,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
-       
+        
         print(indexPath.row)
     }
     
@@ -154,13 +156,13 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         }
         else
         {
-          NetWorkManager.alamofireRequestData("大连", bus:self.lineString, url: "http://op.juhe.cn/189/bus/busline")
-      
+            NetWorkManager.alamofireRequestData("大连", bus:self.lineString, url: "http://op.juhe.cn/189/bus/busline")
+            
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.successAction), name: "alamofireSuccess", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.errorAction), name: "alamofireError", object: nil)
-
+        
     }
     
     //MARK:error
@@ -170,10 +172,10 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "alamofireError", object: nil)
         let errorAction:UIAlertAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default) {
             (action: UIAlertAction!) -> Void in
-             self.progressHUD.hide(true, afterDelay:0)
+            self.progressHUD.hide(true, afterDelay:0)
         }
         AlertControllerAction("警告", message: "公交线路输入错误", firstAction:errorAction, seccondAction: nil,thirdAction:nil)
-     
+        
     }
     //MARK:AlertControllerAction
     func AlertControllerAction(title:String , message:String ,firstAction:UIAlertAction,seccondAction:UIAlertAction?,thirdAction:UIAlertAction?)
@@ -183,13 +185,13 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         alert.addAction(firstAction)
         if seccondAction != nil
         {
-          alert.addAction(seccondAction!)
+            alert.addAction(seccondAction!)
         }
         if thirdAction != nil
         {
             alert.addAction(thirdAction!)
         }
-     
+        
         self.presentViewController(alert, animated:true, completion:nil)
     }
     //MARK:successAction
@@ -201,7 +203,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         self.progressHUD.hide(true, afterDelay:0.25)
         self.navigationController?.pushViewController(target, animated:true)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "alamofireSuccess", object: nil)
-       
+        
     }
     //MARK:MBProgressHUD
     func prpgressHud()
@@ -235,15 +237,15 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     //MARK:weatherAlamofire
     func weatherAlamofire()
     {
-         NetWorkManager.alamofireWeatherRequestData("大连", url: "http://op.juhe.cn/onebox/weather/query", key: "e527188bbf687ccccac5350acf9a151f", dtype: "json")
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.weatherData), name: "WeatherData", object: nil)
+        NetWorkManager.alamofireWeatherRequestData("大连", url: "http://op.juhe.cn/onebox/weather/query", key: "e527188bbf687ccccac5350acf9a151f", dtype: "json")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.weatherData), name: "WeatherData", object: nil)
         
     }
     func weatherData()
     {
-    
-       self.dataFunc()
-       NSNotificationCenter.defaultCenter().removeObserver(self, name: "WeatherData", object: nil)
+        
+        self.dataFunc()
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "WeatherData", object: nil)
     }
     
     func weatherCoredata()
@@ -292,7 +294,64 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         let moon = " 农历 :  "
         _weather.dateLabel.text = (dictionary.valueForKey("date") as? String)!+moon+(dictionary.valueForKey("moon") as? String)!
         _weather.weatherLabel.text = info
-    
+        
     }
+    //MARK: - 地图
+    func location()
+    {
+        //设置定位服务管理器代理
+        locationManager.delegate = self
+        //设置定位进度
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        //更新距离
+        locationManager.distanceFilter = 100
+        ////发送授权申请
+        locationManager.requestAlwaysAuthorization()
+        if (CLLocationManager.locationServicesEnabled())
+        {
+            //允许使用定位服务的话，开启定位服务更新
+            locationManager.startUpdatingLocation()
+            print("定位开始")
+        }
+        
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //获取最新的坐标
+       //    currLocation  = CLLocation.init(latitude: (locations.last?.coordinate.latitude)!, longitude: (-(locations.last?.coordinate.longitude)!))
+        
+        
+        currLocation = locations.last!
+        
+        print( "经度：\(currLocation.coordinate.longitude)")
+        print( "纬度：\(currLocation.coordinate.latitude)")
+        LonLatToCity()
+        
+    }
+    
+    ///将经纬度转换为城市名
+    func LonLatToCity() {
+        let geocoder: CLGeocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(currLocation) { (placemark, error) -> Void in
+            
+            if(error == nil)
+            {
+                let array = placemark! as NSArray
+                let mark = array.firstObject as! CLPlacemark
+                //城市
+                let city: String = (mark.addressDictionary! as NSDictionary).valueForKey("City") as! String
+                print((mark.addressDictionary! as NSDictionary).allKeys)
+                print(city)
+                
+            }
+            else
+            {
+                print(error)
+            }
+        }
+    }
+    
+    
+    
     
 }
