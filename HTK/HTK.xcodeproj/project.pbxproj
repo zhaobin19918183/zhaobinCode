@@ -72,15 +72,12 @@
 		BD753A441D10E5780096854A /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = BD753A431D10E5780096854A /* 3.png */; };
 		BD800DD21D0E486500E2DDEE /* jiahao.png in Resources */ = {isa = PBXBuildFile; fileRef = BD800DD11D0E486500E2DDEE /* jiahao.png */; };
 		BD800DD61D0E50E500E2DDEE /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD800DD51D0E50E500E2DDEE /* iconfont.ttf */; };
-		BD86820C1CEC3949004AC3E4 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD86820B1CEC3949004AC3E4 /* AMapLocationKit.framework */; };
-		BD8682121CEC3B2C004AC3E4 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */; };
 		BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */; };
 		BD8682211CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = BD86821E1CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m */; };
 		BD8682221CEC52D3004AC3E4 /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8682201CEC52D3004AC3E4 /* CityEntity.m */; };
 		BD8682241CEC5C2F004AC3E4 /* WeatherDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */; };
 		BD97F3621CF6A269005FF681 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD97F3601CF6A269005FF681 /* MoreTableViewCell.swift */; };
 		BD97F3631CF6A269005FF681 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD97F3611CF6A269005FF681 /* MoreTableViewCell.xib */; };
-		BDA1C9201D10F3F1000122BD /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDA1C91F1D10F3F1000122BD /* MAMapKit.framework */; };
 		BDA1C9221D10F430000122BD /* NoteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA1C9211D10F430000122BD /* NoteTextView.swift */; };
 		BDA1C9261D10F456000122BD /* NoteTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDA1C9251D10F456000122BD /* NoteTextView.xib */; };
 		BDA1C9281D10F67E000122BD /* typeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA1C9271D10F67E000122BD /* typeView.swift */; };
@@ -252,8 +249,6 @@
 		BD753A431D10E5780096854A /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		BD800DD11D0E486500E2DDEE /* jiahao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiahao.png; sourceTree = "<group>"; };
 		BD800DD51D0E50E500E2DDEE /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = iconfont.ttf; path = ../iconfont.ttf; sourceTree = "<group>"; };
-		BD86820B1CEC3949004AC3E4 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
-		BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
 		BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		BD86821D1CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CityEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
 		BD86821E1CEC52D3004AC3E4 /* CityEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CityEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -262,7 +257,6 @@
 		BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDAO.swift; sourceTree = "<group>"; };
 		BD97F3601CF6A269005FF681 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		BD97F3611CF6A269005FF681 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreTableViewCell.xib; sourceTree = "<group>"; };
-		BDA1C91F1D10F3F1000122BD /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BDA1C9211D10F430000122BD /* NoteTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTextView.swift; sourceTree = "<group>"; };
 		BDA1C9251D10F456000122BD /* NoteTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteTextView.xib; sourceTree = "<group>"; };
 		BDA1C9271D10F67E000122BD /* typeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = typeView.swift; sourceTree = "<group>"; };
@@ -314,7 +308,6 @@
 			files = (
 				BD86821C1CEC4FEB004AC3E4 /* AddressBook.framework in Frameworks */,
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
-				BDA1C9201D10F3F1000122BD /* MAMapKit.framework in Frameworks */,
 				BDECC3F61D05533A0077D8CA /* RxCocoa.framework in Frameworks */,
 				BDECC3F81D05533A0077D8CA /* RxSwift.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
@@ -323,9 +316,7 @@
 				BDE6AE5C1CEC37EA007A315E /* OpenGLES.framework in Frameworks */,
 				BDE6AE5A1CEC37E1007A315E /* QuartzCore.framework in Frameworks */,
 				BDE6AE581CEC37D6007A315E /* libz.tbd in Frameworks */,
-				BD8682121CEC3B2C004AC3E4 /* AMapSearchKit.framework in Frameworks */,
 				BDE6AE561CEC37CE007A315E /* libstdc++.6.0.9.tbd in Frameworks */,
-				BD86820C1CEC3949004AC3E4 /* AMapLocationKit.framework in Frameworks */,
 				BDE6AE341CEC0277007A315E /* MapKit.framework in Frameworks */,
 				A13ABB061CE9FA6500F8D01B /* Alamofire.framework in Frameworks */,
 			);
@@ -433,12 +424,10 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BDA1C91F1D10F3F1000122BD /* MAMapKit.framework */,
 				A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */,
 				BDECC3F41D05533A0077D8CA /* RxCocoa.framework */,
 				BDECC3F51D05533A0077D8CA /* RxSwift.framework */,
 				BD86821B1CEC4FEB004AC3E4 /* AddressBook.framework */,
-				BD8682111CEC3B2C004AC3E4 /* AMapSearchKit.framework */,
 				BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */,
 				BDE6AE611CEC3805007A315E /* Security.framework */,
 				BDE6AE5F1CEC37FD007A315E /* CoreTelephony.framework */,
@@ -447,7 +436,6 @@
 				BDE6AE591CEC37E1007A315E /* QuartzCore.framework */,
 				BDE6AE571CEC37D6007A315E /* libz.tbd */,
 				BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */,
-				BD86820B1CEC3949004AC3E4 /* AMapLocationKit.framework */,
 				A13ABB4A1CE9FEFA00F8D01B /* MBProgressHUD */,
 				A13ABB131CE9FDC200F8D01B /* SDWebImage */,
 				A13ABB051CE9FA6500F8D01B /* Alamofire.framework */,
@@ -1260,6 +1248,8 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1350,6 +1340,8 @@
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
