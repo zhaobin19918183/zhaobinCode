@@ -46,9 +46,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         
         username.subscribeNext {
             
-            let text = $0
-            print(text)
-            
             if $0 == ""
             {
                 self.lineString = nil

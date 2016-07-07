@@ -50,6 +50,8 @@
 		A1D9B3AF1CF31E4900B78808 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D9B3AE1CF31E4900B78808 /* HomeViewController.swift */; };
 		A1D9B3B51CF3242B00B78808 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = A1D9B3B41CF3242B00B78808 /* 7.png */; };
 		A1D9B3B71CF33FD800B78808 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D9B3B61CF33FD800B78808 /* Reach.swift */; };
+		BD0DA8D51D26062F00C1E9F4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE5D1CEC37F4007A315E /* CoreLocation.framework */; };
+		BD0DA8D61D26062F00C1E9F4 /* CoreLocation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE5D1CEC37F4007A315E /* CoreLocation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BD23099E1CFEAF1D0034B8AE /* BusCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */; };
 		BD23099F1CFEAF1D0034B8AE /* BusCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */; };
 		BD2309A21CFEDACE0034B8AE /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */; };
@@ -148,6 +150,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BD0DA8D61D26062F00C1E9F4 /* CoreLocation.framework in Embed Frameworks */,
 				BDECC3F71D05533A0077D8CA /* RxCocoa.framework in Embed Frameworks */,
 				A13ABB081CE9FA6D00F8D01B /* Alamofire.framework in Embed Frameworks */,
 				BDECC3F91D05533A0077D8CA /* RxSwift.framework in Embed Frameworks */,
@@ -278,7 +281,7 @@
 		BDD1F0341D010D3200816B95 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		BDD1F0351D010D3200816B95 /* SectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
 		BDD1F0361D010D3200816B95 /* SectionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionInfo.swift; sourceTree = "<group>"; };
-		BDD1F0401D0148AE00816B95 /* NetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
+		BDD1F0401D0148AE00816B95 /* NetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetWorkManager.swift; path = ../HomeViewController/NetWorkManager.swift; sourceTree = "<group>"; };
 		BDE6AE331CEC0277007A315E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		BDE6AE571CEC37D6007A315E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -310,6 +313,7 @@
 				BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */,
 				BDECC3F61D05533A0077D8CA /* RxCocoa.framework in Frameworks */,
 				BDECC3F81D05533A0077D8CA /* RxSwift.framework in Frameworks */,
+				BD0DA8D51D26062F00C1E9F4 /* CoreLocation.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
 				BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */,
 				BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */,
@@ -455,6 +459,7 @@
 				A13ABB0B1CE9FAD600F8D01B /* FolderManager.swift */,
 				A13ABB031CE9FA2600F8D01B /* Common.swift */,
 				BD4550D11D0FE7C40077D396 /* HelperManager.swift */,
+				BDD1F0401D0148AE00816B95 /* NetWorkManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -481,7 +486,6 @@
 			isa = PBXGroup;
 			children = (
 				A1D9B3AE1CF31E4900B78808 /* HomeViewController.swift */,
-				BDD1F0401D0148AE00816B95 /* NetWorkManager.swift */,
 				BDD1F03F1D01219E00816B95 /* basketballViewController */,
 				BDE7DED11CFD8C3A0006560E /* HomeCollectionCell */,
 				BD489FDA1CEAAC060010806B /* TrafficView */,
@@ -836,6 +840,7 @@
 				TargetAttributes = {
 					A13ABAC01CE9F79000F8D01B = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = W4WR9Z32J8;
 					};
 					A13ABAD41CE9F79100F8D01B = {
 						CreatedOnToolsVersion = 7.3;
