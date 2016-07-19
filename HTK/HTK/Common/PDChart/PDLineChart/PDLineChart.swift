@@ -29,6 +29,8 @@ class PDLineChartDataItem {
     
     var pointArray: [CGPoint]?//按照数学中的平面二维坐标系输入数据
     
+ 
+    
     init() {
     
     }
@@ -37,7 +39,7 @@ class PDLineChartDataItem {
 class PDLineChart: PDChart {
     var axesComponent: PDChartAxesComponent!
     var dataItem: PDLineChartDataItem!
-    
+   
     init(frame: CGRect, dataItem: PDLineChartDataItem) {
         super.init(frame: frame)
         
@@ -79,8 +81,9 @@ class PDLineChart: PDChart {
         chartLayer.lineCap = kCALineCapRound
         chartLayer.lineJoin = kCALineJoinRound
         chartLayer.fillColor = UIColor.whiteColor().CGColor
-        chartLayer.strokeColor = self.dataItem.chartLayerColor.CGColor
-        chartLayer.lineWidth = 1.0
+        chartLayer.strokeColor = UIColor.redColor().CGColor
+        //宽度
+        chartLayer.lineWidth = 2.0
         chartLayer.strokeStart = 0.0
         chartLayer.strokeEnd = 1.0
         self.layer.addSublayer(chartLayer)
@@ -93,8 +96,10 @@ class PDLineChart: PDChart {
         let basePoint: CGPoint = axesComponent.getBasePoint()
         let xAxesWidth: CGFloat = axesComponent.getXAxesWidth()
         let yAxesHeight: CGFloat = axesComponent.getYAxesHeight()
+        
         for i in 0 ..< self.dataItem.pointArray!.count {
             let point: CGPoint = self.dataItem.pointArray![i]
+            
             let pixelPoint: CGPoint = CGPoint(x: basePoint.x + point.x / self.dataItem.xMax * xAxesWidth, y: basePoint.y - point.y / self.dataItem.yMax * yAxesHeight*2)//转换为可以绘制的，屏幕中的像素点
             
             if i == 0 {
@@ -133,26 +138,21 @@ class PDLineChart: PDChart {
         super.drawRect(rect)
         
         let context: CGContext = UIGraphicsGetCurrentContext()!
+        let basePoint: CGPoint = axesComponent.getBasePoint()
+        let xAxesWidth: CGFloat = axesComponent.getXAxesWidth()
+        let yAxesHeight: CGFloat = axesComponent.getYAxesHeight()
+        CGContextSetStrokeColorWithColor(context, UIColor.greenColor().CGColor)
+        CGContextSetLineWidth(context, 5)
+        for i in 0 ..< self.dataItem.pointArray!.count {
+            let point: CGPoint = self.dataItem.pointArray![i]
+
+            CGContextAddEllipseInRect(context, CGRectMake(basePoint.x + point.x / self.dataItem.xMax * xAxesWidth, basePoint.y - point.y / self.dataItem.yMax * yAxesHeight*2,5,5)); //画圆
+            CGContextStrokePath(context) //关闭路径
+       
+        }
+       
         axesComponent.strokeAxes(context)
+
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

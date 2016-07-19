@@ -273,9 +273,9 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     func  dataFunc()
     {
-        
-        self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
-        let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("realtime"))! as! NSData)! as! NSDictionary
+       let weatherModel = WeatherDAO.SearchWeatherModel()
+
+        let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData(weatherModel.realtime! )! as! NSDictionary
         
         let windDic = dictionary.valueForKey("wind")
         let  weatherDic = dictionary.valueForKey("weather")

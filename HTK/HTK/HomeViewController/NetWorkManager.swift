@@ -105,15 +105,17 @@ class NetWorkManager: NSObject
             dataDic = jsonArr?.valueForKey("result")?.valueForKey("data") as?NSMutableDictionary
             if(NSUserDefaults.standardUserDefaults().valueForKey("first") != nil)
             {
-                weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
+                weatherEntity = WeatherDAO.SearchCoreDataEntity()
                 WeatherDAO.deleteEntityWith(Entity: weatherEntity!)
-                WeatherDAO.createNewPassWordData(dataDic!)
+                WeatherDAO.createWeatherEntity(dataDic!)
+                // WeatherDAO.SearchOneEntity(0)
+               // WeatherDAO.updateEntityWith(Entity: weatherEntity!)
                 
             }
             else
             {
                 
-                WeatherDAO.createNewPassWordData(dataDic!)
+                WeatherDAO.createWeatherEntity(dataDic!)
                 NSUserDefaults.standardUserDefaults().setObject("first", forKey: "first")
                 
             }

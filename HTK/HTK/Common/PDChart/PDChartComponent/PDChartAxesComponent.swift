@@ -213,6 +213,7 @@ class PDChartAxesComponent: NSObject {
             }
             
             if (dataItem.yAxesDegreeTexts != nil) {
+                
                 for i in 0 ..< dataItem.yAxesDegreeTexts!.count {
                     let size: CGSize = CGSize(width: dataItem.xAxesLeftMargin - dataItem.degreeTipMarginHorizon * 2, height: dataItem.degreeTipFontSize)
                     let center: CGPoint = CGPoint(x: dataItem.xAxesLeftMargin / 2, y: basePoint.y - yDegreeInterval * CGFloat(i + 1))

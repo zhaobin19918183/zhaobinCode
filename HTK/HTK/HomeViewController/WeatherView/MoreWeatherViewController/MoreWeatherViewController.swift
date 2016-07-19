@@ -16,7 +16,6 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
     var weatherArr  = NSMutableArray()
     var messageArr0  = NSMutableArray()
     var messageArr1  = NSMutableArray()
-    /////////////////////////init(coder aDecoder: NSCoder)
     var refreshControl = RefreshControl()
 
     @IBOutlet weak var tableview: UITableView!
@@ -25,17 +24,17 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         tableview.separatorStyle = UITableViewCellSeparatorStyle.None
         tabBarControllerData()
         weatherDeatilData()
-      //  tableview.addSubview(refreshControl)
-      
-      
+
     }
     
     //TODO:赋值
     func  weatherDeatilData()
     {
-        self.weatherEntity = WeatherDAO.SearchCoreDataEntity().objectAtIndex(0).objectAtIndex(0) as? WeatherEntity
-        
+        self.weatherEntity = WeatherDAO.SearchCoreDataEntity()
         let lifeDictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("life"))! as! NSData)! as! NSDictionary
+
+//        let weatherModel = WeatherDAO.SearchWeatherModel()
+//        let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData(weatherModel.life! )! as! NSDictionary
 
         let ganmao = lifeDictionary.valueForKey("info")?.valueForKey("ganmao") as! NSArray
         let kongtiao = lifeDictionary.valueForKey("info")?.valueForKey("kongtiao") as! NSArray
