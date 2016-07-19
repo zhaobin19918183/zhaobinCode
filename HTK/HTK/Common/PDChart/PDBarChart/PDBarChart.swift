@@ -66,6 +66,7 @@ class PDBarChart: PDChart {
         axesDataItem.yMax = dataItem.yMax
         axesDataItem.yInterval = dataItem.yInterval
         axesDataItem.xAxesDegreeTexts = dataItem.xAxesDegreeTexts
+       // axesDataItem.yAxesDegreeTexts = dataItem.yAxesDegreeTexts
         axesDataItem.showXDegree = false
         axesDataItem.axesWidth = dataItem.axesWidth
         
@@ -155,15 +156,14 @@ class PDBarChart: PDChart {
             self.addSubview(barView)
         }
     }
-    
+     //MARK: - 柱状图每条长度
     override func strokeChart()  {
         if !(self.dataItem.barPointArray != nil) {
             return
         }
-        
         UIGraphicsBeginImageContext(self.frame.size)
-        
-        let yAxesHeight: CGFloat = self.axesComponent.getYAxesHeight()
+       
+        let yAxesHeight: CGFloat = self.axesComponent.getYAxesHeight()*2
         
         for i in 0 ..< self.dataItem.barPointArray!.count {
             let point: CGPoint = self.dataItem.barPointArray![i]
@@ -188,42 +188,3 @@ class PDBarChart: PDChart {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

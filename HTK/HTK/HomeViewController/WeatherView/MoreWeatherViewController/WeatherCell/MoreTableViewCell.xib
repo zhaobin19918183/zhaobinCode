@@ -18,6 +18,7 @@
             <connections>
                 <outlet property="backView" destination="H2p-sc-9uM" id="hze-zp-Iq0"/>
             </connections>
+            <point key="canvasLocation" x="59" y="233"/>
         </tableViewCell>
     </objects>
 </document>

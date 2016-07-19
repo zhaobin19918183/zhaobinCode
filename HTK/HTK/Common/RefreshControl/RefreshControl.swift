@@ -11,7 +11,7 @@ import UIKit
 
 class RefreshControl: UIRefreshControl {
     
-    var customView: UIView!
+    var headerCustomView: UIView!
     
     var labelsArray: Array<UILabel> = []
     
@@ -25,6 +25,7 @@ class RefreshControl: UIRefreshControl {
     {
         
         super.init()
+        
         resetUILayout()
         
     }
@@ -53,13 +54,13 @@ class RefreshControl: UIRefreshControl {
         let refreshContents = NSBundle.mainBundle().loadNibNamed("Refresh",
                                                                  owner: self, options: nil)
         
-        customView = refreshContents[0] as! UIView
-        customView.frame = self.bounds
-        for i in 0 ..< customView.subviews.count {
-            labelsArray.append(customView.viewWithTag(i + 1) as! UILabel)
+        headerCustomView = refreshContents[0] as! UIView
+        headerCustomView.frame = self.bounds
+        for i in 0 ..< headerCustomView.subviews.count {
+            labelsArray.append(headerCustomView.viewWithTag(i + 1) as! UILabel)
         }
         
-        self.addSubview(customView)
+        self.addSubview(headerCustomView)
     }
 
     
@@ -118,7 +119,8 @@ class RefreshControl: UIRefreshControl {
         })
     }
 
-    func loadData() {
+    func loadData()
+    {
         self.endRefreshing()
         timer?.invalidate()
         timer = nil

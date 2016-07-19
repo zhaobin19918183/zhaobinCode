@@ -30,13 +30,12 @@ class MoreTableViewCell: UITableViewCell {
         {
 
            let night = weather[index].valueForKey("info")?.valueForKey("day")?.objectAtIndex(2)
-            print(night)
            nightArray.addObject(night!)
  
         }
        
         
-        let lineChart: PDLineChart = self.getLineChart()
+        let lineChart: PDBarChart = self.getBarChart()
         chart = lineChart
         chart.strokeChart()
         backView.addSubview(lineChart)
@@ -68,6 +67,19 @@ class MoreTableViewCell: UITableViewCell {
         return lineChart
     }
     
+    func getBarChart() -> PDBarChart {
+        let dataItem: PDBarChartDataItem = PDBarChartDataItem()
+        dataItem.xMax = 7.0
+        dataItem.xInterval = 1.0
+        dataItem.yMax = 100.0
+        dataItem.yInterval = 10.0
+        dataItem.barPointArray = [CGPoint(x: 1.0, y: 27.0), CGPoint(x: 2.0, y: 25.0), CGPoint(x: 3.0, y: 26.0), CGPoint(x: 4.0, y:28.0), CGPoint(x: 5.0, y: 28.0), CGPoint(x: 6.0, y: 29.0), CGPoint(x: 7.0, y: 29.0)]
+        dataItem.xAxesDegreeTexts = ["周日", "一", "二", "三", "四", "五", "周六"]
+
+        
+        let barChart: PDBarChart = PDBarChart(frame: CGRectMake(0, 0, self.frame.size.width, 200), dataItem: dataItem)
+        return barChart
+    }
 
     
 }

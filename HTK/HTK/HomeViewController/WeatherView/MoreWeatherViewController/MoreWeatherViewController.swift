@@ -21,9 +21,11 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableview.separatorStyle = UITableViewCellSeparatorStyle.None
         tabBarControllerData()
         weatherDeatilData()
+        tableview.addSubview(refreshControl)
 
     }
     
@@ -72,11 +74,11 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
             let nibArray = NSBundle.mainBundle().loadNibNamed("MoreTableViewCell", owner: self, options: nil)
             cell = nibArray.first as? MoreTableViewCell
         }
-        
         cell?.weatherDataArray(self.weatherArr, index: indexPath)
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
+        
         return cell!
-
+         
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
@@ -88,7 +90,7 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         return 240
         
         }
-      return  120
+        return  120
     }
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
@@ -103,7 +105,7 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
             return weatherArr.count
         }
         else{
-          return 1
+             return 1
         }
         
       
@@ -143,8 +145,6 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         print("刷新结束")
     }
         
-       
-      
-    
+
     
 }

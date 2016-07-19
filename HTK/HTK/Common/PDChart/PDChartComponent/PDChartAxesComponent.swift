@@ -196,11 +196,13 @@ class PDChartAxesComponent: NSObject {
             
             //axes tips------------------------------------
             //func getXAxesDegreeTipLabel(tipText: String, frame: CGRect, fontSize: CGFloat) -> UILabel {
+            //MARK: - X 轴 下标
             if (dataItem.xAxesDegreeTexts != nil) {
                 for i in 0 ..< dataItem.xAxesDegreeTexts!.count {
                     let size: CGSize = CGSize(width: xDegreeInterval - dataItem.degreeTipMarginHorizon * 2, height: dataItem.degreeTipFontSize)
-                    let center: CGPoint = CGPoint(x: basePoint.x + xDegreeInterval * CGFloat(i + 1), y: basePoint.y + dataItem.degreeTipMarginVertical + size.height / 2)
+                    let center: CGPoint = CGPoint(x: basePoint.x + xDegreeInterval * CGFloat(i + 1), y: basePoint.y + dataItem.degreeTipMarginVertical + size.height / 2 )
                     let label: UILabel = self.getXAxesDegreeTipLabel(dataItem.xAxesDegreeTexts![i], center: center, size: size, fontSize: dataItem.degreeTipFontSize)
+                    label.backgroundColor = UIColor.redColor()
                     dataItem.targetView.addSubview(label)
                 }
             } else {
@@ -224,7 +226,7 @@ class PDChartAxesComponent: NSObject {
                 for i in 0 ..< yDegreesNum {
                     let size: CGSize = CGSize(width: dataItem.xAxesLeftMargin - dataItem.degreeTipMarginHorizon * 2, height: dataItem.degreeTipFontSize)
                     let center: CGPoint = CGPoint(x: dataItem.xAxesLeftMargin / 2, y: basePoint.y - yDegreeInterval * CGFloat(i + 1))
-                    let label: UILabel = self.getYAxesDegreeTipLabel("\(CGFloat(i + 1) * dataItem.yInterval)", center: center, size: size, fontSize: dataItem.degreeTipFontSize)
+                    let label: UILabel = self.getYAxesDegreeTipLabel("\(CGFloat(i + 1) * dataItem.yInterval/2)", center: center, size: size, fontSize: dataItem.degreeTipFontSize)
                     dataItem.targetView.addSubview(label)
                 }
             }
