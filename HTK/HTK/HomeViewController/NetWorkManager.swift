@@ -88,6 +88,17 @@ class NetWorkManager: NSObject
         }
     }
     //MARK:alamofireWeatherRequestData
+    
+    private  static var alamofireManager:Manager =
+    {
+        var alamofireManager : Manager?
+        // 设置请求的超时时间
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        config.timeoutIntervalForRequest = 10    // 秒
+        alamofireManager = Manager(configuration: config)
+        return alamofireManager!
+    }()
+    
     static func  alamofireWeatherRequestData(city:String ,url:String,key:String,dtype:String)
     {
         let parameters = [
@@ -97,33 +108,34 @@ class NetWorkManager: NSObject
             ]
         weak var weatherEntity : WeatherEntity?
         weak var dataDic  = NSMutableDictionary()
-          
-        Alamofire.request(.GET, url,parameters: parameters).response{(request, response, data, error) in
-            
-            let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
-                options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
-            dataDic = jsonArr?.valueForKey("result")?.valueForKey("data") as?NSMutableDictionary
-            if(NSUserDefaults.standardUserDefaults().valueForKey("first") != nil)
+        
+        alamofireManager.request(.GET, url,parameters: parameters).response{(request, response, data, error) in
+            if error?.localizedDescription == "The request timed out."
             {
-                weatherEntity = WeatherDAO.SearchCoreDataEntity()
-                WeatherDAO.deleteEntityWith(Entity: weatherEntity!)
-                WeatherDAO.createWeatherEntity(dataDic!)
-                // WeatherDAO.SearchOneEntity(0)
-               // WeatherDAO.updateEntityWith(Entity: weatherEntity!)
+              //TODO:超时
+                print("The request timed out")
                 
             }
             else
             {
+                let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
+                    options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
+                dataDic = jsonArr?.valueForKey("result")?.valueForKey("data") as?NSMutableDictionary
                 
-                WeatherDAO.createWeatherEntity(dataDic!)
-                NSUserDefaults.standardUserDefaults().setObject("first", forKey: "first")
-                
+                if(NSUserDefaults.standardUserDefaults().valueForKey("first") != nil)
+                {
+                    weatherEntity = WeatherDAO.SearchCoreDataEntity()
+                    WeatherDAO.deleteEntityWith(Entity: weatherEntity!)
+                    WeatherDAO.createWeatherEntity(dataDic!)
+                }
+                else
+                {
+                    WeatherDAO.createWeatherEntity(dataDic!)
+                    NSUserDefaults.standardUserDefaults().setObject("first", forKey: "first")
+                }
+                NSNotificationCenter.defaultCenter().postNotificationName("WeatherData", object: nil)
             }
-            NSNotificationCenter.defaultCenter().postNotificationName("WeatherData", object: nil)
-            //self.dataFunc()
-            
         }
-        
     }
 
 }
