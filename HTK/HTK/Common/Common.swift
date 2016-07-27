@@ -30,3 +30,6 @@ let kPathCoreData = kPathRoot + "/Coredata"
 //Level - 3
 let kPathSQLITE = kPathCoreData + "/Model.Sqlite"
 
+let Common_busUrl = "http://op.juhe.cn/189/bus/busline"
+let Common_OK = " 确认"
+let Common_Warning = "警告"

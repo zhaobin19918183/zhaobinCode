@@ -35,7 +35,7 @@ class MoreTableViewCell: UITableViewCell {
         }
        
         
-        let lineChart: PDBarChart = self.getBarChart()
+        let lineChart: PDLineChart = self.getLineChart()
         chart = lineChart
         chart.strokeChart()
         backView.addSubview(lineChart)
@@ -77,7 +77,7 @@ class MoreTableViewCell: UITableViewCell {
         dataItem.xAxesDegreeTexts = ["周日", "一", "二", "三", "四", "五", "周六"]
 
         
-        let barChart: PDBarChart = PDBarChart(frame: CGRectMake(0, 0, self.frame.size.width, 200), dataItem: dataItem)
+        let barChart: PDBarChart = PDBarChart(frame: CGRectMake(0, 0, self.frame.size.width, 240), dataItem: dataItem)
         return barChart
     }
 

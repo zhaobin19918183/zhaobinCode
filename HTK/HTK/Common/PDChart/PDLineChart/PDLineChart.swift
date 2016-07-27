@@ -113,6 +113,17 @@ class PDLineChart: PDChart {
         
         chartLayer.path = progressLine.CGPath
         
+        //画点
+        //CGContextSetStrokeColorWithColor(context, UIColor.greenColor().CGColor)
+        CGContextSetLineWidth(nil, 5)
+        for i in 0 ..< self.dataItem.pointArray!.count {
+            let point: CGPoint = self.dataItem.pointArray![i]
+            
+            CGContextAddEllipseInRect(nil, CGRectMake(basePoint.x + point.x / self.dataItem.xMax * xAxesWidth, basePoint.y - point.y / self.dataItem.yMax * yAxesHeight*2,5,5)); //画圆
+            CGContextStrokePath(nil) //关闭路径
+            
+        }
+
         //动画
         CATransaction.begin()
         let pathAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -138,19 +149,19 @@ class PDLineChart: PDChart {
         super.drawRect(rect)
         
         let context: CGContext = UIGraphicsGetCurrentContext()!
-        let basePoint: CGPoint = axesComponent.getBasePoint()
-        let xAxesWidth: CGFloat = axesComponent.getXAxesWidth()
-        let yAxesHeight: CGFloat = axesComponent.getYAxesHeight()
-        CGContextSetStrokeColorWithColor(context, UIColor.greenColor().CGColor)
-        CGContextSetLineWidth(context, 5)
-        for i in 0 ..< self.dataItem.pointArray!.count {
-            let point: CGPoint = self.dataItem.pointArray![i]
-
-            CGContextAddEllipseInRect(context, CGRectMake(basePoint.x + point.x / self.dataItem.xMax * xAxesWidth, basePoint.y - point.y / self.dataItem.yMax * yAxesHeight*2,5,5)); //画圆
-            CGContextStrokePath(context) //关闭路径
-       
-        }
-       
+//        let basePoint: CGPoint = axesComponent.getBasePoint()
+//        let xAxesWidth: CGFloat = axesComponent.getXAxesWidth()
+//        let yAxesHeight: CGFloat = axesComponent.getYAxesHeight()
+//        CGContextSetStrokeColorWithColor(context, UIColor.greenColor().CGColor)
+//        CGContextSetLineWidth(context, 5)
+//        for i in 0 ..< self.dataItem.pointArray!.count {
+//            let point: CGPoint = self.dataItem.pointArray![i]
+//
+//            CGContextAddEllipseInRect(context, CGRectMake(basePoint.x + point.x / self.dataItem.xMax * xAxesWidth, basePoint.y - point.y / self.dataItem.yMax * yAxesHeight*2,5,5)); //画圆
+//            CGContextStrokePath(context) //关闭路径
+//       
+//        }
+//       
         axesComponent.strokeAxes(context)
 
     }

@@ -12,10 +12,10 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
 
     weak var weatherEntity : WeatherEntity?
     let headerArray = ["当日推荐","天气走势"]
-    let titleArray = ["感冒 : ","空调 : ","穿衣 : ","运动 : ","紫外线 : ","污染 : ","洗车 : "]
-    var weatherArr  = NSMutableArray()
-    var messageArr0  = NSMutableArray()
-    var messageArr1  = NSMutableArray()
+    let titleArray  = ["感冒 : ","空调 : ","穿衣 : ","运动 : ","紫外线 : ","污染 : ","洗车 : "]
+    var weatherArr     = NSMutableArray()
+    var messageArr0    = NSMutableArray()
+    var messageArr1    = NSMutableArray()
     var refreshControl = RefreshControl()
 
     @IBOutlet weak var tableview: UITableView!
@@ -144,7 +144,5 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         tableview.reloadData()
         print("刷新结束")
     }
-        
 
-    
 }

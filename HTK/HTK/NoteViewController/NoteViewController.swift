@@ -21,12 +21,5 @@ class NoteViewController: UIViewController {
         super.viewDidLoad()
          _photosSelectView.photosSelectView = self.parentViewController!
         self.automaticallyAdjustsScrollViewInsets = false
-       
-      
     }
-
-    
-   
-
-
 }

@@ -336,7 +336,7 @@ class BusTableViewController: UITableViewController,SectionHeaderViewDelegate{
         let quotation: Quotation = play.quotations[indexPath.row] as! Quotation
         
         // 在实际使用中，可以调用邮件的API来实现真正的发送邮件
-        print("用以下语录发送邮件: \(quotation.quotation)")
+         print("用以下语录发送邮件: \(quotation.quotation)")
     }
     
     
@@ -348,7 +348,7 @@ class BusTableViewController: UITableViewController,SectionHeaderViewDelegate{
             let documentPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
             let documentPath = documentPaths[0]
             
-            print(documentPath)
+         //   print(documentPath)
             
             let filePath1:String = documentPath + "/dataList.plist"
             

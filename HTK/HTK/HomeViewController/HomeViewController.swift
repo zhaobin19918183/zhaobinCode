@@ -11,6 +11,7 @@ import MapKit
 import CoreLocation
 import Alamofire
 
+
 class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,CLLocationManagerDelegate{
     let locationManager:CLLocationManager = CLLocationManager()
     var currLocation:CLLocation = CLLocation()
@@ -30,6 +31,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         super.viewDidLoad()
         
         location()
+        
         weatherCoredata()
         weatherMoreButtonAction()
         trafficViewSearchButtonAction()
@@ -144,17 +146,16 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     func  alamofireRequestData()
     {
         if self.lineString == nil {
-            let okAction:UIAlertAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default) {
+            let okAction:UIAlertAction = UIAlertAction(title: Common_OK, style: UIAlertActionStyle.Default) {
                 (action: UIAlertAction!) -> Void in
                 self.progressHUD.hide(true, afterDelay:0.25)
             }
-            AlertControllerAction("警告", message: "公交线路输入为空", firstAction:okAction, seccondAction: nil,thirdAction:nil)
+            AlertControllerAction(Common_Warning, message: "公交线路输入为空", firstAction:okAction, seccondAction: nil,thirdAction:nil)
             self.progressHUD.hide(true, afterDelay:0)
         }
         else
         {
-            NetWorkManager.alamofireRequestData("大连", bus:self.lineString, url: "http://op.juhe.cn/189/bus/busline")
-            
+            NetWorkManager.alamofireRequestData("大连", bus:self.lineString, url: Common_busUrl)
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.successAction), name: "alamofireSuccess", object: nil)
@@ -167,11 +168,11 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     {
         
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "alamofireError", object: nil)
-        let errorAction:UIAlertAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default) {
+        let errorAction:UIAlertAction = UIAlertAction(title: Common_OK, style: UIAlertActionStyle.Default) {
             (action: UIAlertAction!) -> Void in
             self.progressHUD.hide(true, afterDelay:0)
         }
-        AlertControllerAction("警告", message: "公交线路输入错误", firstAction:errorAction, seccondAction: nil,thirdAction:nil)
+        AlertControllerAction(Common_Warning, message: "公交线路输入错误", firstAction:errorAction, seccondAction: nil,thirdAction:nil)
         
     }
     //MARK:AlertControllerAction
@@ -234,20 +235,32 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     //MARK:weatherAlamofire
     func weatherAlamofire()
     {
+        self.prpgressHud()
         NetWorkManager.alamofireWeatherRequestData("大连", url: "http://op.juhe.cn/onebox/weather/query", key: "e527188bbf687ccccac5350acf9a151f", dtype: "json")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.weatherData), name: "TimeOut", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.weatherData), name: "WeatherData", object: nil)
         
     }
-    func weatherData()
+    
+    func weatherData(notification:NSNotification)
     {
-        
+        if (notification.object?.localizedDescription == "The request timed out.")
+        {
+            let errorAction:UIAlertAction = UIAlertAction(title: Common_OK, style: UIAlertActionStyle.Default) {
+                (action: UIAlertAction!) -> Void in
+                self.progressHUD.hide(true, afterDelay:0)
+            }
+            AlertControllerAction(Common_Warning, message: "网络申请超时,将使用本地数据!!!!", firstAction:errorAction, seccondAction: nil,thirdAction:nil)
+        }
         self.dataFunc()
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "WeatherData", object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "TimeOut", object: nil)
     }
     
     func weatherCoredata()
     {
         let status = Reach().connectionStatus()
+        
         if (!(NSUserDefaults.standardUserDefaults().boolForKey("everLaunched"))) {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey:"everLaunched")
             
@@ -261,23 +274,25 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         }
         else
         {
-            if  status.description == "Offline"{
+            if  status.description == "Offline"
+            {
                 dataFunc()
             }
             else
             {
+                
                 weatherAlamofire()
+                
             }
         }
     }
     
     func  dataFunc()
     {
-       let weatherModel = WeatherDAO.SearchWeatherModel()
-
+        let weatherModel = WeatherDAO.SearchWeatherModel()
         let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData(weatherModel.realtime! )! as! NSDictionary
         
-        let windDic = dictionary.valueForKey("wind")
+        let   windDic = dictionary.valueForKey("wind")
         let  weatherDic = dictionary.valueForKey("weather")
         let  info = weatherDic!.valueForKey("info") as! String
         
@@ -315,9 +330,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //获取最新的坐标
-       //    currLocation  = CLLocation.init(latitude: (locations.last?.coordinate.latitude)!, longitude: (-(locations.last?.coordinate.longitude)!))
-        
-        
+         //   currLocation  = CLLocation.init(latitude: (locations.last?.coordinate.latitude)!, longitude: (-(locations.last?.coordinate.longitude)!))
+
         currLocation = locations.last!
         
         print( "经度：\(currLocation.coordinate.longitude)")
@@ -347,8 +361,5 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             }
         }
     }
-    
-    
-    
-    
+
 }

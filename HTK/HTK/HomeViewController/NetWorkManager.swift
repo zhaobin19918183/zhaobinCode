@@ -94,7 +94,7 @@ class NetWorkManager: NSObject
         var alamofireManager : Manager?
         // 设置请求的超时时间
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        config.timeoutIntervalForRequest = 10    // 秒
+        config.timeoutIntervalForRequest = 0.002    // 秒
         alamofireManager = Manager(configuration: config)
         return alamofireManager!
     }()
@@ -108,11 +108,11 @@ class NetWorkManager: NSObject
             ]
         weak var weatherEntity : WeatherEntity?
         weak var dataDic  = NSMutableDictionary()
-        
         alamofireManager.request(.GET, url,parameters: parameters).response{(request, response, data, error) in
             if error?.localizedDescription == "The request timed out."
             {
               //TODO:超时
+                NSNotificationCenter.defaultCenter().postNotificationName("TimeOut", object: error)
                 print("The request timed out")
                 
             }
