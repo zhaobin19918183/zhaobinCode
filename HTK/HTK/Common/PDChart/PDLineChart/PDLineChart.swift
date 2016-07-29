@@ -26,11 +26,7 @@ class PDLineChartDataItem {
     
     var yMax: CGFloat!
     var yInterval: CGFloat!
-    
     var pointArray: [CGPoint]?//按照数学中的平面二维坐标系输入数据
-    
- 
-    
     init() {
     
     }
@@ -113,17 +109,6 @@ class PDLineChart: PDChart {
         
         chartLayer.path = progressLine.CGPath
         
-        //画点
-        //CGContextSetStrokeColorWithColor(context, UIColor.greenColor().CGColor)
-        CGContextSetLineWidth(nil, 5)
-        for i in 0 ..< self.dataItem.pointArray!.count {
-            let point: CGPoint = self.dataItem.pointArray![i]
-            
-            CGContextAddEllipseInRect(nil, CGRectMake(basePoint.x + point.x / self.dataItem.xMax * xAxesWidth, basePoint.y - point.y / self.dataItem.yMax * yAxesHeight*2,5,5)); //画圆
-            CGContextStrokePath(nil) //关闭路径
-            
-        }
-
         //动画
         CATransaction.begin()
         let pathAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -134,8 +119,7 @@ class PDLineChart: PDChart {
         
         //func addAnimation(anim: CAAnimation!, forKey key: String!)
         chartLayer.addAnimation(pathAnimation, forKey: "strokeEndAnimation")
-        
-        
+
         //class func setCompletionBlock(block: (() -> Void)!)
         CATransaction.setCompletionBlock({
             () -> Void in

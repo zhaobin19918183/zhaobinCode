@@ -12,10 +12,13 @@
 		}
 		.style2{
 			border:solid 2px red;
+
 		}
 		.style3{
 			border:solid 2px green;
+
 		}
+
 	</style>
 	
 	<script>
@@ -26,26 +29,29 @@ function checkField(val)
 		document.getElementById("inputError").setAttribute("class","style1");
 	   alert("输入值已更改。新值是：" + val);
 	}else if(val > 50 && val < 100){
-			document.getElementById("inputError").setAttribute("class","style2");
+	   document.getElementById("inputError").setAttribute("class","style2");
+	   
 	   alert("输入值已更改。新值是：" + val);
 	}
 	
 }
 </script>
 	
-	
 </head>
 <body>
 
 <form class="form-horizontal" role="form">
 
-   <div  id = "error"    class="form-group has-success" >
+   <div  id = "error"  style="margin-top:10px;">
 
       <label class="col-sm-2 control-label" for="inputError">
          输入
       </label>
-      <div class="col-sm-10">
+      <div id ="inputsuccess" class="col-sm-10 col-lg-4  form-group has-success" >
+
          <input type="text" class="form-control" id="inputError"  onchange="checkField(this.value)" >
+
+         <a href="称重单.html"><button type="button" class="btn btn-primary" style="margin-top:10px;">警告按钮</button></a>
       </div>
    </div>
 </form>

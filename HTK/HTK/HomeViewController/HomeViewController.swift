@@ -11,7 +11,6 @@ import MapKit
 import CoreLocation
 import Alamofire
 
-
 class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,CLLocationManagerDelegate{
     let locationManager:CLLocationManager = CLLocationManager()
     var currLocation:CLLocation = CLLocation()
@@ -31,10 +30,10 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         super.viewDidLoad()
         
         location()
-        
         weatherCoredata()
         weatherMoreButtonAction()
         trafficViewSearchButtonAction()
+        
         _traffic.pickerView = self.parentViewController!
         collectionView.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellID")
         rxTextFieldCocoa()
@@ -44,6 +43,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     //MARK:lineTextField 实时监控
     func rxTextFieldCocoa()
     {
+
         let username = _traffic.lineTextField.rx_text
         
         username.subscribeNext {
@@ -85,7 +85,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
-        
         print(indexPath.row)
     }
     
@@ -253,8 +252,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             AlertControllerAction(Common_Warning, message: "网络申请超时,将使用本地数据!!!!", firstAction:errorAction, seccondAction: nil,thirdAction:nil)
         }
         self.dataFunc()
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "WeatherData", object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "TimeOut", object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name:"WeatherData", object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name:"TimeOut", object: nil)
     }
     
     func weatherCoredata()
@@ -264,7 +263,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         if (!(NSUserDefaults.standardUserDefaults().boolForKey("everLaunched"))) {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey:"everLaunched")
             
-            if  status.description == "Offline"{
+            if  status.description == "Offline"
+            {
                 netWorkAlert()
             }
             else
@@ -280,33 +280,18 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             }
             else
             {
-                
                 weatherAlamofire()
-                
             }
         }
     }
     
     func  dataFunc()
     {
+        self.progressHUD.hide(true, afterDelay:0)
         let weatherModel = WeatherDAO.SearchWeatherModel()
         let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData(weatherModel.realtime! )! as! NSDictionary
-        
-        let   windDic = dictionary.valueForKey("wind")
-        let  weatherDic = dictionary.valueForKey("weather")
-        let  info = weatherDic!.valueForKey("info") as! String
-        
-        _weather.tempratureLabel.text = String(format: "温度 : %@ °",(weatherDic?.valueForKey("temperature") as? String)!)
-        let pow = "风力:"
-        _weather.powerLabel.text = pow+((windDic?.valueForKey("power"))! as! String)
-        let dire = "风向:"
-        _weather.directLabel.text = dire+((windDic?.valueForKey("direct"))! as! String)
-        let img = UIImage(named:(weatherDic?.valueForKey("img"))! as! String)
-        _weather.weatherImageView.image = img
-        let moon = " 农历 :  "
-        _weather.dateLabel.text = (dictionary.valueForKey("date") as? String)!+moon+(dictionary.valueForKey("moon") as? String)!
-        _weather.weatherLabel.text = info
-        
+        _weather.weatherDic(dictionary)
+
     }
     //MARK: - 地图
     func location()
@@ -317,7 +302,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         //更新距离
         locationManager.distanceFilter = 100
-        ////发送授权申请
+        //发送授权申请
         locationManager.requestAlwaysAuthorization()
         if (CLLocationManager.locationServicesEnabled())
         {
@@ -325,13 +310,10 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             locationManager.startUpdatingLocation()
             print("定位开始")
         }
-        
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //获取最新的坐标
-         //   currLocation  = CLLocation.init(latitude: (locations.last?.coordinate.latitude)!, longitude: (-(locations.last?.coordinate.longitude)!))
-
         currLocation = locations.last!
         
         print( "经度：\(currLocation.coordinate.longitude)")

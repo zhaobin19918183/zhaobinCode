@@ -94,7 +94,7 @@ class NetWorkManager: NSObject
         var alamofireManager : Manager?
         // 设置请求的超时时间
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        config.timeoutIntervalForRequest = 0.002    // 秒
+        config.timeoutIntervalForRequest = 10    // 秒
         alamofireManager = Manager(configuration: config)
         return alamofireManager!
     }()
