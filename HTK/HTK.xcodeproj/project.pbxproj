@@ -50,6 +50,7 @@
 		A1D9B3AF1CF31E4900B78808 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D9B3AE1CF31E4900B78808 /* HomeViewController.swift */; };
 		A1D9B3B51CF3242B00B78808 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = A1D9B3B41CF3242B00B78808 /* 7.png */; };
 		A1D9B3B71CF33FD800B78808 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D9B3B61CF33FD800B78808 /* Reach.swift */; };
+		BD0103561D508E2B009F99AC /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0103551D508E2B009F99AC /* XLPagerTabStrip.framework */; };
 		BD0DA8D51D26062F00C1E9F4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE5D1CEC37F4007A315E /* CoreLocation.framework */; };
 		BD0DA8D61D26062F00C1E9F4 /* CoreLocation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE5D1CEC37F4007A315E /* CoreLocation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BD16302F1D34B43100653E60 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD16302E1D34B43100653E60 /* WeatherModel.swift */; };
@@ -231,6 +232,7 @@
 		A1D9B3AE1CF31E4900B78808 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A1D9B3B41CF3242B00B78808 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		A1D9B3B61CF33FD800B78808 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
+		BD0103551D508E2B009F99AC /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		BD16302E1D34B43100653E60 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusCarTableViewCell.swift; sourceTree = "<group>"; };
 		BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusCarTableViewCell.xib; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				BD0DA8D51D26062F00C1E9F4 /* CoreLocation.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
 				BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */,
+				BD0103561D508E2B009F99AC /* XLPagerTabStrip.framework in Frameworks */,
 				BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */,
 				BDE6AE5C1CEC37EA007A315E /* OpenGLES.framework in Frameworks */,
 				BDE6AE5A1CEC37E1007A315E /* QuartzCore.framework in Frameworks */,
@@ -430,6 +433,7 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BD0103551D508E2B009F99AC /* XLPagerTabStrip.framework */,
 				A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */,
 				BDECC3F41D05533A0077D8CA /* RxCocoa.framework */,
 				BDECC3F51D05533A0077D8CA /* RxSwift.framework */,
@@ -843,6 +847,7 @@
 				TargetAttributes = {
 					A13ABAC01CE9F79000F8D01B = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = VV5JYD8YJW;
 					};
 					A13ABAD41CE9F79100F8D01B = {
 						CreatedOnToolsVersion = 7.3;
@@ -1258,12 +1263,14 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-Objc";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lilly.innocellence.eadverse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lilly.innocellence.saudiHRanswers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -1383,12 +1390,14 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/",
+					Resources,
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-Objc";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lilly.innocellence.eadverse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lilly.innocellence.saudiHRanswers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;

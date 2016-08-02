@@ -1,10 +1,4 @@
-//
-//  CSNavTabBarController.swift
-//  CSNavTabBarController-Demo
-//
-//  Created by iMacHCS on 15/11/19.
-//  Copyright © 2015年 CS. All rights reserved.
-//
+
 
 import Foundation
 import UIKit

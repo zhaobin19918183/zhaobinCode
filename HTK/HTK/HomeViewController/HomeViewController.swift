@@ -43,11 +43,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     //MARK:lineTextField 实时监控
     func rxTextFieldCocoa()
     {
-
         let username = _traffic.lineTextField.rx_text
-        
         username.subscribeNext {
-            
             if $0 == ""
             {
                 self.lineString = nil
@@ -161,7 +158,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.errorAction), name: "alamofireError", object: nil)
         
     }
-    
     //MARK:error
     func errorAction()
     {

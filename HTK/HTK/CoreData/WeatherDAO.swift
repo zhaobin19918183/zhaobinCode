@@ -106,7 +106,7 @@ class WeatherDAO: BaseDAO {
         let weatherArray    = try!managedContext.executeFetchRequest(fetchRqeust) as AnyObject as! NSArray
         return weatherArray
     }
-    //MARK: - 
+    //MARK: - 0
     static  func  SearchWeatherModel() -> WeatherModel
     {
         let managedContext  = BaseDAO.mainMOC
