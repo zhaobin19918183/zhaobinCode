@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <style type="text/css">
+    ul, li {
+      margin:0px;
+      padding:0px;
+      list-style:none;
+    }
+    body {
+    }
+    #wrapper {
+      width:1000px;
+      margin:0px auto;
+    }
+      #wrapper .header {
+        width: 100%;
+        background-color: rgb(46, 177, 232);
+      }
+      #wrapper .content {
+        width: 100%;
+      }
+        #wrapper .content .username {
+          color: red;
+        }
+        #wrapper .content .time {
+          color: orange;
+        }
+        #wrapper .content .item_content {
+          color: blue;
+        }
+      #wrapper .content_ul, #wrapper .item {
+        background-color: rgb(237, 237, 237);
+        padding: 10px;
+      }
+      #wrapper .destroy{
+        color: green;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      #wrapper .footer {
+        width:100%;
+        float: left;
+        background-color: rgb(46, 177, 232);
+        padding: 10px 0px;
+      }
+        #wrapper .footer .fl {
+          width:80%;
+          float:left;
+        }
+        #wrapper .footer .fr{
+          width:20%;
+          float:left;
+        }
+          #wrapper .footer .fr::after {
+            clear:both;
+          }
+    #new_chat {
+      width: 100%;
+      height: 80px;
+    }
+    #wrapper .footer .fr_up {
+      margin-left: 30px;
+      margin-bottom: 10px;
+    }
+    #wrapper .footer .fr_down {
+      margin-left: 30px;
+    }
+    #nickname {
+      width: 97px;
+    }
+    #wrapper .footer .send {
+      width: 150px;
+      background-color: green;
+      display: block;
+      text-align: center;
+      padding: 20px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="header">
+       [ Chat Room Beta 1.0 ]
+    </div>
+    <div class="content">
+      <ul class="content_ul">
+      </ul>
+    </div>
+    <div class="footer">
+      <div class="fl"><textarea id="new_chat" autofocus></textarea></div>
+      <div class="fr">
+        <div class="fr_up">
+          呢称：<input id="nickname" type="text"/>
+        </div>
+        <div class="fr_down">
+          <button class="send" id="send">发送消息</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/template" id="item-template">
+      <span class="username"><%=username %></span> : <span class="time"><%=date %></span> <a class="destroy">X</a><br />
+      <span class="item_content"><%=content %></span>
+  </script>
+  <script src="/static/chatroom/js/vendor/jquery.js"></script>
+  <script src="/static/chatroom/js/vendor/underscore.js"></script>
+  <script src="/static/chatroom/js/vendor/backbone.js"></script>
+  <script src="/static/chatroom/js/models.js"></script>
+  <script src="/static/chatroom/js/views.js"></script>
+</body>
+</html>

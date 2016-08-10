@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+</html>
+<head xmlns="http://www.w3.org/1999/html">
+        <title>报名情况统计</title>
+    </head>
+    <body>
+        <p style="text-align:center;font-size:1.5em;">少年！</p>
+        <form action="/polls/form/" method="post">
+        {% csrf_token %}
+            <fieldset>
+                <legend>你要参加２０１４年７月ＪＬＰＴ的哪个等级考试？</legend>
+                <p>Name:<input type="text" name="name" value="{{name}}"/>
+                <br>Level:<input type="text" name="level" value="{{level}}"/></br>
+                        <!--{{form_info.as_p}}-->
+                        <input type="submit" value="submit" />
+                </fieldset>
+        </form>
+    </body>
+</html>
