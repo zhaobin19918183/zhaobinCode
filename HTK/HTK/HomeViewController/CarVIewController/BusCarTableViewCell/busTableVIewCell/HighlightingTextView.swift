@@ -11,8 +11,8 @@ import UIKit
 // 本类用于调整单元格被选中后文本的颜色（黑(未选中)/白(选中)）
 class HighlightingTextView: UITextView {
     
-    func setHighlighted(highlight: Bool) {
+    func setHighlighted(_ highlight: Bool) {
         // 调整高亮状态下的文本颜色
-            self.textColor = highlight ? UIColor.whiteColor() : UIColor.blackColor()
+            self.textColor = highlight ? UIColor.white : UIColor.black
     }
 }

@@ -20,31 +20,31 @@ class SectionInfo: NSObject {
         return self.rowHeights.count
     }
     
-    func objectInRowHeightsAtIndex(idx: Int) -> AnyObject {
-        return self.rowHeights[idx]
+    func objectInRowHeightsAtIndex(_ idx: Int) -> AnyObject {
+        return self.rowHeights[idx] as AnyObject
     }
     
-    func insertObject(anObject: AnyObject, inRowHeightsAtIndex: Int) {
-        self.rowHeights.insertObject(anObject, atIndex: inRowHeightsAtIndex)
+    func insertObject(_ anObject: AnyObject, inRowHeightsAtIndex: Int) {
+        self.rowHeights.insert(anObject, at: inRowHeightsAtIndex)
     }
     
-    func insertRowHeights(rowHeightArray: NSArray, atIndexes: NSIndexSet) {
-        self.rowHeights.insertObjects(rowHeightArray as [AnyObject], atIndexes: atIndexes)
+    func insertRowHeights(_ rowHeightArray: NSArray, atIndexes: IndexSet) {
+        self.rowHeights.insert(rowHeightArray as [AnyObject], at: atIndexes)
     }
     
-    func removeObjectFromRowHeightsAtIndex(idx: Int) {
-        self.rowHeights.removeObjectAtIndex(idx)
+    func removeObjectFromRowHeightsAtIndex(_ idx: Int) {
+        self.rowHeights.removeObject(at: idx)
     }
     
-    func removeRowHeightsAtIndexes(indexes: NSIndexSet) {
-        self.rowHeights.removeObjectsAtIndexes(indexes)
+    func removeRowHeightsAtIndexes(_ indexes: IndexSet) {
+        self.rowHeights.removeObjects(at: indexes)
     }
     
-    func replaceObjectInRowHeightsAtIndex(idx: Int, withObject: AnyObject) {
+    func replaceObjectInRowHeightsAtIndex(_ idx: Int, withObject: AnyObject) {
         self.rowHeights[idx] = withObject
     }
     
-    func replaceRowHeightsAtIndexes(indexes: NSIndexSet, withRowHeight: NSArray) {
-        self.rowHeights.replaceObjectsAtIndexes(indexes, withObjects: withRowHeight as [AnyObject])
+    func replaceRowHeightsAtIndexes(_ indexes: IndexSet, withRowHeight: NSArray) {
+        self.rowHeights.replaceObjects(at: indexes, with: withRowHeight as [AnyObject])
     }
 }

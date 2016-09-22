@@ -21,7 +21,7 @@ class QuoteCell: UITableViewCell {
     var longPressRecognizer: UILongPressGestureRecognizer?
     
     // 设置语录
-    func setTheQuotation(newQuotation: Quotation) {
+    func setTheQuotation(_ newQuotation: Quotation) {
         
         quotation = newQuotation
         stationsNumberDetail.text = quotation.stationNum
@@ -31,7 +31,7 @@ class QuoteCell: UITableViewCell {
     }
     
     // 长按手势判定
-    func setTheLongPressRecognizer(newLongPressRecognizer: UILongPressGestureRecognizer?) {
+    func setTheLongPressRecognizer(_ newLongPressRecognizer: UILongPressGestureRecognizer?) {
             
         if longPressRecognizer != nil {
             self.removeGestureRecognizer(longPressRecognizer!)

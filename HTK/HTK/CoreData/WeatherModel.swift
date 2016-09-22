@@ -11,12 +11,12 @@ import UIKit
 
 struct WeatherModel
 {
-    var life                   : NSData?
-    var pm25                   : NSData?
-    var realtime               : NSData?
-    var weather                : NSData?
+    var life                   : Data?
+    var pm25                   : Data?
+    var realtime               : Data?
+    var weather                : Data?
     
-    static func convertFrom(dictionary :WeatherEntity) -> WeatherModel
+    static func convertFrom(_ dictionary :WeatherEntity) -> WeatherModel
     {
         var model = WeatherModel()
         model.life                   = dictionary.life
@@ -27,13 +27,13 @@ struct WeatherModel
         return model
     }
     
-    static func searchForm(dictionary :NSMutableDictionary) -> WeatherModel
+    static func searchForm(_ dictionary :NSMutableDictionary) -> WeatherModel
     {
         var model = WeatherModel()
-        model.life                   = dictionary["life"] as? NSData
-        model.pm25                   = dictionary["pm25"] as? NSData
-        model.realtime               = dictionary["realtime"] as? NSData
-        model.weather                = dictionary["realtime"] as? NSData
+        model.life                   = dictionary["life"] as? Data
+        model.pm25                   = dictionary["pm25"] as? Data
+        model.realtime               = dictionary["realtime"] as? Data
+        model.weather                = dictionary["realtime"] as? Data
         
         return model
     }

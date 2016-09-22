@@ -10,13 +10,13 @@ import UIKit
 
 import Alamofire
 
-typealias completionWithResponse     = (request : NSURLRequest? , response : NSHTTPURLResponse? , data : NSData? , error : NSError?) -> Void
+typealias completionWithResponse     = (_ request : URLRequest? , _ response : HTTPURLResponse? , _ data : Data? , _ error : NSError?) -> Void
 
 class NetWorkManager: NSObject
 {
     var progressHUD : MBProgressHUD!
     //MARK:测试
-    static func  callbackData(city:String ,bus:String,url:String,complete:completionWithResponse)
+    static func  callbackData(_ city:String ,bus:String,url:String,complete:@escaping completionWithResponse)
     {
         let parameters = [
             "dtype":"json",
@@ -27,14 +27,14 @@ class NetWorkManager: NSObject
 
         let string1 = url
 
-        Alamofire.request(.GET, string1, parameters: parameters ).response { (request:NSURLRequest?, response:NSHTTPURLResponse?, data:NSData?, error:NSError?)->Void in complete(request: request , response: response , data: data , error: error)
+        Alamofire.request(.GET, string1, parameters: parameters ).response { (request:URLRequest?, response:HTTPURLResponse?, data:Data?, error:NSError?)->Void in complete(request: request , response: response , data: data , error: error)
             
         }
 
         
     }
     //MARK:alamofireRequestData
-    static func  alamofireRequestData(city:String ,bus:String,url:String)
+    static func  alamofireRequestData(_ city:String ,bus:String,url:String)
     {
         let parameters = [
         "dtype":"json",
@@ -53,32 +53,32 @@ class NetWorkManager: NSObject
         {
         
             Alamofire.request(.GET, string1, parameters: parameters ).response { (request, response, data, error) in
-                let jsonDic = try! NSJSONSerialization.JSONObjectWithData(data!,
-                    options: NSJSONReadingOptions.MutableContainers) as! NSMutableDictionary
+                let jsonDic = try! JSONSerialization.jsonObject(with: data!,
+                    options: JSONSerialization.ReadingOptions.mutableContainers) as! NSMutableDictionary
                 
               
-                if (jsonDic.valueForKey("reason") as! String) == "city or bus may not matching"
+                if (jsonDic.value(forKey: "reason") as! String) == "city or bus may not matching"
                 {
-                   NSNotificationCenter.defaultCenter().postNotificationName("alamofireError", object: nil)
+                   NotificationCenter.default.post(name: Notification.Name(rawValue: "alamofireError"), object: nil)
                 }
                 else
                 {
-                    NSNotificationCenter.defaultCenter().postNotificationName("alamofireSuccess", object: nil)
-                    let array = NSArray(objects:jsonDic.valueForKey("result")!)
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: "alamofireSuccess"), object: nil)
+                    let array = NSArray(objects:jsonDic.value(forKey: "result")!)
                     
 //                    let filePath = NSBundle.mainBundle().pathForResource("dataList.plist", ofType:nil )
 //                    array.writeToFile(filePath!, atomically: true)
                     
-                   let documentPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+                   let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
                     let documentPath = documentPaths[0]
 
                     print(documentPath)
                     
                     let filePath1:String = documentPath + "/dataList.plist"
-                    array.writeToFile(filePath1, atomically: true)
+                    array.write(toFile: filePath1, atomically: true)
                     
                     
-                   let succ = array.writeToFile(filePath1, atomically:true)
+                   let succ = array.write(toFile: filePath1, atomically:true)
                     print(succ)
                     
                 }
@@ -89,17 +89,17 @@ class NetWorkManager: NSObject
     }
     //MARK:alamofireWeatherRequestData
     
-    private  static var alamofireManager:Manager =
+    fileprivate  static var alamofireManager:Manager =
     {
         var alamofireManager : Manager?
         // 设置请求的超时时间
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = 10    // 秒
         alamofireManager = Manager(configuration: config)
         return alamofireManager!
     }()
     
-    static func  alamofireWeatherRequestData(city:String ,url:String,key:String,dtype:String)
+    static func  alamofireWeatherRequestData(_ city:String ,url:String,key:String,dtype:String)
     {
         let parameters = [
             "dtype":dtype,
@@ -112,17 +112,17 @@ class NetWorkManager: NSObject
             if error?.localizedDescription == "The request timed out."
             {
               //TODO:超时
-                NSNotificationCenter.defaultCenter().postNotificationName("TimeOut", object: error)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "TimeOut"), object: error)
                 print("The request timed out")
                 
             }
             else
             {
-                let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
-                    options: NSJSONReadingOptions.MutableContainers) as? NSMutableDictionary
-                dataDic = jsonArr?.valueForKey("result")?.valueForKey("data") as?NSMutableDictionary
+                let jsonArr = try! JSONSerialization.jsonObject(with: data!,
+                    options: JSONSerialization.ReadingOptions.mutableContainers) as? NSMutableDictionary
+                dataDic = jsonArr?.value(forKey: "result")?.value(forKey: "data") as?NSMutableDictionary
                 
-                if(NSUserDefaults.standardUserDefaults().valueForKey("first") != nil)
+                if(UserDefaults.standard.value(forKey: "first") != nil)
                 {
                     weatherEntity = WeatherDAO.SearchCoreDataEntity()
                     WeatherDAO.deleteEntityWith(Entity: weatherEntity!)
@@ -131,9 +131,9 @@ class NetWorkManager: NSObject
                 else
                 {
                     WeatherDAO.createWeatherEntity(dataDic!)
-                    NSUserDefaults.standardUserDefaults().setObject("first", forKey: "first")
+                    UserDefaults.standard.set("first", forKey: "first")
                 }
-                NSNotificationCenter.defaultCenter().postNotificationName("WeatherData", object: nil)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "WeatherData"), object: nil)
             }
         }
     }

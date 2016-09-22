@@ -28,7 +28,7 @@ class typeView: UIView {
     func  resetUILayout()
     {
         
-        NSBundle.mainBundle().loadNibNamed("typeView", owner:self,options:nil)
+        Bundle.main.loadNibNamed("typeView", owner:self,options:nil)
         self.addSubview(_typeView)
     }
 

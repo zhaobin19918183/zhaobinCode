@@ -11,7 +11,7 @@ import UIKit
 import Photos
 protocol popViewControllerDelegate
 {
-    func popViewControllerPhotosArray(photosImageArray : NSMutableArray)
+    func popViewControllerPhotosArray(_ photosImageArray : NSMutableArray)
 }
 class PhotosSelectManager: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
@@ -37,9 +37,9 @@ class PhotosSelectManager: UIViewController,UICollectionViewDelegate,UICollectio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.modalPresentationStyle = .Custom
-        assetsFetchResults = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: nil)
-        collectionView.registerNib(UINib(nibName: "PhotosCollectionCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellId")
+        self.modalPresentationStyle = .custom
+        assetsFetchResults = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: nil)
+        collectionView.register(UINib(nibName: "PhotosCollectionCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellId")
         collectionView.allowsMultipleSelection = true
         // Do any additional setup after loading the view.\
         
@@ -48,33 +48,33 @@ class PhotosSelectManager: UIViewController,UICollectionViewDelegate,UICollectio
         
     }
     //MARK:CollectionView
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return assetsFetchResults.count
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
+    func numberOfSections(in collectionView: UICollectionView) -> Int
     {
         return 1;
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCellId", forIndexPath: indexPath) as? PhotosCollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCellId", for: indexPath) as? PhotosCollectionCell
         
-        asset = assetsFetchResults[indexPath.row] as! PHAsset
+        asset = assetsFetchResults[(indexPath as NSIndexPath).row] as! PHAsset
         
         //        imageManager.requestImageDataForAsset(asset, options: PHImageRequestOptions.init()) { (data, string, imageOrientation, dic) in
         //           print(data)
         //
         //        }
-        imageManager.requestImageForAsset(asset, targetSize:PHImageManagerMaximumSize,contentMode: PHImageContentMode.AspectFit, options: nil) { (resultimage,  info) in
+        imageManager.requestImage(for: asset, targetSize:PHImageManagerMaximumSize,contentMode: PHImageContentMode.aspectFit, options: nil) { (resultimage,  info) in
             
             cell?.backgroundImageVIew.image = resultimage
             
         }
         
-        if cell?.selected == true {
+        if cell?.isSelected == true {
             
             cell?.imageLable!.text = "\u{e615}"
         }
@@ -87,25 +87,25 @@ class PhotosSelectManager: UIViewController,UICollectionViewDelegate,UICollectio
         
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! PhotosCollectionCell
+        let cell = collectionView.cellForItem(at: indexPath) as! PhotosCollectionCell
         cell.imageLable!.font = UIFont(name: "iconfont", size: 20)
         cell.imageLable!.text = "\u{e615}"
-        self.imageArray.addObject(cell.backgroundImageVIew.image!)
-        self.selectedArray.addObject(cell.backgroundImageVIew.image!)
+        self.imageArray.add(cell.backgroundImageVIew.image!)
+        self.selectedArray.add(cell.backgroundImageVIew.image!)
         
     }
     
-    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! PhotosCollectionCell
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! PhotosCollectionCell
         cell.imageLable!.font = UIFont(name: "iconfont", size: 20)
         cell.imageLable!.text = "\u{e614}"
-        self.imageArray.removeObject(cell.backgroundImageVIew.image!)
+        self.imageArray.remove(cell.backgroundImageVIew.image!)
         
     }
     //MARK:取出图片按照图片大小确定cell 的大小
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         
         //        let  string =  NSUserDefaults.standardUserDefaults().valueForKey("photos") as! String
         //        let array = HelperManager.convertStringToAnyObject(string) as! NSMutableArray
@@ -115,29 +115,29 @@ class PhotosSelectManager: UIViewController,UICollectionViewDelegate,UICollectio
         //        print(decodedimage.size.width)
         return CGSize(width: 120, height:120)
     }
-    @IBAction func numberPhotosAction(sender: UIButton)
+    @IBAction func numberPhotosAction(_ sender: UIButton)
     {
         dismiss()
     }
     
-    @IBAction func photosButtonAction(sender: UIButton)
+    @IBAction func photosButtonAction(_ sender: UIButton)
     {
         print("相册")
         let iPC = UIImagePickerController()
-        iPC.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
+        iPC.sourceType = UIImagePickerControllerSourceType.savedPhotosAlbum
         iPC.delegate = self
-        presentViewController(iPC, animated: true) { () -> Void in
+        present(iPC, animated: true) { () -> Void in
                          print("complete")
                      }
     }
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?)
     {
         
         
     }
     
     
-    @IBAction func backButtonAction(sender: UIButton)
+    @IBAction func backButtonAction(_ sender: UIButton)
     {
         if self.selectedArray.count != 0
         {
@@ -153,7 +153,7 @@ class PhotosSelectManager: UIViewController,UICollectionViewDelegate,UICollectio
     func dismiss()
     {
         self.delegate.popViewControllerPhotosArray(self.imageArray)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

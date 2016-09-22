@@ -19,18 +19,18 @@ class MoreTableViewCell: UITableViewCell {
         // Initializ  ation code
     }
   
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    func weatherDataArray(weather:NSMutableArray ,index:NSIndexPath)
+    func weatherDataArray(_ weather:NSMutableArray ,index:IndexPath)
     {
         for index in 0...6
         {
 
-           let night = weather[index].valueForKey("info")?.valueForKey("day")?.objectAtIndex(2)
-           nightArray.addObject(night!)
+           let night = (((weather[index] as AnyObject).value(forKey: "info") as AnyObject).value(forKey: "day") as AnyObject).object(at: 2)
+           nightArray.add(night)
  
         }
        
@@ -50,20 +50,20 @@ class MoreTableViewCell: UITableViewCell {
         dataItem.yMax = 100.0
         dataItem.yInterval = 10.0
         
-        let y1 = nightArray[0].doubleValue
-        let y2 = nightArray[1].doubleValue
-        let y3 = nightArray[2].doubleValue
-        let y4 = nightArray[3].doubleValue
-        let y5 = nightArray[4].doubleValue
-        let y6 = nightArray[5].doubleValue
-        let y7 = nightArray[6].doubleValue
+        let y1 = (nightArray[0] as AnyObject).doubleValue
+        let y2 = (nightArray[1] as AnyObject).doubleValue
+        let y3 = (nightArray[2] as AnyObject).doubleValue
+        let y4 = (nightArray[3] as AnyObject).doubleValue
+        let y5 = (nightArray[4] as AnyObject).doubleValue
+        let y6 = (nightArray[5] as AnyObject).doubleValue
+        let y7 = (nightArray[6] as AnyObject).doubleValue
         
 
-        dataItem.pointArray = [CGPoint(x: 1.0, y: y1), CGPoint(x: 2.0, y: y2), CGPoint(x: 3.0, y: y3), CGPoint(x: 4.0, y:y4), CGPoint(x: 5.0, y: y5), CGPoint(x: 6.0, y: y6), CGPoint(x: 7.0, y: y7)]
+        dataItem.pointArray = [CGPoint(x: 1.0, y: y1!), CGPoint(x: 2.0, y: y2!), CGPoint(x: 3.0, y: y3!), CGPoint(x: 4.0, y:y4!), CGPoint(x: 5.0, y: y5!), CGPoint(x: 6.0, y: y6!), CGPoint(x: 7.0, y: y7!)]
         dataItem.xAxesDegreeTexts = [ "一", "二", "三", "四", "五", "周六","周日"]
         dataItem.yAxesDegreeTexts = ["5", "10", "15", "20","25","30","35","40","45","50"]
         
-        let lineChart: PDLineChart = PDLineChart(frame: CGRectMake(0, 0, 320, 240), dataItem: dataItem)
+        let lineChart: PDLineChart = PDLineChart(frame: CGRect(x: 0, y: 0, width: 320, height: 240), dataItem: dataItem)
         return lineChart
     }
     
@@ -77,7 +77,7 @@ class MoreTableViewCell: UITableViewCell {
         dataItem.xAxesDegreeTexts = ["周日", "一", "二", "三", "四", "五", "周六"]
 
         
-        let barChart: PDBarChart = PDBarChart(frame: CGRectMake(0, 0, self.frame.size.width, 240), dataItem: dataItem)
+        let barChart: PDBarChart = PDBarChart(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: 240), dataItem: dataItem)
         return barChart
     }
 

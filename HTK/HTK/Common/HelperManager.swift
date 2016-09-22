@@ -10,13 +10,13 @@ import UIKit
 
 struct HelperManager {
     static let sharedManager = HelperManager()
-    private init() {}
+    fileprivate init() {}
     
-    static func convertAnyObjectToData< T > (anyObject : T) -> NSData
+    static func convertAnyObjectToData< T > (_ anyObject : T) -> Data
     {
-        let resultData : NSData?
+        let resultData : Data?
         do{
-            resultData = try NSJSONSerialization.dataWithJSONObject(anyObject as! AnyObject, options: .PrettyPrinted)
+            resultData = try JSONSerialization.data(withJSONObject: anyObject as AnyObject, options: .prettyPrinted)
         }catch
         {
             resultData = nil
@@ -25,11 +25,11 @@ struct HelperManager {
         return resultData!
     }
     
-    static func convertDataToAnyObject(data : NSData) -> AnyObject
+    static func convertDataToAnyObject(_ data : Data) -> AnyObject
     {
         let resultAnyObject : AnyObject?
         do{
-            resultAnyObject = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+            resultAnyObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
         }catch
         {
             resultAnyObject = nil
@@ -38,29 +38,29 @@ struct HelperManager {
         return resultAnyObject!
     }
     
-    static func convertDataToString <T> (anyObject : T) -> String
+    static func convertDataToString <T> (_ anyObject : T) -> String
     {
-        let resultData : NSData!
+        let resultData : Data!
         do{
-            resultData = try NSJSONSerialization.dataWithJSONObject(anyObject as! AnyObject, options: .PrettyPrinted)
+            resultData = try JSONSerialization.data(withJSONObject: anyObject as AnyObject, options: .prettyPrinted)
         }catch
         {
             resultData = nil
         }
         
-        return String(data: resultData, encoding: NSUTF8StringEncoding)!
+        return String(data: resultData, encoding: String.Encoding.utf8)!
     }
     
-    static func convertStringToAnyObject(string : String?) -> AnyObject?
+    static func convertStringToAnyObject(_ string : String?) -> AnyObject?
     {
-        guard let jsonData = string?.dataUsingEncoding(NSUTF8StringEncoding) else
+        guard let jsonData = string?.data(using: String.Encoding.utf8) else
         {
             return nil
         }
         
         let resultAnyObject : AnyObject?
         do{
-            resultAnyObject = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .AllowFragments)
+            resultAnyObject = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
         }catch
         {
             resultAnyObject = nil
@@ -68,18 +68,18 @@ struct HelperManager {
         
         return resultAnyObject
     }
-    static func convertServerTimeToLocalTime(dateString : String) -> String
+    static func convertServerTimeToLocalTime(_ dateString : String) -> String
     {
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        dateFormatter.timeZone   = NSTimeZone(forSecondsFromGMT: 0)
-        let convertedDate = dateFormatter.dateFromString(dateString)
+        dateFormatter.timeZone   = TimeZone(secondsFromGMT: 0)
+        let convertedDate = dateFormatter.date(from: dateString)
         dateFormatter.dateFormat = "dd"
-        let day = dateFormatter.stringFromDate(convertedDate!)
+        let day = dateFormatter.string(from: convertedDate!)
         dateFormatter.dateFormat = "MM"
-        let monthString = dateFormatter.stringFromDate(convertedDate!)
+        let monthString = dateFormatter.string(from: convertedDate!)
         dateFormatter.dateFormat = "yyyy"
-        let year = dateFormatter.stringFromDate(convertedDate!)
+        let year = dateFormatter.string(from: convertedDate!)
         switch monthString {
         case "01":
             let  month  = "January"
@@ -120,19 +120,19 @@ struct HelperManager {
         default:
             break
         }
-        return dateFormatter.stringFromDate(convertedDate!)
+        return dateFormatter.string(from: convertedDate!)
     }
     
-    static func convertServerTimeToDateString(dateString : String) -> (day : String , month : String)
+    static func convertServerTimeToDateString(_ dateString : String) -> (day : String , month : String)
     {
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        dateFormatter.timeZone   = NSTimeZone(forSecondsFromGMT: 0)
-        let convertedDate = dateFormatter.dateFromString(dateString)
+        dateFormatter.timeZone   = TimeZone(secondsFromGMT: 0)
+        let convertedDate = dateFormatter.date(from: dateString)
         dateFormatter.dateFormat = "MM"
-        let monthString = dateFormatter.stringFromDate(convertedDate!)
+        let monthString = dateFormatter.string(from: convertedDate!)
         dateFormatter.dateFormat = "dd"
-        let day = dateFormatter.stringFromDate(convertedDate!)
+        let day = dateFormatter.string(from: convertedDate!)
         switch monthString {
         case "01":
             let  month   = "January"

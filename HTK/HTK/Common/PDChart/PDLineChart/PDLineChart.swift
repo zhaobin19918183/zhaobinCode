@@ -76,8 +76,8 @@ class PDLineChart: PDChart {
         let chartLayer: CAShapeLayer = CAShapeLayer()
         chartLayer.lineCap = kCALineCapRound
         chartLayer.lineJoin = kCALineJoinRound
-        chartLayer.fillColor = UIColor.whiteColor().CGColor
-        chartLayer.strokeColor = UIColor.redColor().CGColor
+        chartLayer.fillColor = UIColor.white.cgColor
+        chartLayer.strokeColor = UIColor.red.cgColor
         //宽度
         chartLayer.lineWidth = 2.0
         chartLayer.strokeStart = 0.0
@@ -99,15 +99,15 @@ class PDLineChart: PDChart {
             let pixelPoint: CGPoint = CGPoint(x: basePoint.x + point.x / self.dataItem.xMax * xAxesWidth, y: basePoint.y - point.y / self.dataItem.yMax * yAxesHeight*2)//转换为可以绘制的，屏幕中的像素点
             
             if i == 0 {
-                progressLine.moveToPoint(pixelPoint)
+                progressLine.move(to: pixelPoint)
             } else {
-                progressLine.addLineToPoint(pixelPoint)
+                progressLine.addLine(to: pixelPoint)
             }
         }
         
         progressLine.stroke()
         
-        chartLayer.path = progressLine.CGPath
+        chartLayer.path = progressLine.cgPath
         
         //动画
         CATransaction.begin()
@@ -118,7 +118,7 @@ class PDLineChart: PDChart {
         pathAnimation.toValue = 1.0
         
         //func addAnimation(anim: CAAnimation!, forKey key: String!)
-        chartLayer.addAnimation(pathAnimation, forKey: "strokeEndAnimation")
+        chartLayer.add(pathAnimation, forKey: "strokeEndAnimation")
 
         //class func setCompletionBlock(block: (() -> Void)!)
         CATransaction.setCompletionBlock({
@@ -129,8 +129,8 @@ class PDLineChart: PDChart {
         UIGraphicsEndImageContext()
     }
     
-    override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
         
         let context: CGContext = UIGraphicsGetCurrentContext()!
 //        let basePoint: CGPoint = axesComponent.getBasePoint()

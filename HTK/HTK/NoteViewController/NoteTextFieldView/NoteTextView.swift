@@ -22,14 +22,14 @@ class NoteTextView: UIView,UITextViewDelegate {
     
     func  resetUILayout()
     {
-        NSBundle.mainBundle().loadNibNamed("NoteTextView", owner:self,options:nil)
+        Bundle.main.loadNibNamed("NoteTextView", owner:self,options:nil)
 //        self.textView.layer.borderColor = UIColor(red: 60/255, green: 40/255, blue: 129/255, alpha: 1).CGColor;
 //        self.textView.layer.borderWidth = 2
 //        self.textView.layer.cornerRadius = 16
      
         self.addSubview(_noteTextView)
     }
-    func textViewDidEndEditing(textView: UITextView) {
+    func textViewDidEndEditing(_ textView: UITextView) {
     
     }
 

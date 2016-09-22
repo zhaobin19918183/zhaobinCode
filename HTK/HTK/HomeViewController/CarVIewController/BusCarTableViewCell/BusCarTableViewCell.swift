@@ -21,14 +21,14 @@ class BusCarTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func busCarStationdesList(array : NSMutableArray ,index:NSIndexPath)
+    func busCarStationdesList(_ array : NSMutableArray ,index:IndexPath)
     {
 
-        numberDetailLabel.text = array.objectAtIndex(index.row).valueForKey("stationNum") as? String
-        nameDetailLabel.text = array.objectAtIndex(index.row).valueForKey("name") as? String
+        numberDetailLabel.text = (array.object(at: (index as NSIndexPath).row) as AnyObject).value(forKey: "stationNum") as? String
+        nameDetailLabel.text = (array.object(at: (index as NSIndexPath).row) as AnyObject).value(forKey: "name") as? String
         
     }
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state

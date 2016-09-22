@@ -22,7 +22,7 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableview.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableview.separatorStyle = UITableViewCellSeparatorStyle.none
         tabBarControllerData()
         weatherDeatilData()
         tableview.addSubview(refreshControl)
@@ -33,55 +33,55 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
     func  weatherDeatilData()
     {
         self.weatherEntity = WeatherDAO.SearchCoreDataEntity()
-        let lifeDictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("life"))! as! NSData)! as! NSDictionary
+        let lifeDictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObject(with: (self.weatherEntity?.value(forKey: "life"))! as! Data)! as! NSDictionary
 
 //        let weatherModel = WeatherDAO.SearchWeatherModel()
 //        let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData(weatherModel.life! )! as! NSDictionary
 
-        let ganmao = lifeDictionary.valueForKey("info")?.valueForKey("ganmao") as! NSArray
-        let kongtiao = lifeDictionary.valueForKey("info")?.valueForKey("kongtiao") as! NSArray
-        let chuanyi = lifeDictionary.valueForKey("info")?.valueForKey("chuanyi") as! NSArray
-        let yundong = lifeDictionary.valueForKey("info")?.valueForKey("yundong") as! NSArray
-        let ziwaixian = lifeDictionary.valueForKey("info")?.valueForKey("ziwaixian") as! NSArray
-        let wuran = lifeDictionary.valueForKey("info")?.valueForKey("wuran") as! NSArray
-        let xiche = lifeDictionary.valueForKey("info")?.valueForKey("xiche") as! NSArray
-        self.messageArr1 = [ganmao.objectAtIndex(1),kongtiao.objectAtIndex(1),chuanyi.objectAtIndex(1),yundong.objectAtIndex(1),ziwaixian.objectAtIndex(1),wuran.objectAtIndex(1),xiche.objectAtIndex(1)]
-        self.messageArr0 = [ganmao.objectAtIndex(0),kongtiao.objectAtIndex(0),chuanyi.objectAtIndex(0),yundong.objectAtIndex(0),ziwaixian.objectAtIndex(0),wuran.objectAtIndex(0),xiche.objectAtIndex(0)]
-        self.weatherArr = NSKeyedUnarchiver.unarchiveObjectWithData((self.weatherEntity?.valueForKey("weather"))! as! NSData)! as! NSMutableArray
+        let ganmao = (lifeDictionary.value(forKey: "info") as AnyObject).value(forKey: "ganmao") as! NSArray
+        let kongtiao = (lifeDictionary.value(forKey: "info") as AnyObject).value(forKey: "kongtiao") as! NSArray
+        let chuanyi = (lifeDictionary.value(forKey: "info") as AnyObject).value(forKey: "chuanyi") as! NSArray
+        let yundong = (lifeDictionary.value(forKey: "info") as AnyObject).value(forKey: "yundong") as! NSArray
+        let ziwaixian = (lifeDictionary.value(forKey: "info") as AnyObject).value(forKey: "ziwaixian") as! NSArray
+        let wuran = (lifeDictionary.value(forKey: "info") as AnyObject).value(forKey: "wuran") as! NSArray
+        let xiche = (lifeDictionary.value(forKey: "info") as AnyObject).value(forKey: "xiche") as! NSArray
+        self.messageArr1 = [ganmao.object(at: 1),kongtiao.object(at: 1),chuanyi.object(at: 1),yundong.object(at: 1),ziwaixian.object(at: 1),wuran.object(at: 1),xiche.object(at: 1)]
+        self.messageArr0 = [ganmao.object(at: 0),kongtiao.object(at: 0),chuanyi.object(at: 0),yundong.object(at: 0),ziwaixian.object(at: 0),wuran.object(at: 0),xiche.object(at: 0)]
+        self.weatherArr = NSKeyedUnarchiver.unarchiveObject(with: (self.weatherEntity?.value(forKey: "weather"))! as! Data)! as! NSMutableArray
         
     }
     //TODO:tableView
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      
-        if(indexPath.section==0)
+        if((indexPath as NSIndexPath).section==0)
         {
             let initIdentifier : String = "WaatherTableViewCell"
-            var cell : WaatherTableViewCell? = tableView.dequeueReusableCellWithIdentifier(initIdentifier) as? WaatherTableViewCell
+            var cell : WaatherTableViewCell? = tableView.dequeueReusableCell(withIdentifier: initIdentifier) as? WaatherTableViewCell
             if cell == nil
             {
-                let nibArray = NSBundle.mainBundle().loadNibNamed("WaatherTableViewCell", owner: self, options: nil)
-                cell = nibArray.first as? WaatherTableViewCell
+                let nibArray = Bundle.main.loadNibNamed("WaatherTableViewCell", owner: self, options: nil)
+                cell = nibArray?.first as? WaatherTableViewCell
             }
-            cell!.selectionStyle = UITableViewCellSelectionStyle.None
-            cell?.infotitle.text = self.titleArray[indexPath.row] + (self.messageArr0[indexPath.row] as! String)
-            cell?.messageLabel.text = self.messageArr1[indexPath.row] as? String
+            cell!.selectionStyle = UITableViewCellSelectionStyle.none
+            cell?.infotitle.text = self.titleArray[(indexPath as NSIndexPath).row] + (self.messageArr0[(indexPath as NSIndexPath).row] as! String)
+            cell?.messageLabel.text = self.messageArr1[(indexPath as NSIndexPath).row] as? String
             return cell!
         }
         let initIdentifier : String = "MoreTableViewCell"
-        var cell : MoreTableViewCell? = tableView.dequeueReusableCellWithIdentifier(initIdentifier) as? MoreTableViewCell
+        var cell : MoreTableViewCell? = tableView.dequeueReusableCell(withIdentifier: initIdentifier) as? MoreTableViewCell
         if cell == nil
         {
-            let nibArray = NSBundle.mainBundle().loadNibNamed("MoreTableViewCell", owner: self, options: nil)
-            cell = nibArray.first as? MoreTableViewCell
+            let nibArray = Bundle.main.loadNibNamed("MoreTableViewCell", owner: self, options: nil)
+            cell = nibArray?.first as? MoreTableViewCell
         }
         cell?.weatherDataArray(self.weatherArr, index: indexPath)
-        cell!.selectionStyle = UITableViewCellSelectionStyle.None
+        cell!.selectionStyle = UITableViewCellSelectionStyle.none
         
         return cell!
          
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 0 {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath as NSIndexPath).section == 0 {
             120
         }
         else
@@ -92,14 +92,14 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         }
         return  120
     }
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
       
         return self.headerArray[section]
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if section == 0 {
             return weatherArr.count
@@ -110,12 +110,12 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
         
       
     }
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
         return 20
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
        
         return 2
@@ -123,8 +123,8 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
     func tabBarControllerData()
     {
         self.navigationItem.title = "细说天气"
-        self.tabBarController?.tabBar.hidden = true
-        let nextItem=UIBarButtonItem(title:"Home",style:.Plain,target:self,action:#selector(backHomeView))
+        self.tabBarController?.tabBar.isHidden = true
+        let nextItem=UIBarButtonItem(title:"Home",style:.plain,target:self,action:#selector(backHomeView))
         self.navigationItem.leftBarButtonItem = nextItem
 
     }
@@ -133,13 +133,13 @@ class MoreWeatherViewController: UIViewController,UITableViewDataSource,UITableV
     func backHomeView()
     {
         
-        self.navigationController!.popViewControllerAnimated(true)
-        self.tabBarController?.tabBar.hidden = false
+        self.navigationController!.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = false
         
     }
 
     //TODO:数据刷新
-    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView)
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView)
     {
         tableview.reloadData()
         print("刷新结束")

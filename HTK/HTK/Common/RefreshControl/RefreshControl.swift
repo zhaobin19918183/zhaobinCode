@@ -19,7 +19,7 @@ class RefreshControl: UIRefreshControl {
     
     var currentLabelIndex = 0
     
-    var timer: NSTimer!
+    var timer: Timer!
  
     required override init()
     {
@@ -37,11 +37,11 @@ class RefreshControl: UIRefreshControl {
     func  resetUILayout()
     {
         self.addTarget(self, action: #selector(refreshData),
-                       forControlEvents: UIControlEvents.ValueChanged)
+                       for: UIControlEvents.valueChanged)
         
         //背景色和tint颜色都要清除,保证自定义下拉视图高度自适应
-        self.backgroundColor = UIColor.whiteColor()
-        self.tintColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.white
+        self.tintColor = UIColor.clear
 
         loadData()
         
@@ -51,10 +51,10 @@ class RefreshControl: UIRefreshControl {
 
     //自定义刷新界面
     func loadCustomRefreshView() {
-        let refreshContents = NSBundle.mainBundle().loadNibNamed("Refresh",
+        let refreshContents = Bundle.main.loadNibNamed("Refresh",
                                                                  owner: self, options: nil)
         
-        headerCustomView = refreshContents[0] as! UIView
+        headerCustomView = refreshContents?[0] as! UIView
         headerCustomView.frame = self.bounds
         for i in 0 ..< headerCustomView.subviews.count {
             labelsArray.append(headerCustomView.viewWithTag(i + 1) as! UILabel)
@@ -76,31 +76,31 @@ class RefreshControl: UIRefreshControl {
         //播放动画
         playAnimateRefresh()
         //模拟加载数据
-        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self,
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self,
                                                        selector: #selector(loadData), userInfo: nil, repeats: true)
     }
     
     //播放文字动画
     func playAnimateRefresh() {
         //文字放大，变色动画
-        UIView.animateWithDuration(0.15, delay: 0.0,
-                                   options: .CurveLinear, animations: { () -> Void in
+        UIView.animate(withDuration: 0.15, delay: 0.0,
+                                   options: .curveLinear, animations: { () -> Void in
                                     
                                     self.labelsArray[self.currentLabelIndex].transform =
-                                        CGAffineTransformMakeScale(1.5, 1.5)
+                                        CGAffineTransform(scaleX: 1.5, y: 1.5)
                                     self.labelsArray[self.currentLabelIndex].textColor =
                                         self.getNextColor()
                                     
             }, completion: { (finished) -> Void in
                 
                 //文字样式还原动画
-                UIView.animateWithDuration(0.1, delay: 0.0,
-                    options: .CurveLinear, animations: { () -> Void in
+                UIView.animate(withDuration: 0.1, delay: 0.0,
+                    options: .curveLinear, animations: { () -> Void in
                         
                         self.labelsArray[self.currentLabelIndex].transform =
-                        CGAffineTransformIdentity
+                        CGAffineTransform.identity
                         self.labelsArray[self.currentLabelIndex].textColor =
-                            UIColor.blackColor()
+                            UIColor.black
                         
                     }, completion: { (finished) -> Void in
                         self.currentLabelIndex += 1
@@ -110,7 +110,7 @@ class RefreshControl: UIRefreshControl {
                         }
                         
                         //没加载完则继续播放动画
-                        if self.refreshing {
+                        if self.isRefreshing {
                             self.playAnimateRefresh()
                         }else{
                             self.currentLabelIndex = 0
@@ -128,9 +128,9 @@ class RefreshControl: UIRefreshControl {
     
     
     func getNextColor() -> UIColor {
-        var colorsArray: Array<UIColor> = [UIColor.magentaColor(),
-                                           UIColor.brownColor(), UIColor.yellowColor(), UIColor.redColor(),
-                                           UIColor.greenColor(), UIColor.blueColor(), UIColor.orangeColor()]
+        var colorsArray: Array<UIColor> = [UIColor.magenta,
+                                           UIColor.brown, UIColor.yellow, UIColor.red,
+                                           UIColor.green, UIColor.blue, UIColor.orange]
         
         if currentColorIndex == colorsArray.count {
             currentColorIndex = 0

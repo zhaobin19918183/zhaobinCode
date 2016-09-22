@@ -38,32 +38,32 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     func  resetUILayout()
     {
         
-        NSBundle.mainBundle().loadNibNamed("PhotosSelectView", owner:self,options:nil)
-        photosCollection.registerNib(UINib(nibName: "PhotosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellID")
+        Bundle.main.loadNibNamed("PhotosSelectView", owner:self,options:nil)
+        photosCollection.register(UINib(nibName: "PhotosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellID")
         self.addSubview(_photosSelectView)
         
     }
     //MARK: 照片缓存
     func photosUserDefaults()
     {
-        assetsFetchResults = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: nil)
+        assetsFetchResults = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: nil)
         if assetsFetchResults.count != 0
         {
             for index in 1...assetsFetchResults.count
             {
                 asset = assetsFetchResults[index - 1] as! PHAsset
                 
-                imageManager.requestImageForAsset(asset, targetSize:PHImageManagerMaximumSize, contentMode: PHImageContentMode.AspectFit, options: nil) { (resultimage,  info) in
+                imageManager.requestImage(for: asset, targetSize:PHImageManagerMaximumSize, contentMode: PHImageContentMode.aspectFit, options: nil) { (resultimage,  info) in
                     
                     let imageData = UIImagePNGRepresentation(resultimage!)
-                    let base64String = imageData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue:0))
+                    let base64String = imageData!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue:0))
                     
-                    self.selectedArray.addObject(base64String)
-                    let data : NSData! = try? NSJSONSerialization.dataWithJSONObject(self.selectedArray, options: [])
+                    self.selectedArray.add(base64String)
+                    let data : Data! = try? JSONSerialization.data(withJSONObject: self.selectedArray, options: [])
                     //NSData转换成NSString打印输出
-                    let str = NSString(data:data, encoding: NSUTF8StringEncoding)
+                    let str = NSString(data:data, encoding: String.Encoding.utf8)
                     
-                    NSUserDefaults.standardUserDefaults().setObject(str, forKey: "photos")
+                    UserDefaults.standard.set(str, forKey: "photos")
                 }
                 
             }
@@ -71,7 +71,7 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
         }
     }
     
-    func popViewControllerPhotosArray(photosImageArray : NSMutableArray)
+    func popViewControllerPhotosArray(_ photosImageArray : NSMutableArray)
     {
         
         self.photosImageArray = photosImageArray
@@ -79,7 +79,7 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
         
     }
     //MARK:CollectionView
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         if self.photosImageArray.count == 0 {
             return 1
@@ -88,47 +88,47 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
         return  self.photosImageArray.count + 1
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
+    func numberOfSections(in collectionView: UICollectionView) -> Int
     {
         return 1;
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCellID", forIndexPath: indexPath) as? PhotosCollectionViewCell
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCellID", for: indexPath) as? PhotosCollectionViewCell
         if cell == nil
         {
-            let nibArray : NSArray = NSBundle.mainBundle().loadNibNamed("PhotosCollectionViewCell", owner:self, options:nil)
+            let nibArray : NSArray = Bundle.main.loadNibNamed("PhotosCollectionViewCell", owner:self, options:nil)
             cell = nibArray.firstObject as? PhotosCollectionViewCell
         }
-        if self.photosImageArray.count != 0 && indexPath.row < self.photosImageArray.count{
+        if self.photosImageArray.count != 0 && (indexPath as NSIndexPath).row < self.photosImageArray.count{
             
-            cell?.backgroundImageView.image = self.photosImageArray.objectAtIndex(indexPath.row ) as? UIImage
+            cell?.backgroundImageView.image = self.photosImageArray.object(at: (indexPath as NSIndexPath).row ) as? UIImage
             // print(indexPath.row)
-            cell?.delectButton.hidden = false
-            cell?.delectButton.tag = indexPath.row
-            cell?.delectButton.addTarget(self, action: #selector(PhotosSelectView.deleteImage(_:)), forControlEvents: UIControlEvents.TouchDown)
+            cell?.delectButton.isHidden = false
+            cell?.delectButton.tag = (indexPath as NSIndexPath).row
+            cell?.delectButton.addTarget(self, action: #selector(PhotosSelectView.deleteImage(_:)), for: UIControlEvents.touchDown)
         }
         else
         {
             
             cell?.backgroundImageView.image = UIImage(named:"jiahao")
-            cell?.delectButton.hidden = true
+            cell?.delectButton.isHidden = true
             
         }
         return cell!
         
     }
-    func deleteImage(button:UIButton)
+    func deleteImage(_ button:UIButton)
     {
         print(button.tag)
-        self.photosImageArray.removeObject(self.photosImageArray[button.tag])
+        self.photosImageArray.remove(self.photosImageArray[button.tag])
         self.photosCollection.reloadData()
         
     }
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        if indexPath.row == self.photosImageArray.count
+        if (indexPath as NSIndexPath).row == self.photosImageArray.count
         {
             
             let loginView = PhotosSelectManager()
@@ -136,7 +136,7 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
             
             loginView.view.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha:0)
             loginView.imageArray = self.photosImageArray
-            photosSelectView.presentViewController(loginView, animated: true, completion: nil)
+            photosSelectView.present(loginView, animated: true, completion: nil)
             
             
         }

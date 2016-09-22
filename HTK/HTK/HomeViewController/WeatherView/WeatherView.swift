@@ -25,7 +25,7 @@ class WeatherView: UIView
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var moreButton: UIButton!
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
     }
     
@@ -39,25 +39,25 @@ class WeatherView: UIView
     func  resetUILayout()
     {
         
-        NSBundle.mainBundle().loadNibNamed("WeatherView", owner:self,options:nil)
+        Bundle.main.loadNibNamed("WeatherView", owner:self,options:nil)
         _weatherVIew.backgroundColor = UIColor(patternImage: UIImage(named:"weatherImage.png")!)
         self.addSubview(_weatherVIew)
     }
-    func  weatherDic(infor:NSDictionary)
+    func  weatherDic(_ infor:NSDictionary)
     {
-        let   windDic = infor.valueForKey("wind")
-        let  weatherDic = infor.valueForKey("weather")
-        let  info = weatherDic!.valueForKey("info") as! String
+        let   windDic = infor.value(forKey: "wind")
+        let  weatherDic = infor.value(forKey: "weather")
+        let  info = (weatherDic! as AnyObject).value(forKey: "info") as! String
         
-        tempratureLabel.text = String(format: "温度 : %@ °",(weatherDic?.valueForKey("temperature") as? String)!)
+        tempratureLabel.text = String(format: "温度 : %@ °",((weatherDic as AnyObject).value(forKey: "temperature") as? String)!)
         let pow = "风力:"
-        powerLabel.text = pow+((windDic?.valueForKey("power"))! as! String)
+        powerLabel.text = pow+(((windDic as AnyObject).value(forKey: "power"))! as! String)
         let dire = "风向:"
-        directLabel.text = dire+((windDic?.valueForKey("direct"))! as! String)
-        let img = UIImage(named:(weatherDic?.valueForKey("img"))! as! String)
+        directLabel.text = dire+(((windDic as AnyObject).value(forKey: "direct"))! as! String)
+        let img = UIImage(named:((weatherDic as AnyObject).value(forKey: "img"))! as! String)
         weatherImageView.image = img
         let moon = " 农历 :  "
-        dateLabel.text = (infor.valueForKey("date") as? String)!+moon+(infor.valueForKey("moon") as? String)!
+        dateLabel.text = (infor.value(forKey: "date") as? String)!+moon+(infor.value(forKey: "moon") as? String)!
         weatherLabel.text = info
      
     }

@@ -28,7 +28,7 @@ class TrafficView:UIView,trafficViewPickerDelegate,UITextFieldDelegate {
     
     
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
     }
     
@@ -43,8 +43,8 @@ class TrafficView:UIView,trafficViewPickerDelegate,UITextFieldDelegate {
     func  resetUILayout()
     {
         
-        NSBundle.mainBundle().loadNibNamed("TrafficView", owner:self,options:nil)
-        projectButton.hidden = true
+        Bundle.main.loadNibNamed("TrafficView", owner:self,options:nil)
+        projectButton.isHidden = true
         typeButton.tag = 2
         projectButton.tag = 1
         lineTextField.delegate = self
@@ -63,7 +63,7 @@ class TrafficView:UIView,trafficViewPickerDelegate,UITextFieldDelegate {
     }
     
     // MARK: UITextFieldDelegate
-    func textFieldDidEndEditing(textField:UITextField)
+    func textFieldDidEndEditing(_ textField:UITextField)
     {
         //收起键盘
         //textField.resignFirstResponder()
@@ -73,56 +73,56 @@ class TrafficView:UIView,trafficViewPickerDelegate,UITextFieldDelegate {
         
     }
     //TODO:
-    @IBAction func typeButtonAction(sender: UIButton)
+    @IBAction func typeButtonAction(_ sender: UIButton)
     {
         let loginView = pickerViewController()
         loginView.delegate = self
         loginView.tag = String(sender.tag)
-        lineTextField.hidden = false
+        lineTextField.isHidden = false
         lineTextField.placeholder = "线路"
-        projectButton.hidden = true
+        projectButton.isHidden = true
         loginView.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha:0.5)
-        pickerView.presentViewController(loginView, animated: true, completion: nil)
+        pickerView.present(loginView, animated: true, completion: nil)
     }
-    @IBAction func projectButtonAction(sender: UIButton)
+    @IBAction func projectButtonAction(_ sender: UIButton)
     {
         
         let loginView = pickerViewController()
         loginView.delegate = self
         loginView.tag = String(sender.tag)
         loginView.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha:0.5)
-        pickerView.presentViewController(loginView, animated: true, completion: nil)
+        pickerView.present(loginView, animated: true, completion: nil)
         
     }
     
  
-    func trafficViewprojectPickerViewString(project: String)
+    func trafficViewprojectPickerViewString(_ project: String)
     {
         self.project = project
         print("查询方式====\(project)")
         if project == "0" {
-            projectButton.hidden = true
-            lineTextField.hidden = false
+            projectButton.isHidden = true
+            lineTextField.isHidden = false
             lineTextField.placeholder = "线路"
         }
         else
             if project == "1"
             {
-                projectButton.hidden = true
-                lineTextField.hidden = false
+                projectButton.isHidden = true
+                lineTextField.isHidden = false
                 lineTextField.placeholder = "站台"
                 
             }
             else
             {
-                projectButton.hidden = false
+                projectButton.isHidden = false
                 lineTextField.placeholder = "目标站点"
                
         }
         
         
     }
-    func trafficViewtypePickerViewString(type: String)
+    func trafficViewtypePickerViewString(_ type: String)
     {
         print("换乘方案====\(type)")
         

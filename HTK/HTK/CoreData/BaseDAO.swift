@@ -13,18 +13,18 @@ class BaseDAO: NSObject
 {
     static let managedObjectModel : NSManagedObjectModel =
     {
-        let modelURL = NSBundle.mainBundle().URLForResource("HTKModel", withExtension: "momd")
+        let modelURL = Bundle.main.url(forResource: "HTKModel", withExtension: "momd")
     
-        return NSManagedObjectModel(contentsOfURL: modelURL!)!
+        return NSManagedObjectModel(contentsOf: modelURL!)!
     }()
     
     static let persistentStoreCoordinator : NSPersistentStoreCoordinator =
     {
-        let sqliteURL = NSURL.fileURLWithPath(kPathSQLITE)
+        let sqliteURL = URL(fileURLWithPath: kPathSQLITE)
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: BaseDAO.managedObjectModel)
         do
         {
-            try persistentStoreCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: sqliteURL, options: nil)
+            try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: sqliteURL, options: nil)
             print("Initial persistent store coordinator success")
         }catch
         {
@@ -36,7 +36,7 @@ class BaseDAO: NSObject
   
     static let mainMOC : NSManagedObjectContext =
     {
-        let moc = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        let moc = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         moc.persistentStoreCoordinator = BaseDAO.persistentStoreCoordinator
 
         return moc

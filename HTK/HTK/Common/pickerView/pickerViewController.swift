@@ -10,8 +10,8 @@ import UIKit
 
 protocol trafficViewPickerDelegate
 {
-    func trafficViewtypePickerViewString(type:String)
-    func trafficViewprojectPickerViewString(project:String)
+    func trafficViewtypePickerViewString(_ type:String)
+    func trafficViewprojectPickerViewString(_ project:String)
    
 }
 
@@ -26,17 +26,17 @@ class pickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     {
         super.viewDidLoad()
        // print(self.delegate)
-        self.modalPresentationStyle = .Custom
+        self.modalPresentationStyle = .custom
        
     }
     
     
-    func numberOfComponentsInPickerView( pickerView: UIPickerView) -> Int{
+    func numberOfComponents( in pickerView: UIPickerView) -> Int{
         return 1
     }
     
     //设置选择框的行数为9行，继承于UIPickerViewDataSource协议
-    func pickerView(pickerView: UIPickerView,numberOfRowsInComponent component: Int) -> Int{
+    func pickerView(_ pickerView: UIPickerView,numberOfRowsInComponent component: Int) -> Int{
         if(tag == "1")
         {
           return 6
@@ -48,7 +48,7 @@ class pickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     //设置选择框各选项的内容，继承于UIPickerViewDelegate协议
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int)
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int)
         -> String? {
             if(tag == "1")
             {
@@ -61,10 +61,10 @@ class pickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //将在滑动停止后触发，并打印出选中列和行索引
-        UIView.animateWithDuration(0.5) { () -> Void in
-            self.dismissViewControllerAnimated(true) { () -> Void in
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            self.dismiss(animated: true) { () -> Void in
                 if(self.tag == "1")
                 {
                     self.delegate.trafficViewtypePickerViewString(String(row))
@@ -75,7 +75,7 @@ class pickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 }
                 
             }
-        }
+        }) 
 
         
        // print(row)
@@ -84,7 +84,7 @@ class pickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func dismiss()
     {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
    
     

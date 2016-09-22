@@ -14,15 +14,15 @@ func initialDirectories()
     createDirectoryAt(kPathCoreData)
 }
 
-func createDirectoryAt(path : String)
+func createDirectoryAt(_ path : String)
 {
-    let fileManager = NSFileManager.defaultManager()
-    if !fileManager.fileExistsAtPath(path)
+    let fileManager = FileManager.default
+    if !fileManager.fileExists(atPath: path)
     {
-        let attributes = [NSFileProtectionKey:NSFileProtectionComplete];
+        let attributes = [FileAttributeKey.protectionKey:FileProtectionType.complete];
         do
         {
-            try fileManager.createDirectoryAtPath(path, withIntermediateDirectories: true, attributes: attributes)
+            try fileManager.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: attributes)
             print("Create Directory Success - \n\(path)\n")
         }
         catch

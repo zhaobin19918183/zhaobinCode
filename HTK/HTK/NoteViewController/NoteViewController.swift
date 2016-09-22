@@ -19,7 +19,7 @@ class NoteViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-         _photosSelectView.photosSelectView = self.parentViewController!
+         _photosSelectView.photosSelectView = self.parent!
         self.automaticallyAdjustsScrollViewInsets = false
     }
 }

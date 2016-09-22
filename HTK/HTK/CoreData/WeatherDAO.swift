@@ -12,10 +12,10 @@ import CoreData
 class WeatherDAO: BaseDAO {
 
     //MARK: - Create
-    static func createEntityWith(InitialClosure closure : (newEntity : WeatherEntity )->() ) -> Bool
+    static func createEntityWith(InitialClosure closure : (_ newEntity : WeatherEntity )->() ) -> Bool
     {
-        let entity = NSEntityDescription.insertNewObjectForEntityForName(self.entityName(), inManagedObjectContext: BaseDAO.mainMOC) as! WeatherEntity
-        closure(newEntity: entity)
+        let entity = NSEntityDescription.insertNewObject(forEntityName: self.entityName(), into: BaseDAO.mainMOC) as! WeatherEntity
+        closure(entity)
         return self.save()
     }
     
@@ -33,20 +33,20 @@ class WeatherDAO: BaseDAO {
     //MARK: - Delete
     static func deleteEntityWith(Entity entity : WeatherEntity) -> Bool
     {
-        BaseDAO.mainMOC.deleteObject(entity)
+        BaseDAO.mainMOC.delete(entity)
         return self.save()
     }
     //MARK: - Retrive 按条件搜索数据
     static func retriveEntityWith(ID identification : String) -> [WeatherEntity]
     {
         let request         = NSFetchRequest(entityName: self.entityName())
-        let searchEntity    = NSEntityDescription.entityForName(self.entityName(), inManagedObjectContext: BaseDAO.mainMOC)
+        let searchEntity    = NSEntityDescription.entity(forEntityName: self.entityName(), in: BaseDAO.mainMOC)
         request.entity      = searchEntity
         let predicate       = NSPredicate(format: "identification == %@", identification)
         request.predicate   = predicate
         do
         {
-            let resultArray = try BaseDAO.mainMOC.executeFetchRequest(request)
+            let resultArray = try BaseDAO.mainMOC.fetch(request)
             return resultArray as! [WeatherEntity]
         }catch
         {
@@ -54,15 +54,15 @@ class WeatherDAO: BaseDAO {
         }
     }
     
-    static  func createWeatherEntity(dicData:NSMutableDictionary)
+    static  func createWeatherEntity(_ dicData:NSMutableDictionary)
     {
 
         let success = WeatherDAO.createEntityWith { (newEntity:WeatherEntity) -> () in
             
-            let realtimedata : NSData  = NSKeyedArchiver.archivedDataWithRootObject(dicData.valueForKey("realtime")!)
-            let lifedata : NSData      = NSKeyedArchiver.archivedDataWithRootObject(dicData.valueForKey("life")!)
-            let weatherdata : NSData   = NSKeyedArchiver.archivedDataWithRootObject(dicData.valueForKey("weather")!)
-            let pmdata : NSData        = NSKeyedArchiver.archivedDataWithRootObject(dicData.valueForKey("pm25")!)
+            let realtimedata : Data  = NSKeyedArchiver.archivedData(withRootObject: dicData.value(forKey: "realtime")!)
+            let lifedata : Data      = NSKeyedArchiver.archivedData(withRootObject: dicData.value(forKey: "life")!)
+            let weatherdata : Data   = NSKeyedArchiver.archivedData(withRootObject: dicData.value(forKey: "weather")!)
+            let pmdata : Data        = NSKeyedArchiver.archivedData(withRootObject: dicData.value(forKey: "pm25")!)
             
             newEntity.realtime         = realtimedata
             newEntity.life             = lifedata
@@ -86,16 +86,16 @@ class WeatherDAO: BaseDAO {
     {
         let managedContext  = BaseDAO.mainMOC
         let fetchRqeust     = NSFetchRequest(entityName: "WeatherEntity")
-        let weatherArray    = try!managedContext.executeFetchRequest(fetchRqeust) as AnyObject as! NSArray
-        let weatherEntity   = weatherArray.objectAtIndex(0) as! WeatherEntity
+        let weatherArray    = try!managedContext.fetch(fetchRqeust) as AnyObject as! NSArray
+        let weatherEntity   = weatherArray.object(at: 0) as! WeatherEntity
         return weatherEntity
     }
-    static  func  SearchOneEntity(index:Int) -> WeatherEntity
+    static  func  SearchOneEntity(_ index:Int) -> WeatherEntity
     {
         let managedContext  = BaseDAO.mainMOC
         let fetchRqeust     = NSFetchRequest(entityName: "WeatherEntity")
-        let weatherArray    = try!managedContext.executeFetchRequest(fetchRqeust) as AnyObject as! NSArray
-        let weatherEntity   = weatherArray.objectAtIndex(index) as! WeatherEntity
+        let weatherArray    = try!managedContext.fetch(fetchRqeust) as AnyObject as! NSArray
+        let weatherEntity   = weatherArray.object(at: index) as! WeatherEntity
         return weatherEntity
     }
     //MARK: - 全部数据
@@ -103,7 +103,7 @@ class WeatherDAO: BaseDAO {
     {
         let managedContext  = BaseDAO.mainMOC
         let fetchRqeust     = NSFetchRequest(entityName: "WeatherEntity")
-        let weatherArray    = try!managedContext.executeFetchRequest(fetchRqeust) as AnyObject as! NSArray
+        let weatherArray    = try!managedContext.fetch(fetchRqeust) as AnyObject as! NSArray
         return weatherArray
     }
     //MARK: - 0
@@ -111,8 +111,8 @@ class WeatherDAO: BaseDAO {
     {
         let managedContext  = BaseDAO.mainMOC
         let fetchRqeust     = NSFetchRequest(entityName: "WeatherEntity")
-        let fetcheResults   = try!managedContext.executeFetchRequest(fetchRqeust) as AnyObject as! NSArray
-        let model           =  WeatherModel.convertFrom(fetcheResults.objectAtIndex(0) as! WeatherEntity)
+        let fetcheResults   = try!managedContext.fetch(fetchRqeust) as AnyObject as! NSArray
+        let model           =  WeatherModel.convertFrom(fetcheResults.object(at: 0) as! WeatherEntity)
         return model
     }
    //MARK: - save
