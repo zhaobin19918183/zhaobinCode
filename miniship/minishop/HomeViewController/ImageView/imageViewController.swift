@@ -16,8 +16,8 @@ class imageViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.hidden = true
-        let nextItem=UIBarButtonItem(title:"Home",style:.Plain,target:self,action:#selector(backHomeView))
+        self.tabBarController?.tabBar.isHidden = true
+        let nextItem=UIBarButtonItem(title:"Home",style:.plain,target:self,action:#selector(backHomeView))
         self.navigationItem.leftBarButtonItem = nextItem
         
     }
@@ -25,8 +25,8 @@ class imageViewController: UIViewController {
     func backHomeView()
     {
 
-        self.navigationController!.popViewControllerAnimated(true)
-        self.tabBarController?.tabBar.hidden = false
+        self.navigationController!.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = false
         
     }
   

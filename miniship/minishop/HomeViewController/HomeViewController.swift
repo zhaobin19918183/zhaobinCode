@@ -24,7 +24,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     
     @IBOutlet weak var _scrollView: UIScrollView!
     var imageArray : NSArray!
-    var timer: NSTimer?
+    var timer: Timer?
     var lableTitle : NSMutableArray!
     
     var viewWidth: CGFloat{
@@ -36,7 +36,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     {
         super.viewDidLoad()
          imageArray = ["1-1.jpg","1-2.jpg","1-3.jpg","1-4.jpg"]
-        let nextItem=UIBarButtonItem(title:"",style:.Plain,target:self,action:nil);
+        let nextItem=UIBarButtonItem(title:"",style:.plain,target:self,action:nil);
         //  添加到到导航栏上
         self.navigationItem.leftBarButtonItem = nextItem;
      
@@ -52,7 +52,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     {
         
         let height = _goodsView.frame.size.height + _goodsView.frame.origin.y
-        _scrollView.contentSize  = CGSizeMake(_scrollView.frame.size.width, height)
+        _scrollView.contentSize  = CGSize(width: _scrollView.frame.size.width, height: height)
         imageScrollViewAction()
         
     }
@@ -62,36 +62,36 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     {
        
         
-        _imageScrolleView.contentSize = CGSizeMake(CGFloat(imageArray.count+2) * self.view.frame.width, _imageScrolleView.bounds.size.height)
+        _imageScrolleView.contentSize = CGSize(width: CGFloat(imageArray.count+2) * self.view.frame.width, height: _imageScrolleView.bounds.size.height)
         _imageScrolleView.showsHorizontalScrollIndicator = false
         _imageScrolleView.delegate = self
-        _imageScrolleView.pagingEnabled = true
+        _imageScrolleView.isPagingEnabled = true
         
         for i in 1...imageArray.count {
             
-            let imgView: UIImageView = UIImageView(frame: CGRectMake(CGFloat(i) * self.view.frame.width, 0, self.view.frame.width, _imageScrolleView.bounds.size.height))
+            let imgView: UIImageView = UIImageView(frame: CGRect(x: CGFloat(i) * self.view.frame.width, y: 0, width: self.view.frame.width, height: _imageScrolleView.bounds.size.height))
             
             imgView.image = UIImage(named: imageArray[i-1] as!String)
             _imageScrolleView.addSubview(imgView)
             
-            imgView.userInteractionEnabled = true
+            imgView.isUserInteractionEnabled = true
             
             let singleTap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.imageViewTouch))
             imgView.addGestureRecognizer(singleTap)
       
         }
         
-        let imgView: UIImageView = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, _imageScrolleView.bounds.size.height))
+        let imgView: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: _imageScrolleView.bounds.size.height))
         imgView.image = UIImage(named: imageArray.lastObject as!String)
-        imgView.userInteractionEnabled = true
+        imgView.isUserInteractionEnabled = true
         _imageScrolleView.addSubview(imgView)
         
-        let imgView2: UIImageView = UIImageView(frame: CGRectMake(self.view.frame.width * 5, 0, self.view.frame.width, _imageScrolleView.bounds.size.height))
+        let imgView2: UIImageView = UIImageView(frame: CGRect(x: self.view.frame.width * 5, y: 0, width: self.view.frame.width, height: _imageScrolleView.bounds.size.height))
         imgView2.image = UIImage(named: imageArray.firstObject as!String)
-        imgView2.userInteractionEnabled = true
+        imgView2.isUserInteractionEnabled = true
         _imageScrolleView.addSubview(imgView2)
         
-        _imageScrolleView.setContentOffset(CGPointMake(self.view.frame.width, 0), animated: false)
+        _imageScrolleView.setContentOffset(CGPoint(x: self.view.frame.width, y: 0), animated: false)
         
         
     }
@@ -105,7 +105,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
         case 0:
             print(page)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let target = storyboard.instantiateViewControllerWithIdentifier("imageViewController")
+            let target = storyboard.instantiateViewController(withIdentifier: "imageViewController")
             self.navigationController?.pushViewController(target, animated:true)
         case 1:
             print(page)
@@ -125,7 +125,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     //TODO:UIScrollViewDelegate
     
     
-    func scrollViewDidScroll(scrollView: UIScrollView)
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
 
         let scrollviewW =  _imageScrolleView.frame.size.width
@@ -137,7 +137,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     }
    
     
-    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         
     }
 
@@ -146,7 +146,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     //MARK:addTimer()
         func addTimer(){
     
-            timer = NSTimer.scheduledTimerWithTimeInterval(1.5,
+            timer = Timer.scheduledTimer(timeInterval: 1.5,
                 target:self,selector:#selector(HomeViewController.nextPage),
                 userInfo:nil,repeats:true)
         }
@@ -178,21 +178,21 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
                 page = page+1
             }
     
-            UIView.animateWithDuration(0.5, animations: { [unowned self] () -> Void in
-                self._imageScrolleView.setContentOffset(CGPointMake(self.viewWidth*self.index , 0), animated: false)
+            UIView.animate(withDuration: 0.5, animations: { [unowned self] () -> Void in
+                self._imageScrolleView.setContentOffset(CGPoint(x: self.viewWidth*self.index , y: 0), animated: false)
                 })
         }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         let w = scrollView.frame.width
         
         let page : Int = Int(_imageScrolleView.contentOffset.x/w)
         if page == 0 {
-            _imageScrolleView.setContentOffset(CGPointMake(CGFloat(imageArray.count) * w, 0), animated: false)
+            _imageScrolleView.setContentOffset(CGPoint(x: CGFloat(imageArray.count) * w, y: 0), animated: false)
             
         } else if page == imageArray.count+1 {
-            _imageScrolleView.setContentOffset(CGPointMake(w, 0), animated: false)
+            _imageScrolleView.setContentOffset(CGPoint(x: w, y: 0), animated: false)
             
         }
         

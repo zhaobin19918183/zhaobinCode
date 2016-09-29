@@ -7,8 +7,6 @@
 //
 
 import XCTest
-
-
 class HTKTests: XCTestCase {
     
     override func setUp() {

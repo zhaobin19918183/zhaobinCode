@@ -18,7 +18,7 @@ class RecommendedView: UIView {
     @IBOutlet weak var _recommendButton2: UIButton!
     
     @IBOutlet weak var _recommendButton3: UIButton!
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
     }
 
@@ -29,24 +29,24 @@ class RecommendedView: UIView {
         
     }
  
-    @IBAction func recommendAction1(sender: UIButton)
+    @IBAction func recommendAction1(_ sender: UIButton)
     {
         print(1)
     }
     
-    @IBAction func recommendAction2(sender: UIButton)
+    @IBAction func recommendAction2(_ sender: UIButton)
     {
         print(2)
     }
     
-    @IBAction func recommendAction3(sender: UIButton)
+    @IBAction func recommendAction3(_ sender: UIButton)
     {
         print(3)
     }
     func  resetUILayout()
     {
         
-        NSBundle.mainBundle().loadNibNamed("recommendedview", owner:self,options:nil)
+        Bundle.main.loadNibNamed("recommendedview", owner:self,options:nil)
         self.addSubview(myUIView)
         
     }

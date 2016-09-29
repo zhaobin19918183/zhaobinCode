@@ -2,7 +2,7 @@
 import UIKit
 
 class CSHeaderReusableView: UICollectionReusableView {
-    private let textLabel = UILabel(frame: CGRectZero)
+    fileprivate let textLabel = UILabel(frame: CGRect.zero)
     
     var text: String? {
         didSet {
@@ -17,7 +17,7 @@ class CSHeaderReusableView: UICollectionReusableView {
         super.init(frame: frame)
         textLabel.left = 10
         textLabel.centerY = frame.height / 2.0
-        textLabel.font = UIFont.systemFontOfSize(14)
+        textLabel.font = UIFont.systemFont(ofSize: 14)
         self.addSubview(textLabel)
     }
 

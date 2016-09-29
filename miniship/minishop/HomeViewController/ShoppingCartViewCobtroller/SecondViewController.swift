@@ -16,37 +16,37 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         print("second viewDidLoad")
 
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         /*若tabbar为透明的，需要将tableView的contentInset的bottom设为tabBar的高度
         才能避免底部被tabBar挡住*/
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         print("second viewWillAppear")
     }
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         print("second viewDidAppear")
     }
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         print("second viewWillDisappear")
     }
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         print("second viewDidDisappear")
     }
 }
 
 extension SecondViewController: UITableViewDataSource, UITableViewDelegate {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 10
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return section + 1
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
-        cell.textLabel?.text = "第\(indexPath.section)分区 - 第\(indexPath.row)行"
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        cell.textLabel?.text = "第\((indexPath as NSIndexPath).section)分区 - 第\((indexPath as NSIndexPath).row)行"
         return cell
     }
 }// 版权属于原作者

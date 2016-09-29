@@ -21,37 +21,37 @@ class ShoppingCarViewController: UIViewController,UITableViewDataSource,UITableV
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(tableView.isEqual(_menuTableView))
         {
             let initIdentifier : String = "MenuTableViewCell"
-            var cell : MenuTableViewCell? = tableView.dequeueReusableCellWithIdentifier(initIdentifier) as? MenuTableViewCell
+            var cell : MenuTableViewCell? = tableView.dequeueReusableCell(withIdentifier: initIdentifier) as? MenuTableViewCell
             if cell == nil
             {
-                let nibArray = NSBundle.mainBundle().loadNibNamed("MenuTableViewCell", owner: self, options: nil)
-                cell = nibArray.first as? MenuTableViewCell
-                cell?._menuNameLable.text = self.sec[indexPath.row]
+                let nibArray = Bundle.main.loadNibNamed("MenuTableViewCell", owner: self, options: nil)
+                cell = nibArray?.first as? MenuTableViewCell
+                cell?._menuNameLable.text = self.sec[(indexPath as NSIndexPath).row]
             }
             return cell!
         }
         
         let initIdentifier : String = "ProductTableViewCell"
-        var cell : ProductTableViewCell? = tableView.dequeueReusableCellWithIdentifier(initIdentifier) as? ProductTableViewCell
+        var cell : ProductTableViewCell? = tableView.dequeueReusableCell(withIdentifier: initIdentifier) as? ProductTableViewCell
         if cell == nil
         {
-            let nibArray = NSBundle.mainBundle().loadNibNamed("ProductTableViewCell", owner: self, options: nil)
-            cell = nibArray.first as? ProductTableViewCell
+            let nibArray = Bundle.main.loadNibNamed("ProductTableViewCell", owner: self, options: nil)
+            cell = nibArray?.first as? ProductTableViewCell
             
         }
-       cell?.index = indexPath.row
-       cell?.section = indexPath.section
+       cell?.index = (indexPath as NSIndexPath).row
+       cell?.section = (indexPath as NSIndexPath).section
        
        return cell!
         
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if(tableView.isEqual(_menuTableView))
         {
@@ -63,7 +63,7 @@ class ShoppingCarViewController: UIViewController,UITableViewDataSource,UITableV
         }
         return 0
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if(tableView.isEqual(_menuTableView))
         {
@@ -75,7 +75,7 @@ class ShoppingCarViewController: UIViewController,UITableViewDataSource,UITableV
         }
         return 0
     }
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
         if(tableView.isEqual(_productTableView))
         {
@@ -83,11 +83,11 @@ class ShoppingCarViewController: UIViewController,UITableViewDataSource,UITableV
         }
         return nil
     }
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
         return 20
     }
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
         if (tableView.isEqual(_productTableView))
         {
@@ -95,7 +95,7 @@ class ShoppingCarViewController: UIViewController,UITableViewDataSource,UITableV
         }
         return 1
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         if(tableView.isEqual(_productTableView))
         {
@@ -104,17 +104,17 @@ class ShoppingCarViewController: UIViewController,UITableViewDataSource,UITableV
         else
         if(tableView.isEqual(_menuTableView))
         {
-         _productTableView?.selectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: indexPath.row), animated: true, scrollPosition: .Top)
+         _productTableView?.selectRow(at: IndexPath(row: 0, section: (indexPath as NSIndexPath).row), animated: true, scrollPosition: .top)
          _productTableView.reloadData()
        
         }
     }
     //TODO:header display
 
-    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if(tableView.isEqual(_productTableView))
         {
-        _menuTableView.selectRowAtIndexPath(NSIndexPath(forRow: section, inSection: 0), animated: true, scrollPosition: UITableViewScrollPosition.Middle)
+        _menuTableView.selectRow(at: IndexPath(row: section, section: 0), animated: true, scrollPosition: UITableViewScrollPosition.middle)
         }
         
     }

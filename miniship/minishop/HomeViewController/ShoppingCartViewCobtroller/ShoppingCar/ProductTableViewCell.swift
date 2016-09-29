@@ -31,7 +31,7 @@ class ProductTableViewCell: UITableViewCell {
    
 
     
-    @IBAction func deleteProductAction(sender: UIButton)
+    @IBAction func deleteProductAction(_ sender: UIButton)
     {
        
         print("section==\(section)","index==\(index)")
@@ -39,7 +39,7 @@ class ProductTableViewCell: UITableViewCell {
        
     }
   
-    @IBAction func addProductAction(sender: UIButton)
+    @IBAction func addProductAction(_ sender: UIButton)
     {
        print("section==\(section)","index==\(index)")
       
@@ -47,14 +47,14 @@ class ProductTableViewCell: UITableViewCell {
       
     }
 //    //MARK:动画效果
-    func addProductsAnimation(imageView: UIImageView) {
+    func addProductsAnimation(_ imageView: UIImageView) {
         
         if (self.animationLayers == nil)
         {
             self.animationLayers = [CALayer]();
         }
         
-        let frame = imageView.convertRect(imageView.bounds, toView:self)
+        let frame = imageView.convert(imageView.bounds, to:self)
         let transitionLayer = CALayer()
         transitionLayer.frame = frame
         transitionLayer.contents = imageView.layer.contents
@@ -63,10 +63,10 @@ class ProductTableViewCell: UITableViewCell {
         
         let p1 = transitionLayer.position;
         
-        let p3 = CGPointMake(self.width - 20 , self.layer.bounds.size.height * 4 + 20);
+        let p3 = CGPoint(x: self.width - 20 , y: self.layer.bounds.size.height * 4 + 20);
         
         let positionAnimation = CAKeyframeAnimation(keyPath: "position")
-        let path = CGPathCreateMutable();
+        let path = CGMutablePath();
         CGPathMoveToPoint(path, nil, p1.x, p1.y);
         CGPathAddCurveToPoint(path, nil, p1.x, p1.y - 30, p3.x, p1.y - 30, p3.x, p3.y);
         positionAnimation.path = path;
@@ -75,22 +75,22 @@ class ProductTableViewCell: UITableViewCell {
         opacityAnimation.fromValue = 1
         opacityAnimation.toValue = 0.9
         opacityAnimation.fillMode = kCAFillModeForwards
-        opacityAnimation.removedOnCompletion = true
+        opacityAnimation.isRemovedOnCompletion = true
         
         let transformAnimation = CABasicAnimation(keyPath: "transform")
-        transformAnimation.fromValue = NSValue(CATransform3D: CATransform3DIdentity)
-        transformAnimation.toValue = NSValue(CATransform3D: CATransform3DScale(CATransform3DIdentity, 0.2, 0.2, 1))
+        transformAnimation.fromValue = NSValue(caTransform3D: CATransform3DIdentity)
+        transformAnimation.toValue = NSValue(caTransform3D: CATransform3DScale(CATransform3DIdentity, 0.2, 0.2, 1))
         
         let groupAnimation = CAAnimationGroup()
         groupAnimation.animations = [positionAnimation, transformAnimation, opacityAnimation];
         groupAnimation.duration = 0.8
         groupAnimation.delegate = self;
         
-        transitionLayer.addAnimation(groupAnimation, forKey: "cartParabola")
+        transitionLayer.add(groupAnimation, forKey: "cartParabola")
     }
 
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

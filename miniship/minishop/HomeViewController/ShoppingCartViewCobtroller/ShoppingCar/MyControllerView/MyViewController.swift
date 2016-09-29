@@ -16,7 +16,7 @@ class MyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.modalPresentationStyle = .Custom
+        self.modalPresentationStyle = .custom
         // Do any additional setup after loading the view.
     }
 
@@ -25,12 +25,12 @@ class MyViewController: UIViewController {
         
     }
     
-    @IBAction func popViewAction(sender: UIButton)
+    @IBAction func popViewAction(_ sender: UIButton)
     {
 
         let loginView = popViewController()
         loginView.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
-        self.presentViewController(loginView, animated: true, completion: nil)
+        self.present(loginView, animated: true, completion: nil)
 
     }
 

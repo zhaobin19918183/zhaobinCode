@@ -4,8 +4,8 @@ import UIKit
 
 class CSEditBar: UIView {
 
-    private let titleLabel = UILabel(frame: CGRectZero)
-    let editButton = UIButton(frame: CGRectZero)
+    fileprivate let titleLabel = UILabel(frame: CGRect.zero)
+    let editButton = UIButton(frame: CGRect.zero)
     
     weak var delegate: CSEditBarDelegate?
     
@@ -14,22 +14,22 @@ class CSEditBar: UIView {
         self.backgroundColor = barBackgroundColor
         
         titleLabel.text = "切换栏目"
-        titleLabel.font = UIFont.systemFontOfSize(14)
+        titleLabel.font = UIFont.systemFont(ofSize: 14)
         titleLabel.sizeToFit()
         titleLabel.left = 10
         titleLabel.centerY = frame.height / 2.0
         
-        editButton.setTitle("排序删除", forState: UIControlState.Normal)
-        editButton.setTitle("完成", forState: UIControlState.Selected)
-        editButton.setTitleColor(selTitleColor.color, forState: UIControlState.Normal)
-        editButton.setTitleColor(barBackgroundColor, forState: UIControlState.Highlighted)
-        editButton.titleLabel?.font = UIFont.systemFontOfSize(12)
-        editButton.setBackgroundImage(UIImage(named: "channel_edit_button_bg"), forState: UIControlState.Normal)
-        editButton.setBackgroundImage(UIImage(named: "channel_edit_button_selected_bg"), forState: UIControlState.Highlighted)
-        editButton.size = CGSizeMake(60, 36)
+        editButton.setTitle("排序删除", for: UIControlState())
+        editButton.setTitle("完成", for: UIControlState.selected)
+        editButton.setTitleColor(selTitleColor.color, for: UIControlState())
+        editButton.setTitleColor(barBackgroundColor, for: UIControlState.highlighted)
+        editButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        editButton.setBackgroundImage(UIImage(named: "channel_edit_button_bg"), for: UIControlState())
+        editButton.setBackgroundImage(UIImage(named: "channel_edit_button_selected_bg"), for: UIControlState.highlighted)
+        editButton.size = CGSize(width: 60, height: 36)
         editButton.right = self.width - 14
         editButton.centerY = frame.height / 2.0
-        editButton.addTarget(self, action: #selector(CSEditBar.editButtonDidPress(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        editButton.addTarget(self, action: #selector(CSEditBar.editButtonDidPress(_:)), for: UIControlEvents.touchUpInside)
         
         self.addSubview(titleLabel)
         self.addSubview(editButton)
@@ -48,9 +48,9 @@ class CSEditBar: UIView {
         editButton.centerY = self.height / 2.0
     }
     
-    internal func editButtonDidPress(sender: UIButton) {
-        sender.selected = !sender.selected
-        if sender.selected {
+    internal func editButtonDidPress(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
             self.delegate?.editBarDidBeginEditing?(self)
         } else {
             self.delegate?.editBarDidFinishEditing?(self)
@@ -60,8 +60,8 @@ class CSEditBar: UIView {
 }
 
 @objc protocol CSEditBarDelegate : NSObjectProtocol {
-    optional func editBarDidBeginEditing(editBar: CSEditBar)
-    optional func editBarDidFinishEditing(editBar: CSEditBar)
+    @objc optional func editBarDidBeginEditing(_ editBar: CSEditBar)
+    @objc optional func editBarDidFinishEditing(_ editBar: CSEditBar)
 }
 // 版权属于原作者
 // http://code4app.com (cn) http://code4app.net (en)

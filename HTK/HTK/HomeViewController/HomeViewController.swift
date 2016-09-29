@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-import Alamofire
+
 
 class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,CLLocationManagerDelegate{
     let locationManager:CLLocationManager = CLLocationManager()

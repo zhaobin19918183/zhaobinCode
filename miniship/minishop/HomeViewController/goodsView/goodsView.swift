@@ -21,7 +21,7 @@ class goodsView: UIView {
     func  resetUILayout()
     {
         
-        NSBundle.mainBundle().loadNibNamed("goodsView", owner:self,options:nil)
+        Bundle.main.loadNibNamed("goodsView", owner:self,options:nil)
         self.addSubview(myUIView)
 
     }

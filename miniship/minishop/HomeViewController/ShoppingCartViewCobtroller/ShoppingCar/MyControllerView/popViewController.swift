@@ -13,13 +13,13 @@ class popViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-       self.modalPresentationStyle = .Custom
+       self.modalPresentationStyle = .custom
       
         
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func missButton(sender: UIButton)
+    @IBAction func missButton(_ sender: UIButton)
     {
 //        let time: NSTimeInterval = 0.5
 //        let delay = dispatch_time(DISPATCH_TIME_NOW,
@@ -27,7 +27,7 @@ class popViewController: UIViewController {
 //        dispatch_after(delay, dispatch_get_main_queue()) {
 //           
 //        }
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
         
     }

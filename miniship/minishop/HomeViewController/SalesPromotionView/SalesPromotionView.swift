@@ -25,7 +25,7 @@ class SalesPromotionView: UIView {
     func  resetUILayout()
     {
         
-        NSBundle.mainBundle().loadNibNamed("salesPromotionview", owner:self,options:nil)
+        Bundle.main.loadNibNamed("salesPromotionview", owner:self,options:nil)
         self.addSubview(myUIView)
         
     }

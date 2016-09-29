@@ -140,10 +140,10 @@ class CSMoreNewsViewController: CSNavTabBarController {
     }
     
     
-    override func navTabBar(navTabBar: CSNavTabBar, didClickArrowButton arrowButton: UIButton) {
+    override func navTabBar(_ navTabBar: CSNavTabBar, didClickArrowButton arrowButton: UIButton) {
         super.navTabBar(navTabBar, didClickArrowButton: arrowButton)
         
-        if arrowButton.selected == false {
+        if arrowButton.isSelected == false {
             var myClasses = [[String: String]]()
             var moreClasses = [[String: String]]()
             for vc in self.viewControllers {

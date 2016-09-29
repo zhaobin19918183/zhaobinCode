@@ -10,75 +10,75 @@
 import UIKit
 
 enum CSChannelStatus {
-    case Normal             //普通状态
-    case Highlight          //高亮状态
-    case Editing            //编辑状态
-    case SimpleNormal       //简单的普通状态
-    case SimpleHighlight    //简单的高亮状态
-    case SimpleEditing      //简单的编辑状态
+    case normal             //普通状态
+    case highlight          //高亮状态
+    case editing            //编辑状态
+    case simpleNormal       //简单的普通状态
+    case simpleHighlight    //简单的高亮状态
+    case simpleEditing      //简单的编辑状态
 }
 
 class CSChannelCollectionViewCell: UICollectionViewCell {
     let backgroundImageView: UIImageView!
-    private let textLabel: UILabel!
-    private let deleteButton: UIButton!
+    fileprivate let textLabel: UILabel!
+    fileprivate let deleteButton: UIButton!
     
-    private var deleteCallBack: ((CSChannelCollectionViewCell) -> Void)?
+    fileprivate var deleteCallBack: ((CSChannelCollectionViewCell) -> Void)?
     
     
     var text: String? {
         didSet {
             self.textLabel.text = text
             textLabel.sizeToFit()
-            textLabel.center = CGPointMake(self.backgroundImageView.width / 2.0, self.backgroundImageView.height / 2.0)
+            textLabel.center = CGPoint(x: self.backgroundImageView.width / 2.0, y: self.backgroundImageView.height / 2.0)
         }
     }
     
-    var status: CSChannelStatus = .Normal {
+    var status: CSChannelStatus = .normal {
         didSet {
             switch status {
-            case .Normal:
+            case .normal:
                 self.backgroundImageView.image = UIImage(named: "channel_grid_circle")
                 self.textLabel.textColor = norTitleColor.color
-                self.deleteButton.hidden = true
-            case .Highlight:
+                self.deleteButton.isHidden = true
+            case .highlight:
                 self.backgroundImageView.image = UIImage(named: "channel_grid_circle")
                 self.textLabel.textColor = selTitleColor.color
-                self.deleteButton.hidden = true
-            case .Editing:
+                self.deleteButton.isHidden = true
+            case .editing:
                 self.backgroundImageView.image = UIImage(named: "channel_grid_circle")
                 self.textLabel.textColor = norTitleColor.color
-                self.deleteButton.hidden = false
-            case .SimpleNormal:
+                self.deleteButton.isHidden = false
+            case .simpleNormal:
                 self.backgroundImageView.image = nil
                 self.textLabel.textColor = norTitleColor.color
-                self.deleteButton.hidden = true
-            case .SimpleHighlight:
+                self.deleteButton.isHidden = true
+            case .simpleHighlight:
                 self.backgroundImageView.image = nil
                 self.textLabel.textColor = selTitleColor.color
-                self.deleteButton.hidden = true
-            case .SimpleEditing:
+                self.deleteButton.isHidden = true
+            case .simpleEditing:
                 self.backgroundImageView.image = nil
                 self.textLabel.textColor = disableTitleColor_day.color
-                self.deleteButton.hidden = true
+                self.deleteButton.isHidden = true
             }
         }
     }
     
     override init(frame: CGRect) {
-        backgroundImageView = UIImageView(frame: CGRectMake(0, 2, 70, 30))
-        textLabel = UILabel(frame: CGRectZero)
-        deleteButton = UIButton(frame: CGRectMake(0, 0, 14, 14))
+        backgroundImageView = UIImageView(frame: CGRect(x: 0, y: 2, width: 70, height: 30))
+        textLabel = UILabel(frame: CGRect.zero)
+        deleteButton = UIButton(frame: CGRect(x: 0, y: 0, width: 14, height: 14))
         super.init(frame: frame)
         
         backgroundImageView.image = UIImage(named: "channel_grid_circle")
 
-        textLabel.font = UIFont.systemFontOfSize(15)
+        textLabel.font = UIFont.systemFont(ofSize: 15)
         textLabel.textColor = norTitleColor.color
         
-        deleteButton.setImage(UIImage(named: "channel_edit_delete"), forState: UIControlState.Normal)
-        deleteButton.addTarget(self, action: #selector(CSChannelCollectionViewCell.deleteButtonDidPress(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        deleteButton.hidden = true
+        deleteButton.setImage(UIImage(named: "channel_edit_delete"), for: UIControlState())
+        deleteButton.addTarget(self, action: #selector(CSChannelCollectionViewCell.deleteButtonDidPress(_:)), for: UIControlEvents.touchUpInside)
+        deleteButton.isHidden = true
         self.backgroundImageView.addSubview(textLabel)
         self.contentView.addSubview(backgroundImageView)
         self.contentView.addSubview(deleteButton)
@@ -90,15 +90,15 @@ class CSChannelCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundImageView.center = CGPointMake(self.width / 2.0, (self.height - 2) / 2.0 + 2)
+        backgroundImageView.center = CGPoint(x: self.width / 2.0, y: (self.height - 2) / 2.0 + 2)
     }
     
     // delete点击事件
-    internal func deleteButtonDidPress(sender: UIButton) {
+    internal func deleteButtonDidPress(_ sender: UIButton) {
         self.deleteCallBack?(self)
     }
     // 添加点击事件的回调闭包
-    internal func deleteActionCallBack(callBack: ((CSChannelCollectionViewCell) -> Void)) {
+    internal func deleteActionCallBack(_ callBack: @escaping ((CSChannelCollectionViewCell) -> Void)) {
         self.deleteCallBack = callBack
     }
     

@@ -15,10 +15,10 @@ class TextViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("text viewDidLoad")
-        self.view.backgroundColor = UIColor.orangeColor()
-        self.view.layer.borderColor = UIColor.greenColor().CGColor
+        self.view.backgroundColor = UIColor.orange
+        self.view.layer.borderColor = UIColor.green.cgColor
         self.view.layer.borderWidth = 60
-        textLabel = UILabel(frame: CGRectZero)
+        textLabel = UILabel(frame: CGRect.zero)
         textLabel.text = self.title
         textLabel.sizeToFit()
         self.view.addSubview(textLabel)
@@ -26,7 +26,7 @@ class TextViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        textLabel.center = CGPointMake(self.view.width / 2.0, self.view.height / 2.0)
+        textLabel.center = CGPoint(x: self.view.width / 2.0, y: self.view.height / 2.0)
     }
 
     override func didReceiveMemoryWarning() {

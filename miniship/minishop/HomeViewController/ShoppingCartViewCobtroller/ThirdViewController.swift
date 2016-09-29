@@ -14,12 +14,12 @@ class ThirdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.yellowColor()
+        self.view.backgroundColor = UIColor.yellow
         print("third viewDidLoad")
 
         let flowLayout = UICollectionViewFlowLayout()
-        collectionView = UICollectionView(frame: CGRectMake(0, 0, self.view.width, self.view.height), collectionViewLayout: flowLayout)
-        collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height), collectionViewLayout: flowLayout)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.dataSource = self
         self.view.addSubview(collectionView)
         
@@ -30,31 +30,31 @@ class ThirdViewController: UIViewController {
     }
 
     override func viewWillLayoutSubviews() {
-        collectionView.frame = CGRectMake(0, 0, self.view.width, self.view.height)
+        collectionView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height)
     }
 
 }
 
 extension ThirdViewController: UICollectionViewDataSource {
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 100
     }
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         
-        switch indexPath.item % 4 {
+        switch (indexPath as NSIndexPath).item % 4 {
         case 0:
-            cell.contentView.backgroundColor = UIColor.redColor()
+            cell.contentView.backgroundColor = UIColor.red
         case 1:
-            cell.contentView.backgroundColor = UIColor.greenColor()
+            cell.contentView.backgroundColor = UIColor.green
         case 2:
-            cell.contentView.backgroundColor = UIColor.blueColor()
+            cell.contentView.backgroundColor = UIColor.blue
         case 3:
-            cell.contentView.backgroundColor = UIColor.orangeColor()
+            cell.contentView.backgroundColor = UIColor.orange
         case 4:
-            cell.contentView.backgroundColor = UIColor.purpleColor()
+            cell.contentView.backgroundColor = UIColor.purple
         default:
-            cell.contentView.backgroundColor = UIColor.yellowColor()
+            cell.contentView.backgroundColor = UIColor.yellow
         }
         
         return cell

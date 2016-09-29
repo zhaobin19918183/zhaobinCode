@@ -9,10 +9,10 @@
 import UIKit
 
 extension NSString {
-    func textSizeWithFont(font: UIFont) -> CGSize {
+    func textSizeWithFont(_ font: UIFont) -> CGSize {
         let attributes = [NSFontAttributeName: font]
-        let options = NSStringDrawingOptions.UsesLineFragmentOrigin
-        let rect = self.boundingRectWithSize(CGSizeMake(CGFloat.max, CGFloat.max), options: options, attributes: attributes, context: nil)
+        let options = NSStringDrawingOptions.usesLineFragmentOrigin
+        let rect = self.boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude), options: options, attributes: attributes, context: nil)
         return rect.size
     }
 }
@@ -33,10 +33,10 @@ extension UIView {
     func snapshot() -> UIImage {
         UIGraphicsBeginImageContext(self.bounds.size)
         let context = UIGraphicsGetCurrentContext()
-        self.layer.renderInContext(context!)
+        self.layer.render(in: context!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+        return image!
     }
     var top: CGFloat {
         get {
