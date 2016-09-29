@@ -55,6 +55,12 @@ class BookListDAO: BaseDAO
 
         return dataSource
     }
+    //MARK: - Delete
+    static func deleteEntityWith(Entity entity : BookListEntity) -> Bool
+    {
+        BaseDAO.mainMOC.delete(entity)
+        return self.save()
+    }
 
 
     //MARK: - save

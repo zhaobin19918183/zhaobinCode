@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD5B72251D9CEFB1007C1665 /* ShopCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5B72241D9CEFB1007C1665 /* ShopCarViewController.swift */; };
+		BD5B722A1D9CF37C007C1665 /* ShopCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5B72281D9CF37C007C1665 /* ShopCarTableViewCell.swift */; };
+		BD5B722B1D9CF37C007C1665 /* ShopCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD5B72291D9CF37C007C1665 /* ShopCarTableViewCell.xib */; };
+		BD5B722E1D9CF79C007C1665 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5B722D1D9CF79C007C1665 /* ProductViewController.swift */; };
 		BDBBA5471D9B4DF000EB1AF4 /* FolderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBBA5461D9B4DF000EB1AF4 /* FolderManager.swift */; };
 		BDBBA54A1D9B559300EB1AF4 /* FamilyShopModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BDBBA5481D9B559300EB1AF4 /* FamilyShopModel.xcdatamodeld */; };
 		BDBBA5561D9B597800EB1AF4 /* BookListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBBA5551D9B597800EB1AF4 /* BookListModel.swift */; };
@@ -67,6 +71,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BD5B72241D9CEFB1007C1665 /* ShopCarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCarViewController.swift; sourceTree = "<group>"; };
+		BD5B72281D9CF37C007C1665 /* ShopCarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCarTableViewCell.swift; sourceTree = "<group>"; };
+		BD5B72291D9CF37C007C1665 /* ShopCarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCarTableViewCell.xib; sourceTree = "<group>"; };
+		BD5B722D1D9CF79C007C1665 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		BDBBA5461D9B4DF000EB1AF4 /* FolderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderManager.swift; sourceTree = "<group>"; };
 		BDBBA5491D9B559300EB1AF4 /* FamilyShopModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FamilyShopModel.xcdatamodel; sourceTree = "<group>"; };
 		BDBBA5551D9B597800EB1AF4 /* BookListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListModel.swift; sourceTree = "<group>"; };
@@ -126,6 +134,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD5B72231D9CEF98007C1665 /* ShopCarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BD5B72241D9CEFB1007C1665 /* ShopCarViewController.swift */,
+				BD5B72281D9CF37C007C1665 /* ShopCarTableViewCell.swift */,
+				BD5B72291D9CF37C007C1665 /* ShopCarTableViewCell.xib */,
+			);
+			path = ShopCarViewController;
+			sourceTree = "<group>";
+		};
+		BD5B722C1D9CF787007C1665 /* ProductViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BD5B722D1D9CF79C007C1665 /* ProductViewController.swift */,
+			);
+			path = ProductViewController;
+			sourceTree = "<group>";
+		};
 		BDE25DE11D98B47000814B54 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +179,8 @@
 				BDE25E2E1D98F62900814B54 /* NetWorkManager */,
 				BDE25E291D98F55100814B54 /* CoreData */,
 				BDE25E1B1D98B48E00814B54 /* HomeViewController */,
+				BD5B72231D9CEF98007C1665 /* ShopCarViewController */,
+				BD5B722C1D9CF787007C1665 /* ProductViewController */,
 				BDE25E2F1D98F65D00814B54 /* Resources */,
 				BDE25DF11D98B47000814B54 /* Main.storyboard */,
 				BDE25DF41D98B47000814B54 /* Assets.xcassets */,
@@ -339,6 +367,7 @@
 			files = (
 				BDE25DF81D98B47000814B54 /* LaunchScreen.storyboard in Resources */,
 				BDE25DF51D98B47000814B54 /* Assets.xcassets in Resources */,
+				BD5B722B1D9CF37C007C1665 /* ShopCarTableViewCell.xib in Resources */,
 				BDE25DF31D98B47000814B54 /* Main.storyboard in Resources */,
 				BDE25E371D9906D800814B54 /* 屏幕快照 2016-09-02 下午12.40.08.png in Resources */,
 			);
@@ -368,6 +397,7 @@
 				BDBBA5561D9B597800EB1AF4 /* BookListModel.swift in Sources */,
 				BDE25E2D1D98F5E800814B54 /* Common.swift in Sources */,
 				BDBBA54A1D9B559300EB1AF4 /* FamilyShopModel.xcdatamodeld in Sources */,
+				BD5B722E1D9CF79C007C1665 /* ProductViewController.swift in Sources */,
 				BDBBA5581D9B656900EB1AF4 /* BookListDAO.swift in Sources */,
 				BDE25DEE1D98B47000814B54 /* AppDelegate.swift in Sources */,
 				BDBBA55B1D9B689800EB1AF4 /* BookListEntity+CoreDataClass.swift in Sources */,
@@ -375,7 +405,9 @@
 				BDE25E351D98F6DA00814B54 /* NetWorkManager.swift in Sources */,
 				BDE25E331D98F67F00814B54 /* MBProgressHUD.m in Sources */,
 				BDBBA55C1D9B689800EB1AF4 /* BookListEntity+CoreDataProperties.swift in Sources */,
+				BD5B72251D9CEFB1007C1665 /* ShopCarViewController.swift in Sources */,
 				BDE25E1D1D98B4A300814B54 /* HomeViewController.swift in Sources */,
+				BD5B722A1D9CF37C007C1665 /* ShopCarTableViewCell.swift in Sources */,
 				BDE25E2B1D98F5A200814B54 /* BaseDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +565,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FamilyShop/Resources",
 				);
 				INFOPLIST_FILE = FamilyShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -553,6 +586,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FamilyShop/Resources",
 				);
 				INFOPLIST_FILE = FamilyShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -12,7 +12,42 @@ import UIKit
 
 class NetWorkManager: NSObject
 {
-   
+    
+    static func networkStateJudgement()
+    {
+        var manager: NetworkReachabilityManager?
+        
+        manager = NetworkReachabilityManager(host: "www.apple.com")
+        manager?.startListening()
+        if (manager?.isReachable)!
+        {
+            manager?.listener = { status in
+                if status == NetworkReachabilityManager.NetworkReachabilityStatus.reachable(NetworkReachabilityManager.ConnectionType.ethernetOrWiFi)
+                {
+                    
+                    print(" ethernetOrWiFi : \(status)")
+               
+                    
+                }
+                if status == NetworkReachabilityManager.NetworkReachabilityStatus.unknown
+                {
+                    print("无法识别: \(status)")
+                }
+                
+            }
+            
+        }
+        else
+        {
+            print("网络连接失败: \(manager?.isReachable)")
+           
+        }
+        
+
+    }
+    
+
+    
     static  func alamofireUploadFile(url:String,parameters:[String:String],data: Data, withName name: String, fileName: String)
     {
         Alamofire.upload(multipartFormData: { (multipartFormData) in

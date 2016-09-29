@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+
+
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var _backgroundScollView: UIScrollView!
@@ -19,18 +21,61 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var _fourView: UIView!
     @IBOutlet weak var _fiveView: UIView!
     @IBOutlet weak var _sixView: UIView!
+    @IBOutlet weak var testButton: UIButton!
     weak var bookListEntity : BookListEntity?
+    var manager: NetworkReachabilityManager?
     override func viewDidLoad()
     {
         super.viewDidLoad()
-//        alamofireRequest()
+        networkStateJudgement()
+
+
+    }
+    
+    @IBAction func testButtonAction(_ sender: UIButton)
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let target = storyboard.instantiateViewController(withIdentifier: "ShopCarViewController")
+        self.navigationController?.pushViewController(target, animated:true)
+    }
+    //MARK: - 网络识别
+    func networkStateJudgement()
+    {
+        self.manager = NetworkReachabilityManager(host: "www.apple.com")
+        self.manager?.startListening()
+        if (self.manager?.isReachable)!
+        {
+            self.manager?.listener = { status in
+                if status == NetworkReachabilityManager.NetworkReachabilityStatus.reachable(NetworkReachabilityManager.ConnectionType.ethernetOrWiFi) {
+                    print(" ethernetOrWiFi : \(status)")
+                    
+                }
+                if status == NetworkReachabilityManager.NetworkReachabilityStatus.unknown
+                {
+                    print("无法识别: \(status)")
+                }
+                
+            }
+        }
+        else
+        {
+           print("网络连接失败: \(self.manager?.isReachable)")
+        }
+    }
+    
+    
+    func coreDataArray()
+    {
         print(BookListDAO.SearchAllDataEntity().count)
         
-        self.bookListEntity = BookListDAO.SearchAllDataEntity()[0] as? BookListEntity
-        print(self.bookListEntity?.name)
-        
+        for index in 0...BookListDAO.SearchAllDataEntity().count - 1
+        {
+            self.bookListEntity = BookListDAO.SearchAllDataEntity()[index] as? BookListEntity
+            print(self.bookListEntity?.name)
+        }
     
     }
+
     func  alamofireRequest()
     {
         Alamofire.request("http://127.0.0.1:8000/polls/book/?format=json").responseJSON { (data) in
