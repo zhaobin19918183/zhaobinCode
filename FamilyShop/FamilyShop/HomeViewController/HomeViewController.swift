@@ -23,12 +23,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var _sixView: UIView!
     @IBOutlet weak var testButton: UIButton!
     weak var bookListEntity : BookListEntity?
-    var manager: NetworkReachabilityManager?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        networkStateJudgement()
 
+       
 
     }
     
@@ -38,42 +38,23 @@ class HomeViewController: UIViewController {
         let target = storyboard.instantiateViewController(withIdentifier: "ShopCarViewController")
         self.navigationController?.pushViewController(target, animated:true)
     }
-    //MARK: - 网络识别
-    func networkStateJudgement()
-    {
-        self.manager = NetworkReachabilityManager(host: "www.apple.com")
-        self.manager?.startListening()
-        if (self.manager?.isReachable)!
-        {
-            self.manager?.listener = { status in
-                if status == NetworkReachabilityManager.NetworkReachabilityStatus.reachable(NetworkReachabilityManager.ConnectionType.ethernetOrWiFi) {
-                    print(" ethernetOrWiFi : \(status)")
-                    
-                }
-                if status == NetworkReachabilityManager.NetworkReachabilityStatus.unknown
-                {
-                    print("无法识别: \(status)")
-                }
-                
-            }
-        }
-        else
-        {
-           print("网络连接失败: \(self.manager?.isReachable)")
-        }
-    }
     
+    func netWorkStatusType()
+    {
+        let manager = NetWorkManager.networkStateJudgement()
+        print(manager.SuccessOrError,manager.type)
+    }
     
     func coreDataArray()
     {
         print(BookListDAO.SearchAllDataEntity().count)
         
-        for index in 0...BookListDAO.SearchAllDataEntity().count - 1
+        for  dic in BookListDAO.SearchAllDataEntity()
         {
-            self.bookListEntity = BookListDAO.SearchAllDataEntity()[index] as? BookListEntity
-            print(self.bookListEntity?.name)
+            let dicBookList = dic as! BookListEntity
+            print(dicBookList.date)
         }
-    
+
     }
 
     func  alamofireRequest()
@@ -86,7 +67,7 @@ class HomeViewController: UIViewController {
             for index in 0...count - 1
             {
                print("indx:\(index) dic ===\(dic["results"]?.objectAt(index).allKeys)")
-              // BookListDAO.creatBookListEntity((dic["results"]?.objectAt(index))! as! NSDictionary)
+               BookListDAO.creatBookListEntity((dic["results"]?.objectAt(index))! as! NSDictionary)
             }
            
         
