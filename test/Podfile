@@ -1,0 +1,4 @@
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
+pod 'Google/Analytics' 

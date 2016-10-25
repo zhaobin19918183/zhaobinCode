@@ -12,33 +12,19 @@ import AlamofireImage
 
 
 class HomeViewController: UIViewController {
-
-    @IBOutlet weak var _backgroundScollView: UIScrollView!
-    
-    @IBOutlet weak var _firstView: UIView!
-    @IBOutlet weak var _secondView: UIView!
-    @IBOutlet weak var _threeView: UIView!
-    @IBOutlet weak var _fourView: UIView!
-    @IBOutlet weak var _fiveView: UIView!
-    @IBOutlet weak var _sixView: UIView!
-    @IBOutlet weak var testButton: UIButton!
+ 
     weak var bookListEntity : BookListEntity?
+    var EndDic:NSDictionary!
+    var EndArray:NSArray!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
+        alamofireRequest()
        
 
     }
-    
-    @IBAction func testButtonAction(_ sender: UIButton)
-    {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let target = storyboard.instantiateViewController(withIdentifier: "ShopCarViewController")
-        self.navigationController?.pushViewController(target, animated:true)
-    }
-    
+
     func netWorkStatusType()
     {
         let manager = NetWorkManager.networkStateJudgement()
@@ -59,18 +45,12 @@ class HomeViewController: UIViewController {
 
     func  alamofireRequest()
     {
-        Alamofire.request("http://127.0.0.1:8000/polls/book/?format=json").responseJSON { (data) in
-            
-           
+        Alamofire.request("http://op.juhe.cn/onebox/basketball/nba?dtype=&=&key=a77b663959938859a741024f8cbb11ac").responseJSON { (data) in
             let dic = data.result.value  as! [String:AnyObject]
-            let count = (dic["results"]?.count)! as Int
-            for index in 0...count - 1
-            {
-               print("indx:\(index) dic ===\(dic["results"]?.objectAt(index).allKeys)")
-               BookListDAO.creatBookListEntity((dic["results"]?.objectAt(index))! as! NSDictionary)
-            }
+            let arr = dic["result"]?["list"] as! NSArray
+            self.EndDic = arr.object(at: 0) as! NSDictionary
            
-        
+//            self.EndArray = self.EndDic.value(forKey: "tr") as! NSArray!
         }
        
       

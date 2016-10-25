@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD19F21E1C98F2DA009B52CE /* backgroundimage.png in Resources */ = {isa = PBXBuildFile; fileRef = BD19F21D1C98F2DA009B52CE /* backgroundimage.png */; };
 		BD19F22A1C992EF0009B52CE /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19F2291C992EF0009B52CE /* CarDetailViewController.swift */; };
+		BD1B26021DAC836F008798C1 /* 1-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD1B25FE1DAC836F008798C1 /* 1-1.jpg */; };
+		BD1B26031DAC836F008798C1 /* 1-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD1B25FF1DAC836F008798C1 /* 1-2.jpg */; };
+		BD1B26041DAC836F008798C1 /* 1-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD1B26001DAC836F008798C1 /* 1-3.jpg */; };
+		BD1B26051DAC836F008798C1 /* 1-4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD1B26011DAC836F008798C1 /* 1-4.jpg */; };
 		BD2958841C92A9D600349D33 /* imageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2958831C92A9D600349D33 /* imageViewController.swift */; };
-		BD2958891C92A9FF00349D33 /* 1-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD2958851C92A9FF00349D33 /* 1-1.jpg */; };
-		BD29588A1C92A9FF00349D33 /* 1-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD2958861C92A9FF00349D33 /* 1-2.jpg */; };
-		BD29588B1C92A9FF00349D33 /* 1-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD2958871C92A9FF00349D33 /* 1-3.jpg */; };
-		BD29588C1C92A9FF00349D33 /* 1-4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD2958881C92A9FF00349D33 /* 1-4.jpg */; };
 		BD3517761C90FB6F004267D3 /* RecommendedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3517751C90FB6F004267D3 /* RecommendedView.swift */; };
 		BD3517791C90FBCB004267D3 /* SalesPromotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3517781C90FBCB004267D3 /* SalesPromotionView.swift */; };
 		BD35177C1C90FC0F004267D3 /* goodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD35177B1C90FC0F004267D3 /* goodsView.swift */; };
@@ -85,13 +84,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BD19F21D1C98F2DA009B52CE /* backgroundimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundimage.png; path = ../HomeViewController/ShoppingCartViewCobtroller/ShoppingCar/backgroundimage.png; sourceTree = "<group>"; };
 		BD19F2291C992EF0009B52CE /* CarDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
+		BD1B25FE1DAC836F008798C1 /* 1-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1-1.jpg"; path = "minishop/HomeViewController/ImageView/1-1.jpg"; sourceTree = SOURCE_ROOT; };
+		BD1B25FF1DAC836F008798C1 /* 1-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1-2.jpg"; path = "minishop/HomeViewController/ImageView/1-2.jpg"; sourceTree = SOURCE_ROOT; };
+		BD1B26001DAC836F008798C1 /* 1-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1-3.jpg"; path = "minishop/HomeViewController/ImageView/1-3.jpg"; sourceTree = SOURCE_ROOT; };
+		BD1B26011DAC836F008798C1 /* 1-4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1-4.jpg"; path = "minishop/HomeViewController/ImageView/1-4.jpg"; sourceTree = SOURCE_ROOT; };
 		BD2958831C92A9D600349D33 /* imageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageViewController.swift; sourceTree = "<group>"; };
-		BD2958851C92A9FF00349D33 /* 1-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1-1.jpg"; path = "../HomeViewController/ImageView/1-1.jpg"; sourceTree = "<group>"; };
-		BD2958861C92A9FF00349D33 /* 1-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1-2.jpg"; path = "../HomeViewController/ImageView/1-2.jpg"; sourceTree = "<group>"; };
-		BD2958871C92A9FF00349D33 /* 1-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1-3.jpg"; path = "../HomeViewController/ImageView/1-3.jpg"; sourceTree = "<group>"; };
-		BD2958881C92A9FF00349D33 /* 1-4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1-4.jpg"; path = "../HomeViewController/ImageView/1-4.jpg"; sourceTree = "<group>"; };
 		BD3517751C90FB6F004267D3 /* RecommendedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedView.swift; sourceTree = "<group>"; };
 		BD3517781C90FBCB004267D3 /* SalesPromotionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesPromotionView.swift; sourceTree = "<group>"; };
 		BD35177B1C90FC0F004267D3 /* goodsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goodsView.swift; sourceTree = "<group>"; };
@@ -179,11 +177,10 @@
 		BD19F21F1C98F2EE009B52CE /* Allimage */ = {
 			isa = PBXGroup;
 			children = (
-				BD2958851C92A9FF00349D33 /* 1-1.jpg */,
-				BD2958861C92A9FF00349D33 /* 1-2.jpg */,
-				BD2958871C92A9FF00349D33 /* 1-3.jpg */,
-				BD2958881C92A9FF00349D33 /* 1-4.jpg */,
-				BD19F21D1C98F2DA009B52CE /* backgroundimage.png */,
+				BD1B25FE1DAC836F008798C1 /* 1-1.jpg */,
+				BD1B25FF1DAC836F008798C1 /* 1-2.jpg */,
+				BD1B26001DAC836F008798C1 /* 1-3.jpg */,
+				BD1B26011DAC836F008798C1 /* 1-4.jpg */,
 			);
 			path = Allimage;
 			sourceTree = "<group>";
@@ -508,32 +505,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD2958891C92A9FF00349D33 /* 1-1.jpg in Resources */,
 				BDAF922A1C916E0A00C03C9B /* recommendedview.xib in Resources */,
 				BD43AF791C97B0BA00D19B7E /* night_channel_edit_delete@2x.png in Resources */,
 				BD43AF721C97B0BA00D19B7E /* channel_grid_circle@2x.png in Resources */,
 				BDAF92281C913FFE00C03C9B /* goodsView.xib in Resources */,
 				BD43AF7C1C97B0BA00D19B7E /* night_navbar_left_more@2x.png in Resources */,
 				BD43AF701C97B0BA00D19B7E /* channel_edit_button_selected_bg@2x.png in Resources */,
+				BD1B26051DAC836F008798C1 /* 1-4.jpg in Resources */,
 				BD43AFB11C97E54E00D19B7E /* ProductTableViewCell.xib in Resources */,
 				BD43AF761C97B0BA00D19B7E /* night_channel_compact_placeholder_inactive@2x.png in Resources */,
 				BD43AF891C97B2D800D19B7E /* SecondViewController.xib in Resources */,
+				BD1B26041DAC836F008798C1 /* 1-3.jpg in Resources */,
 				BD43AF771C97B0BA00D19B7E /* night_channel_edit_button_bg@2x.png in Resources */,
-				BD29588B1C92A9FF00349D33 /* 1-3.jpg in Resources */,
 				BD975F621C900ADC00B2D736 /* LaunchScreen.storyboard in Resources */,
 				BD975F5F1C900ADC00B2D736 /* Assets.xcassets in Resources */,
+				BD1B26031DAC836F008798C1 /* 1-2.jpg in Resources */,
 				BD43AF751C97B0BA00D19B7E /* navbar_right_more@2x.png in Resources */,
 				BDAF922E1C91703500C03C9B /* salesPromotionview.xib in Resources */,
 				BD43AF7E1C97B0BA00D19B7E /* specialcell_nav_btn@2x.png in Resources */,
 				BD43AF781C97B0BA00D19B7E /* night_channel_edit_button_selected_bg@2x.png in Resources */,
 				BD43AF6F1C97B0BA00D19B7E /* channel_edit_button_bg@2x.png in Resources */,
-				BD29588A1C92A9FF00349D33 /* 1-2.jpg in Resources */,
 				BDAC8F681CA5090900BD30CB /* popViewController.xib in Resources */,
-				BD29588C1C92A9FF00349D33 /* 1-4.jpg in Resources */,
 				BD43AF731C97B0BA00D19B7E /* channel_nav_arrow@2x.png in Resources */,
-				BD19F21E1C98F2DA009B52CE /* backgroundimage.png in Resources */,
 				BD43AF7A1C97B0BA00D19B7E /* night_channel_grid_circle@2x.png in Resources */,
 				BD43AF7B1C97B0BA00D19B7E /* night_channel_nav_arrow@2x.png in Resources */,
+				BD1B26021DAC836F008798C1 /* 1-1.jpg in Resources */,
 				BD43AF711C97B0BA00D19B7E /* channel_edit_delete@2x.png in Resources */,
 				BD43AF741C97B0BA00D19B7E /* navbar_left_more@2x.png in Resources */,
 				BD43AFAD1C97E53800D19B7E /* MenuTableViewCell.xib in Resources */,

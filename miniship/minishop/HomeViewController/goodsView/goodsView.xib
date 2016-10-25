@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="goodsView" customModule="minishop" customModuleProvider="target">
@@ -16,16 +17,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IhV-Ko-nG0">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="168"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uc9-zU-Nll">
-                            <rect key="frame" x="0.0" y="0.0" width="156" height="168"/>
-                            <color key="backgroundColor" red="0.47058823529999999" green="0.65490196079999996" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.47058823529999999" green="0.65490196079999996" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" title="Button"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gf4-VT-HNw">
-                            <rect key="frame" x="164" y="0.0" width="156" height="168"/>
-                            <color key="backgroundColor" red="0.94117647059999998" green="0.63137254899999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.94117647059999998" green="0.63137254899999995" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" title="Button"/>
                         </button>
                     </subviews>
@@ -41,7 +39,7 @@
                     </constraints>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="0.5899700363" green="0.5899700363" blue="0.5899700363" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.5899700363" green="0.5899700363" blue="0.5899700363" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="IhV-Ko-nG0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Z14-31-FkJ"/>
                 <constraint firstItem="IhV-Ko-nG0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lcS-vF-8zG"/>
@@ -49,7 +47,7 @@
                 <constraint firstAttribute="bottom" secondItem="IhV-Ko-nG0" secondAttribute="bottom" constant="400" id="rA8-9I-YDi"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="299" y="336"/>
+            <point key="canvasLocation" x="-124" y="346"/>
         </view>
     </objects>
 </document>

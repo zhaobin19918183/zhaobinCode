@@ -67,9 +67,9 @@ class ProductTableViewCell: UITableViewCell {
         
         let positionAnimation = CAKeyframeAnimation(keyPath: "position")
         let path = CGMutablePath();
-        CGPathMoveToPoint(path, nil, p1.x, p1.y);
-        CGPathAddCurveToPoint(path, nil, p1.x, p1.y - 30, p3.x, p1.y - 30, p3.x, p3.y);
-        positionAnimation.path = path;
+       // CGPathMoveToPoint(path, nil, p1.x, p1.y);
+       // CGPathAddCurveToPoint(path, nil, p1.x, p1.y - 30, p3.x, p1.y - 30, p3.x, p3.y);
+       // positionAnimation.path = path;
         
         let opacityAnimation = CABasicAnimation(keyPath: "opacity")
         opacityAnimation.fromValue = 1
@@ -84,7 +84,7 @@ class ProductTableViewCell: UITableViewCell {
         let groupAnimation = CAAnimationGroup()
         groupAnimation.animations = [positionAnimation, transformAnimation, opacityAnimation];
         groupAnimation.duration = 0.8
-        groupAnimation.delegate = self;
+       // groupAnimation.delegate = self;
         
         transitionLayer.add(groupAnimation, forKey: "cartParabola")
     }

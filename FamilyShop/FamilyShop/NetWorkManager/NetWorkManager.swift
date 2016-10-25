@@ -13,6 +13,8 @@ import SystemConfiguration
 
 class NetWorkManager: NSObject
 {
+    
+ 
 
     static func networkStateJudgement()->(type:NetworkReachabilityManager,SuccessOrError:String)
     {
@@ -25,7 +27,7 @@ class NetWorkManager: NSObject
         }
         else
         {
-             return (manager!,"offline")
+              return (manager!,"offline")
         }
 
     }

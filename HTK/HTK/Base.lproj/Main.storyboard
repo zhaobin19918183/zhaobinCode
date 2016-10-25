@@ -159,7 +159,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cW1-8Z-Ap8" id="vbF-5t-keX">
-                                            <frame key="frameInset" width="320" height="40"/>
+                                            <frame key="frameInset" width="320" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3路" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhT-pd-J1Q">
@@ -307,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTu-3c-496" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="173"/>
+            <point key="canvasLocation" x="1127" y="161"/>
         </scene>
         <!--笔记-->
         <scene sceneID="dIH-EH-YuA">
@@ -390,7 +390,7 @@
             <objects>
                 <navigationController id="5F9-CN-yAg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" id="xCD-DL-2K9"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oId-Jx-fb4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oId-Jx-fb4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -414,7 +414,7 @@
             <objects>
                 <navigationController id="5Nk-9z-vzR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="药" id="GHZ-CU-RBi"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xGW-3M-tdT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xGW-3M-tdT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -436,7 +436,7 @@
             <objects>
                 <navigationController id="c3e-Hq-bDO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="笔记" id="eNK-Ww-bNq"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hSG-8I-pzD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hSG-8I-pzD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -465,7 +465,7 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7lW-oM-zS5" id="q8T-IT-d7K">
-                                    <frame key="frameInset" width="375" height="88"/>
+                                    <frame key="frameInset" width="375" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WeF-79-3XB">
