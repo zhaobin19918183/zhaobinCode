@@ -15,47 +15,52 @@ class EndViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
 
     @IBOutlet weak var _tableview: UITableView!
     
-    var EndDic0:NSDictionary!
-    var EndDic1:NSDictionary!
-    var EndDic:NSDictionary!
+    var EndDic0:[String:AnyObject]!
+    var EndDic1:[String:AnyObject]!
+    var EndDic:[String:AnyObject]!
     
-    var EndArray0:NSArray!
-    var EndArray1:NSArray!
+    var EndArray0:[[String:AnyObject]]!
+    var EndArray1:[[String:AnyObject]]!
     var EndArray:NSMutableArray!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        alamofireRequest()
+        //alamofireRequest()
        
         
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool)
+    {
+          alamofireRequest()
     }
     func  alamofireRequest()
     {
         Alamofire.request("http://op.juhe.cn/onebox/basketball/nba?dtype=&=&key=a77b663959938859a741024f8cbb11ac").responseJSON { (data) in
             let dic = data.result.value  as! [String:AnyObject]
   
-            let arr = dic["result"]?["list"] as! NSArray
-            self.EndDic0 = arr.object(at: 0) as! NSDictionary
-            self.EndArray0 = self.EndDic0.value(forKey: "tr") as! NSArray!
+            let arr = dic["result"]?["list"] as! [[String:AnyObject]]
+            self.EndDic0 = arr[0]
+            self.EndArray0 = self.EndDic0["tr"] as! [[String:AnyObject]]
             
-            self.EndDic1 = arr.object(at: 1) as! NSDictionary
-            self.EndArray1 = self.EndDic1.value(forKey: "tr") as! NSArray!
+            self.EndDic1 = arr[1]
+            self.EndArray1 = self.EndDic1["tr"] as! [[String:AnyObject]]
+            
             
             for  index in 0...self.EndArray1.count - 1
             {
-              let dic = self.EndArray1.object(at: index) as! NSDictionary
-              let  status = dic.value(forKey: "status") as! NSNumber
+              let  dic = self.EndArray1[index]
+              let  status = dic["status"] as! NSNumber
                 if status == 2
                 {
-                    
-                self.EndArray0.addingObjects(from: [self.EndArray1.object(at: index)])
-                    
+    
+                self.EndArray0.append( self.EndArray1[index])
+                
                 }
                 
             }
-           
+
             
             self._tableview.reloadData()
     
@@ -89,7 +94,7 @@ class EndViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
         if self.EndDic0 != nil
         {
             cell?.endLiveAction(dic: self.EndDic0)
-            cell?.endLiveDicAction(dic: self.EndArray0.object(at: indexPath.row) as! NSDictionary,tableview:tableView)
+            cell?.endLiveDicAction(dic: self.EndArray0[indexPath.row] ,tableview:tableView)
             cell?.navigationController = self.navigationController
             
         }
@@ -107,16 +112,6 @@ class EndViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

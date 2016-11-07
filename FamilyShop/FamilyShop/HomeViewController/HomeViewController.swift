@@ -9,22 +9,32 @@
 import UIKit
 import Alamofire
 import AlamofireImage
-
+import AVFoundation
 
 class HomeViewController: UIViewController {
  
     weak var bookListEntity : BookListEntity?
     var EndDic:NSDictionary!
     var EndArray:NSArray!
-    
+    var avAudioPlayer:AVAudioPlayer!
     override func viewDidLoad()
     {
         super.viewDidLoad()
         alamofireRequest()
+
+        initAVAudioPlayer()
        
 
     }
-
+    func initAVAudioPlayer(){
+        do{
+            try self.avAudioPlayer = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: Bundle.main.path(forResource: "Stream", ofType: "mp3")!) as URL)
+            self.avAudioPlayer.play()
+        }catch let error as NSError{
+            print(error.localizedDescription)
+        }
+    }
+   
     func netWorkStatusType()
     {
         let manager = NetWorkManager.networkStateJudgement()

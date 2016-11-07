@@ -31,22 +31,22 @@ class EndTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    func  endLiveAction(dic:NSDictionary)
+    func  endLiveAction(dic:[String:AnyObject])
     {
-      dateLabel.text = dic.value(forKey: "title") as? String
+      dateLabel.text = dic["title"] as? String
     }
-    func  endLiveDicAction(dic:NSDictionary ,tableview:UITableView)
+    func  endLiveDicAction(dic:[String:AnyObject] ,tableview:UITableView)
     {
         //[player1logo, player2logobig, m_link1url, m_link2url, score, player2logo, time, link2text, link1text, player2, player1logobig, link1url, player1url, link2url, player1, status, player2url]
-        _teamName1.text = dic.value(forKey: "player1") as? String
-        _teamName2.text = dic.value(forKey: "player2") as? String
-        _teamNumber.text = dic.value(forKey: "score") as? String
-        _teamActionTime.text = dic.value(forKey: "time") as? String
+        _teamName1.text = dic["player1"] as? String
+        _teamName2.text = dic["player2"] as? String
+        _teamNumber.text = dic["score"] as? String
+        _teamActionTime.text = dic["time"] as? String
         _teamImageView1.tag = 1
         _teamImageView2.tag = 2
-        teamImagelogo(url: dic.value(forKey: "player2logo") as! String,imageview:_teamImageView2)
-        teamImagelogo(url: dic.value(forKey: "player1logobig") as! String,imageview:_teamImageView1)
-        self.dataString = dic.value(forKey: "link1url") as! String
+        teamImagelogo(url: dic["player2logo"] as! String,imageview:_teamImageView2)
+        teamImagelogo(url: dic["player1logobig"] as! String,imageview:_teamImageView1)
+        self.dataString = dic["link1url"] as! String
     }
 
     @IBAction func dataAction(_ sender: UIButton)
