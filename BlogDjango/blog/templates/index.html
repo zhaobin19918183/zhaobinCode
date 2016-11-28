@@ -1,6 +1,67 @@
-{% block title %}DannyBlog{% endblock %}
+<!DOCTYPE html>
+<html>
 
-{% block content_body %}
+<head>
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:600px;
+    width:100px;
+    float:left;
+    padding:5px;
+}
+#sectionLeft {
+    width:500px;
+    float:left;
+    padding:10px;
+    height:600px;
+}
+  #sectionRight {
+    width:500px;
+    float:right;
+    height:600px;
+    padding:10px;
+    background-color:#eeeeee;
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="header">
+<h1>博客频道</h1>
+</div>
+
+<div id="nav">
+测试1<br>
+测试2<br>
+测试3<br>
+</div>
+<div id="sectionRight">
+  测试1<br>
+  测试2<br>
+  测试3<br>
+</div>
+<div id="sectionLeft">
+<h2>博客</h2>
+  {% block content_body %}
 <div class="main_body">
   {% for blog in blogs %}
     <div class="blog_body">
@@ -22,3 +83,12 @@
   {% endfor %}
 </div>
 {% endblock %}
+	</div>
+</div>
+
+<div id="footer">
+www.不吭你坑谁.com
+</div>
+
+</body>
+</html>

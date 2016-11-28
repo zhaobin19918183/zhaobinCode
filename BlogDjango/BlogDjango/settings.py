@@ -41,18 +41,21 @@ INSTALLED_APPS = (
     'django_comments',
     'django.contrib.staticfiles',
     'rest_framework',
+    'werkzeug_debugger_runserver',
+    'django_extensions',
     'blog',
 )
 SITE_ID = 1
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
 )
 
 ROOT_URLCONF = 'BlogDjango.urls'
@@ -99,13 +102,25 @@ WSGI_APPLICATION = 'BlogDjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME': 'zhao',
-        'USER': 'admin1',
+        'NAME': 'django',
+        'USER': 'binzhao',
         'PASSWORD': 'zb123456',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE':'django.db.backends.sqlite3',
+#         'NAME': 'postgres',
+#         'USER': 'zhaobin',
+#         'PASSWORD': 'zhaobin1991',
+#         'HOST': '10.66.149.53',
+#         'PORT': '5432',
+#     }
+# }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -117,3 +132,4 @@ DATABASES = {
 
 STATIC_URL = '/static/'
 MEDIA_URL  ='/templates/'
+MEDIA_ROOT = '/Users/zhaobin/Desktop/Django/BlogDjango/blog/templates'

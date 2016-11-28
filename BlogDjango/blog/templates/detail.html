@@ -30,7 +30,7 @@
         <div class="comments_body">
             {% for comment in comments %}
             <div class="comment_container">
-              <div class="comment_id"><a href="{{ comment.user_url }}"><img src="/static/images/hp.jpg" width="42" height="42" /></a></div>
+              <div class="comment_id"><a href="{{ comment.user_url }}"></a></div>
               <div class="cmt_user_info">
                 <span class="li_small_2">{{ comment.user_name }}</span>
                 <span class="li_small_2">{{ comment.submit_date|date:"Y-m-d H:i"}}</span>

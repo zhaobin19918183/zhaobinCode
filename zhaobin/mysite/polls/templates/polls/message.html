@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+</html>
+<head xmlns="http://www.w3.org/1999/html">
+    <meta charset="utf-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+        <title>报名情况统计</title>
+    </head>
+    <body>
+        <p style="text-align:center;font-size:1.5em;">少年！</p>
+        <form action="/polls/form/" method="post">
+        {% csrf_token %}
+            <fieldset>
+                <legend>你要参加哪个等级考试？</legend>
+                <!--<p>Name:<input type="text" name="name" value="{{name}}"/></p>-->
+                <!--<br>Level:<input type="file" name="level" value="{{level}}"/></br>-->
+                        {{form_info.as_p}}
+                        <input type="submit" value="submit" />
+                </fieldset>
+        </form>
+    </body>
+</html>

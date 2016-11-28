@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>EasyBug1.0</title>
+    </head>
+    <body>
+        <form action="login" method="post">{% csrf_token %}
+            <p>Username:<input type="text" name="yourname" value="{{yourname}}"/>
+            <p>Password:<input type="text" name="yourpassword" value="{{yourpassword}}"/>
+            <input type="submit" name="login"/></p>
+        </form>
+    </body>
+<html>

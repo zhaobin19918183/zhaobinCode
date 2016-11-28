@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+</html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head xmlns="http://www.w3.org/1999/html">
+        <title>图书馆</title>
+    </head>
+    <body>
+        <p style="text-align:center;font-size:1.5em;">图书管理</p>
+
+        <form action="/polls/home/" method="post">
+        {% csrf_token %}
+            <fieldset>
+                <legend>图书录入系统</legend>
+
+                <p>编&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号: <input  style="padding-right:15px;" type="text" name="number" value="{{number}}"/></p><br>
+                <p>出版日期: <input type="date" name="date" value="{{date}}"/>
+                <input id="b2" type="button" name="jisuan" value="计算" onclick="">
+                </p><br>
+                <p>书籍名称: <input style="padding-right:15px;" type="text" name="name" value="{{name}}"/></p><br>
+                        <!--{{form_info.as_p}}-->
+                        <input type="submit" value="提交" />
+                </fieldset>
+        </form>
+    </body>
+</html>
