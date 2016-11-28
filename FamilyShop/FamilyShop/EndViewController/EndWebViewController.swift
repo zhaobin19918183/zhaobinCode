@@ -16,7 +16,7 @@ class EndWebViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "比赛数据"
         let webView = UIWebView(frame:self.view.bounds)
-        let url = NSURL(string: uslString)
+        let url = NSURL(string:uslString)
         let request = NSURLRequest(url: url as! URL)
         webView.loadRequest(request as URLRequest)
         self.view.addSubview(webView)

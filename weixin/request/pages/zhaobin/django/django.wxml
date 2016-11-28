@@ -1,0 +1,9 @@
+
+   <view class="background" >
+         <input class="bc_gray input_other" id="1" bindinput="bindKeyInput" placeholder="请输入用户名" auto-focus/>
+         <input class="bc_gray input_other" id="2" bindinput="bindKeyInput" placeholder="请输入地址" auto-focus/>
+         <input class="bc_gray input_other" id="3" bindinput="bindKeyInput" placeholder="请输入身份证" auto-focus/>
+         <input class="bc_gray input_other" id="4" bindinput="bindKeyInput" placeholder="邮箱" auto-focus/>
+         <button class="button-bound" bindtap="submit">提交</button>
+    </view>
+

@@ -20,9 +20,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        alamofireRequest()
-
-        initAVAudioPlayer()
+       //alamofireUploadFile()
+   //http://www.bxwx8.org/binfo/99/99078.htm
+        let webView = UIWebView(frame:self.view.bounds)
+        let url = NSURL(string: "http://www.bxwx8.org/binfo/99/99078.htm")
+        let request = NSURLRequest(url: url as! URL)
+        webView.loadRequest(request as URLRequest)
+        self.view.addSubview(webView)
        
 
     }
@@ -72,7 +76,23 @@ class HomeViewController: UIViewController {
         let image : UIImage = UIImage(named:"屏幕快照 2016-09-02 下午12.40.08.png")!
         let imageData       = UIImagePNGRepresentation(image)
         let parameters      = ["name":"Adis4"]
-        NetWorkManager.alamofireUploadFile(url: "http://127.0.0.1:8000/polls/home", parameters: parameters, data:imageData!, withName: "image", fileName: "zhaobin.png")
+        NetWorkManager.alamofireUploadFile(url: "http://127.0.0.1:8000/blog/home", parameters: parameters, data:imageData!, withName: "image", fileName: "zhaobin.png")
+        
     }
+    func  bengkui()
+    {
+            let image : UIImage = UIImage(named:"屏幕快照 2016-09-02 下午12.40.08.png")!
+            let imageData       = UIImagePNGRepresentation(image)
+            let parameters      = ["name":"zhaobin", "date": "2011-10-11", "address" : "address","number" : "111111111111111111","email"   : "bin.zhao@innocellence.com"]
+            NetWorkManager.alamofireUploadFile(url: "http://127.0.0.1:8000/blog/wxSmall", parameters: parameters, data:imageData!, withName: "image", fileName: "zhaobin.png")
+    }
+    
+    
+//    let image : UIImage = UIImage(named:"屏幕快照 2016-09-02 下午12.40.08.png")!
+//    let imageData       = UIImagePNGRepresentation(image)
+//    let parameters      = ["name":"zhaobin", "date": "2011-10-11", "address" : "address","number" : "111111111111111111","email"   : "bin.zhao@innocellence.com"]
+//    NetWorkManager.alamofireUploadFile(url: "http://127.0.0.1:8000/polls/wxSmall", parameters: parameters, data:imageData!, withName: "image", fileName: "zhaobin.png")
+//}
+
 
 }

@@ -54,14 +54,10 @@ class EndViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
               let  status = dic["status"] as! NSNumber
                 if status == 2
                 {
-    
                 self.EndArray0.append( self.EndArray1[index])
-                
                 }
                 
             }
-
-            
             self._tableview.reloadData()
     
         }

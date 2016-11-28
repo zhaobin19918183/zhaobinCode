@@ -1,0 +1,35 @@
+<view class="label_sise">
+<label >
+     <text class="label-1__text">日期:</text>
+     <text class="label-2__text">{{date}}</text>
+</label>
+</view>
+<view class="label_sise">
+<label >
+     <text class="label-1__text">温度:</text>
+     <text class="label-2__text">{{temperature}}</text>
+</label>
+</view>
+<view class="label_sise">
+<label >
+     <text class="label-1__text">天气: </text>
+     <text class="label-2__text">{{info}}</text>
+</label>
+</view>
+<view class="label_sise">
+<label >
+     <text class="label-1__text">风速:</text>
+     <text class="label-2__text">{{direct}}</text>
+</label>
+</view>
+<view class="label_sise">
+<label >
+     <text class="label-1__text">风力:</text>
+     <text class="label-2__text">{{power}}</text>
+</label>
+</view>
+  <view class="body-view">
+    <loading hidden="{{hidden}}" bindchange="onLoad">
+      加载中...
+    </loading>
+  </view>

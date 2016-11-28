@@ -1,0 +1,39 @@
+
+<view class="section">
+  <view class="section__title">篮球</view>
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item bc_green">
+    <button class = "button-bounds"  bindtap="NotBeginAction">详情</button>
+    </view>
+    
+  </view>
+</view>
+
+<view class="section">
+  <view class="section__title">瀑布流</view>
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item bc_green">
+    <button class = "button-bounds"  bindtap="StartAction">详情</button>
+    </view>
+    
+  </view>
+</view>
+
+<view class="section">
+  <view class="section__title">表单</view>
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item bc_green">
+    <button class = "button-bounds"  bindtap="EndAction">详情</button>
+    </view>
+    
+  </view>
+</view>
+<view class="section">
+  <view class="section__title">笑话大全</view>
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item bc_green">
+    <button class = "button-bounds"  bindtap="JokeAction">详情</button>
+    </view>
+    
+  </view>
+</view>

@@ -1,0 +1,25 @@
+page
+{
+    background-color: cornflowerblue;
+}
+.label_sise
+{
+    margin: 40px 40px;
+    background-color: sandybrown;
+    
+}
+.label-1__text{
+    display: inline-block;
+    vertical-align: middle;
+    align-items: center;
+   
+}
+.label-2__text
+{
+  display: inline-block;
+    vertical-align: middle;
+    align-items: center;
+    text-indent: 1em; 
+    padding-left: 5em;
+
+}

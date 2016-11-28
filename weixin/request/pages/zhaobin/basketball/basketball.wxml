@@ -1,0 +1,18 @@
+ <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"
+    class="list bc_green" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
+    <view class="item" wx:for="{{list}}">
+     <view class="bc_red imageViewSize">
+     <image style="width:140px; height: 100px; background-color: #eeeeee;" src="{{item.player1logo}}"></image>
+      <!--<text class="title" >&nbsp;&nbsp;&nbsp;</text>-->
+      <image style="width:140px; height: 100px; background-color: #eeeeee;" src="{{item.player2logo}}"></image>
+     
+    </view>
+     <text >{{item.player1}}</text>
+      <!--<text class="title" >&nbsp;&nbsp;&nbsp;</text>-->
+     <text >{{item.player2}}</text></view>
+  </scroll-view>
+  <view class="body-view">
+    <loading hidden="{{hidden}}" bindchange="loadingChange">
+      加载中...
+    </loading>
+  </view>

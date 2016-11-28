@@ -1,0 +1,1 @@
+<button bindtap="setLoading">点击设置以上按钮loading属性</button>
