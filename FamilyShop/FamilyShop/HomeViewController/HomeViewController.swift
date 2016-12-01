@@ -21,9 +21,8 @@ class HomeViewController: UIViewController {
     {
         super.viewDidLoad()
        //alamofireUploadFile()
-   //http://www.bxwx8.org/binfo/99/99078.htm
         let webView = UIWebView(frame:self.view.bounds)
-        let url = NSURL(string: "http://www.bxwx8.org/binfo/99/99078.htm")
+        let url = NSURL(string: "https://www.baidu.com")
         let request = NSURLRequest(url: url as! URL)
         webView.loadRequest(request as URLRequest)
         self.view.addSubview(webView)
@@ -52,7 +51,7 @@ class HomeViewController: UIViewController {
         for  dic in BookListDAO.SearchAllDataEntity()
         {
             let dicBookList = dic as! BookListEntity
-            print(dicBookList.date)
+            print(dicBookList.date! as String)
         }
 
     }

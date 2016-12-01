@@ -40,24 +40,9 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         
     }
     
-    //MARK:lineTextField 实时监控
-    func rxTextFieldCocoa()
-    {
-        let username = _traffic.lineTextField.rx_text
-        username.subscribeNext {
-            if $0 == ""
-            {
-                self.lineString = nil
-            }
-            else
-            {
-                self.lineString  = $0
-            }
-        }
-    }
-    
+        
     //MARK:CollectionView
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return 5
     }
@@ -67,9 +52,9 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         return 1;
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCellID", forIndexPath: indexPath) as? HomeCollectionViewCell
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCellID", for: indexPath as IndexPath) as? HomeCollectionViewCell
         if cell == nil
         {
             let nibArray : NSArray = NSBundle.mainBundle().loadNibNamed("HomeCollectionViewCell", owner:self, options:nil)
@@ -151,7 +136,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         }
         else
         {
-            NetWorkManager.alamofireRequestData("大连", bus:self.lineString, url: Common_busUrl)
+//            NetWorkManager.alamofireRequestData("大连", bus:self.lineString, url: Common_busUrl)
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.successAction), name: "alamofireSuccess", object: nil)
@@ -231,9 +216,9 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     func weatherAlamofire()
     {
         self.prpgressHud()
-        NetWorkManager.alamofireWeatherRequestData("大连", url: "http://op.juhe.cn/onebox/weather/query", key: "e527188bbf687ccccac5350acf9a151f", dtype: "json")
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.weatherData), name: "TimeOut", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.weatherData), name: "WeatherData", object: nil)
+//        NetWorkManager.alamofireWeatherRequestData("大连", url: "http://op.juhe.cn/onebox/weather/query", key: "e527188bbf687ccccac5350acf9a151f", dtype: "json")
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.weatherData), name: "TimeOut", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.weatherData), name: "WeatherData", object: nil)
         
     }
     

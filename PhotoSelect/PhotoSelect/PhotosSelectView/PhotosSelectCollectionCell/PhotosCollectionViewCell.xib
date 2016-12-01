@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PhotosCollectionViewCell" id="gTV-IL-0wX" customClass="PhotosCollectionViewCell" customModule="PhotoSelect" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ISt-F4-3He">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaM-uR-FYt">
+                        <rect key="frame" x="80" y="0.0" width="20" height="20"/>
+                        <color key="backgroundColor" red="1" green="0.039807787329999997" blue="0.078941213309999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="4hf-15-27n"/>
+                            <constraint firstAttribute="width" constant="20" id="mmB-fX-AXR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                        <state key="normal" title="×">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ISt-F4-3He" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6Bv-Jh-X9v"/>
+                <constraint firstAttribute="trailing" secondItem="PaM-uR-FYt" secondAttribute="trailing" id="8km-o0-Ye3"/>
+                <constraint firstAttribute="trailing" secondItem="ISt-F4-3He" secondAttribute="trailing" id="DA1-bc-kbg"/>
+                <constraint firstAttribute="bottom" secondItem="ISt-F4-3He" secondAttribute="bottom" id="R4w-Pi-7Zo"/>
+                <constraint firstItem="PaM-uR-FYt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Rrg-HA-dDT"/>
+                <constraint firstItem="ISt-F4-3He" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bQh-dC-jnt"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundImageView" destination="ISt-F4-3He" id="M4L-FC-hNN"/>
+                <outlet property="delectButton" destination="PaM-uR-FYt" id="4RX-ZH-wAL"/>
+            </connections>
+            <point key="canvasLocation" x="533" y="447"/>
+        </collectionViewCell>
+    </objects>
+</document>

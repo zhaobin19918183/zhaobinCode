@@ -19,7 +19,7 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     var photosImageArray = NSMutableArray()
     var didselectImageArray = NSMutableArray()
     //资源库管理类
-    var assetsFetchResults =  PHFetchResult()
+    var assetsFetchResults =  PHFetchResult<AnyObject>()
     //保存照片集合
     var PHIassets = PHImageManager()
     var asset = PHAsset()
@@ -46,7 +46,7 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     //MARK: 照片缓存
     func photosUserDefaults()
     {
-        assetsFetchResults = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: nil)
+        assetsFetchResults = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: nil) as! PHFetchResult<AnyObject>
         if assetsFetchResults.count != 0
         {
             for index in 1...assetsFetchResults.count
@@ -61,7 +61,7 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
                     self.selectedArray.add(base64String)
                     let data : Data! = try? JSONSerialization.data(withJSONObject: self.selectedArray, options: [])
                     //NSData转换成NSString打印输出
-                    let str = NSString(data:data, encoding: String.Encoding.utf8)
+                    let str = NSString(data:data, encoding: String.Encoding.utf8.rawValue)
                     
                     UserDefaults.standard.set(str, forKey: "photos")
                 }
@@ -98,7 +98,7 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCellID", for: indexPath) as? PhotosCollectionViewCell
         if cell == nil
         {
-            let nibArray : NSArray = Bundle.main.loadNibNamed("PhotosCollectionViewCell", owner:self, options:nil)
+            let nibArray = Bundle.main.loadNibNamed("PhotosCollectionViewCell", owner:self, options:nil) as
             cell = nibArray.firstObject as? PhotosCollectionViewCell
         }
         if self.photosImageArray.count != 0 && (indexPath as NSIndexPath).row < self.photosImageArray.count{

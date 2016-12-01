@@ -39,7 +39,7 @@ class WeatherDAO: BaseDAO {
     //MARK: - Retrive 按条件搜索数据
     static func retriveEntityWith(ID identification : String) -> [WeatherEntity]
     {
-        let request         = NSFetchRequest(entityName: self.entityName())
+        let request         = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName())
         let searchEntity    = NSEntityDescription.entity(forEntityName: self.entityName(), in: BaseDAO.mainMOC)
         request.entity      = searchEntity
         let predicate       = NSPredicate(format: "identification == %@", identification)
@@ -102,7 +102,7 @@ class WeatherDAO: BaseDAO {
     static func SearchAllDataEntity()->NSArray
     {
         let managedContext  = BaseDAO.mainMOC
-        let fetchRqeust     = NSFetchRequest(entityName: "WeatherEntity")
+        let fetchRqeust     = NSFetchRequest<NSFetchRequestResult>(entityName: "WeatherEntity")
         let weatherArray    = try!managedContext.fetch(fetchRqeust) as AnyObject as! NSArray
         return weatherArray
     }
@@ -110,7 +110,7 @@ class WeatherDAO: BaseDAO {
     static  func  SearchWeatherModel() -> WeatherModel
     {
         let managedContext  = BaseDAO.mainMOC
-        let fetchRqeust     = NSFetchRequest(entityName: "WeatherEntity")
+        let fetchRqeust     = NSFetchRequest<NSFetchRequestResult>(entityName: "WeatherEntity")
         let fetcheResults   = try!managedContext.fetch(fetchRqeust) as AnyObject as! NSArray
         let model           =  WeatherModel.convertFrom(fetcheResults.object(at: 0) as! WeatherEntity)
         return model

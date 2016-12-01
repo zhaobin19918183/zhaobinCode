@@ -14,8 +14,6 @@
 		A13ABACA1CE9F79000F8D01B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13ABAC81CE9F79000F8D01B /* Main.storyboard */; };
 		A13ABACC1CE9F79000F8D01B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13ABACB1CE9F79000F8D01B /* Assets.xcassets */; };
 		A13ABACF1CE9F79000F8D01B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13ABACD1CE9F79000F8D01B /* LaunchScreen.storyboard */; };
-		A13ABADA1CE9F79100F8D01B /* HTKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13ABAD91CE9F79100F8D01B /* HTKTests.swift */; };
-		A13ABAE51CE9F79100F8D01B /* HTKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13ABAE41CE9F79100F8D01B /* HTKUITests.swift */; };
 		A13ABAFD1CE9F7B300F8D01B /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13ABAFA1CE9F7B300F8D01B /* NoteViewController.swift */; };
 		A13ABB001CE9F98400F8D01B /* HTKModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A13ABAFE1CE9F98400F8D01B /* HTKModel.xcdatamodeld */; };
 		A13ABB021CE9F9C400F8D01B /* BaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13ABB011CE9F9C400F8D01B /* BaseDAO.swift */; };
@@ -54,6 +52,8 @@
 		BD23099E1CFEAF1D0034B8AE /* BusCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */; };
 		BD23099F1CFEAF1D0034B8AE /* BusCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */; };
 		BD2309A21CFEDACE0034B8AE /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */; };
+		BD40F0E51DED45A400A39F1B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD40F0E41DED45A400A39F1B /* Alamofire.framework */; };
+		BD40F0E71DED463C00A39F1B /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40F0E61DED463C00A39F1B /* NetWorkManager.swift */; };
 		BD4550D21D0FE7C40077D396 /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4550D11D0FE7C40077D396 /* HelperManager.swift */; };
 		BD489FD71CEAA9340010806B /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD489FD61CEAA9340010806B /* WeatherView.swift */; };
 		BD489FD91CEAA9500010806B /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD489FD81CEAA9500010806B /* WeatherView.xib */; };
@@ -100,15 +100,11 @@
 		BDD1F03B1D010D3200816B95 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1F0341D010D3200816B95 /* SectionHeaderView.swift */; };
 		BDD1F03C1D010D3200816B95 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD1F0351D010D3200816B95 /* SectionHeaderView.xib */; };
 		BDD1F03D1D010D3200816B95 /* SectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1F0361D010D3200816B95 /* SectionInfo.swift */; };
-		BDD1F0411D0148AE00816B95 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1F0401D0148AE00816B95 /* NetWorkManager.swift */; };
-		BDE25E201D98F44200814B54 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE25E1E1D98F41500814B54 /* Alamofire.framework */; };
-		BDE25E211D98F44200814B54 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDE25E1E1D98F41500814B54 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDE6AE341CEC0277007A315E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE331CEC0277007A315E /* MapKit.framework */; };
 		BDE6AE561CEC37CE007A315E /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */; };
 		BDE6AE581CEC37D6007A315E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE571CEC37D6007A315E /* libz.tbd */; };
 		BDE6AE5A1CEC37E1007A315E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE591CEC37E1007A315E /* QuartzCore.framework */; };
 		BDE6AE5C1CEC37EA007A315E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE5B1CEC37EA007A315E /* OpenGLES.framework */; };
-		BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE5D1CEC37F4007A315E /* CoreLocation.framework */; };
 		BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE5F1CEC37FD007A315E /* CoreTelephony.framework */; };
 		BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE611CEC3805007A315E /* Security.framework */; };
 		BDE6AE641CEC380F007A315E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE6AE631CEC380F007A315E /* SystemConfiguration.framework */; };
@@ -127,23 +123,6 @@
 		BDECC3F91D05533A0077D8CA /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDECC3F51D05533A0077D8CA /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A13ABAD61CE9F79100F8D01B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A13ABAB91CE9F79000F8D01B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A13ABAC01CE9F79000F8D01B;
-			remoteInfo = HTK;
-		};
-		A13ABAE11CE9F79100F8D01B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A13ABAB91CE9F79000F8D01B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A13ABAC01CE9F79000F8D01B;
-			remoteInfo = HTK;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		A13ABB091CE9FA6D00F8D01B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -154,7 +133,6 @@
 				BD0DA8D61D26062F00C1E9F4 /* CoreLocation.framework in Embed Frameworks */,
 				BDECC3F71D05533A0077D8CA /* RxCocoa.framework in Embed Frameworks */,
 				BDECC3F91D05533A0077D8CA /* RxSwift.framework in Embed Frameworks */,
-				BDE25E211D98F44200814B54 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,17 +151,14 @@
 		A13ABACB1CE9F79000F8D01B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A13ABACE1CE9F79000F8D01B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A13ABAD01CE9F79000F8D01B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A13ABAD51CE9F79100F8D01B /* HTKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13ABAD91CE9F79100F8D01B /* HTKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTKTests.swift; sourceTree = "<group>"; };
 		A13ABADB1CE9F79100F8D01B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A13ABAE01CE9F79100F8D01B /* HTKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13ABAE41CE9F79100F8D01B /* HTKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTKUITests.swift; sourceTree = "<group>"; };
 		A13ABAE61CE9F79100F8D01B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A13ABAFA1CE9F7B300F8D01B /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		A13ABAFF1CE9F98400F8D01B /* HTKModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HTKModel.xcdatamodel; sourceTree = "<group>"; };
 		A13ABB011CE9F9C400F8D01B /* BaseDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDAO.swift; sourceTree = "<group>"; };
 		A13ABB031CE9FA2600F8D01B /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		A13ABB051CE9FA6500F8D01B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Common/Alamofire.framework; sourceTree = "<group>"; };
 		A13ABB0B1CE9FAD600F8D01B /* FolderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FolderManager.swift; path = ../NetWorkManager/FolderManager.swift; sourceTree = "<group>"; };
 		A13ABB141CE9FDC200F8D01B /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		A13ABB151CE9FDC200F8D01B /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
@@ -235,6 +210,8 @@
 		BD23099C1CFEAF1D0034B8AE /* BusCarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusCarTableViewCell.swift; sourceTree = "<group>"; };
 		BD23099D1CFEAF1D0034B8AE /* BusCarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusCarTableViewCell.xib; sourceTree = "<group>"; };
 		BD2309A01CFEDACE0034B8AE /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		BD40F0E41DED45A400A39F1B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		BD40F0E61DED463C00A39F1B /* NetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
 		BD4550D11D0FE7C40077D396 /* HelperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperManager.swift; sourceTree = "<group>"; };
 		BD489FD61CEAA9340010806B /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherView.swift; path = ../WeatherView.swift; sourceTree = "<group>"; };
 		BD489FD81CEAA9500010806B /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherView.xib; path = ../WeatherView.xib; sourceTree = "<group>"; };
@@ -283,8 +260,6 @@
 		BDD1F0341D010D3200816B95 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		BDD1F0351D010D3200816B95 /* SectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
 		BDD1F0361D010D3200816B95 /* SectionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionInfo.swift; sourceTree = "<group>"; };
-		BDD1F0401D0148AE00816B95 /* NetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetWorkManager.swift; path = ../HomeViewController/NetWorkManager.swift; sourceTree = "<group>"; };
-		BDE25E1E1D98F41500814B54 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
 		BDE6AE331CEC0277007A315E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		BDE6AE571CEC37D6007A315E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -319,27 +294,12 @@
 				BD0DA8D51D26062F00C1E9F4 /* CoreLocation.framework in Frameworks */,
 				BDE6AE621CEC3805007A315E /* Security.framework in Frameworks */,
 				BDE6AE601CEC37FD007A315E /* CoreTelephony.framework in Frameworks */,
-				BDE6AE5E1CEC37F4007A315E /* CoreLocation.framework in Frameworks */,
 				BDE6AE5C1CEC37EA007A315E /* OpenGLES.framework in Frameworks */,
 				BDE6AE5A1CEC37E1007A315E /* QuartzCore.framework in Frameworks */,
 				BDE6AE581CEC37D6007A315E /* libz.tbd in Frameworks */,
-				BDE25E201D98F44200814B54 /* Alamofire.framework in Frameworks */,
+				BD40F0E51DED45A400A39F1B /* Alamofire.framework in Frameworks */,
 				BDE6AE561CEC37CE007A315E /* libstdc++.6.0.9.tbd in Frameworks */,
 				BDE6AE341CEC0277007A315E /* MapKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A13ABAD21CE9F79100F8D01B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A13ABADD1CE9F79100F8D01B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,8 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				A13ABAC11CE9F79000F8D01B /* HTK.app */,
-				A13ABAD51CE9F79100F8D01B /* HTKTests.xctest */,
-				A13ABAE01CE9F79100F8D01B /* HTKUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -431,7 +389,7 @@
 		A13ABAF21CE9F7B300F8D01B /*  Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BDE25E1E1D98F41500814B54 /* Alamofire.framework */,
+				BD40F0E41DED45A400A39F1B /* Alamofire.framework */,
 				A13ABB491CE9FE5500F8D01B /* Bridging-Header.h */,
 				BDECC3F41D05533A0077D8CA /* RxCocoa.framework */,
 				BDECC3F51D05533A0077D8CA /* RxSwift.framework */,
@@ -446,7 +404,6 @@
 				BDE6AE551CEC37CE007A315E /* libstdc++.6.0.9.tbd */,
 				A13ABB4A1CE9FEFA00F8D01B /* MBProgressHUD */,
 				A13ABB131CE9FDC200F8D01B /* SDWebImage */,
-				A13ABB051CE9FA6500F8D01B /* Alamofire.framework */,
 				BDE6AE331CEC0277007A315E /* MapKit.framework */,
 			);
 			path = " Resources";
@@ -463,7 +420,6 @@
 				A13ABB0B1CE9FAD600F8D01B /* FolderManager.swift */,
 				A13ABB031CE9FA2600F8D01B /* Common.swift */,
 				BD4550D11D0FE7C40077D396 /* HelperManager.swift */,
-				BDD1F0401D0148AE00816B95 /* NetWorkManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -471,6 +427,7 @@
 		A13ABAF41CE9F7B300F8D01B /* 3 */ = {
 			isa = PBXGroup;
 			children = (
+				BD40F0E61DED463C00A39F1B /* NetWorkManager.swift */,
 				A13ABB011CE9F9C400F8D01B /* BaseDAO.swift */,
 				BD8682231CEC5C2F004AC3E4 /* WeatherDAO.swift */,
 				BD16302E1D34B43100653E60 /* WeatherModel.swift */,
@@ -798,42 +755,6 @@
 			productReference = A13ABAC11CE9F79000F8D01B /* HTK.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A13ABAD41CE9F79100F8D01B /* HTKTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A13ABAEC1CE9F79100F8D01B /* Build configuration list for PBXNativeTarget "HTKTests" */;
-			buildPhases = (
-				A13ABAD11CE9F79100F8D01B /* Sources */,
-				A13ABAD21CE9F79100F8D01B /* Frameworks */,
-				A13ABAD31CE9F79100F8D01B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A13ABAD71CE9F79100F8D01B /* PBXTargetDependency */,
-			);
-			name = HTKTests;
-			productName = HTKTests;
-			productReference = A13ABAD51CE9F79100F8D01B /* HTKTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		A13ABADF1CE9F79100F8D01B /* HTKUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A13ABAEF1CE9F79100F8D01B /* Build configuration list for PBXNativeTarget "HTKUITests" */;
-			buildPhases = (
-				A13ABADC1CE9F79100F8D01B /* Sources */,
-				A13ABADD1CE9F79100F8D01B /* Frameworks */,
-				A13ABADE1CE9F79100F8D01B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A13ABAE21CE9F79100F8D01B /* PBXTargetDependency */,
-			);
-			name = HTKUITests;
-			productName = HTKUITests;
-			productReference = A13ABAE01CE9F79100F8D01B /* HTKUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -841,22 +762,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "赵斌";
 				TargetAttributes = {
 					A13ABAC01CE9F79000F8D01B = {
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0800;
-					};
-					A13ABAD41CE9F79100F8D01B = {
-						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
-						TestTargetID = A13ABAC01CE9F79000F8D01B;
-					};
-					A13ABADF1CE9F79100F8D01B = {
-						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
-						TestTargetID = A13ABAC01CE9F79000F8D01B;
 					};
 				};
 			};
@@ -874,8 +785,6 @@
 			projectRoot = "";
 			targets = (
 				A13ABAC01CE9F79000F8D01B /* HTK */,
-				A13ABAD41CE9F79100F8D01B /* HTKTests */,
-				A13ABADF1CE9F79100F8D01B /* HTKUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -923,20 +832,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A13ABAD31CE9F79100F8D01B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A13ABADE1CE9F79100F8D01B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -962,7 +857,6 @@
 				A13ABB421CE9FDC200F8D01B /* UIImageView+HighlightedWebCache.m in Sources */,
 				A13ABAFD1CE9F7B300F8D01B /* NoteViewController.swift in Sources */,
 				BD6D3B181CFC1D3E0000ED34 /* PDLineChart.swift in Sources */,
-				BDD1F0411D0148AE00816B95 /* NetWorkManager.swift in Sources */,
 				BDBB64E21D0D2C25000B0028 /* PhotosCollectionViewCell.swift in Sources */,
 				BDD1F03D1D010D3200816B95 /* SectionInfo.swift in Sources */,
 				BD6D3B171CFC1D3E0000ED34 /* PDChartAxesComponent.swift in Sources */,
@@ -977,6 +871,7 @@
 				BDBB64E91D0D2F70000B0028 /* PhotosSelectManager.swift in Sources */,
 				BD16302F1D34B43100653E60 /* WeatherModel.swift in Sources */,
 				BD8682241CEC5C2F004AC3E4 /* WeatherDAO.swift in Sources */,
+				BD40F0E71DED463C00A39F1B /* NetWorkManager.swift in Sources */,
 				BD6D3B061CFC054B0000ED34 /* RefreshControl.swift in Sources */,
 				BDD1F02A1D010AE900816B95 /* BusTableViewController.swift in Sources */,
 				A11C02991CEB4EF600797AC9 /* WeatherEntity.m in Sources */,
@@ -1010,36 +905,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A13ABAD11CE9F79100F8D01B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A13ABADA1CE9F79100F8D01B /* HTKTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A13ABADC1CE9F79100F8D01B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A13ABAE51CE9F79100F8D01B /* HTKUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A13ABAD71CE9F79100F8D01B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A13ABAC01CE9F79000F8D01B /* HTK */;
-			targetProxy = A13ABAD61CE9F79100F8D01B /* PBXContainerItemProxy */;
-		};
-		A13ABAE21CE9F79100F8D01B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A13ABAC01CE9F79000F8D01B /* HTK */;
-			targetProxy = A13ABAE11CE9F79100F8D01B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A13ABAC81CE9F79000F8D01B /* Main.storyboard */ = {
@@ -1075,8 +941,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1125,8 +993,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1149,6 +1019,7 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1266,6 +1137,7 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/",
 					Resources,
+					"$(PROJECT_DIR)/HTK/\\ Resources",
 					"$(PROJECT_DIR)/HTK/\\ Resources",
 					"$(PROJECT_DIR)/HTK/\\ Resources",
 				);
@@ -1398,6 +1270,7 @@
 					Resources,
 					"$(PROJECT_DIR)/HTK/\\ Resources",
 					"$(PROJECT_DIR)/HTK/\\ Resources",
+					"$(PROJECT_DIR)/HTK/\\ Resources",
 				);
 				INFOPLIST_FILE = HTK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1410,56 +1283,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhaobin/zhaobinCode/HTK/HTK/ Resources/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		A13ABAED1CE9F79100F8D01B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = HTKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTKTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HTK.app/HTK";
-			};
-			name = Debug;
-		};
-		A13ABAEE1CE9F79100F8D01B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = HTKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTKTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HTK.app/HTK";
-			};
-			name = Release;
-		};
-		A13ABAF01CE9F79100F8D01B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = HTKUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTKUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = HTK;
-			};
-			name = Debug;
-		};
-		A13ABAF11CE9F79100F8D01B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = HTKUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zhaobin.HTKUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = HTK;
 			};
 			name = Release;
 		};
@@ -1480,24 +1303,6 @@
 			buildConfigurations = (
 				A13ABAEA1CE9F79100F8D01B /* Debug */,
 				A13ABAEB1CE9F79100F8D01B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A13ABAEC1CE9F79100F8D01B /* Build configuration list for PBXNativeTarget "HTKTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A13ABAED1CE9F79100F8D01B /* Debug */,
-				A13ABAEE1CE9F79100F8D01B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A13ABAEF1CE9F79100F8D01B /* Build configuration list for PBXNativeTarget "HTKUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A13ABAF01CE9F79100F8D01B /* Debug */,
-				A13ABAF11CE9F79100F8D01B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

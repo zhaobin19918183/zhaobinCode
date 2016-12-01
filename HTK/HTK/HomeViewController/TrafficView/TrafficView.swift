@@ -8,10 +8,6 @@
 
 import UIKit
 
-import RxSwift
-
-import RxCocoa
-
 class TrafficView:UIView,trafficViewPickerDelegate,UITextFieldDelegate {
     
     @IBOutlet var trafficView: UIView!
