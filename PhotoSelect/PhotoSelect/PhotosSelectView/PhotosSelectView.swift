@@ -133,7 +133,6 @@ class PhotosSelectView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
             
             let loginView = PhotosSelectManager()
             loginView.delegate = self
-            
             loginView.view.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha:0)
             loginView.imageArray = self.photosImageArray
             photosSelectView.present(loginView, animated: true, completion: nil)

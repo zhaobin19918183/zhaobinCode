@@ -43,7 +43,7 @@ class ProductTableViewCell: UITableViewCell {
     {
        print("section==\(section)","index==\(index)")
       
-       addProductsAnimation(_productImageView)
+      // addProductsAnimation(_productImageView)
       
     }
 //    //MARK:动画效果

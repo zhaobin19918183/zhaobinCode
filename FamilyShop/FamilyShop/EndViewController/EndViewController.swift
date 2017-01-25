@@ -27,9 +27,6 @@ class EndViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
     {
         super.viewDidLoad()
         //alamofireRequest()
-       
-        
-        // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool)
     {
@@ -70,7 +67,7 @@ class EndViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
         
         if self.EndArray0 == nil
         {
-          return 1
+          return 0
         }
         else
         {

@@ -55,6 +55,7 @@ class BookListDAO: BaseDAO
 
         return dataSource
     }
+    
     //MARK: - Delete
     static func deleteEntityWith(Entity entity : BookListEntity) -> Bool
     {

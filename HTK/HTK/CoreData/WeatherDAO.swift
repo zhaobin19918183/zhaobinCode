@@ -85,7 +85,7 @@ class WeatherDAO: BaseDAO {
     static  func  SearchCoreDataEntity() -> WeatherEntity
     {
         let managedContext  = BaseDAO.mainMOC
-        let fetchRqeust     = NSFetchRequest(entityName: "WeatherEntity")
+        let fetchRqeust     = NSFetchRequest<NSFetchRequestResult>(entityName: "WeatherEntity")
         let weatherArray    = try!managedContext.fetch(fetchRqeust) as AnyObject as! NSArray
         let weatherEntity   = weatherArray.object(at: 0) as! WeatherEntity
         return weatherEntity
@@ -93,7 +93,7 @@ class WeatherDAO: BaseDAO {
     static  func  SearchOneEntity(_ index:Int) -> WeatherEntity
     {
         let managedContext  = BaseDAO.mainMOC
-        let fetchRqeust     = NSFetchRequest(entityName: "WeatherEntity")
+        let fetchRqeust     = NSFetchRequest<NSFetchRequestResult>(entityName: "WeatherEntity")
         let weatherArray    = try!managedContext.fetch(fetchRqeust) as AnyObject as! NSArray
         let weatherEntity   = weatherArray.object(at: index) as! WeatherEntity
         return weatherEntity

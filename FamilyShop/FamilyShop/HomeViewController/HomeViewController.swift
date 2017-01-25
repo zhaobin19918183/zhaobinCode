@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     var EndDic:NSDictionary!
     var EndArray:NSArray!
     var avAudioPlayer:AVAudioPlayer!
+    var TestViewController:testViewController!
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -26,6 +27,9 @@ class HomeViewController: UIViewController {
         let request = NSURLRequest(url: url as! URL)
         webView.loadRequest(request as URLRequest)
         self.view.addSubview(webView)
+         netWorkStatusType()
+        TestViewController = testViewController()
+        self.addChildViewController(TestViewController)
        
 
     }

@@ -45,7 +45,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>iconfont.ttf</string>
+		<string>iconfont</string>
 	</array>
 </dict>
 </plist>

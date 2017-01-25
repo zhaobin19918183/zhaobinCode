@@ -75,12 +75,11 @@ class PhotosSelectManager: UIViewController,UICollectionViewDelegate,UICollectio
         }
         
         if cell?.isSelected == true {
-            
-            cell?.imageLable!.text = "\u{e6ab}"
+            cell?.selectImage.image = UIImage(named:"selected.png")
         }
         else
         {
-            cell?.imageLable!.text = "\u{e6ab}"
+           cell?.selectImage.image = UIImage(named:"select.png")
         }
         
         return cell!
@@ -90,8 +89,9 @@ class PhotosSelectManager: UIViewController,UICollectionViewDelegate,UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         let cell = collectionView.cellForItem(at: indexPath) as! PhotosCollectionCell
-        cell.imageLable!.font = UIFont(name: "iconfont", size: 20)
-        cell.imageLable!.text = "\u{e615}"
+//        cell.imageLable!.font = UIFont(name: "iconfont", size: 20)
+//        cell.imageLable!.text = "\u{e660}"
+        cell.selectImage.image = UIImage(named:"selected.png")
         self.imageArray.add(cell.backgroundImageVIew.image!)
         self.selectedArray.add(cell.backgroundImageVIew.image!)
         
@@ -99,8 +99,9 @@ class PhotosSelectManager: UIViewController,UICollectionViewDelegate,UICollectio
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! PhotosCollectionCell
-        cell.imageLable!.font = UIFont(name: "iconfont", size: 20)
-        cell.imageLable!.text = "\u{e614}"
+//        cell.imageLable!.font = UIFont(name: "iconfont", size: 20)
+//        cell.imageLable!.text = "\u{e661}"
+        cell.selectImage.image = UIImage(named:"select.png")
         self.imageArray.remove(cell.backgroundImageVIew.image!)
         
     }

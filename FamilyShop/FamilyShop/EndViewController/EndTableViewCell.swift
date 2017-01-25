@@ -37,7 +37,6 @@ class EndTableViewCell: UITableViewCell {
     }
     func  endLiveDicAction(dic:[String:AnyObject] ,tableview:UITableView)
     {
-        //[player1logo, player2logobig, m_link1url, m_link2url, score, player2logo, time, link2text, link1text, player2, player1logobig, link1url, player1url, link2url, player1, status, player2url]
         _teamName1.text = dic["player1"] as? String
         _teamName2.text = dic["player2"] as? String
         _teamNumber.text = dic["score"] as? String

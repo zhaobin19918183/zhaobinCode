@@ -18,12 +18,15 @@
 		BD5B722A1D9CF37C007C1665 /* ShopCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5B72281D9CF37C007C1665 /* ShopCarTableViewCell.swift */; };
 		BD5B722B1D9CF37C007C1665 /* ShopCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD5B72291D9CF37C007C1665 /* ShopCarTableViewCell.xib */; };
 		BD64E74A1DAF3769007B5E95 /* EndWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD64E7491DAF3769007B5E95 /* EndWebViewController.swift */; };
+		BD7C99141E0A79B50059A688 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C99121E0A79B50059A688 /* testViewController.swift */; };
+		BD7C99151E0A79B50059A688 /* testViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD7C99131E0A79B50059A688 /* testViewController.xib */; };
 		BDBBA5471D9B4DF000EB1AF4 /* FolderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBBA5461D9B4DF000EB1AF4 /* FolderManager.swift */; };
 		BDBBA54A1D9B559300EB1AF4 /* FamilyShopModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BDBBA5481D9B559300EB1AF4 /* FamilyShopModel.xcdatamodeld */; };
 		BDBBA5561D9B597800EB1AF4 /* BookListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBBA5551D9B597800EB1AF4 /* BookListModel.swift */; };
 		BDBBA5581D9B656900EB1AF4 /* BookListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBBA5571D9B656900EB1AF4 /* BookListDAO.swift */; };
 		BDBBA55B1D9B689800EB1AF4 /* BookListEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBBA5591D9B689800EB1AF4 /* BookListEntity+CoreDataClass.swift */; };
 		BDBBA55C1D9B689800EB1AF4 /* BookListEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBBA55A1D9B689800EB1AF4 /* BookListEntity+CoreDataProperties.swift */; };
+		BDD062491E0263DF00AA66EB /* NBA Terminal.py in Resources */ = {isa = PBXBuildFile; fileRef = BDD062481E0263DF00AA66EB /* NBA Terminal.py */; };
 		BDD3EC031DAE03EB0004BB3B /* SuspendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD3EC021DAE03EB0004BB3B /* SuspendButton.swift */; };
 		BDD3EC061DAE2F130004BB3B /* EndTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD3EC041DAE2F130004BB3B /* EndTableViewCell.swift */; };
 		BDD3EC071DAE2F130004BB3B /* EndTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD3EC051DAE2F130004BB3B /* EndTableViewCell.xib */; };
@@ -92,12 +95,15 @@
 		BD5B72281D9CF37C007C1665 /* ShopCarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCarTableViewCell.swift; sourceTree = "<group>"; };
 		BD5B72291D9CF37C007C1665 /* ShopCarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCarTableViewCell.xib; sourceTree = "<group>"; };
 		BD64E7491DAF3769007B5E95 /* EndWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndWebViewController.swift; sourceTree = "<group>"; };
+		BD7C99121E0A79B50059A688 /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		BD7C99131E0A79B50059A688 /* testViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testViewController.xib; sourceTree = "<group>"; };
 		BDBBA5461D9B4DF000EB1AF4 /* FolderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderManager.swift; sourceTree = "<group>"; };
 		BDBBA5491D9B559300EB1AF4 /* FamilyShopModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FamilyShopModel.xcdatamodel; sourceTree = "<group>"; };
 		BDBBA5551D9B597800EB1AF4 /* BookListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListModel.swift; sourceTree = "<group>"; };
 		BDBBA5571D9B656900EB1AF4 /* BookListDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListDAO.swift; sourceTree = "<group>"; };
 		BDBBA5591D9B689800EB1AF4 /* BookListEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BookListEntity+CoreDataClass.swift"; path = "../../BookListEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BDBBA55A1D9B689800EB1AF4 /* BookListEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BookListEntity+CoreDataProperties.swift"; path = "../../BookListEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BDD062481E0263DF00AA66EB /* NBA Terminal.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = "NBA Terminal.py"; sourceTree = "<group>"; };
 		BDD1FCD91DAB219600DBB6CB /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		BDD3EC021DAE03EB0004BB3B /* SuspendButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuspendButton.swift; sourceTree = "<group>"; };
 		BDD3EC041DAE2F130004BB3B /* EndTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndTableViewCell.swift; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 		BDE25DEC1D98B47000814B54 /* NBALive */ = {
 			isa = PBXGroup;
 			children = (
+				BDD062481E0263DF00AA66EB /* NBA Terminal.py */,
 				BDE25DED1D98B47000814B54 /* AppDelegate.swift */,
 				BDE25E2E1D98F62900814B54 /* NetWorkManager */,
 				BDE25E291D98F55100814B54 /* CoreData */,
@@ -249,6 +256,8 @@
 			children = (
 				BD58D7B61DCB217F00D14BE2 /* Stream.mp3 */,
 				BDE25E1C1D98B4A300814B54 /* HomeViewController.swift */,
+				BD7C99121E0A79B50059A688 /* testViewController.swift */,
+				BD7C99131E0A79B50059A688 /* testViewController.xib */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -410,8 +419,10 @@
 				BD58D7B71DCB217F00D14BE2 /* Stream.mp3 in Resources */,
 				BDE25DF81D98B47000814B54 /* LaunchScreen.storyboard in Resources */,
 				BDE25DF51D98B47000814B54 /* Assets.xcassets in Resources */,
+				BD7C99151E0A79B50059A688 /* testViewController.xib in Resources */,
 				BD5B722B1D9CF37C007C1665 /* ShopCarTableViewCell.xib in Resources */,
 				BDD3EC071DAE2F130004BB3B /* EndTableViewCell.xib in Resources */,
+				BDD062491E0263DF00AA66EB /* NBA Terminal.py in Resources */,
 				BD1B260A1DAC880D008798C1 /* 1-1.jpg in Resources */,
 				BDE25DF31D98B47000814B54 /* Main.storyboard in Resources */,
 				BDE25E371D9906D800814B54 /* 屏幕快照 2016-09-02 下午12.40.08.png in Resources */,
@@ -460,6 +471,7 @@
 				BDE25E1D1D98B4A300814B54 /* HomeViewController.swift in Sources */,
 				BD5B722A1D9CF37C007C1665 /* ShopCarTableViewCell.swift in Sources */,
 				BDE25E2B1D98F5A200814B54 /* BaseDAO.swift in Sources */,
+				BD7C99141E0A79B50059A688 /* testViewController.swift in Sources */,
 				BDD3EC061DAE2F130004BB3B /* EndTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

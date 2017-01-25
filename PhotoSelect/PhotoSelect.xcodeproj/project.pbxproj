@@ -23,6 +23,8 @@
 		BD37C9491DEE727800BDE891 /* PhotosSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD37C9451DEE727800BDE891 /* PhotosSelectView.xib */; };
 		BD37C94B1DEE776100BDE891 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37C94A1DEE776100BDE891 /* NoteViewController.swift */; };
 		BD37C94D1DEE79D800BDE891 /* jiahao.png in Resources */ = {isa = PBXBuildFile; fileRef = BD37C94C1DEE79D800BDE891 /* jiahao.png */; };
+		BD7DFE9C1DEFAFC200D30A88 /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = BD7DFE9A1DEFAFC100D30A88 /* select.png */; };
+		BD7DFE9D1DEFAFC200D30A88 /* selected.png in Resources */ = {isa = PBXBuildFile; fileRef = BD7DFE9B1DEFAFC100D30A88 /* selected.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		BD37C94A1DEE776100BDE891 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		BD37C94C1DEE79D800BDE891 /* jiahao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiahao.png; sourceTree = "<group>"; };
 		BD37C94E1DEE7E5A00BDE891 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		BD7DFE9A1DEFAFC100D30A88 /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select.png; sourceTree = "<group>"; };
+		BD7DFE9B1DEFAFC100D30A88 /* selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 		BD37C9361DEE720900BDE891 /* PhotosSelectManager */ = {
 			isa = PBXGroup;
 			children = (
+				BD7DFE9A1DEFAFC100D30A88 /* select.png */,
+				BD7DFE9B1DEFAFC100D30A88 /* selected.png */,
 				BD37C9371DEE720900BDE891 /* PhotosCollectionCell.swift */,
 				BD37C9381DEE720900BDE891 /* PhotosCollectionCell.xib */,
 				BD37C9391DEE720900BDE891 /* PhotosSelectManager.swift */,
@@ -288,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD7DFE9C1DEFAFC200D30A88 /* select.png in Resources */,
 				BD37C9131DEE708C00BDE891 /* LaunchScreen.storyboard in Resources */,
 				BD37C94D1DEE79D800BDE891 /* jiahao.png in Resources */,
 				BD37C9101DEE708C00BDE891 /* Assets.xcassets in Resources */,
@@ -295,6 +302,7 @@
 				BD37C9471DEE727800BDE891 /* PhotosCollectionViewCell.xib in Resources */,
 				BD37C93E1DEE720900BDE891 /* PhotosSelectManager.xib in Resources */,
 				BD37C9491DEE727800BDE891 /* PhotosSelectView.xib in Resources */,
+				BD7DFE9D1DEFAFC200D30A88 /* selected.png in Resources */,
 				BD37C90E1DEE708C00BDE891 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,6 +584,7 @@
 				BD37C92F1DEE708C00BDE891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD37C9301DEE708C00BDE891 /* Build configuration list for PBXNativeTarget "PhotoSelectTests" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +593,7 @@
 				BD37C9321DEE708C00BDE891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD37C9331DEE708C00BDE891 /* Build configuration list for PBXNativeTarget "PhotoSelectUITests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +602,7 @@
 				BD37C9351DEE708C00BDE891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
