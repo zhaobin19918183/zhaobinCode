@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13241" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AudioEntity" representedClassName="AudioEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="fileCoordinate" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="fileDistance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="filelong" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="filetime1" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="filetime2" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="filetime3" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="fileTimeLong" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fuileNumber" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AudioEntity" positionX="-54" positionY="-9" width="128" height="195"/>
+    </elements>
+</model>

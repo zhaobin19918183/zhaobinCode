@@ -634,7 +634,7 @@
 					"$(PROJECT_DIR)/FamilyShop/Resources",
 				);
 				INFOPLIST_FILE = FamilyShop/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = InnoCellence.FamilyShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -657,7 +657,7 @@
 					"$(PROJECT_DIR)/FamilyShop/Resources",
 				);
 				INFOPLIST_FILE = FamilyShop/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = InnoCellence.FamilyShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";

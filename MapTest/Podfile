@@ -1,0 +1,9 @@
+platform :ios,'11.0'
+use_frameworks!
+target 'MapTest' do
+ pod 'AMap3DMap'
+ pod 'AMapSearch'
+ pod 'AMapLocation'
+ pod 'Alamofire'
+end
+

@@ -69,9 +69,7 @@ class HomeViewController: UIViewController {
            
 //            self.EndArray = self.EndDic.value(forKey: "tr") as! NSArray!
         }
-       
-      
-            
+    
     }
     
     func alamofireUploadFile()
