@@ -7,12 +7,20 @@ PODS:
     - AMapFoundation (~> 1.4)
   - AMapSearch (5.3.0):
     - AMapFoundation (~> 1.2)
+  - EZAudio (1.1.5):
+    - EZAudio/Full (= 1.1.5)
+  - EZAudio/Core (1.1.5)
+  - EZAudio/Full (1.1.5):
+    - EZAudio/Core
+    - TPCircularBuffer (= 1.1)
+  - TPCircularBuffer (1.1)
 
 DEPENDENCIES:
   - Alamofire
   - AMap3DMap
   - AMapLocation
   - AMapSearch
+  - EZAudio
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -20,7 +28,9 @@ SPEC CHECKSUMS:
   AMapFoundation: 6c0471c9a6a0ad17dad46e3d800ad56ca170f82a
   AMapLocation: 47b62b5381a66e4d0c2931b70ffde72682427896
   AMapSearch: beb01c6b2e7be18fb4898e97162fedf144420c6f
+  EZAudio: 3b1cb4b6d7ebca68f0c2478576d75940aad4aa99
+  TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
-PODFILE CHECKSUM: d4763c23e3bd64bb1eff8968687f1b3f54cfdbd7
+PODFILE CHECKSUM: dc7ae28d7b0fb1aeb8c7e50257af50004c4618d1
 
 COCOAPODS: 1.3.1

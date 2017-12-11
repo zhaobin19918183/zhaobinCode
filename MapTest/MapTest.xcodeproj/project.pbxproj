@@ -20,6 +20,8 @@
 		8A2EA31E1FDE2B610009F058 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA31C1FDE2B610009F058 /* CoreDataModel.xcdatamodeld */; };
 		8A2EA3241FDE339D0009F058 /* BaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3231FDE339D0009F058 /* BaseDAO.swift */; };
 		8A2EA3261FDE342C0009F058 /* AudioDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3251FDE342C0009F058 /* AudioDAO.swift */; };
+		8A2EA32A1FDE50070009F058 /* BeginRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3281FDE50070009F058 /* BeginRecordViewController.swift */; };
+		8A2EA32B1FDE50070009F058 /* BeginRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3291FDE50070009F058 /* BeginRecordViewController.xib */; };
 		90565F9E530F5F0542701068 /* Pods_MapTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67150BCD4A8A22795D3F011A /* Pods_MapTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		8A2EA31D1FDE2B610009F058 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		8A2EA3231FDE339D0009F058 /* BaseDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDAO.swift; sourceTree = "<group>"; };
 		8A2EA3251FDE342C0009F058 /* AudioDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDAO.swift; sourceTree = "<group>"; };
+		8A2EA3281FDE50070009F058 /* BeginRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginRecordViewController.swift; sourceTree = "<group>"; };
+		8A2EA3291FDE50070009F058 /* BeginRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeginRecordViewController.xib; sourceTree = "<group>"; };
 		8AC043E61FDA3BDD00E8EEBF /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		AA8756C621C74D009ACE1EB2 /* Pods-MapTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapTest/Pods-MapTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +157,7 @@
 				8A2EA3151FDE27F10009F058 /* FolderManager.swift */,
 				8A26C00D1FDA2A0600FC81F1 /* AppDelegate.swift */,
 				8A26C00F1FDA2A0600FC81F1 /* ViewController.swift */,
+				8A2EA3271FDE4FDB0009F058 /* BeginRecordViewController */,
 				8A2EA3131FDE1B440009F058 /* RecoredManager.swift */,
 				8AC043E61FDA3BDD00E8EEBF /* Header.h */,
 				8A26C0111FDA2A0600FC81F1 /* Main.storyboard */,
@@ -180,6 +185,15 @@
 				8A26C02F1FDA2A0600FC81F1 /* Info.plist */,
 			);
 			path = MapTestUITests;
+			sourceTree = "<group>";
+		};
+		8A2EA3271FDE4FDB0009F058 /* BeginRecordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8A2EA3281FDE50070009F058 /* BeginRecordViewController.swift */,
+				8A2EA3291FDE50070009F058 /* BeginRecordViewController.xib */,
+			);
+			path = BeginRecordViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A26C0181FDA2A0600FC81F1 /* LaunchScreen.storyboard in Resources */,
+				8A2EA32B1FDE50070009F058 /* BeginRecordViewController.xib in Resources */,
 				8A26C0151FDA2A0600FC81F1 /* Assets.xcassets in Resources */,
 				8A26C0131FDA2A0600FC81F1 /* Main.storyboard in Resources */,
 			);
@@ -329,10 +344,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MapTest/Pods-MapTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/EZAudio/EZAudio.framework",
+				"${BUILT_PRODUCTS_DIR}/TPCircularBuffer/TPCircularBuffer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZAudio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPCircularBuffer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -384,6 +403,7 @@
 			files = (
 				8A26C0101FDA2A0600FC81F1 /* ViewController.swift in Sources */,
 				8A2EA3161FDE27F10009F058 /* FolderManager.swift in Sources */,
+				8A2EA32A1FDE50070009F058 /* BeginRecordViewController.swift in Sources */,
 				8A2EA3241FDE339D0009F058 /* BaseDAO.swift in Sources */,
 				8A2EA31E1FDE2B610009F058 /* CoreDataModel.xcdatamodeld in Sources */,
 				8A2EA3141FDE1B440009F058 /* RecoredManager.swift in Sources */,
@@ -564,10 +584,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c086cb39-9dc6-4ee9-b9fb-0e7dc5ea8188";
 				PROVISIONING_PROFILE_SPECIFIER = ProductTest;
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/newland/Desktop/MapTest/MapTest/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/newland/zhaobinCode/MapTest/MapTest/Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "”${SRCROOT}”/**";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MapTest/Header.h\"";
 			};
 			name = Debug;
 		};
@@ -584,7 +604,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c086cb39-9dc6-4ee9-b9fb-0e7dc5ea8188";
 				PROVISIONING_PROFILE_SPECIFIER = ProductTest;
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/newland/Desktop/MapTest/MapTest/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/newland/zhaobinCode/MapTest/MapTest/Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
